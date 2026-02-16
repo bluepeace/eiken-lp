@@ -1,0 +1,16 @@
+/* AiKen LP - 追加スタイル・SEO用フォールバック */
+:root {
+  --aiken-brand: #50c2cb;
+  --aiken-brand-hover: #46adb5;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* ロゴなど画像のフォールバック */
+img.logo {
+  max-height: 2.25rem;
+  width: auto;
+  height: auto;
+}

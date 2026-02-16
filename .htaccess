@@ -1,0 +1,23 @@
+# AiKen LP - レンサバ用
+# ディレクトリインデックスを index.php に
+DirectoryIndex index.php
+
+# 可能なら .php なしでアクセス（例: / → index.php、/1kyu/ → grade.php?level=1kyu）
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  # 実在ファイル・ディレクトリはそのまま
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  # 級別入り口ページ: /1kyu/, /jun1kyu/, /2kyu/, /jun2kyu/, /3kyu/, /4kyu/, /5kyu/
+  RewriteRule ^(1kyu|jun1kyu|2kyu|jun2kyu|3kyu|4kyu|5kyu)/?$ grade.php?level=$1 [L,QSA]
+  # トップは index.php
+  RewriteRule ^$ index.php [L]
+</IfModule>
+
+# セキュリティ: 設定・include 直アクセス防止（任意）
+<FilesMatch "^(config|\.htaccess)">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+</FilesMatch>
