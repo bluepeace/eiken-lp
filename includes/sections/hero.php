@@ -2,11 +2,15 @@
 <section class="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white px-4 py-16 sm:py-20 md:py-24" aria-labelledby="hero-heading">
   <div class="mx-auto flex max-w-6xl flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-16">
     <div class="flex-1 space-y-6 text-center lg:text-left">
-      <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-[11px] font-medium text-slate-600 shadow-sm">英検5級〜1級 / AI添削対応</span>
-      <h1 id="hero-heading" class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">英検対策を、<span class="block text-[#50c2cb]">ひとつに。</span></h1>
-      <p class="max-w-lg text-base leading-relaxed text-slate-600 sm:text-lg">単語・ライティング・スピーキング・リスニング・リーディング。 AI添削と学習履歴で、次にやるべきことを自動提案。 続けやすく、効率よく合格へ。</p>
+      <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-[11px] font-medium text-slate-600 shadow-sm">英検5級〜1級 / 単語・4技能・AI添削</span>
+      <h1 id="hero-heading" class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
+        英検対策を、<span class="block text-[#50c2cb]">愛犬のようにそばで。</span>
+      </h1>
+      <p class="max-w-lg text-base leading-relaxed text-slate-600 sm:text-lg">
+        英検の<strong>勉強法</strong>で悩んでいませんか？<strong>単語</strong>・リーディング・<strong>リスニング</strong>・<strong>ライティング</strong>・<strong>スピーキング</strong>の4技能を、AIが級別の出題形式に合わせて対策。学習履歴で<strong>間違えた問題の復習</strong>もかんたん。バディが目標達成まで寄り添う、英検対策オールインワンアプリです。
+      </p>
       <div class="flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start">
-        <a class="inline-flex items-center justify-center rounded-full bg-[#50c2cb] px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-[#50c2cb]/25 transition hover:bg-[#46adb5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#50c2cb]/60 focus-visible:ring-offset-2" href="<?php echo APP_URL; ?>/signup">無料で会員登録</a>
+        <a class="inline-flex items-center justify-center rounded-full bg-[#50c2cb] px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-[#50c2cb]/25 transition hover:bg-[#46adb5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#50c2cb]/60 focus-visible:ring-offset-2" href="<?php echo APP_URL; ?>/signup">無料ではじめる</a>
         <a class="inline-flex items-center justify-center rounded-full border-2 border-slate-300 bg-white px-8 py-3.5 text-base font-semibold text-slate-800 transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 focus-visible:ring-offset-2" href="<?php echo APP_URL; ?>/login">ログイン</a>
       </div>
     </div>

@@ -5,7 +5,7 @@
  */
 define('SITE_NAME', 'AiKen');
 define('SITE_READING', 'アイケン');
-define('SITE_DESCRIPTION', '英検5級〜1級まで対応した総合学習プラットフォーム');
+define('SITE_DESCRIPTION', '英検5級〜1級の勉強法・単語・面接・ライティングをひとつで。AI添削と4技能対策で合格まで寄り添う英検対策アプリ。無料ではじめられます。');
 define('SITE_URL', 'https://aiken.life');
 define('APP_URL', 'https://app.aiken.life');
 define('BRAND_COLOR', '#50c2cb');
@@ -13,7 +13,7 @@ define('BRAND_COLOR', '#50c2cb');
 // ページ別メタ（キー = ページ識別子）
 $PAGE_META = [
     'top' => [
-        'title' => SITE_NAME . ' | 英検対策アプリ',
+        'title' => SITE_NAME . '（アイケン）| 英検対策アプリ - 勉強法・単語・4技能・面接をAIで',
         'description' => SITE_DESCRIPTION,
         'og_type' => 'website',
     ],
