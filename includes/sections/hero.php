@@ -1,6 +1,9 @@
 <?php if (!defined('SITE_NAME')) { require_once __DIR__ . '/../../config.php'; } ?>
 <section class="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white px-4 py-16 sm:py-20 md:py-24" aria-labelledby="hero-heading">
-  <div class="mx-auto flex max-w-6xl flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-16">
+  <div class="pointer-events-none absolute inset-0 opacity-[0.03]" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1920&q=20" alt="" class="h-full w-full object-cover" loading="lazy" width="1920" height="1080">
+  </div>
+  <div class="relative mx-auto flex max-w-6xl flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-16">
     <div class="flex-1 space-y-6 text-center lg:text-left">
       <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-[11px] font-medium text-slate-600 shadow-sm">英検5級〜1級 / 単語・4技能・AI添削</span>
       <h1 id="hero-heading" class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">

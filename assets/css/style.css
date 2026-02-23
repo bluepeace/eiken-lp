@@ -14,3 +14,8 @@ img.logo {
   width: auto;
   height: auto;
 }
+
+/* 画像のリッチな表示 */
+img[loading="lazy"] {
+  font-size: 0;
+}
