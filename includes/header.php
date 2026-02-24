@@ -10,6 +10,10 @@ $current_page = $page ?? 'top';
 <?php include __DIR__ . '/head.php'; ?>
 </head>
 <body class="min-h-screen bg-slate-950 text-slate-50 antialiased">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TW48595R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <div class="min-h-screen bg-white">
 <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-md">
   <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
