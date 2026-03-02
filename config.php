@@ -5,7 +5,7 @@
  */
 define('SITE_NAME', 'AiKen');
 define('SITE_READING', 'アイケン');
-define('SITE_DESCRIPTION', '英検5級〜1級の勉強法・単語・面接・ライティングをひとつで。AI添削と4技能対策で合格まで寄り添う英検対策アプリ。無料ではじめられます。');
+define('SITE_DESCRIPTION', '英検対策×AIのAiKen（アイケン）。5級〜1級の勉強法・単語・面接・ライティングをひとつで。AI添削と4技能対策で合格まで寄り添う英検対策アプリ。無料ではじめられます。');
 define('SITE_URL', 'https://aiken.life');
 define('APP_URL', 'https://app.aiken.life');
 define('BRAND_COLOR', '#50c2cb');
