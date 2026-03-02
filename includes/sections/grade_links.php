@@ -5,7 +5,7 @@ global $GRADES;
 <section class="border-t border-slate-100 bg-white px-4 py-16 sm:py-20" aria-labelledby="grade-links-heading">
   <div class="mx-auto max-w-4xl">
     <h2 id="grade-links-heading" class="text-center text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">級別の英検対策ページ</h2>
-    <p class="mt-3 text-center text-slate-600">目標の級を選んで、<strong>英検○級 勉強法</strong>・<strong>単語</strong>・<strong>スピーキング</strong>・ライティング対策をはじめよう。各級の出題形式に合わせた内容です。</p>
+    <p class="mt-3 text-center text-slate-600"><?php echo br_after_period('目標の級を選んで、<strong>英検○級 勉強法</strong>・<strong>単語</strong>・<strong>スピーキング</strong>・ライティング対策をはじめよう。各級の出題形式に合わせた内容です。'); ?></p>
     <ul class="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
       <?php foreach ($GRADES as $slug => $g): ?>
       <li>

@@ -69,3 +69,8 @@ function grade_url(string $level): string {
 function asset(string $path): string {
     return rtrim(SITE_URL, '/') . '/' . ltrim($path, '/');
 }
+
+/** 句点（。）の直後に改行を挿入（index用） */
+function br_after_period(string $html): string {
+    return str_replace('。', '。<br>', $html);
+}

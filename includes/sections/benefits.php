@@ -5,15 +5,15 @@
     <div class="mt-10 space-y-8">
       <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
         <h3 class="font-semibold text-slate-900">オールインワンで「何をすればいいか」が明確に</h3>
-        <p class="mt-2 text-slate-600 leading-relaxed">英検の勉強法で悩む方の多くは、単語・リーディング・リスニング・ライティング・スピーキングを別々に用意し、何から手をつけるか迷いがちです。AiKenでは級別の出題形式に合わせた問題が一つのアプリに集約され、今日やるべきことが提案されるため、英検対策に必要なことを効率よく進められます。</p>
+        <p class="mt-2 text-slate-600 leading-relaxed"><?php echo br_after_period('英検の勉強法で悩む方の多くは、単語・リーディング・リスニング・ライティング・スピーキングを別々に用意し、何から手をつけるか迷いがちです。AiKenでは級別の出題形式に合わせた問題が一つのアプリに集約され、今日やるべきことが提案されるため、英検対策に必要なことを効率よく進められます。'); ?></p>
       </div>
       <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
         <h3 class="font-semibold text-slate-900">学習履歴と復習で、間違えた問題を逃さない</h3>
-        <p class="mt-2 text-slate-600 leading-relaxed">学習内容はすべてアプリ内に残ります。間違えた問題の復習がかんたんにできるので、英検 合格に必要な「やり直し」を習慣化しやすく、本番のレベルに近い対策を続けられます。</p>
+        <p class="mt-2 text-slate-600 leading-relaxed"><?php echo br_after_period('学習内容はすべてアプリ内に残ります。間違えた問題の復習がかんたんにできるので、英検 合格に必要な「やり直し」を習慣化しやすく、本番のレベルに近い対策を続けられます。'); ?></p>
       </div>
       <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
         <h3 class="font-semibold text-slate-900">バディが目標達成まで寄り添う</h3>
-        <p class="mt-2 text-slate-600 leading-relaxed">愛犬のようにそばにいてくれるバディが、学習を応援します。一人では続きにくい英検の勉強も、伴走があることで「また明日もやろう」と思いやすく、英検 日程に向けて最後まで走り抜けられる環境を目指しています。</p>
+        <p class="mt-2 text-slate-600 leading-relaxed"><?php echo br_after_period('愛犬のようにそばにいてくれるバディが、学習を応援します。一人では続きにくい英検の勉強も、伴走があることで「また明日もやろう」と思いやすく、英検 日程に向けて最後まで走り抜けられる環境を目指しています。'); ?></p>
       </div>
     </div>
   </div>

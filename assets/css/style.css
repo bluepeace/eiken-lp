@@ -8,6 +8,14 @@ body {
   font-family: 'Noto Sans JP', sans-serif;
 }
 
+/* index（TOP）ページ: テキストのline-heightと句点改行 */
+.lp-index main p,
+.lp-index main li,
+.lp-index main dd,
+.lp-index main [class*="leading"] {
+  line-height: 1.9;
+}
+
 /* ロゴなど画像のフォールバック */
 img.logo {
   max-height: 2.25rem;

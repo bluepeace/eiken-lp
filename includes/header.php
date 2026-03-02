@@ -14,7 +14,7 @@ $current_page = $page ?? 'top';
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TW48595R"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<div class="min-h-screen bg-white">
+<div class="min-h-screen bg-white<?php echo ($current_page === 'top') ? ' lp-index' : ''; ?>">
 <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-md">
   <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
     <a class="flex items-center" href="<?php echo rtrim(SITE_URL, '/') . '/'; ?>">

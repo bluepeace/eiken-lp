@@ -30,12 +30,12 @@ $faqs = [
 <section class="border-t border-slate-100 bg-slate-50/50 px-4 py-16 sm:py-20" aria-labelledby="faq-heading">
   <div class="mx-auto max-w-2xl">
     <h2 id="faq-heading" class="text-center text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">よくある質問</h2>
-    <p class="mt-2 text-center text-slate-600">英検 メリットや使い方について、よくいただく質問です。</p>
+    <p class="mt-2 text-center text-slate-600"><?php echo br_after_period('英検 メリットや使い方について、よくいただく質問です。'); ?></p>
     <dl class="mt-10 space-y-3">
       <?php foreach ($faqs as $i => $faq): ?>
       <div class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
         <dt class="px-5 py-4 font-semibold text-slate-900"><?php echo htmlspecialchars($faq['q']); ?></dt>
-        <dd class="border-t border-slate-100 px-5 py-4 text-sm leading-relaxed text-slate-600"><?php echo nl2br(htmlspecialchars($faq['a'])); ?></dd>
+        <dd class="border-t border-slate-100 px-5 py-4 text-sm leading-relaxed text-slate-600"><?php echo br_after_period(nl2br(htmlspecialchars($faq['a']))); ?></dd>
       </div>
       <?php endforeach; ?>
     </dl>
