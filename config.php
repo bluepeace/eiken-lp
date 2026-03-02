@@ -13,7 +13,7 @@ define('BRAND_COLOR', '#50c2cb');
 // ページ別メタ（キー = ページ識別子）
 $PAGE_META = [
     'top' => [
-        'title' => SITE_NAME . '（アイケン）| 英検対策アプリ - 勉強法・単語・4技能・面接をAIで',
+        'title' => 'AiKen（アイケン）｜英検対策×AI',
         'description' => SITE_DESCRIPTION,
         'og_type' => 'website',
     ],
