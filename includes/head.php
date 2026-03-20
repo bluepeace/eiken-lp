@@ -26,6 +26,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><?php echo htmlspecialchars($meta['title']); ?></title>
 <meta name="description" content="<?php echo htmlspecialchars($meta['description']); ?>">
+<?php if (!empty($meta['robots'])): ?>
+<meta name="robots" content="<?php echo htmlspecialchars($meta['robots']); ?>">
+<?php endif; ?>
 
 <!-- OGP -->
 <meta property="og:type" content="<?php echo htmlspecialchars($meta['og_type']); ?>">
@@ -40,4 +43,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="<?php echo asset('assets/css/style.css'); ?>">
+<?php if (empty($meta['omit_jsonld'])): ?>
 <?php include __DIR__ . '/structured-data.php'; ?>
+<?php endif; ?>

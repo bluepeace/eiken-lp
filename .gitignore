@@ -17,3 +17,6 @@ desktop.ini
 # ログなど（今後追加する場合）
 # log/
 # *.log
+
+# RSS キャッシュ
+cache/
