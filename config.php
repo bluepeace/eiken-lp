@@ -8,7 +8,11 @@ define('SITE_READING', 'アイケン');
 define('SITE_DESCRIPTION', '英検対策×AIのAiKen（アイケン）。5級〜1級の勉強法・単語・面接・ライティングをひとつで。AI添削と4技能対策で合格まで寄り添う英検対策アプリ。無料ではじめられます。');
 define('SITE_URL', 'https://aiken.life');
 define('APP_URL', 'https://app.aiken.life');
+/** LP フッター著作権表示のリンク先 */
+define('BLUEPIECE_LAB_URL', 'https://bluepiece.me/link');
 define('BRAND_COLOR', '#50c2cb');
+/** 英検コラム（WordPress）RSS */
+define('BLOG_FEED_URL', 'https://aiken.life/blog/feed/');
 
 // ページ別メタ（キー = ページ識別子）
 $PAGE_META = [
@@ -16,6 +20,35 @@ $PAGE_META = [
         'title' => 'AiKen（アイケン）｜英検対策×AI',
         'description' => SITE_DESCRIPTION,
         'og_type' => 'website',
+    ],
+    'about' => [
+        'title' => 'AiKen（アイケン）とは｜英検全級×AI×4技能をひとつのアプリで',
+        'description' => '初めての方へ。AiKenは英検1級〜5級まで、リーディング・リスニング・ライティング・スピーキングをAIとバディの伴走でまとめて対策できるアプリです。無料で会員登録し、今日から英検勉強をはじめられます。',
+        'og_type' => 'website',
+    ],
+    'faq' => [
+        'title' => 'よくあるご質問（FAQ）｜AiKen（アイケン）英検対策',
+        'description' => 'AiKenの使い方、料金、英検の級や4技能対策、保護者の方へ、利用環境など、よくあるご質問をカテゴリ別にまとめました。',
+        'og_type' => 'website',
+    ],
+    'tokushoho' => [
+        'title' => '特定商取引法に基づく表記｜AiKen（アイケン）',
+        'description' => 'AiKen（アイケン）のオンラインサービス（サブスクリプション）に関する特定商取引法に基づく表記です。',
+        'og_type' => 'website',
+        'robots' => 'noindex, follow',
+        'omit_jsonld' => true,
+    ],
+    'terms' => [
+        'title' => '利用規約｜AiKen（アイケン）',
+        'description' => 'AiKen（アイケン）のご利用にあたっての利用規約です。',
+        'og_type' => 'website',
+        'omit_jsonld' => true,
+    ],
+    'privacy' => [
+        'title' => 'プライバシーポリシー｜AiKen（アイケン）',
+        'description' => 'AiKen（アイケン）における個人情報の取り扱いについて定めたプライバシーポリシーです。',
+        'og_type' => 'website',
+        'omit_jsonld' => true,
     ],
 ];
 
@@ -40,6 +73,8 @@ function get_page_meta(string $page = 'top'): array {
         'title' => $meta['title'] ?? SITE_NAME . ' | 英検対策アプリ',
         'description' => $meta['description'] ?? SITE_DESCRIPTION,
         'og_type' => $meta['og_type'] ?? 'website',
+        'robots' => isset($meta['robots']) ? (string) $meta['robots'] : '',
+        'omit_jsonld' => !empty($meta['omit_jsonld']),
     ];
 }
 
@@ -54,6 +89,8 @@ function get_grade_meta(string $level): array {
         'title' => $title,
         'description' => $g['description'],
         'og_type' => 'website',
+        'robots' => '',
+        'omit_jsonld' => false,
     ];
 }
 

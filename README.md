@@ -16,6 +16,11 @@
 | URL | 説明 |
 |-----|------|
 | `/` | TOP（総合） |
+| `/about` | AiKenとは（初訪問者向け）※実体は `about.php`（Rewrite） |
+| `/faq` | よくあるご質問（カテゴリ別）※実体は `faq.php` |
+| `/terms` | 利用規約 |
+| `/privacy` | プライバシーポリシー |
+| `/tokushoho` | 特定商取引法に基づく表記（noindex） |
 | `/1kyu/` | 英検1級＋AI対策 |
 | `/jun1kyu/` | 英検準1級＋AI対策 |
 | `/2kyu/` | 英検2級＋AI対策 |
@@ -24,7 +29,20 @@
 | `/4kyu/` | 英検4級＋AI対策 |
 | `/5kyu/` | 英検5級＋AI対策 |
 
+`/about`・`/faq`・`/terms`・`/privacy`・`/tokushoho` のメタは `config.php` の `$PAGE_META` で管理しています。フッター著作権は **Bluepiece Lab.** → `BLUEPIECE_LAB_URL`（`https://bluepiece.me/link`）。  
 各級ページのタイトル・description は `config.php` の `$GRADES` で管理しています。
+
+**本番アップロード:** `about.php` と `faq.php` は**本文をファイル内に直書き**してあり、`includes/sections/about_content.php` などの追加ファイルは不要です（FTP で1本だけ上げても本文まで反映されます）。共通の `header.php` / `cta.php` / `footer.php` は従来どおり `includes/` 側を更新してください。
+
+## サイトマップ・robots
+
+- **`sitemap.php`** … `SITE_URL`・`/about`・`/faq`・`/terms`・`/privacy`・`/blog/`・級別 URL などを出力（`/tokushoho` は除外）。本番では **`https://aiken.life/sitemap.xml`** で配信（`.htaccess` の Rewrite）。
+- **`robots.txt`** … `Sitemap:` に上記 URL を記載。ステージング用ドメインでは `robots.txt` の1行を書き換えてください。
+- ローカル: `http://localhost:8000/sitemap.xml`（`router.php` 使用時）。
+
+`/plan` はページ未作成のためサイトマップに含めていません。公開後は `sitemap.php` の `$entries` に追加してください。
+
+`/tokushoho`（特定商取引法）は **`noindex, follow`**（`meta` + `X-Robots-Tag`）かつ**サイトマップ未掲載**です。本文は [app.aiken.life/tokushoho](https://app.aiken.life/tokushoho) と同趣旨で掲載しています。
 
 ## ディレクトリ構成
 
@@ -59,15 +77,33 @@ eiken-lp/
 
 ## ローカルで確認
 
-PHP が入っている環境で:
+PHP が入っている環境で、プロジェクトルートで次のいずれかを実行します。
+
+**Windows（ダブルクリック or ターミナル）**
+
+```bat
+dev.bat
+```
+
+**PowerShell**
+
+```powershell
+.\dev.ps1
+```
+
+**手動（macOS / Linux / 共通）**
 
 ```bash
 cd eiken-lp
-php -S localhost:8080
+php -S localhost:8000 router.php
 ```
 
-ブラウザで `http://localhost:8080` を開く。  
-級ページは **Rewrite が効かない環境**（PHP 組み込みサーバーなど）では `http://localhost:8080/grade.php?level=1kyu` のように `?level=` で指定して確認できます。
+ブラウザで **http://localhost:8000** を開く。
+
+- `router.php` により、組み込みサーバーでも **級ページ**（`/1kyu/` など）がそのまま動きます。
+- `router.php` を付けずに `php -S localhost:8000` だけだと `.htaccess` が効かないため、級ページは `http://localhost:8000/grade.php?level=1kyu` のように指定してください。
+
+Cursor / VS Code では **タスク「PHP: localhost:8000 (AiKen LP)」** からも起動できます。
 
 ## ロゴ画像
 

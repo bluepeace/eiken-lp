@@ -27,3 +27,10 @@ img.logo {
 img[loading="lazy"] {
   font-size: 0;
 }
+
+/* 英検コラム: 中央カラムからはみ出してビューポート全幅 */
+.blog-carousel-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  box-sizing: border-box;
+}

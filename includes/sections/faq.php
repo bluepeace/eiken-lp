@@ -39,5 +39,8 @@ $faqs = [
       </div>
       <?php endforeach; ?>
     </dl>
+    <p class="mt-8 text-center">
+      <a class="text-sm font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="/faq">カテゴリ別のよくあるご質問をすべて見る</a>
+    </p>
   </div>
 </section>
