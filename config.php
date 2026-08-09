@@ -5,30 +5,45 @@
  */
 define('SITE_NAME', 'AiKen');
 define('SITE_READING', 'アイケン');
-define('SITE_DESCRIPTION', '英検対策×AIのAiKen（アイケン）。5級〜1級の勉強法・単語・面接・ライティングをひとつで。AI添削と4技能対策で合格まで寄り添う英検対策アプリ。無料ではじめられます。');
+define('SITE_DESCRIPTION', '英検対策アプリAiKen（アイケン）。5級〜1級を本試験形式で対策。単語・リスニング・ライティング・スピーキング・AI採点。10,000問超。月額980円・5日間無料体験。');
 define('SITE_URL', 'https://aiken.life');
 define('APP_URL', 'https://app.aiken.life');
 /** LP フッター著作権表示のリンク先 */
 define('BLUEPIECE_LAB_URL', 'https://bluepiece.me/link');
 define('BRAND_COLOR', '#50c2cb');
+/** キーカラーより濃いテキスト用（キャッチコピーなど） */
+define('BRAND_TEXT_COLOR', '#00a2af');
+/** LP 本文・ナビの統一テキスト色 */
+define('LP_TEXT_COLOR', '#232323');
+/** 月額プラン料金（税込・円）。LP・FAQ・特商法など表示の一元管理用 */
+define('MONTHLY_PRICE', 980);
+/** 無料体験日数（正式オープン以降） */
+define('FREE_TRIAL_DAYS', 5);
+
+require_once __DIR__ . '/includes/icons.php';
 /** 英検コラム（WordPress）RSS */
 define('BLOG_FEED_URL', 'https://aiken.life/blog/feed/');
 
 // ページ別メタ（キー = ページ識別子）
 $PAGE_META = [
     'top' => [
-        'title' => 'AiKen（アイケン）｜英検対策×AI',
+        'title' => '英検対策アプリ｜AiKen（アイケン）5級〜1級・本試験形式',
         'description' => SITE_DESCRIPTION,
         'og_type' => 'website',
     ],
     'about' => [
-        'title' => 'AiKen（アイケン）とは｜英検全級×AI×4技能をひとつのアプリで',
-        'description' => '初めての方へ。AiKenは英検1級〜5級まで、リーディング・リスニング・ライティング・スピーキングをAIとバディの伴走でまとめて対策できるアプリです。無料で会員登録し、今日から英検勉強をはじめられます。',
+        'title' => '英検対策アプリ AiKen（アイケン）とは｜5級〜1級・本試験形式',
+        'description' => '英検対策アプリAiKen（アイケン）のご紹介。5級〜1級を本試験形式で対策。単語・リスニング・ライティング・スピーキング・AI採点。10,000問超。月額980円・5日間無料体験。',
         'og_type' => 'website',
     ],
     'faq' => [
         'title' => 'よくあるご質問（FAQ）｜AiKen（アイケン）英検対策',
         'description' => 'AiKenの使い方、料金、英検の級や4技能対策、保護者の方へ、利用環境など、よくあるご質問をカテゴリ別にまとめました。',
+        'og_type' => 'website',
+    ],
+    'plan' => [
+        'title' => '英検対策アプリの料金｜AiKen（アイケン）月額980円',
+        'description' => '英検対策アプリAiKen（アイケン）の料金。5級〜1級の本試験形式対策が月額980円（税込）。5日間無料体験ののち、サブスクリプション課金。',
         'og_type' => 'website',
     ],
     'tokushoho' => [
@@ -57,13 +72,13 @@ $PAGE_META = [
  * 入り口ページ: /1kyu/, /jun1kyu/, /2kyu/, /jun2kyu/, /3kyu/, /4kyu/, /5kyu/
  */
 $GRADES = [
-    '1kyu'    => [ 'name' => '英検1級',   'name_short' => '1級',   'description' => '英検1級の単語・リーディング・リスニング・ライティング・スピーキングをAI添削で対策。合格までひとつのアプリで。' ],
-    'jun1kyu' => [ 'name' => '英検準1級', 'name_short' => '準1級', 'description' => '英検準1級の単語・リーディング・リスニング・ライティング・スピーキングをAI添削で対策。合格までひとつのアプリで。' ],
-    '2kyu'    => [ 'name' => '英検2級',   'name_short' => '2級',   'description' => '英検2級の単語・リーディング・リスニング・ライティング・スピーキングをAI添削で対策。合格までひとつのアプリで。' ],
-    'jun2kyu' => [ 'name' => '英検準2級', 'name_short' => '準2級', 'description' => '英検準2級の単語・リーディング・リスニング・ライティング・スピーキングをAI添削で対策。合格までひとつのアプリで。' ],
-    '3kyu'    => [ 'name' => '英検3級',   'name_short' => '3級',   'description' => '英検3級の単語・リーディング・リスニング・ライティング・スピーキングをAI添削で対策。合格までひとつのアプリで。' ],
-    '4kyu'    => [ 'name' => '英検4級',   'name_short' => '4級',   'description' => '英検4級の単語・リーディングをAIで効率よく対策。合格までひとつのアプリで。' ],
-    '5kyu'    => [ 'name' => '英検5級',   'name_short' => '5級',   'description' => '英検5級の単語・リーディングをAIで効率よく対策。合格までひとつのアプリで。' ],
+    '1kyu'    => [ 'name' => '英検1級',   'name_short' => '1級',   'description' => '英検1級対策アプリAiKen。単語・リーディング・リスニング・ライティング・スピーキングを本試験形式で対策。AI採点・10,000問超。' ],
+    'jun1kyu' => [ 'name' => '英検準1級', 'name_short' => '準1級', 'description' => '英検準1級対策アプリAiKen。単語・リーディング・リスニング・ライティング・スピーキングを本試験形式で対策。AI採点・10,000問超。' ],
+    '2kyu'    => [ 'name' => '英検2級',   'name_short' => '2級',   'description' => '英検2級対策アプリAiKen。単語・リーディング・リスニング・ライティング・スピーキングを本試験形式で対策。AI採点・10,000問超。' ],
+    'jun2kyu' => [ 'name' => '英検準2級', 'name_short' => '準2級', 'description' => '英検準2級対策アプリAiKen。単語・リーディング・リスニング・ライティング・スピーキングを本試験形式で対策。AI採点・10,000問超。' ],
+    '3kyu'    => [ 'name' => '英検3級',   'name_short' => '3級',   'description' => '英検3級対策アプリAiKen。単語・リーディング・リスニング・ライティング・スピーキングを本試験形式で対策。AI採点・10,000問超。' ],
+    '4kyu'    => [ 'name' => '英検4級',   'name_short' => '4級',   'description' => '英検4級対策アプリAiKen。単語・リーディングを本試験形式で効率よく対策。10,000問超。' ],
+    '5kyu'    => [ 'name' => '英検5級',   'name_short' => '5級',   'description' => '英検5級対策アプリAiKen。単語・リーディングを本試験形式で効率よく対策。10,000問超。' ],
 ];
 
 function get_page_meta(string $page = 'top'): array {
@@ -84,7 +99,7 @@ function get_grade_meta(string $level): array {
     if (!$g) {
         return get_page_meta('top');
     }
-    $title = $g['name'] . '＋AI対策 | ' . SITE_NAME;
+    $title = $g['name'] . '対策アプリ｜' . SITE_NAME . '（' . SITE_READING . '）';
     return [
         'title' => $title,
         'description' => $g['description'],
@@ -110,4 +125,14 @@ function asset(string $path): string {
 /** 句点（。）の直後に改行を挿入（index用） */
 function br_after_period(string $html): string {
     return str_replace('。', '。<br>', $html);
+}
+
+function format_yen(int $amount): string {
+    return number_format($amount) . '円';
+}
+
+/** @param bool $with_tax 末尾に（税込）を付ける */
+function monthly_price_label(bool $with_tax = true): string {
+    $label = '月額' . format_yen(MONTHLY_PRICE);
+    return $with_tax ? $label . '（税込）' : $label;
 }

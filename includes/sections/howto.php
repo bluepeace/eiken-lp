@@ -1,8 +1,8 @@
 <?php if (!defined('SITE_NAME')) { require_once __DIR__ . '/../../config.php'; } ?>
 <section class="border-t border-slate-100 bg-white px-4 py-16 sm:py-20" aria-labelledby="howto-heading">
   <div class="mx-auto max-w-3xl text-center">
-    <h2 id="howto-heading" class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">まずは無料ではじめられます</h2>
-    <p class="mt-3 text-slate-600"><?php echo br_after_period('会員登録ですぐに使えます。クレジットカード不要で、英検の勉強法・単語・4技能対策を体験できます。'); ?></p>
+    <h2 id="howto-heading" class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">英検対策アプリを、<?php echo FREE_TRIAL_DAYS; ?>日間無料で試す</h2>
+    <p class="mt-3 text-slate-600"><?php echo br_after_period('会員登録ですぐに使えます。英検5級〜1級の本試験形式対策を、' . FREE_TRIAL_DAYS . '日間無料で体験できます。'); ?></p>
     <ol class="mt-10 space-y-6">
       <li class="flex items-center gap-4 rounded-xl border border-slate-200 bg-slate-50/50 p-5 text-left">
         <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#50c2cb] text-lg font-bold text-white" aria-hidden="true">1</span>

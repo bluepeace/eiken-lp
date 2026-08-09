@@ -9,15 +9,15 @@ if (!defined('SITE_NAME')) {
 $jsonLd = [
     '@context' => 'https://schema.org',
     '@type' => 'WebApplication',
-    'name' => SITE_NAME,
-    'alternateName' => SITE_READING,
+    'name' => SITE_NAME . '（英検対策アプリ）',
+    'alternateName' => [SITE_READING, '英検対策アプリ', '英検対策アプリ AiKen'],
     'description' => SITE_DESCRIPTION,
     'url' => APP_URL,
     'applicationCategory' => 'EducationalApplication',
     'operatingSystem' => 'Any',
     'offers' => [
         '@type' => 'Offer',
-        'price' => '0',
+        'price' => (string) MONTHLY_PRICE,
         'priceCurrency' => 'JPY',
     ],
 ];

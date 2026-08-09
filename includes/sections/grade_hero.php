@@ -7,9 +7,9 @@ $name_short = $g['name_short'];
 ?>
 <section class="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white px-4 py-16 sm:py-20 md:py-24" aria-labelledby="grade-hero-heading">
   <div class="mx-auto max-w-3xl text-center">
-    <p class="mb-3 text-sm font-medium text-slate-600"><?php echo htmlspecialchars($name); ?>対策</p>
+    <p class="mb-3 text-sm font-medium text-slate-600"><?php echo htmlspecialchars($name); ?>対策アプリ</p>
     <h1 id="grade-hero-heading" class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
-      <?php echo htmlspecialchars($name_short); ?>を、<span class="text-[#50c2cb]">AIで。</span>
+      <?php echo htmlspecialchars($name_short); ?>対策、<span class="text-brand-accent">本試験形式で。</span>
     </h1>
     <p class="mt-6 max-w-xl mx-auto text-base leading-relaxed text-slate-600 sm:text-lg">
       <?php echo htmlspecialchars($g['description']); ?>

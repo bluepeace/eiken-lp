@@ -1,6 +1,6 @@
 <?php if (!defined('SITE_NAME')) { require_once __DIR__ . '/../../config.php'; } ?>
 <section class="border-t border-slate-100 bg-slate-50/50 px-4 py-16 sm:py-20" aria-labelledby="target-heading">
-  <div class="mx-auto max-w-4xl">
+  <div class="lp-container">
     <h2 id="target-heading" class="text-center text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">こんな方におすすめです</h2>
     <p class="mt-3 text-center text-slate-600"><?php echo br_after_period('英検 小学生・中学生・高校生・社会人まで。級や目的に合わせてご利用ください。'); ?></p>
     <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -26,14 +26,14 @@
         </div>
       </div>
       <div class="flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm sm:col-span-2">
-        <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#50c2cb]/10 text-xl" aria-hidden="true">📱</span>
+        <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#50c2cb]/10 text-[#50c2cb]"><?php echo lp_icon('smartphone', 'w-6 h-6'); ?></span>
         <div>
           <p class="font-semibold text-slate-800">単語〜面接までひとつで対策したい方</p>
           <p class="mt-1 text-sm text-slate-600"><?php echo br_after_period('参考書やアプリを増やさず、英検の勉強法・対策をまとめて効率よく。'); ?></p>
         </div>
       </div>
       <div class="flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-        <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#50c2cb]/10 text-xl" aria-hidden="true">🐕</span>
+        <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#50c2cb]/10 text-[#50c2cb]"><?php echo lp_icon('dog', 'w-6 h-6'); ?></span>
         <div>
           <p class="font-semibold text-slate-800">毎日コツコツ続けたい方</p>
           <p class="mt-1 text-sm text-slate-600"><?php echo br_after_period('バディの存在と学習提案で、目標の英検 日程まで走り抜けたい方。'); ?></p>

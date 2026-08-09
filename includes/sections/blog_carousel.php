@@ -8,7 +8,7 @@ $blog_items = get_blog_feed_items(20);
 $blog_index_url = rtrim(SITE_URL, '/') . '/blog/';
 ?>
 <section class="border-t border-slate-100 bg-slate-50/50 py-16 sm:py-20" aria-labelledby="blog-column-heading">
-  <div class="mx-auto max-w-6xl px-4">
+  <div class="lp-container px-4">
     <h2 id="blog-column-heading" class="text-center text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">英検コラム</h2>
     <p class="mt-2 text-center text-slate-600"><?php echo br_after_period('英検の試験形式・勉強法・級別のポイントを、コラムでわかりやすく解説しています。'); ?></p>
 
@@ -40,7 +40,7 @@ $blog_index_url = rtrim(SITE_URL, '/') . '/blog/';
             <?php if (!empty($post['image'])): ?>
             <img src="<?php echo htmlspecialchars($post['image']); ?>" alt="" class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]" loading="lazy" decoding="async" width="576" height="324">
             <?php else: ?>
-            <div class="flex h-full w-full items-center justify-center text-4xl text-slate-300" aria-hidden="true">📄</div>
+            <div class="flex h-full w-full items-center justify-center text-slate-300"><?php echo lp_icon('book-text', 'w-12 h-12'); ?></div>
             <?php endif; ?>
           </div>
           <div class="flex flex-1 flex-col p-4">
@@ -56,7 +56,7 @@ $blog_index_url = rtrim(SITE_URL, '/') . '/blog/';
       </div>
     </div>
   </div>
-  <div class="mx-auto max-w-6xl px-4">
+  <div class="lp-container px-4">
     <p class="mt-8 text-center">
       <a class="text-sm font-semibold text-[#50c2cb] underline-offset-2 hover:text-[#46adb5] hover:underline" href="<?php echo htmlspecialchars($blog_index_url); ?>">コラム一覧へ</a>
     </p>

@@ -35,6 +35,11 @@ if (preg_match('#^/faq/?$#', $uri)) {
     return true;
 }
 
+if (preg_match('#^/plan/?$#', $uri)) {
+    require __DIR__ . '/plan.php';
+    return true;
+}
+
 if (preg_match('#^/tokushoho/?$#', $uri)) {
     require __DIR__ . '/tokushoho.php';
     return true;

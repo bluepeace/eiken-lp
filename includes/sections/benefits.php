@@ -1,7 +1,7 @@
 <?php if (!defined('SITE_NAME')) { require_once __DIR__ . '/../../config.php'; } ?>
 <section class="border-t border-slate-100 bg-slate-50/50 px-4 py-16 sm:py-20" aria-labelledby="benefits-heading">
   <div class="mx-auto max-w-3xl">
-    <h2 id="benefits-heading" class="text-center text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">英検対策を、ひとつにまとめる理由</h2>
+    <h2 id="benefits-heading" class="text-center text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">英検対策アプリで、ひとつにまとめる理由</h2>
     <div class="mt-10 space-y-8">
       <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
         <h3 class="font-semibold text-slate-900">オールインワンで「何をすればいいか」が明確に</h3>

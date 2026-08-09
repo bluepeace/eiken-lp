@@ -42,7 +42,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="<?php echo asset('assets/css/style.css'); ?>">
+<link rel="stylesheet" href="<?php echo $base; ?>/assets/css/style.css?v=<?php echo @filemtime(__DIR__ . '/../assets/css/style.css') ?: '1'; ?>">
 <?php if (empty($meta['omit_jsonld'])): ?>
 <?php include __DIR__ . '/structured-data.php'; ?>
 <?php endif; ?>

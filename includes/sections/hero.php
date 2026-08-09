@@ -1,18 +1,19 @@
 <?php if (!defined('SITE_NAME')) { require_once __DIR__ . '/../../config.php'; } ?>
-<section class="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white px-4 py-16 sm:py-20 md:py-24" aria-labelledby="hero-heading">
-  <div class="pointer-events-none absolute inset-0 opacity-[0.03]" aria-hidden="true">
-    <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1920&q=20" alt="" class="h-full w-full object-cover" loading="lazy" width="1920" height="1080">
+<section class="relative overflow-hidden px-4 py-16 sm:py-20 md:py-24" aria-labelledby="hero-heading">
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <img src="/assets/images/hero-bg.png" alt="" class="hero-bg-image h-full w-full object-cover" loading="eager" fetchpriority="high" width="1920" height="1080">
+    <div class="hero-bg-overlay absolute inset-0"></div>
   </div>
-  <div class="relative mx-auto flex max-w-6xl flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-16">
+  <div class="relative z-10 lp-container flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-16">
     <div class="flex-1 space-y-6 text-center lg:text-left">
-      <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-[11px] font-medium text-slate-600 shadow-sm">英検5級〜1級 / 単語・4技能・AI添削</span>
-      <h1 id="hero-heading" class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
-        英検対策を、<span class="block text-[#50c2cb]">愛犬のようにそばで。</span>
+      <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-[11px] font-medium text-slate-600 shadow-sm">英検対策アプリ｜5級〜1級｜本試験形式</span>
+      <h1 id="hero-heading" class="text-3xl font-bold leading-[1.4] tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
+        英検対策、<span class="block text-brand-accent">本試験形式で全部そろう。</span>
       </h1>
-      <p class="max-w-lg text-base leading-relaxed text-slate-600 sm:text-lg"><?php echo br_after_period('英検の<strong>勉強法</strong>で悩んでいませんか？<strong>単語</strong>・リーディング・<strong>リスニング</strong>・<strong>ライティング</strong>・<strong>スピーキング</strong>の4技能を、AIが級別の出題形式に合わせて対策。学習履歴で<strong>間違えた問題の復習</strong>もかんたん。バディが目標達成まで寄り添う、英検対策オールインワンアプリです。'); ?></p>
+      <p class="max-w-lg text-base leading-relaxed text-slate-600 sm:text-lg"><?php echo br_after_period('<strong>単語</strong>・<strong>リーディング</strong>・<strong>リスニング</strong>・<strong>ライティング</strong>・<strong>スピーキング</strong>を、英検の本番に近い形式で出題。収録<strong>10,000問超</strong>、<strong>AI</strong>がライティングとスピーキングをその場で採点。間違えた問題は履歴から復習でき、通学時間にも使えます。<strong>' . monthly_price_label() . '</strong>で、5級から1級までひとつのアプリで対策できます。'); ?></p>
       <div class="flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start">
-        <a class="inline-flex items-center justify-center rounded-full bg-[#50c2cb] px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-[#50c2cb]/25 transition hover:bg-[#46adb5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#50c2cb]/60 focus-visible:ring-offset-2" href="<?php echo APP_URL; ?>/signup">無料ではじめる</a>
-        <a class="inline-flex items-center justify-center rounded-full border-2 border-slate-300 bg-white px-8 py-3.5 text-base font-semibold text-slate-800 transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 focus-visible:ring-offset-2" href="<?php echo APP_URL; ?>/login">ログイン</a>
+        <a class="inline-flex items-center justify-center rounded-full bg-[#50c2cb] px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-[#50c2cb]/25 transition hover:bg-[#46adb5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#50c2cb]/60 focus-visible:ring-offset-2" href="<?php echo APP_URL; ?>/signup"><?php echo FREE_TRIAL_DAYS; ?>日間無料で試す</a>
+        <a class="inline-flex items-center justify-center rounded-full border-2 border-slate-300 bg-white px-8 py-3.5 text-base font-semibold text-slate-800 transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 focus-visible:ring-offset-2" href="/plan">料金を見る</a>
       </div>
     </div>
     <div class="flex-1">
@@ -26,7 +27,7 @@
               <div class="h-10 w-10 shrink-0 rounded-full bg-slate-200" aria-hidden="true"></div>
               <div>
                 <p class="text-xs font-semibold text-slate-800">こんにちは、ゲスト さん</p>
-                <p class="text-[10px] text-slate-500">今日は英検2級に向けて、小さな一歩を。</p>
+                <p class="text-[10px] text-slate-500">英検準2級に向けて、今日の学習を。</p>
               </div>
             </div>
             <div class="rounded-xl border border-slate-200 bg-slate-50/50 p-3">

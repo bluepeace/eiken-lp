@@ -18,6 +18,7 @@
 | `/` | TOP（総合） |
 | `/about` | AiKenとは（初訪問者向け）※実体は `about.php`（Rewrite） |
 | `/faq` | よくあるご質問（カテゴリ別）※実体は `faq.php` |
+| `/plan` | 料金・プラン（月額980円）※実体は `plan.php` |
 | `/terms` | 利用規約 |
 | `/privacy` | プライバシーポリシー |
 | `/tokushoho` | 特定商取引法に基づく表記（noindex） |
@@ -36,11 +37,11 @@
 
 ## サイトマップ・robots
 
-- **`sitemap.php`** … `SITE_URL`・`/about`・`/faq`・`/terms`・`/privacy`・`/blog/`・級別 URL などを出力（`/tokushoho` は除外）。本番では **`https://aiken.life/sitemap.xml`** で配信（`.htaccess` の Rewrite）。
+- **`sitemap.php`** … `SITE_URL`・`/about`・`/faq`・`/plan`・`/terms`・`/privacy`・`/blog/`・級別 URL などを出力（`/tokushoho` は除外）。本番では **`https://aiken.life/sitemap.xml`** で配信（`.htaccess` の Rewrite）。
 - **`robots.txt`** … `Sitemap:` に上記 URL を記載。ステージング用ドメインでは `robots.txt` の1行を書き換えてください。
 - ローカル: `http://localhost:8000/sitemap.xml`（`router.php` 使用時）。
 
-`/plan` はページ未作成のためサイトマップに含めていません。公開後は `sitemap.php` の `$entries` に追加してください。
+`/plan`（料金ページ）は `plan.php` で公開しています。料金変更時は `config.php` の `MONTHLY_PRICE` を更新してください。
 
 `/tokushoho`（特定商取引法）は **`noindex, follow`**（`meta` + `X-Robots-Tag`）かつ**サイトマップ未掲載**です。本文は [app.aiken.life/tokushoho](https://app.aiken.life/tokushoho) と同趣旨で掲載しています。
 

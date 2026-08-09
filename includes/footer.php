@@ -5,7 +5,7 @@ if (!defined('SITE_NAME')) {
 ?>
 </main>
 <footer class="border-t border-slate-200 bg-slate-50 px-4 py-8">
-  <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 sm:flex-row">
+  <div class="lp-container flex flex-col items-center justify-between gap-4 sm:flex-row">
     <a class="flex items-center" href="/">
       <img alt="<?php echo htmlspecialchars(SITE_NAME); ?>" width="120" height="36" class="h-9 w-auto logo" src="<?php echo asset('assets/images/logo-aiken.png'); ?>">
     </a>

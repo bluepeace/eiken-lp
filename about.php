@@ -27,15 +27,15 @@ include __DIR__ . '/includes/header.php';
     <h2 id="about-empathy-heading" class="text-center text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">英検、こんなことで止まっていませんか？</h2>
     <ul class="mt-8 space-y-4 text-slate-700">
       <li class="flex gap-3 rounded-xl border border-slate-200 bg-slate-50/80 px-4 py-3 sm:px-5">
-        <span class="shrink-0 text-lg" aria-hidden="true">📚</span>
+        <span class="shrink-0 text-[#50c2cb]"><?php echo lp_icon('book-open', 'w-6 h-6'); ?></span>
         <span><?php echo br_after_period('教材やアプリが<strong>バラバラ</strong>で、単語は別・リスニングは別…と時間がもったいない。'); ?></span>
       </li>
       <li class="flex gap-3 rounded-xl border border-slate-200 bg-slate-50/80 px-4 py-3 sm:px-5">
-        <span class="shrink-0 text-lg" aria-hidden="true">✏️</span>
+        <span class="shrink-0 text-[#A6D472]"><?php echo lp_icon('pencil-line', 'w-6 h-6'); ?></span>
         <span><?php echo br_after_period('<strong>ライティングやスピーキング</strong>は、自分で直したくても添削や練習相手がいない。'); ?></span>
       </li>
       <li class="flex gap-3 rounded-xl border border-slate-200 bg-slate-50/80 px-4 py-3 sm:px-5">
-        <span class="shrink-0 text-lg" aria-hidden="true">🎯</span>
+        <span class="shrink-0 text-[#A77CBF]"><?php echo lp_icon('target', 'w-6 h-6'); ?></span>
         <span><?php echo br_after_period('「今日は何をする？」が決まらず、<strong>続かない・計画が立てられない</strong>。'); ?></span>
       </li>
     </ul>
@@ -47,37 +47,37 @@ include __DIR__ . '/includes/header.php';
 </section>
 
 <section class="border-b border-slate-100 bg-slate-50/50 px-4 py-14 sm:py-20" aria-labelledby="about-value-heading">
-  <div class="mx-auto max-w-5xl">
+  <div class="lp-container">
     <h2 id="about-value-heading" class="text-center text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">アプリで得られること（ベネフィット）</h2>
     <p class="mt-3 text-center text-slate-600"><?php echo br_after_period('英検対策で押さえたい<strong>全級・4技能・AI・履歴・バディ</strong>を、はじめての方にも分かりやすくまとめました。'); ?></p>
     <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <span class="text-2xl" aria-hidden="true">🎓</span>
+        <span class="inline-flex text-[#50c2cb]"><?php echo lp_icon('graduation-cap', 'w-7 h-7'); ?></span>
         <h3 class="mt-3 font-semibold text-slate-900">英検全級に対応</h3>
         <p class="mt-2 text-sm leading-relaxed text-slate-600"><?php echo br_after_period('<strong>1級・準1級・2級・準2級・3級・4級・5級</strong>の出題内容に沿った対策ができます。級が変わっても<strong>アプリはそのまま</strong>。'); ?></p>
       </article>
       <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <span class="text-2xl" aria-hidden="true">🤖</span>
+        <span class="inline-flex text-[#50c2cb]"><?php echo lp_icon('bot', 'w-7 h-7'); ?></span>
         <h3 class="mt-3 font-semibold text-slate-900">AI が級に合わせて出題</h3>
         <p class="mt-2 text-sm leading-relaxed text-slate-600"><?php echo br_after_period('形式やレベルに合わせた<strong>練習問題</strong>で、効率よく弱点に触れられます。「何を解けばいいか」に迷いにくくなります。'); ?></p>
       </article>
       <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <span class="text-2xl" aria-hidden="true">📖</span>
+        <span class="inline-flex text-[#50c2cb]"><?php echo lp_icon('book-text', 'w-7 h-7'); ?></span>
         <h3 class="mt-3 font-semibold text-slate-900">4 技能をアプリ内で完結</h3>
         <p class="mt-2 text-sm leading-relaxed text-slate-600"><?php echo br_after_period('<strong>リーディング・リスニング・ライティング・スピーキング</strong>をひとつの流れで。英検対策に必要な軸を<strong>オールインワン</strong>でカバーします。'); ?></p>
       </article>
       <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <span class="text-2xl" aria-hidden="true">📝</span>
+        <span class="inline-flex text-[#50c2cb]"><?php echo lp_icon('clipboard-list', 'w-7 h-7'); ?></span>
         <h3 class="mt-3 font-semibold text-slate-900">学習履歴で復習しやすい</h3>
         <p class="mt-2 text-sm leading-relaxed text-slate-600"><?php echo br_after_period('学んだ内容は<strong>アプリに蓄積</strong>。間違えた問題に戻りやすく、<strong>「忘れてから拾い直す」負担</strong>を減らします。'); ?></p>
       </article>
       <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <span class="text-2xl" aria-hidden="true">🐕</span>
+        <span class="inline-flex text-[#F57A9C]"><?php echo lp_icon('dog', 'w-7 h-7'); ?></span>
         <h3 class="mt-3 font-semibold text-slate-900">バディが寄り添う</h3>
         <p class="mt-2 text-sm leading-relaxed text-slate-600"><?php echo br_after_period('愛犬のようにそばにいる<strong>バディ</strong>が、励ましと継続の後押しを。ひとりで続ける英検勉強を、<strong>少し明るく</strong>します。'); ?></p>
       </article>
       <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <span class="text-2xl" aria-hidden="true">📱</span>
+        <span class="inline-flex text-[#50c2cb]"><?php echo lp_icon('smartphone', 'w-7 h-7'); ?></span>
         <h3 class="mt-3 font-semibold text-slate-900">ブラウザですぐはじめられる</h3>
         <p class="mt-2 text-sm leading-relaxed text-slate-600"><?php echo br_after_period('スマートフォン・タブレット・PC から利用可能。<strong>会員登録後</strong>、すぐに練習をスタートできます。'); ?></p>
       </article>
@@ -86,7 +86,7 @@ include __DIR__ . '/includes/header.php';
 </section>
 
 <section class="border-b border-slate-100 bg-white px-4 py-14 sm:py-20" aria-labelledby="about-for-whom-heading">
-  <div class="mx-auto max-w-5xl">
+  <div class="lp-container">
     <h2 id="about-for-whom-heading" class="text-center text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">こんな方におすすめ</h2>
     <p class="mt-3 text-center text-slate-600"><?php echo br_after_period('学習段階の目安として、よくいらっしゃるパターンを挙げています。'); ?></p>
     <div class="mt-10 grid gap-6 md:grid-cols-3">
@@ -138,7 +138,7 @@ include __DIR__ . '/includes/header.php';
       <a class="inline-flex items-center justify-center rounded-full bg-[#50c2cb] px-10 py-4 text-lg font-semibold text-white shadow-lg shadow-[#50c2cb]/25 transition hover:bg-[#46adb5]" href="<?php echo APP_URL; ?>/signup">会員登録へ進む</a>
       <a class="inline-flex items-center justify-center rounded-full border-2 border-slate-300 bg-white px-8 py-4 text-base font-semibold text-slate-800 transition hover:bg-slate-50" href="<?php echo rtrim(SITE_URL, '/') . '/plan'; ?>">料金・プランを見る</a>
     </div>
-    <p class="mt-6 text-xs text-slate-500"><?php echo br_after_period('料金やキャンペーンの詳細は<strong>料金ページ</strong>の内容が優先されます（リリース時期に合わせて更新してください）。'); ?></p>
+    <p class="mt-6 text-xs text-slate-500"><?php echo br_after_period('現在の料金は<strong>' . monthly_price_label() . '</strong>（' . FREE_TRIAL_DAYS . '日間無料体験あり）。詳細は<strong>料金ページ</strong>をご確認ください。'); ?></p>
   </div>
 </section>
 <?php
