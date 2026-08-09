@@ -454,9 +454,8 @@ img[loading="lazy"] {
   }
 }
 
-/* 英検コラム: 中央カラムからはみ出してビューポート全幅 */
+/* 英検コラム: セクション全幅（100vw は縦スクロールバー分はみ出して横スクロールの原因になる） */
 .blog-carousel-bleed {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
+  width: 100%;
   box-sizing: border-box;
 }
