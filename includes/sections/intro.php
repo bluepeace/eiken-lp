@@ -8,12 +8,15 @@
         </div>
       </div>
       <div class="flex-1">
-        <h2 id="intro-heading" class="text-xl font-bold tracking-tight text-slate-900 sm:text-2xl">英検対策アプリAiKenでできること</h2>
-        <div class="mt-6 space-y-4 text-slate-600 leading-relaxed">
-      <p><?php echo br_after_period('<strong>英検（実用英語技能検定）</strong>は、入試活用・単位認定・就活・海外留学など、<strong>英検のメリット</strong>は幅広く、<strong>英検 日程</strong>に合わせて計画的に勉強したい方も多いはず。一方で、<strong>英検 勉強法</strong>や<strong>英検 対策</strong>として「<strong>英検 単語</strong>」「<strong>英検 面接</strong>」「<strong>英検 ライティング</strong>」を別々に用意するのは大変です。'); ?></p>
-      <p><?php echo br_after_period('<strong>' . htmlspecialchars(SITE_NAME) . '（' . htmlspecialchars(SITE_READING) . '）</strong>は、<strong>英検対策アプリ</strong>として5級から1級まで、<strong>級別の出題形式</strong>に合わせて本試験形式の問題を出題。リーディング・リスニング・ライティング・スピーキングの<strong>5技能</strong>をひとつのアプリで対策でき、<strong>英検 合格</strong>に向けた学習履歴の蓄積や、間違えた問題の復習もそのままアプリ内で完結します。'); ?></p>
-    </div>
+        <h2 id="intro-heading" class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl"><span class="heading-accent">英検対策アプリ<?php echo htmlspecialchars(SITE_NAME); ?></span>でできること</h2>
+        <div class="intro-body mt-6 space-y-6 leading-relaxed sm:space-y-7">
+          <p><?php echo br_after_period('お子さんの英検は、<strong>入試や進学にも関わる</strong>大切な検定です。保護者の方にとっても、<strong>単語</strong>・<strong>リーディング</strong>・<strong>面接対策</strong>…と教材やアプリをバラバラに揃えるのは、時間も費用もかかります。「うちの子、本当に<strong>英検対策</strong>できているのかな」と不安になる方も多いはずです。'); ?></p>
+          <p><?php echo br_after_period('<span class="lp-marker">' . htmlspecialchars(SITE_NAME) . '（' . htmlspecialchars(SITE_READING) . '）は、英検5級から1級まで対応した英検対策アプリです。</span><strong>単語</strong>・<strong>リーディング</strong>・<strong>リスニング</strong>・<strong>ライティング</strong>・<strong>スピーキング</strong>を、本試験に近い形式でひとつにまとめました。学習履歴が残るので<strong>間違えた問題の復習</strong>もでき、ライティングとスピーキングは<span class="lp-marker">AIがその場で採点・フィードバックします。</span><strong>ご家庭だけでは難しい部分</strong>も、アプリ内で対策できます。'); ?></p>
+        </div>
       </div>
+    </div>
+    <div class="mt-10 flex justify-center">
+      <a class="inline-flex items-center justify-center rounded-full bg-[#50c2cb] px-10 py-4 text-lg font-semibold text-white shadow-lg shadow-[#50c2cb]/25 transition hover:bg-[#46adb5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#50c2cb]/60 focus-visible:ring-offset-2" href="<?php echo APP_URL; ?>/signup">無料で試す</a>
     </div>
   </div>
 </section>

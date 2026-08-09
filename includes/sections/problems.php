@@ -1,30 +1,41 @@
 <?php if (!defined('SITE_NAME')) { require_once __DIR__ . '/../../config.php'; } ?>
-<section class="border-t border-slate-100 bg-slate-50/50 px-4 py-16 sm:py-20" aria-labelledby="problems-heading">
-  <div class="mx-auto max-w-3xl text-center">
-    <h2 id="problems-heading" class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">英検対策、こんな悩みありませんか？</h2>
-    <p class="mt-3 text-slate-600"><?php echo br_after_period('勉強法・単語・面接……何から手をつければいいか迷っていませんか。'); ?></p>
-    <ul class="mt-8 space-y-3">
-      <li class="flex items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white px-6 py-4 text-left text-slate-700 shadow-sm">
-        <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-200 text-slate-600"><?php echo lp_icon('circle-help', 'w-4 h-4'); ?></span>
-        <span><?php echo br_after_period('英検の<strong>勉強法</strong>がわからず、何から始めればいいかわからない'); ?></span>
-      </li>
-      <li class="flex items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white px-6 py-4 text-left text-slate-700 shadow-sm">
-        <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-200 text-slate-600"><?php echo lp_icon('circle-help', 'w-4 h-4'); ?></span>
-        <span><?php echo br_after_period('<strong>単語</strong>・参考書・問題集が増えすぎて、続かない・復習しづらい'); ?></span>
-      </li>
-      <li class="flex items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white px-6 py-4 text-left text-slate-700 shadow-sm">
-        <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-200 text-slate-600"><?php echo lp_icon('circle-help', 'w-4 h-4'); ?></span>
-        <span><?php echo br_after_period('<strong>ライティング</strong>・<strong>スピーキング（面接）</strong>の添削や練習ができず、二次試験が不安'); ?></span>
-      </li>
-      <li class="flex items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white px-6 py-4 text-left text-slate-700 shadow-sm">
-        <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-200 text-slate-600"><?php echo lp_icon('circle-help', 'w-4 h-4'); ?></span>
-        <span><?php echo br_after_period('計画を立てても三日坊主になりがち。一人だと続かない'); ?></span>
-      </li>
-      <li class="flex items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white px-6 py-4 text-left text-slate-700 shadow-sm">
-        <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-200 text-slate-600"><?php echo lp_icon('circle-help', 'w-4 h-4'); ?></span>
-        <span><?php echo br_after_period('子どもに英検を受けさせたいが、<strong>何歳から</strong>・<strong>何級</strong>がおすすめかわからない（保護者の方）'); ?></span>
-      </li>
-    </ul>
-    <p class="mt-8 text-lg font-medium text-slate-700"><?php echo br_after_period('だからこそ、<span class="text-[#50c2cb]">単語から面接までひとつのアプリ</span>で、<br class="sm:hidden">級別の<strong>英検対策</strong>ができると便利です。'); ?></p>
+<?php
+$problem_items = [
+    '部活や塾で忙しくて、<strong>空き時間</strong>でサクッと英検の練習がしたい',
+    '通学の電車の中で、<strong>スマホから</strong>英検対策を進められたらいいのに',
+    '<strong>ライティング</strong>は、書いた直後に添削してもらえないかな',
+    '<strong>オンライン英会話</strong>以外でも、スピーキングを特訓したい',
+    '<strong>過去問</strong>だけじゃ足りない。もっといろんな練習問題を解きたい',
+    '<strong>本番に近い形式</strong>の問題で、実践的に練習したい',
+];
+?>
+<section class="problems-section border-t border-[#50c2cb]/15 px-4 py-16 sm:py-20" aria-labelledby="problems-heading">
+  <div class="lp-container">
+    <div class="problems-section__header mx-auto max-w-3xl text-center">
+      <h2 id="problems-heading" class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">英検対策、<span class="heading-accent">こんなお悩み</span>ありませんか？</h2>
+      <p class="problems-lead mt-3"><?php echo br_after_period('部活や塾で忙しいあなたへ。英検、こんなことで止まっていませんか。'); ?></p>
+    </div>
+    <div class="problems-card mt-8 rounded-2xl border border-white/80 bg-white px-5 py-6 text-left shadow-sm sm:px-8 sm:py-8">
+      <div class="problems-card__inner">
+        <ul class="problems-list space-y-4 sm:space-y-5">
+          <?php foreach ($problem_items as $text): ?>
+          <li class="problems-list__item">
+            <span class="problems-list__check text-[#50c2cb]" aria-hidden="true"><?php echo lp_icon('check', 'w-4 h-4'); ?></span>
+            <span class="problems-lead"><?php echo $text; ?></span>
+          </li>
+          <?php endforeach; ?>
+        </ul>
+        <figure class="problems-buddy">
+          <img src="/assets/images/buddy-worries.png" alt="AiKenのバディ" width="320" height="320" class="problems-buddy__image" loading="lazy">
+        </figure>
+      </div>
+    </div>
+    <div class="problems-solution">
+      <div class="problems-arrow" aria-hidden="true">
+        <?php echo lp_icon('chevron-down', 'problems-arrow__icon'); ?>
+        <?php echo lp_icon('chevron-down', 'problems-arrow__icon'); ?>
+      </div>
+      <p class="problems-lead problems-solution__text mx-auto max-w-3xl text-center text-lg font-bold"><?php echo br_after_period('だからこそ、<span class="text-brand-accent">空き時間の練習</span>から<strong>AI添削</strong>・<strong>スピーキング特訓</strong>まで。本番形式の問題を、アプリひとつで。'); ?></p>
+    </div>
   </div>
 </section>
