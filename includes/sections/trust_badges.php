@@ -15,8 +15,8 @@
         <span class="trust-badges__label">AI添削</span>
       </div>
       <div class="trust-badges__item">
-        <span class="trust-badges__icon text-[#50c2cb]"><?php echo lp_icon('dog', 'w-5 h-5'); ?></span>
-        <span class="trust-badges__label">バディが寄り添う</span>
+        <span class="trust-badges__icon text-[#50c2cb]"><?php echo lp_icon('clipboard-list', 'w-5 h-5'); ?></span>
+        <span class="trust-badges__label">問題数10,000問以上</span>
       </div>
       <div class="trust-badges__item">
         <span class="trust-badges__icon text-[#50c2cb]"><?php echo lp_icon('badge-check', 'w-5 h-5'); ?></span>

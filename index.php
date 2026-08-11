@@ -13,6 +13,8 @@ include __DIR__ . '/includes/sections/trust_badges.php';
 include __DIR__ . '/includes/sections/intro.php';
 include __DIR__ . '/includes/sections/problems.php';
 include __DIR__ . '/includes/sections/features.php';
+include __DIR__ . '/includes/sections/voice.php';
+include __DIR__ . '/includes/sections/app_skills.php';
 include __DIR__ . '/includes/sections/target.php';
 include __DIR__ . '/includes/sections/grade_links.php';
 include __DIR__ . '/includes/sections/benefits.php';

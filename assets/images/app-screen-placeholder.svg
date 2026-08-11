@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="844" viewBox="0 0 390 844" role="img" aria-label=";b­ã×Áã–™-">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8fafb"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+  </defs>
+  <rect width="390" height="844" fill="url(#bg)"/>
+  <rect x="24" y="72" width="342" height="48" rx="12" fill="#50c2cb" opacity="0.25"/>
+  <rect x="24" y="144" width="220" height="18" rx="9" fill="#50c2cb" opacity="0.2"/>
+  <rect x="24" y="180" width="300" height="18" rx="9" fill="#94a3b8" opacity="0.2"/>
+  <rect x="24" y="220" width="342" height="160" rx="16" fill="#50c2cb" opacity="0.12"/>
+  <rect x="24" y="404" width="342" height="72" rx="14" fill="#fff"/>
+  <rect x="24" y="404" width="342" height="72" rx="14" fill="none" stroke="#50c2cb" stroke-opacity="0.25"/>
+  <rect x="24" y="492" width="342" height="72" rx="14" fill="#fff"/>
+  <rect x="24" y="492" width="342" height="72" rx="14" fill="none" stroke="#cbd5e1"/>
+  <rect x="24" y="580" width="342" height="72" rx="14" fill="#fff"/>
+  <rect x="24" y="580" width="342" height="72" rx="14" fill="none" stroke="#cbd5e1"/>
+  <text x="195" y="780" text-anchor="middle" font-family="Noto Sans JP, sans-serif" font-size="18" fill="#00a2af">;b­ã×Áã–™-</text>
+</svg>

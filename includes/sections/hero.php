@@ -6,9 +6,9 @@
   </div>
   <div class="relative z-10 lp-container flex flex-col items-start gap-12 lg:flex-row lg:items-center lg:gap-16">
     <div class="w-full flex-1 space-y-6 text-left">
-      <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-[13px] font-medium text-slate-600 shadow-sm">英検対策アプリ｜5級〜1級｜本試験形式</span>
-      <h1 id="hero-heading" class="text-3xl font-bold leading-[1.4] tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
-        英検対策、<span class="block text-brand-accent">本試験形式で全部そろう</span>
+      <h1 id="hero-heading" class="text-3xl font-bold leading-[1.4] tracking-tight sm:text-4xl md:text-5xl">
+        <span class="block text-brand-accent">英検対策アプリはAiKen</span>
+        <span class="hero-heading__sub block">5級〜1級を本試験形式で</span>
       </h1>
       <p class="max-w-lg text-base leading-relaxed text-[#232323] sm:text-lg"><?php echo br_after_period('<strong>単語</strong>・<strong>リーディング</strong>・<strong>リスニング</strong>・<strong>ライティング</strong>・<strong>スピーキング</strong>を本試験形式で対策。10,000問超・AI採点・復習対応。<strong>' . monthly_price_label() . '</strong>で5級〜1級まで。'); ?></p>
       <div class="flex flex-col gap-3 sm:flex-row sm:justify-start">
