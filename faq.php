@@ -39,11 +39,15 @@ $faq_categories = [
             ],
             [
                 'q' => '月額料金はいくらですか？',
-                'a' => 'プレミアムプランは' . monthly_price_label() . 'です。英検5級〜1級の対策機能をすべてご利用いただけます。料金の詳細は「料金」ページもあわせてご確認ください。',
+                'a' => open_campaign_active()
+                    ? 'プレミアムプランは' . monthly_price_label() . 'です（OPEN記念価格・定価' . monthly_price_regular_label() . '・' . open_campaign_end_label() . 'まで）。英検5級〜1級の対策機能をすべてご利用いただけます。料金の詳細は「料金」ページもあわせてご確認ください。'
+                    : 'プレミアムプランは' . monthly_price_regular_label() . 'です。英検5級〜1級の対策機能をすべてご利用いただけます。料金の詳細は「料金」ページもあわせてご確認ください。',
             ],
             [
                 'q' => '料金プランやキャンペーンはどこで確認できますか？',
-                'a' => '最新の料金は本サイトの「料金」ページ（' . rtrim(SITE_URL, '/') . '/plan）またはアプリ内の案内をご確認ください。現在は' . monthly_price_label(false) . 'のプレミアムプランを提供しています（料金は予告なく変更される場合があります）。',
+                'a' => open_campaign_active()
+                    ? '最新の料金は本サイトの「料金」ページ（' . rtrim(SITE_URL, '/') . '/plan）またはアプリ内の案内をご確認ください。現在はOPEN記念価格として' . monthly_price_label(false) . '（定価' . monthly_price_regular_label(false) . '・' . open_campaign_end_label() . 'まで）のプレミアムプランを提供しています（料金は予告なく変更される場合があります）。'
+                    : '最新の料金は本サイトの「料金」ページ（' . rtrim(SITE_URL, '/') . '/plan）またはアプリ内の案内をご確認ください。現在は' . monthly_price_regular_label(false) . 'のプレミアムプランを提供しています（料金は予告なく変更される場合があります）。',
             ],
             [
                 'q' => '退会・解約はできますか？',

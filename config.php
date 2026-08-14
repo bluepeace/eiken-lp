@@ -15,8 +15,12 @@ define('BRAND_COLOR', '#50c2cb');
 define('BRAND_TEXT_COLOR', '#00a2af');
 /** LP 本文・ナビの統一テキスト色 */
 define('LP_TEXT_COLOR', '#232323');
-/** 月額プラン料金（税込・円）。LP・FAQ・特商法など表示の一元管理用 */
+/** 月額プラン料金（税込・円）。OPEN記念価格。LP・FAQ・特商法など表示の一元管理用 */
 define('MONTHLY_PRICE', 980);
+/** 月額プランの定価（税込・円） */
+define('MONTHLY_PRICE_REGULAR', 1480);
+/** OPEN記念価格の適用終了日（Y-m-d・当日まで有効） */
+define('OPEN_CAMPAIGN_END', '2026-12-31');
 /** 無料体験日数（正式オープン以降） */
 define('FREE_TRIAL_DAYS', 5);
 
@@ -42,8 +46,8 @@ $PAGE_META = [
         'og_type' => 'website',
     ],
     'plan' => [
-        'title' => '英検対策アプリの料金｜AiKen（アイケン）月額980円',
-        'description' => '英検対策アプリAiKen（アイケン）の料金。5級〜1級の本試験形式対策が月額980円（税込）。5日間無料体験ののち、サブスクリプション課金。',
+        'title' => '英検対策アプリの料金｜AiKen（アイケン）OPEN記念価格 月額980円',
+        'description' => '英検対策アプリAiKen（アイケン）の料金。OPEN記念価格で月額980円（税込・定価1,480円・2026年12月31日まで）。5日間無料体験ののち、サブスクリプション課金。',
         'og_type' => 'website',
     ],
     'tokushoho' => [
@@ -135,4 +139,20 @@ function format_yen(int $amount): string {
 function monthly_price_label(bool $with_tax = true): string {
     $label = '月額' . format_yen(MONTHLY_PRICE);
     return $with_tax ? $label . '（税込）' : $label;
+}
+
+/** @param bool $with_tax 末尾に（税込）を付ける */
+function monthly_price_regular_label(bool $with_tax = true): string {
+    $label = '月額' . format_yen(MONTHLY_PRICE_REGULAR);
+    return $with_tax ? $label . '（税込）' : $label;
+}
+
+function open_campaign_active(): bool {
+    return time() <= strtotime(OPEN_CAMPAIGN_END . ' 23:59:59');
+}
+
+/** 例: 2026年12月31日 */
+function open_campaign_end_label(): string {
+    $ts = strtotime(OPEN_CAMPAIGN_END);
+    return $ts ? date('Y年n月j日', $ts) : OPEN_CAMPAIGN_END;
 }

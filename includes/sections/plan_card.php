@@ -3,6 +3,7 @@ if (!defined('SITE_NAME')) {
     require_once __DIR__ . '/../../config.php';
 }
 $plan_price_note = $plan_price_note ?? '料金は予告なく変更される場合があります。最新の表示価格は本ページおよびアプリ内の案内が優先されます。';
+$show_open_campaign = open_campaign_active();
 ?>
     <div class="overflow-hidden rounded-2xl border-2 border-[#50c2cb]/40 bg-white shadow-lg ring-1 ring-slate-900/5">
       <div class="bg-[#50c2cb] px-6 py-4 text-center">
@@ -10,7 +11,14 @@ $plan_price_note = $plan_price_note ?? '料金は予告なく変更される場�
         <p class="mt-1 text-sm text-white/90">英検対策のすべての機能</p>
       </div>
       <div class="px-6 py-8 text-center">
-        <p class="text-4xl font-bold tracking-tight text-slate-900"><?php echo htmlspecialchars(monthly_price_label()); ?></p>
+        <?php if ($show_open_campaign): ?>
+        <p class="text-sm font-semibold tracking-wide text-[#3d9aa3]">OPEN記念価格</p>
+        <p class="mt-2 text-sm text-slate-400 line-through">定価 <?php echo htmlspecialchars(monthly_price_regular_label()); ?></p>
+        <p class="mt-1 text-4xl font-bold tracking-tight text-slate-900"><?php echo htmlspecialchars(monthly_price_label()); ?></p>
+        <p class="mt-2 text-sm font-medium text-slate-700"><?php echo htmlspecialchars(open_campaign_end_label()); ?>までのキャンペーン価格</p>
+        <?php else: ?>
+        <p class="text-4xl font-bold tracking-tight text-slate-900"><?php echo htmlspecialchars(monthly_price_regular_label()); ?></p>
+        <?php endif; ?>
         <p class="mt-2 text-sm text-slate-600"><?php echo FREE_TRIAL_DAYS; ?>日間無料体験ののち、自動更新</p>
         <ul class="mt-8 space-y-3 text-left text-sm text-slate-700">
           <li class="flex gap-2"><span class="shrink-0 text-[#50c2cb]"><?php echo lp_icon('check', 'w-5 h-5'); ?></span>英検5級〜1級（準1級・準2級含む）すべて対応</li>

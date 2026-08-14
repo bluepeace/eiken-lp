@@ -3,7 +3,9 @@ if (!defined('SITE_NAME')) { require_once __DIR__ . '/../../config.php'; }
 $faqs = [
   [
     'q' => '月額料金はいくらですか？',
-    'a' => 'プレミアムプランは' . monthly_price_label() . 'です。' . FREE_TRIAL_DAYS . '日間の無料体験ののち、英検5級〜1級の対策機能をすべてご利用いただけます。詳しくは料金ページをご覧ください。',
+    'a' => open_campaign_active()
+      ? 'プレミアムプランは' . monthly_price_label() . 'です（OPEN記念価格・定価' . monthly_price_regular_label() . '・' . open_campaign_end_label() . 'まで）。' . FREE_TRIAL_DAYS . '日間の無料体験ののち、英検5級〜1級の対策機能をすべてご利用いただけます。詳しくは料金ページをご覧ください。'
+      : 'プレミアムプランは' . monthly_price_regular_label() . 'です。' . FREE_TRIAL_DAYS . '日間の無料体験ののち、英検5級〜1級の対策機能をすべてご利用いただけます。詳しくは料金ページをご覧ください。',
   ],
   [
     'q' => '英検の何級に対応していますか？',

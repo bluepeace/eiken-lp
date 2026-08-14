@@ -12,7 +12,9 @@ include __DIR__ . '/includes/header.php';
   <div class="mx-auto max-w-3xl text-center">
     <p class="text-sm font-semibold tracking-wide text-[#3d9aa3]">保護者の方へ</p>
     <h1 id="plan-heading" class="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">料金・プラン</h1>
-    <p class="mt-4 text-lg text-slate-700"><?php echo br_after_period('英検5級〜1級の対策が、<strong>' . monthly_price_label() . '</strong>で使えます。'); ?></p>
+    <p class="mt-4 text-lg text-slate-700"><?php echo br_after_period(open_campaign_active()
+        ? '英検5級〜1級の対策が、OPEN記念価格の<strong>' . monthly_price_label() . '</strong>で使えます。（定価' . monthly_price_regular_label() . '・' . open_campaign_end_label() . 'まで）'
+        : '英検5級〜1級の対策が、<strong>' . monthly_price_regular_label() . '</strong>で使えます。'); ?></p>
   </div>
 </section>
 
