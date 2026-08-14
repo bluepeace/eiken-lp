@@ -3,9 +3,9 @@ if (!defined('SITE_NAME')) {
     require_once __DIR__ . '/../../config.php';
 }
 
-$voice_photo_fs = __DIR__ . '/../../assets/images/developer-voice.jpg';
+$voice_photo_fs = __DIR__ . '/../../assets/images/developer-voice.png';
 $voice_photo_url = is_file($voice_photo_fs)
-    ? '/assets/images/developer-voice.jpg'
+    ? '/assets/images/developer-voice.png'
     : '/assets/images/developer-voice-placeholder.svg';
 
 $voice_quote = '「自分で作ったアプリで、本当に英検に合格できるのか？」——それが気になって、思い切って第1回を受けてみました。空き時間にサッと開けるので、電車の中や夜の布団の中、会社の昼休みにもよく使っていました。初めての英検でしたが、似た形式の問題を何度も解いているうちに「いけるかも」と思えて、それが自信につながったと思います。次は準2級プラスに挑戦します！';
@@ -21,7 +21,7 @@ $voice_quote = '「自分で作ったアプリで、本当に英検に合格で�
       <figure class="voice-card__photo">
         <img
           src="<?php echo htmlspecialchars($voice_photo_url); ?>"
-          alt="英検準2級に合格したAiKen開発者Mの写真"
+          alt="AiKenキャラクター（写真は後日差し替え）"
           width="400"
           height="400"
           class="voice-card__image"
