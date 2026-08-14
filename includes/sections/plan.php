@@ -3,7 +3,7 @@ if (!defined('SITE_NAME')) {
     require_once __DIR__ . '/../../config.php';
 }
 ?>
-<section class="border-t border-slate-100 bg-white px-4 py-16 sm:py-20" aria-labelledby="top-plan-heading">
+<section class="border-t border-slate-100 bg-[#e8fafb] px-4 py-16 sm:py-20" aria-labelledby="top-plan-heading">
   <div class="lp-container">
     <div class="mx-auto max-w-3xl text-center">
       <h2 id="top-plan-heading" class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">料金・プラン</h2>
