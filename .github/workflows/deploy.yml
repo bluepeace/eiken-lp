@@ -1,0 +1,24 @@
+name: Deploy to ConoHa WING
+
+on:
+  push:
+    branches:
+      - main # mainブランチにプッシュされたら自動実行
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy files via SCP
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          port: ${{ secrets.PORT }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "." # リポジトリのすべてのファイルを送る
+          exclude: ".git/,.github/" # 送信しないフォルダを除外
+          target: "~/public_html/aiken.life" # ★ここをConoHa WINGの公開フォルダ名に変更してください

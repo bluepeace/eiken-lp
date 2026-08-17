@@ -20,3 +20,6 @@ desktop.ini
 
 # RSS キャッシュ
 cache/
+
+# WordPress（Git管理外）
+blog/
