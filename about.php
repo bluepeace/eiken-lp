@@ -10,8 +10,8 @@ include __DIR__ . '/includes/header.php';
 ?>
 <section class="border-b border-slate-100 bg-gradient-to-b from-[#e8f8f9] to-white px-4 py-14 sm:py-20" aria-labelledby="about-lead-heading">
   <div class="mx-auto max-w-3xl text-center">
-    <p class="text-sm font-semibold tracking-wide text-[#3d9aa3]">はじめての方へ</p>
-    <h1 id="about-lead-heading" class="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">AiKen（アイケン）とは</h1>
+    <p class="section-badge section-badge--center" aria-hidden="true">ABOUT</p>
+    <h1 id="about-lead-heading" class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">AiKen（アイケン）とは</h1>
     <p class="mt-4 text-lg font-medium text-slate-800">英検対策 × AI × バディ（愛犬）— 合格まで、ひとつのアプリにまとめました。</p>
     <p class="mt-5 text-left text-slate-600 sm:text-center"><?php echo br_after_period('<strong>AiKen</strong>は、英検<strong>1級から5級まで全級</strong>の出題形式に沿って、<strong>AIが練習問題を出題</strong>する英検対策アプリです。リーディング・リスニング・ライティング・スピーキングの<strong>4技能</strong>をアプリ内で鍛え、学習履歴も残るので<strong>間違えた問題の復習</strong>がかんたん。そして<strong>バディ</strong>がそばで励まし、続けやすい環境をつくります。'); ?></p>
     <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:justify-center">
@@ -24,6 +24,7 @@ include __DIR__ . '/includes/header.php';
 
 <section class="border-b border-slate-100 bg-white px-4 py-14 sm:py-20" aria-labelledby="about-empathy-heading">
   <div class="mx-auto max-w-3xl">
+    <p class="section-badge section-badge--center" aria-hidden="true">WORRY</p>
     <h2 id="about-empathy-heading" class="text-center text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">英検、こんなことで止まっていませんか？</h2>
     <ul class="mt-8 space-y-4 text-slate-700">
       <li class="flex gap-3 rounded-xl border border-slate-200 bg-slate-50/80 px-4 py-3 sm:px-5">
@@ -48,6 +49,7 @@ include __DIR__ . '/includes/header.php';
 
 <section class="border-b border-slate-100 bg-slate-50/50 px-4 py-14 sm:py-20" aria-labelledby="about-value-heading">
   <div class="lp-container">
+    <p class="section-badge section-badge--center" aria-hidden="true">BENEFIT</p>
     <h2 id="about-value-heading" class="text-center text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">アプリで得られること（ベネフィット）</h2>
     <p class="mt-3 text-center text-slate-600"><?php echo br_after_period('英検対策で押さえたい<strong>全級・4技能・AI・履歴・バディ</strong>を、はじめての方にも分かりやすくまとめました。'); ?></p>
     <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -87,6 +89,7 @@ include __DIR__ . '/includes/header.php';
 
 <section class="border-b border-slate-100 bg-white px-4 py-14 sm:py-20" aria-labelledby="about-for-whom-heading">
   <div class="lp-container">
+    <p class="section-badge section-badge--center" aria-hidden="true">FOR YOU</p>
     <h2 id="about-for-whom-heading" class="text-center text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">こんな方におすすめ</h2>
     <p class="mt-3 text-center text-slate-600"><?php echo br_after_period('学習段階の目安として、よくいらっしゃるパターンを挙げています。'); ?></p>
     <div class="mt-10 grid gap-6 md:grid-cols-3">
@@ -109,6 +112,7 @@ include __DIR__ . '/includes/header.php';
 
 <section class="bg-gradient-to-b from-white to-slate-50 px-4 py-14 sm:py-20" aria-labelledby="about-steps-heading">
   <div class="mx-auto max-w-3xl text-center">
+    <p class="section-badge section-badge--center" aria-hidden="true">START</p>
     <h2 id="about-steps-heading" class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">会員登録から、今日の練習まで</h2>
     <p class="mt-3 text-slate-600"><?php echo br_after_period('手順はシンプルです。<strong>まず登録</strong>して、アプリの中で級とメニューを選べばOK。'); ?></p>
     <ol class="mt-10 space-y-6 text-left">

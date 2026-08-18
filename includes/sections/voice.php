@@ -13,6 +13,7 @@ $voice_quote = '「自分で作ったアプリで、本当に英検に合格で�
 <section class="voice-section border-t border-slate-100 px-4 py-16 sm:py-20" aria-labelledby="voice-heading">
   <div class="lp-container">
     <div class="voice-section__header mx-auto max-w-3xl text-center">
+      <p class="section-badge section-badge--center" aria-hidden="true">VOICE</p>
       <h2 id="voice-heading" class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">英検<span class="heading-accent">合格者の声</span></h2>
       <p class="voice-section__lead mt-3"><?php echo br_after_period(SITE_NAME . 'はリリースしたばかりのため、まだユーザー様の合格の声はありません。その代わり、「開発者」自身が英検を受けて無事合格しました！'); ?></p>
     </div>

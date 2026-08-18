@@ -1,6 +1,7 @@
 <?php if (!defined('SITE_NAME')) { require_once __DIR__ . '/../../config.php'; } ?>
 <section class="border-t border-slate-100 bg-white px-4 py-16 sm:py-20" aria-labelledby="cta-heading">
   <div class="mx-auto max-w-2xl text-center">
+    <p class="section-badge section-badge--center" aria-hidden="true">GO</p>
     <h2 id="cta-heading" class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">英検対策アプリで、今日からはじめよう</h2>
     <p class="mt-3 text-slate-600"><?php echo br_after_period(FREE_TRIAL_DAYS . '日間無料体験。英語4技能＋単語・AI採点を、ひとつのアプリで。' . monthly_price_label() . 'で5級〜1級まで対策できます。'); ?></p>
     <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">

@@ -10,11 +10,11 @@ include __DIR__ . '/includes/header.php';
 ?>
 <section class="border-b border-slate-100 bg-gradient-to-b from-[#e8f8f9] to-white px-4 py-14 sm:py-20" aria-labelledby="plan-heading">
   <div class="mx-auto max-w-3xl text-center">
-    <p class="text-sm font-semibold tracking-wide text-[#3d9aa3]">保護者の方へ</p>
-    <h1 id="plan-heading" class="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">料金・プラン</h1>
+    <p class="section-badge section-badge--center" aria-hidden="true">PLAN</p>
+    <h1 id="plan-heading" class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">料金・プラン</h1>
     <p class="mt-4 text-lg text-slate-700"><?php echo br_after_period(open_campaign_active()
-        ? '英検5級〜1級の対策が、OPEN記念価格の<strong>' . monthly_price_label() . '</strong>で使えます。（定価' . monthly_price_regular_label() . '・' . open_campaign_end_label() . 'まで）'
-        : '英検5級〜1級の対策が、<strong>' . monthly_price_regular_label() . '</strong>で使えます。'); ?></p>
+        ? '最初の' . FREE_TRIAL_DAYS . '日間は、単語テスト・AI添削・リーディング・リスニングなど<strong>全機能が無料</strong>です。その後はOPEN記念価格の<strong>' . monthly_price_label() . '</strong>で続けられます。（定価' . monthly_price_regular_label() . '・' . open_campaign_end_label() . 'まで）'
+        : '最初の' . FREE_TRIAL_DAYS . '日間は、単語テスト・AI添削・リーディング・リスニングなど<strong>全機能が無料</strong>です。その後は<strong>' . monthly_price_regular_label() . '</strong>で続けられます。'); ?></p>
   </div>
 </section>
 
@@ -26,6 +26,7 @@ include __DIR__ . '/includes/header.php';
 
 <section class="border-b border-slate-100 bg-slate-50/50 px-4 py-14 sm:py-20" aria-labelledby="plan-notes-heading">
   <div class="mx-auto max-w-3xl">
+    <p class="section-badge section-badge--center" aria-hidden="true">NOTE</p>
     <h2 id="plan-notes-heading" class="text-center text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">ご利用にあたって</h2>
     <dl class="mt-8 space-y-4">
       <div class="rounded-xl border border-slate-200 bg-white px-5 py-4 shadow-sm">

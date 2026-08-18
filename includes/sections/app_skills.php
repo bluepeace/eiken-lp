@@ -84,6 +84,7 @@ $skill_items = [
 <section class="app-skills-section border-t border-slate-100 px-4 py-16 sm:py-20" aria-labelledby="app-skills-heading">
   <div class="lp-container">
     <div class="app-skills-section__header mx-auto max-w-3xl text-center">
+      <p class="section-badge section-badge--center" aria-hidden="true">SKILLS</p>
       <h2 id="app-skills-heading" class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">画面で見る、<span class="heading-accent">英語4技能＋単語</span>の学習イメージ</h2>
       <p class="app-skills-section__lead mt-3"><?php echo br_after_period('単語・リーディング・リスニング・ライティング・スピーキング。英検の本試験形式で、どんなふうに学べるかを画面イメージでご紹介します。'); ?></p>
     </div>

@@ -4,22 +4,37 @@ if (!defined('SITE_NAME')) {
 }
 $plan_price_note = $plan_price_note ?? '料金は予告なく変更される場合があります。最新の表示価格は本ページおよびアプリ内の案内が優先されます。';
 $show_open_campaign = open_campaign_active();
+$trial_features = ['単語テスト', 'AI添削', 'リーディング', 'リスニング', 'スピーキング'];
 ?>
-    <div class="overflow-hidden rounded-2xl border-2 border-[#50c2cb]/40 bg-white shadow-lg ring-1 ring-slate-900/5">
-      <div class="bg-[#50c2cb] px-6 py-4 text-center">
+    <div class="plan-card overflow-hidden rounded-2xl border-2 bg-white shadow-lg ring-1 ring-slate-900/5<?php echo $show_open_campaign ? ' plan-card--campaign' : ''; ?>">
+      <div class="plan-card__header px-6 py-4 text-center">
         <h2 id="plan-premium-heading" class="text-lg font-bold text-white">プレミアムプラン</h2>
         <p class="mt-1 text-sm text-white/90">英検対策のすべての機能</p>
       </div>
       <div class="px-6 py-8 text-center">
         <?php if ($show_open_campaign): ?>
-        <p class="text-sm font-semibold tracking-wide text-[#3d9aa3]">OPEN記念価格</p>
-        <p class="mt-2 text-sm text-slate-400 line-through">定価 <?php echo htmlspecialchars(monthly_price_regular_label()); ?></p>
-        <p class="mt-1 text-4xl font-bold tracking-tight text-slate-900"><?php echo htmlspecialchars(monthly_price_label()); ?></p>
-        <p class="mt-2 text-sm font-medium text-slate-700"><?php echo htmlspecialchars(open_campaign_end_label()); ?>までのキャンペーン価格</p>
+        <div class="plan-campaign">
+          <p class="plan-campaign__badge">OPEN記念価格</p>
+          <p class="mt-3 text-sm text-slate-400 line-through">定価 <?php echo htmlspecialchars(monthly_price_regular_label()); ?></p>
+          <p class="mt-1 text-4xl font-bold tracking-tight text-slate-900"><?php echo htmlspecialchars(monthly_price_label()); ?></p>
+          <p class="plan-campaign__until"><?php echo htmlspecialchars(open_campaign_end_label()); ?>までのキャンペーン</p>
+        </div>
         <?php else: ?>
         <p class="text-4xl font-bold tracking-tight text-slate-900"><?php echo htmlspecialchars(monthly_price_regular_label()); ?></p>
         <?php endif; ?>
-        <p class="mt-2 text-sm text-slate-600"><?php echo FREE_TRIAL_DAYS; ?>日間無料体験ののち、自動更新</p>
+
+        <div class="plan-trial">
+          <p class="plan-trial__title">最初の<?php echo FREE_TRIAL_DAYS; ?>日間は、<span>全機能が無料</span></p>
+          <p class="plan-trial__lead">単語テスト・AI添削・リーディング・リスニングなど、英検対策の機能をすべて体験できます。</p>
+          <ul class="plan-trial__chips">
+            <?php foreach ($trial_features as $feature): ?>
+            <li><?php echo htmlspecialchars($feature); ?></li>
+            <?php endforeach; ?>
+          </ul>
+          <p class="plan-trial__after"><?php echo FREE_TRIAL_DAYS; ?>日を過ぎても、無料のまま1日少しずつ続けられます。</p>
+        </div>
+
+        <p class="mt-4 text-sm text-slate-600"><?php echo FREE_TRIAL_DAYS; ?>日間無料体験ののち、自動更新。いつでも解約できます。</p>
         <ul class="mt-8 space-y-3 text-left text-sm text-slate-700">
           <li class="flex gap-2"><span class="shrink-0 text-[#50c2cb]"><?php echo lp_icon('check', 'w-5 h-5'); ?></span>英検5級〜1級（準1級・準2級含む）すべて対応</li>
           <li class="flex gap-2"><span class="shrink-0 text-[#50c2cb]"><?php echo lp_icon('check', 'w-5 h-5'); ?></span>単語・リーディング・リスニング・ライティング・スピーキング</li>

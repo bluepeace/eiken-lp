@@ -6,10 +6,11 @@ if (!defined('SITE_NAME')) {
 <section class="border-t border-slate-100 bg-[#e8fafb] px-4 py-16 sm:py-20" aria-labelledby="top-plan-heading">
   <div class="lp-container">
     <div class="mx-auto max-w-3xl text-center">
+      <p class="section-badge section-badge--center" aria-hidden="true">PLAN</p>
       <h2 id="top-plan-heading" class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">料金・プラン</h2>
       <p class="mt-3 text-slate-600"><?php echo br_after_period(open_campaign_active()
-          ? '英検5級〜1級の対策が、OPEN記念価格の<strong>' . monthly_price_label() . '</strong>で使えます。（定価' . monthly_price_regular_label() . '・' . open_campaign_end_label() . 'まで）'
-          : '英検5級〜1級の対策が、<strong>' . monthly_price_regular_label() . '</strong>で使えます。'); ?></p>
+          ? '最初の' . FREE_TRIAL_DAYS . '日間は、単語テスト・AI添削・リーディング・リスニングなど<strong>全機能が無料</strong>です。その後はOPEN記念価格の<strong>' . monthly_price_label() . '</strong>で続けられます。（定価' . monthly_price_regular_label() . '・' . open_campaign_end_label() . 'まで）'
+          : '最初の' . FREE_TRIAL_DAYS . '日間は、単語テスト・AI添削・リーディング・リスニングなど<strong>全機能が無料</strong>です。その後は<strong>' . monthly_price_regular_label() . '</strong>で続けられます。'); ?></p>
     </div>
     <div class="mx-auto mt-10 max-w-lg sm:mt-12">
       <?php

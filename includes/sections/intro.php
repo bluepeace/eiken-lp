@@ -8,6 +8,7 @@
         </div>
       </div>
       <div class="flex-1">
+        <p class="section-badge" aria-hidden="true">ABOUT</p>
         <h2 id="intro-heading" class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl"><span class="heading-accent">英検対策アプリ<?php echo htmlspecialchars(SITE_NAME); ?></span>でできること</h2>
         <div class="intro-body mt-6 space-y-6 leading-relaxed sm:space-y-7">
           <p><?php echo br_after_period('お子さんの英検は、<strong>入試や進学にも関わる</strong>大切な検定です。保護者の方にとっても、<strong>単語</strong>・<strong>リーディング</strong>・<strong>面接対策</strong>…と教材やアプリをバラバラに揃えるのは、時間も費用もかかります。「うちの子、本当に<strong>英検対策</strong>できているのかな」と不安になる方も多いはずです。'); ?></p>

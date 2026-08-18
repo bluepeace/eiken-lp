@@ -787,12 +787,32 @@ img[loading="lazy"] {
   }
 }
 
+.section-badge {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  background-color: rgba(80, 194, 203, 0.14);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--aiken-brand-text);
+}
+
+.section-badge--center,
+.faq-section__badge {
+  margin-inline: auto;
+}
+
 .faq-section__badge {
   display: flex;
   width: fit-content;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 0.75rem;
+  margin-bottom: 0.75rem;
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
   background-color: rgba(80, 194, 203, 0.14);
@@ -981,4 +1001,108 @@ img[loading="lazy"] {
 
 .faq-item__body br + br {
   display: none;
+}
+
+/* ========== 料金プラン ========== */
+.plan-card {
+  border-color: rgba(80, 194, 203, 0.4);
+}
+
+.plan-card__header {
+  background-color: var(--aiken-brand);
+}
+
+.plan-card--campaign {
+  border-color: #f0b27a;
+}
+
+.plan-campaign {
+  margin: -0.5rem -0.25rem 0;
+  padding: 1.1rem 1rem 1.2rem;
+  border-radius: 1.15rem;
+  background:
+    linear-gradient(180deg, #fff8ef 0%, #ffefd6 100%);
+  border: 1px solid #f3c38a;
+}
+
+.plan-campaign__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0.3rem 0.85rem;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #f59e0b 0%, #ea580c 100%);
+  color: #fff;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  box-shadow: 0 6px 14px rgba(234, 88, 12, 0.28);
+}
+
+.plan-campaign__until {
+  display: inline-flex;
+  margin: 0.75rem 0 0;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  background-color: #fff;
+  border: 1px solid #fdba74;
+  color: #c2410c;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.plan-trial {
+  margin-top: 1.5rem;
+  padding: 1.15rem 1rem 1.2rem;
+  border-radius: 1.15rem;
+  background-color: #f4fbfc;
+  border: 1px solid rgba(80, 194, 203, 0.28);
+  text-align: center;
+}
+
+.plan-trial__title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.5;
+  color: #0f172a;
+}
+
+.plan-trial__title span {
+  color: var(--aiken-brand-text);
+}
+
+.plan-trial__lead {
+  margin: 0.6rem 0 0;
+  font-size: 0.875rem;
+  line-height: 1.8;
+  color: var(--lp-text);
+}
+
+.plan-trial__chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.45rem;
+  margin: 0.9rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.plan-trial__chips li {
+  padding: 0.3rem 0.7rem;
+  border-radius: 9999px;
+  background-color: #fff;
+  border: 1px solid rgba(80, 194, 203, 0.35);
+  color: var(--aiken-brand-text);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.plan-trial__after {
+  margin: 0.9rem 0 0;
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  color: #475569;
 }

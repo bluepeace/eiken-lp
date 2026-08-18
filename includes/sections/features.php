@@ -48,6 +48,7 @@ $strength_items = [
 <section class="strengths-section border-t border-slate-100 bg-white px-4 py-16 sm:py-20" aria-labelledby="features-heading">
   <div class="lp-container">
     <div class="strengths-section__header mx-auto max-w-3xl text-center">
+      <p class="section-badge section-badge--center" aria-hidden="true">STRENGTHS</p>
       <h2 id="features-heading" class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">英検対策アプリ<?php echo htmlspecialchars(SITE_NAME); ?>の<span class="heading-accent">7つの強み</span></h2>
       <p class="strengths-section__lead mt-3"><?php echo br_after_period('さきほどのお悩みを、ひとつのアプリでまとめて解決。'); ?></p>
     </div>

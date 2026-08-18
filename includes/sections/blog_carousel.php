@@ -9,6 +9,7 @@ $blog_index_url = rtrim(SITE_URL, '/') . '/blog/';
 ?>
 <section class="border-t border-slate-100 bg-slate-50/50 py-16 sm:py-20" aria-labelledby="blog-column-heading">
   <div class="lp-container px-4">
+    <p class="section-badge section-badge--center" aria-hidden="true">COLUMN</p>
     <h2 id="blog-column-heading" class="text-center text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">英検対策コラム</h2>
     <p class="mt-2 text-center text-slate-600"><?php echo br_after_period('英検の試験形式・勉強法・級別のポイントを、コラムでわかりやすく解説しています。英検対策アプリAiKenの活用法も書いているので、受験生はぜひチェックしてみてください。'); ?></p>
 

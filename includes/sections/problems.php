@@ -12,6 +12,7 @@ $problem_items = [
 <section class="problems-section border-t border-[#50c2cb]/15 px-4 py-16 sm:py-20" aria-labelledby="problems-heading">
   <div class="lp-container">
     <div class="problems-section__header mx-auto max-w-3xl text-center">
+      <p class="section-badge section-badge--center" aria-hidden="true">WORRY</p>
       <h2 id="problems-heading" class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">英検対策、<span class="heading-accent">こんなお悩み</span>ありませんか？</h2>
       <p class="problems-lead mt-3"><?php echo br_after_period('部活や塾で忙しいあなたへ。英検、こんなことで止まっていませんか。'); ?></p>
     </div>

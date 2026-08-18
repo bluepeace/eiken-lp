@@ -1,6 +1,7 @@
 <?php if (!defined('SITE_NAME')) { require_once __DIR__ . '/../../config.php'; } ?>
 <section class="border-t border-slate-100 bg-white px-4 py-16 sm:py-20" aria-labelledby="howto-heading">
   <div class="mx-auto max-w-3xl text-center">
+    <p class="section-badge section-badge--center" aria-hidden="true">START</p>
     <h2 id="howto-heading" class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">英検対策アプリを、<?php echo FREE_TRIAL_DAYS; ?>日間無料で試す</h2>
     <p class="mt-3 text-slate-600"><?php echo br_after_period('会員登録ですぐに使えます。英検5級〜1級の本試験形式対策を、' . FREE_TRIAL_DAYS . '日間無料で体験できます。'); ?></p>
     <ol class="mt-10 space-y-6">

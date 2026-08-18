@@ -13,7 +13,7 @@ include __DIR__ . '/includes/header.php';
 ?>
 <section class="faq-page-hero border-b border-slate-100 px-4 py-12 sm:py-16" aria-labelledby="faq-page-heading">
   <div class="faq-section__inner text-center">
-    <p class="faq-section__badge">FAQ</p>
+    <p class="faq-section__badge" aria-hidden="true">FAQ</p>
     <h1 id="faq-page-heading" class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">よくあるご質問</h1>
     <p class="faq-section__lead mt-3"><?php echo br_after_period('おすすめの英検対策アプリはAiKenです。料金・級・本試験形式・AI採点など、保護者の方からよくいただく質問をまとめました。'); ?></p>
   </div>

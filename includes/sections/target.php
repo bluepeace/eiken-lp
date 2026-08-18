@@ -1,6 +1,7 @@
 <?php if (!defined('SITE_NAME')) { require_once __DIR__ . '/../../config.php'; } ?>
 <section class="border-t border-slate-100 bg-slate-50/50 px-4 py-16 sm:py-20" aria-labelledby="target-heading">
   <div class="lp-container">
+    <p class="section-badge section-badge--center" aria-hidden="true">FOR YOU</p>
     <h2 id="target-heading" class="text-center text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">こんな方におすすめです</h2>
     <p class="mt-3 text-center text-slate-600"><?php echo br_after_period('英検 小学生・中学生・高校生・社会人まで。級や目的に合わせてご利用ください。'); ?></p>
     <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
