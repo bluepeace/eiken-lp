@@ -23,3 +23,32 @@ $jsonLd = [
 ];
 ?>
 <script type="application/ld+json"><?php echo json_encode($jsonLd, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?></script>
+<?php
+if (!empty($faq_schema_items) && is_array($faq_schema_items)) {
+    $faqMainEntity = [];
+    foreach ($faq_schema_items as $faqItem) {
+        if (empty($faqItem['q']) || empty($faqItem['a'])) {
+            continue;
+        }
+        $faqMainEntity[] = [
+            '@type' => 'Question',
+            'name' => $faqItem['q'],
+            'acceptedAnswer' => [
+                '@type' => 'Answer',
+                'text' => $faqItem['a'],
+            ],
+        ];
+    }
+    if ($faqMainEntity) {
+        $faqLd = [
+            '@context' => 'https://schema.org',
+            '@type' => 'FAQPage',
+            'inLanguage' => 'ja',
+            'name' => 'よくあるご質問｜' . SITE_NAME . '（英検対策アプリ）',
+            'url' => $canonical ?? rtrim(SITE_URL, '/') . '/',
+            'mainEntity' => $faqMainEntity,
+        ];
+        echo '<script type="application/ld+json">' . json_encode($faqLd, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . '</script>' . "\n";
+    }
+}
+?>

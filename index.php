@@ -5,7 +5,9 @@
  */
 $page = 'top';
 require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/includes/faq-data.php';
 $canonical = rtrim(SITE_URL, '/') . '/';
+$faq_schema_items = faq_top_items();
 
 include __DIR__ . '/includes/header.php';
 include __DIR__ . '/includes/sections/hero.php';
