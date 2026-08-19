@@ -19,7 +19,7 @@ include __DIR__ . '/includes/header.php';
 </section>
 
 <section class="border-b border-slate-100 bg-white px-4 py-14 sm:py-20" aria-labelledby="plan-premium-heading">
-  <div class="mx-auto max-w-lg">
+  <div class="mx-auto max-w-2xl">
     <?php include __DIR__ . '/includes/sections/plan_card.php'; ?>
   </div>
 </section>

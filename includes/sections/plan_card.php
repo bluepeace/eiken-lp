@@ -34,7 +34,7 @@ $trial_features = ['単語テスト', 'AI添削', 'リーディング', 'リス�
           <p class="plan-trial__after"><?php echo FREE_TRIAL_DAYS; ?>日を過ぎても、無料のまま1日少しずつ続けられます。</p>
         </div>
 
-        <p class="mt-4 text-sm text-slate-600"><?php echo FREE_TRIAL_DAYS; ?>日間無料体験ののち、自動更新。いつでも解約できます。</p>
+        <p class="mt-4 text-sm text-slate-600"><?php echo br_after_period('会員登録の時点では課金は発生しません。登録は無料、カード登録も不要です。'); ?></p>
         <ul class="mt-8 space-y-3 text-left text-sm text-slate-700">
           <li class="flex gap-2"><span class="shrink-0 text-[#50c2cb]"><?php echo lp_icon('check', 'w-5 h-5'); ?></span>英検5級〜1級（準1級・準2級含む）すべて対応</li>
           <li class="flex gap-2"><span class="shrink-0 text-[#50c2cb]"><?php echo lp_icon('check', 'w-5 h-5'); ?></span>単語・リーディング・リスニング・ライティング・スピーキング</li>

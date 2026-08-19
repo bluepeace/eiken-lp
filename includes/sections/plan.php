@@ -12,7 +12,7 @@ if (!defined('SITE_NAME')) {
           ? '最初の' . FREE_TRIAL_DAYS . '日間は、単語テスト・AI添削・リーディング・リスニングなど<strong>全機能が無料</strong>です。その後はOPEN記念価格の<strong>' . monthly_price_label() . '</strong>で続けられます。（定価' . monthly_price_regular_label() . '・' . open_campaign_end_label() . 'まで）'
           : '最初の' . FREE_TRIAL_DAYS . '日間は、単語テスト・AI添削・リーディング・リスニングなど<strong>全機能が無料</strong>です。その後は<strong>' . monthly_price_regular_label() . '</strong>で続けられます。'); ?></p>
     </div>
-    <div class="mx-auto mt-10 max-w-lg sm:mt-12">
+    <div class="mx-auto mt-10 max-w-2xl sm:mt-12">
       <?php
       $plan_price_note = '料金は予告なく変更される場合があります。最新の表示価格は料金ページおよびアプリ内の案内が優先されます。';
       include __DIR__ . '/plan_card.php';
