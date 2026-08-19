@@ -27,6 +27,15 @@ define('FREE_TRIAL_DAYS', 5);
 require_once __DIR__ . '/includes/icons.php';
 /** 英検コラム（WordPress）RSS */
 define('BLOG_FEED_URL', 'https://aiken.life/blog/feed/');
+/** TOPコラムカルーセルの表示件数（先頭はピックアップ、残りは最新記事） */
+define('BLOG_CAROUSEL_LIMIT', 20);
+/**
+ * TOPの英検対策コラムで先頭に出す記事URL（指定した順）。
+ * 指定以外は更新日の新しい順で埋める。古い記事もこのURLから拾います。
+ */
+$BLOG_CAROUSEL_PICKUP_URLS = [
+    // 'https://aiken.life/blog/example-slug/',
+];
 
 // ページ別メタ（キー = ページ識別子）
 $PAGE_META = [

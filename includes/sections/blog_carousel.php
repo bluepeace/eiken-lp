@@ -4,7 +4,11 @@ if (!defined('SITE_NAME')) {
 }
 require_once __DIR__ . '/../blog-feed.php';
 
-$blog_items = get_blog_feed_items(50);
+global $BLOG_CAROUSEL_PICKUP_URLS;
+$blog_items = get_blog_carousel_items(
+    $BLOG_CAROUSEL_PICKUP_URLS ?? [],
+    defined('BLOG_CAROUSEL_LIMIT') ? BLOG_CAROUSEL_LIMIT : 20
+);
 $blog_index_url = rtrim(SITE_URL, '/') . '/blog/';
 ?>
 <section class="border-t border-slate-100 bg-slate-50/50 py-16 sm:py-20" aria-labelledby="blog-column-heading">
@@ -47,7 +51,10 @@ $blog_index_url = rtrim(SITE_URL, '/') . '/blog/';
           <div class="flex flex-1 flex-col p-4">
             <h3 class="line-clamp-2 text-sm font-semibold leading-snug text-slate-900 group-hover:text-[#46adb5]"><?php echo htmlspecialchars($post['title']); ?></h3>
             <?php
-            $ts = !empty($post['pubDate']) ? @strtotime($post['pubDate']) : false;
+            $ts = !empty($post['modDate']) ? @strtotime($post['modDate']) : false;
+            if (!$ts && !empty($post['pubDate'])) {
+                $ts = @strtotime($post['pubDate']);
+            }
             if ($ts): ?>
             <time class="mt-auto pt-3 text-xs text-slate-500" datetime="<?php echo date('c', $ts); ?>"><?php echo date('Y年n月j日', $ts); ?></time>
             <?php endif; ?>
