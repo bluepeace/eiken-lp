@@ -5,11 +5,32 @@ if (!defined('SITE_NAME')) {
 
 $news_items = [
     [
-        'date' => '2026/06/12',
+        'date' => '2026/07/31',
+        'title' => '7月アップデートのお知らせ',
+        'lead' => [
+            'いつも' . SITE_NAME . 'をご利用いただきありがとうございます。',
+            '7月は新しい問題形式の追加より、使いやすさと品質の改善を中心に進めました。',
+        ],
+        'sections' => [
+            [
+                'heading' => '使いやすさの改善',
+                'items' => [
+                    '単語テストの誤答選択肢を、同じ品詞の意味から選ぶようにしました（紛らわしく、より本番に近い練習になります）',
+                    'いただいた問題報告をもとに、単語の意味・例文を修正しました',
+                    '級に対して易しすぎる語を整理し、単語テストの難易度を整えました',
+                    'プレミアム購入画面で、利用規約への同意を確認してから申し込めるようになりました',
+                    'メールアドレス変更の確認メールが、より確実に届くようになりました',
+                ],
+            ],
+        ],
+        'closing' => [],
+    ],
+    [
+        'date' => '2026/06/30',
         'title' => '6月アップデートのお知らせ',
         'lead' => [
             'いつも' . SITE_NAME . 'をご利用いただきありがとうございます。',
-            'この1か月ほどで追加・改善した主な内容をお知らせします。',
+            '6月に追加・改善した主な内容をお知らせします。',
         ],
         'sections' => [
             [
@@ -19,37 +40,82 @@ $news_items = [
                     'ヘルプ（画面右上メニュー → ヘルプ）で FAQ を選ぶか、AI に質問できます',
                     '学習履歴から「同じ問題で再演習」できるようになりました（1日の無料セット数には含まれません）',
                     'リーディング・リスニング・ライティングの履歴で、正解した問題も解説をあとから確認できます',
-                    'リスニングの学習履歴で、出題内容の詳細を見られるようになりました',
                     'プレミアム購入ページから、購入履歴と領収書 PDF のダウンロードができます',
-                    'プロフィールにプレミアム契約の状態を表示するようになりました',
                     'プロフィールからアカウント退会（再登録可）ができます',
+                    'メールアドレスとパスワードを、アカウント設定から変更できるようになりました',
+                    '準2級スピーキングの練習を始めました（イラスト・模範解答つき、本試験に近いカード形式）',
+                    'ライティングの写真読み取り精度を上げました',
+                    '解約の予約と取り消しができ、メールでお知らせします',
                 ],
             ],
             [
                 'heading' => '問題・コンテンツの追加',
                 'items' => [
-                    '準1級・1級：Real-Life 形式、1級インタビュー（第4部）の練習問題を追加',
-                    '準2級：第1部（応答文）・第2部（会話の内容一致）の問題を大幅追加',
-                    '2級：リーディング長文（語句空所・内容一致）の問題を追加',
-                    '3級・準2級：長文内容一致の問題を追加',
-                    '5級：イラストリスニング（絵で選ぶ）の問題追加と表示の改善',
-                    '各級の単語・ライティング問題も随時追加しています',
+                    '2級リーディング：長文の語句空所補充 約50問、長文の内容一致 50問を追加',
+                    '準1級リーディング：長文の語句空所補充を追加',
+                    '1級・準1級・2級・準2級のリーディングに、日本語訳と語句の解説を追加',
+                    '4級リスニング第3部（文の内容一致）に解説を追加',
+                    '5級リスニング第3部（イラストで選ぶ）の表示を改善し、イラストを追加',
+                    '単語は級に合った難易度になるよう見直し、易しすぎる語を整理しました',
                 ],
             ],
             [
                 'heading' => '使いやすさの改善',
                 'items' => [
-                    '無料プラン：登録後5日間は各技能を制限なく利用可能。6日目以降は各技能1日1セット',
-                    '単語テストで「次へ」ボタンを解説の上に配置（スクロールなしで次の問題へ）',
+                    'ダッシュボードに、無料／プレミアムに応じた利用状況を表示',
+                    '試験日までのカウントダウンを表示',
                     '学習ストリークを端末の日付（日本では0時）基準で計算するよう改善',
-                    'ライティングで級を変更する際、確認ダイアログを表示',
+                    'ライティングで級を変更する際、確認ダイアログを表示。級・問題を変えたときはタイマーをリセット',
+                    'リスニングで問題を切り替えると、前の音声が止まるようになりました',
+                    '長文空所補充で、間違えた選択肢に打ち消し線を表示',
+                    'スマートフォンのダッシュボードでも学習バディを表示',
                 ],
             ],
         ],
-        'closing' => [
-            '今後も問題数の追加と機能改善を続けます。',
-            'ご意見・不具合報告は各問題画面の「問題を報告する」、その他はヘルプまたはお問い合わせフォームからお知らせください。',
+        'closing' => [],
+    ],
+    [
+        'date' => '2026/05/31',
+        'title' => '5月アップデートのお知らせ',
+        'lead' => [
+            'いつも' . SITE_NAME . 'をご利用いただきありがとうございます。',
+            '5月に追加・改善した主な内容をお知らせします。',
         ],
+        'sections' => [
+            [
+                'heading' => '新機能・便利になったこと',
+                'items' => [
+                    '準1級・1級で、本番と同じ Real-Life 形式のリスニング練習ができるようになりました',
+                    '1級リスニング第4部（インタビュー）の練習ができるようになりました',
+                    'リスニングの学習履歴で、出題内容の詳細を見られるようになりました',
+                    'プロフィールにプレミアム契約の状態を表示するようになりました',
+                ],
+            ],
+            [
+                'heading' => '問題・コンテンツの追加',
+                'items' => [
+                    '1級リスニング：第1部（会話）50問、第2部（文の内容一致）50問、第3部（Real-Life）50問、第4部（インタビュー）50問',
+                    '準1級リスニング：第1部（会話）50問、第2部（文の内容一致）50問、第3部（Real-Life）50問',
+                    '2級リスニング：第1部（会話の内容一致）50問、第2部（文の内容一致）を追加',
+                    '準2級リスニング：第1部（応答文）・第2部（会話の内容一致）・第3部（文の内容一致）を追加（4月末〜5月）',
+                    '準2級プラスリスニング：第1部（応答文）50問、第2部（文の内容一致）50問',
+                    '3級リスニング：第2部（会話の内容一致）50問、第3部（文の内容一致）50問',
+                    '3級・準2級リーディング：長文の内容一致を各50問追加',
+                    '1級・準1級リーディング：長文の語句空所補充を追加',
+                    '単語：5級 約240語、4級 約480語、3級 約470語、2級 約220語、準2級プラス 約500語、準1級 約280語を追加',
+                    'ライティング：1級・準1級・2級の英作文と要約を、各20題追加',
+                ],
+            ],
+            [
+                'heading' => '使いやすさの改善',
+                'items' => [
+                    '無料プラン：登録後5日間は各技能を制限なく利用可能。6日目以降は各技能1日1セットです',
+                    '単語テストで「次へ」ボタンを解説の上に配置（スクロールなしで次の問題へ）',
+                    'リスニングの放送回数を本番に合わせました（3級以下は2回、準2級以上は1回）',
+                ],
+            ],
+        ],
+        'closing' => [],
     ],
     [
         'date' => '2026/04/05',
@@ -75,35 +141,29 @@ $news_items = [
     <h2 id="news-heading" class="text-center text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">お知らせ</h2>
     <p class="news-section__lead mt-3 text-center"><?php echo br_after_period('アプリのアップデートや問題追加など、最近のお知らせです。'); ?></p>
 
-    <div class="news-frame">
-      <div class="news-frame__chrome" aria-hidden="true">
-        <span></span><span></span><span></span>
-        <p class="news-frame__address">お知らせ</p>
-      </div>
-      <div class="news-frame__body" tabindex="0" role="region" aria-label="お知らせ一覧（スクロールできます）">
-        <?php foreach ($news_items as $news): ?>
-        <article class="news-item">
-          <header class="news-item__header">
-            <h3 class="news-item__title"><?php echo htmlspecialchars($news['title']); ?></h3>
-            <time class="news-item__date" datetime="<?php echo htmlspecialchars(str_replace('/', '-', $news['date'])); ?>"><?php echo htmlspecialchars($news['date']); ?></time>
-          </header>
-          <?php foreach ($news['lead'] as $p): ?>
-          <p><?php echo htmlspecialchars($p); ?></p>
-          <?php endforeach; ?>
-          <?php foreach ($news['sections'] as $sec): ?>
-          <h4><?php echo htmlspecialchars($sec['heading']); ?></h4>
-          <ul>
-            <?php foreach ($sec['items'] as $item): ?>
-            <li><?php echo htmlspecialchars($item); ?></li>
-            <?php endforeach; ?>
-          </ul>
-          <?php endforeach; ?>
-          <?php foreach ($news['closing'] as $p): ?>
-          <p><?php echo htmlspecialchars($p); ?></p>
-          <?php endforeach; ?>
-        </article>
+    <div class="news-list" tabindex="0" role="region" aria-label="お知らせ一覧（スクロールできます）">
+      <?php foreach ($news_items as $news): ?>
+      <article class="news-item">
+        <header class="news-item__header">
+          <h3 class="news-item__title"><?php echo htmlspecialchars($news['title']); ?></h3>
+          <time class="news-item__date" datetime="<?php echo htmlspecialchars(str_replace('/', '-', $news['date'])); ?>"><?php echo htmlspecialchars($news['date']); ?></time>
+        </header>
+        <?php foreach ($news['lead'] as $p): ?>
+        <p><?php echo htmlspecialchars($p); ?></p>
         <?php endforeach; ?>
-      </div>
+        <?php foreach ($news['sections'] as $sec): ?>
+        <h4><?php echo htmlspecialchars($sec['heading']); ?></h4>
+        <ul>
+          <?php foreach ($sec['items'] as $item): ?>
+          <li><?php echo htmlspecialchars($item); ?></li>
+          <?php endforeach; ?>
+        </ul>
+        <?php endforeach; ?>
+        <?php foreach ($news['closing'] as $p): ?>
+        <p><?php echo htmlspecialchars($p); ?></p>
+        <?php endforeach; ?>
+      </article>
+      <?php endforeach; ?>
     </div>
   </div>
 </section>
