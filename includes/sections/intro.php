@@ -4,7 +4,7 @@
     <div class="flex flex-col gap-8 lg:flex-row lg:items-center lg:gap-12">
       <div class="flex-1 shrink-0 lg:order-2">
         <div class="overflow-hidden rounded-2xl shadow-lg ring-1 ring-slate-900/5">
-          <img src="/assets/images/intro-app-screen.jpg" alt="スマホで英検対策アプリAiKenを使っている様子" width="1024" height="683" class="h-64 w-full object-cover sm:h-80 lg:h-72" loading="lazy">
+          <img src="/assets/images/intro-app-screen.jpg" alt="スマホで英検対策アプリAiKenを使っている様子" width="1024" height="683" class="h-auto w-full" loading="lazy">
         </div>
       </div>
       <div class="flex-1">
