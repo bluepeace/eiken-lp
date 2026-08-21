@@ -37,7 +37,47 @@ function aiken_http_get(string $url, int $timeout = 10): ?string
     $body = @file_get_contents($url, false, $ctx);
     return ($body !== false && $body !== '') ? $body : null;
 }
+function aiken_blog_featured_image_from_embed(array $post): ?string
+{
+    $media = $post['_embedded']['wp:featuredmedia'][0] ?? null;
+    if (!is_array($media)) {
+        return null;
+    }
+    $sizes = is_array($media['media_details']['sizes'] ?? null) ? $media['media_details']['sizes'] : [];
+    foreach (['medium_large', 'large', 'medium'] as $size) {
+        $url = $sizes[$size]['source_url'] ?? '';
+        if (is_string($url) && filter_var($url, FILTER_VALIDATE_URL)) {
+            return $url;
+        }
+    }
+    $url = $media['source_url'] ?? '';
+    return (is_string($url) && filter_var($url, FILTER_VALIDATE_URL)) ? $url : null;
+}
 
+/**
+ * @return array{datetime: string, label: string}|null
+ */
+function aiken_blog_modified_display(string $modified): ?array
+{
+    $modified = trim($modified);
+    if ($modified === '') {
+        return null;
+    }
+    if (preg_match('/^(\d{4})-(\d{2})-(\d{2})/', $modified, $m)) {
+        return [
+            'datetime' => $m[1] . '-' . $m[2] . '-' . $m[3],
+            'label' => ((int) $m[1]) . '年' . ((int) $m[2]) . '月' . ((int) $m[3]) . '日 更新',
+        ];
+    }
+    $ts = @strtotime($modified);
+    if ($ts === false) {
+        return null;
+    }
+    return [
+        'datetime' => date('Y-m-d', $ts),
+        'label' => date('Y年n月j日', $ts) . ' 更新',
+    ];
+}
 /**
  * @return list<array{title: string, url: string, image: ?string, pubDate: string, modDate: string}>
  */
@@ -155,6 +195,9 @@ function aiken_html_meta(string $html, string $key): ?string
 
 function aiken_blog_rest_posts_url(): string
 {
+    if (defined('BLOG_API_URL') && is_string(BLOG_API_URL) && BLOG_API_URL !== '') {
+        return rtrim(BLOG_API_URL, '/');
+    }
     return rtrim(SITE_URL, '/') . '/blog/wp-json/wp/v2/posts';
 }
 
@@ -183,10 +226,7 @@ function aiken_wp_rest_item_from_post(array $post, string $fallbackUrl = ''): ?a
     if ($title === '' || $link === '') {
         return null;
     }
-    $image = $post['_embedded']['wp:featuredmedia'][0]['source_url'] ?? null;
-    if (!is_string($image) || !filter_var($image, FILTER_VALIDATE_URL)) {
-        $image = null;
-    }
+    $image = aiken_blog_featured_image_from_embed($post);
     $pubDate = trim((string) ($post['date'] ?? ''));
     $modDate = trim((string) ($post['modified'] ?? ''));
     if ($modDate === '') {

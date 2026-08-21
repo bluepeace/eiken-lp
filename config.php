@@ -25,7 +25,9 @@ define('OPEN_CAMPAIGN_END', '2026-12-31');
 define('FREE_TRIAL_DAYS', 5);
 
 require_once __DIR__ . '/includes/icons.php';
-/** 英検コラム（WordPress）RSS */
+/** 英検コラム（WordPress）REST API（更新日順） */
+define('BLOG_API_URL', 'https://aiken.life/blog/wp-json/wp/v2/posts');
+/** 英検コラム RSS（REST 失敗時のフォールバック） */
 define('BLOG_FEED_URL', 'https://aiken.life/blog/feed/');
 /** TOPコラムカルーセルの表示件数（先頭はピックアップ、残りは最新記事） */
 define('BLOG_CAROUSEL_LIMIT', 20);

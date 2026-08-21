@@ -51,12 +51,9 @@ $blog_index_url = rtrim(SITE_URL, '/') . '/blog/';
           <div class="flex flex-1 flex-col p-4">
             <h3 class="line-clamp-2 text-sm font-semibold leading-snug text-slate-900 group-hover:text-[#46adb5]"><?php echo htmlspecialchars($post['title']); ?></h3>
             <?php
-            $ts = !empty($post['modDate']) ? @strtotime($post['modDate']) : false;
-            if (!$ts && !empty($post['pubDate'])) {
-                $ts = @strtotime($post['pubDate']);
-            }
-            if ($ts): ?>
-            <time class="mt-auto pt-3 text-xs text-slate-500" datetime="<?php echo date('c', $ts); ?>"><?php echo date('Y年n月j日', $ts); ?></time>
+            $modified_display = aiken_blog_modified_display((string) ($post['modDate'] ?? $post['pubDate'] ?? ''));
+            if ($modified_display): ?>
+            <time class="mt-auto pt-3 text-xs text-slate-500" datetime="<?php echo htmlspecialchars($modified_display['datetime']); ?>"><?php echo htmlspecialchars($modified_display['label']); ?></time>
             <?php endif; ?>
           </div>
         </a>
