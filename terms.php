@@ -96,7 +96,7 @@ include __DIR__ . '/includes/header.php';
       </section>
       <section aria-labelledby="terms-s12">
         <h2 id="terms-s12" class="text-lg font-bold text-slate-900">第12条（お問い合わせ）</h2>
-        <p class="mt-3">本規約に関するお問い合わせは、<a class="font-medium text-[#50c2cb] underline-offset-2 hover:underline" href="<?php echo htmlspecialchars(APP_URL); ?>/contact">お問い合わせフォーム</a>または、特定商取引法に基づく表記に記載の連絡先までご連絡ください。</p>
+        <p class="mt-3">本規約に関するお問い合わせは、<a class="font-medium text-[#50c2cb] underline-offset-2 hover:underline" href="/contact">お問い合わせフォーム</a>または、特定商取引法に基づく表記に記載の連絡先までご連絡ください。</p>
       </section>
     </div>
 

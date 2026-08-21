@@ -35,7 +35,7 @@ include __DIR__ . '/includes/header.php';
       </div>
       <div class="rounded-xl border border-slate-200 bg-white px-5 py-4 shadow-sm">
         <dt class="font-semibold text-slate-900">解約・退会</dt>
-        <dd class="mt-2 text-sm leading-relaxed text-slate-600"><?php echo br_after_period('いつでも解約可能です。解約後も、お支払い済みの期間まではご利用いただけます。'); ?></dd>
+        <dd class="mt-2 text-sm leading-relaxed text-slate-600"><?php echo br_after_period('いつでも解約可能です。解約後も、お支払い済みの期間まではご利用いただけます。<a class="font-medium text-[#50c2cb] underline-offset-2 hover:underline" href="/cancel">手順を見る</a>'); ?></dd>
       </div>
       <div class="rounded-xl border border-slate-200 bg-white px-5 py-4 shadow-sm">
         <dt class="font-semibold text-slate-900">特定商取引法に基づく表記</dt>

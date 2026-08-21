@@ -21,10 +21,16 @@ $entries = [];
 
 $entries[] = ['loc' => $base . '/', 'changefreq' => 'weekly', 'priority' => '1.0'];
 $entries[] = ['loc' => $base . '/about', 'changefreq' => 'monthly', 'priority' => '0.8'];
+$entries[] = ['loc' => $base . '/parents', 'changefreq' => 'monthly', 'priority' => '0.8'];
+$entries[] = ['loc' => $base . '/guide', 'changefreq' => 'monthly', 'priority' => '0.7'];
 $entries[] = ['loc' => $base . '/faq', 'changefreq' => 'monthly', 'priority' => '0.8'];
 $entries[] = ['loc' => $base . '/plan', 'changefreq' => 'monthly', 'priority' => '0.8'];
+$entries[] = ['loc' => $base . '/cancel', 'changefreq' => 'yearly', 'priority' => '0.5'];
+$entries[] = ['loc' => $base . '/company', 'changefreq' => 'yearly', 'priority' => '0.5'];
 $entries[] = ['loc' => $base . '/terms', 'changefreq' => 'monthly', 'priority' => '0.5'];
 $entries[] = ['loc' => $base . '/privacy', 'changefreq' => 'monthly', 'priority' => '0.5'];
+$entries[] = ['loc' => $base . '/external-transmission', 'changefreq' => 'yearly', 'priority' => '0.4'];
+$entries[] = ['loc' => $base . '/contact', 'changefreq' => 'yearly', 'priority' => '0.4'];
 $entries[] = ['loc' => $base . '/blog/', 'changefreq' => 'weekly', 'priority' => '0.7'];
 // /tokushoho は noindex のためサイトマップに含めない
 

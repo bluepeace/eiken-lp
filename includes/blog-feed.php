@@ -1,6 +1,6 @@
 <?php
 /**
- * 英検コラム記事の取得（WordPress REST / RSS、キャッシュ付き）
+ * ???????????WordPress REST / RSS?????????
  */
 if (!defined('SITE_NAME')) {
     require_once __DIR__ . '/../config.php';
@@ -21,7 +21,7 @@ function aiken_http_get(string $url, int $timeout = 10): ?string
         ]);
         $body = curl_exec($ch);
         $code = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        curl_close($ch);
+        unset($ch);
         if ($code >= 200 && $code < 300 && is_string($body) && $body !== '') {
             return $body;
         }
@@ -66,7 +66,7 @@ function aiken_blog_modified_display(string $modified): ?array
     if (preg_match('/^(\d{4})-(\d{2})-(\d{2})/', $modified, $m)) {
         return [
             'datetime' => $m[1] . '-' . $m[2] . '-' . $m[3],
-            'label' => ((int) $m[1]) . '年' . ((int) $m[2]) . '月' . ((int) $m[3]) . '日 更新',
+            'label' => ((int) $m[1]) . '?' . ((int) $m[2]) . '?' . ((int) $m[3]) . '? ??',
         ];
     }
     $ts = @strtotime($modified);
@@ -75,7 +75,7 @@ function aiken_blog_modified_display(string $modified): ?array
     }
     return [
         'datetime' => date('Y-m-d', $ts),
-        'label' => date('Y年n月j日', $ts) . ' 更新',
+        'label' => date('Y?n?j?', $ts) . ' ??',
     ];
 }
 /**
@@ -307,7 +307,7 @@ function aiken_blog_item_from_url(string $url): ?array
 }
 
 /**
- * 更新日が新しい順の記事一覧（WordPress REST。失敗時は RSS）。
+ * ??????????????WordPress REST????? RSS??
  *
  * @return list<array{title: string, url: string, image: ?string, pubDate: string, modDate: string}>
  */
@@ -346,7 +346,7 @@ function get_blog_items_by_modified(int $limit = 20): array
 }
 
 /**
- * TOPカルーセル用。ピックアップURLを先頭にし、残りを更新日の新しい順で埋める。
+ * TOP?????????????URL??????????????????????
  *
  * @param list<string> $pickupUrls
  * @return list<array{title: string, url: string, image: ?string, pubDate: string, modDate: string}>
@@ -443,3 +443,153 @@ function get_blog_carousel_items(array $pickupUrls = [], int $limit = 20): array
 
     return $items;
 }
+
+/**
+ * WordPress ?? slug ? ID?????????
+ */
+function aiken_blog_tag_id_by_slug(string $slug): ?int
+{
+    $slug = trim($slug);
+    if ($slug === '') {
+        return null;
+    }
+
+    $cacheDir = __DIR__ . '/../cache';
+    $cacheFile = $cacheDir . '/blog-tag-ids.json';
+    $ttl = 86400;
+    $map = [];
+
+    if (is_readable($cacheFile)) {
+        $cached = json_decode((string) file_get_contents($cacheFile), true);
+        if (is_array($cached) && (int) ($cached['expires'] ?? 0) > time() && isset($cached['map']) && is_array($cached['map'])) {
+            $map = $cached['map'];
+            if (isset($map[$slug]) && is_numeric($map[$slug])) {
+                return (int) $map[$slug];
+            }
+        }
+    }
+
+    $base = preg_replace('#/posts/?$#', '', aiken_blog_rest_posts_url());
+    $url = rtrim((string) $base, '/') . '/tags?' . http_build_query([
+        'slug' => $slug,
+        'per_page' => 1,
+        '_fields' => 'id,slug,name',
+    ]);
+    $json = aiken_http_get($url);
+    $id = null;
+    if ($json !== null) {
+        $rows = json_decode($json, true);
+        if (is_array($rows) && isset($rows[0]['id'])) {
+            $id = (int) $rows[0]['id'];
+        }
+    }
+
+    // slug ????? name ??????????
+    if ($id === null) {
+        $searchUrl = rtrim((string) $base, '/') . '/tags?' . http_build_query([
+            'search' => $slug,
+            'per_page' => 20,
+            '_fields' => 'id,slug,name',
+        ]);
+        $searchJson = aiken_http_get($searchUrl);
+        if ($searchJson !== null) {
+            $rows = json_decode($searchJson, true);
+            if (is_array($rows)) {
+                foreach ($rows as $row) {
+                    if (!is_array($row)) {
+                        continue;
+                    }
+                    $name = (string) ($row['name'] ?? '');
+                    if ($name === $slug || (string) ($row['slug'] ?? '') === $slug) {
+                        $id = (int) ($row['id'] ?? 0);
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    if ($id !== null && $id > 0) {
+        $map[$slug] = $id;
+        if (!is_dir($cacheDir)) {
+            @mkdir($cacheDir, 0755, true);
+        }
+        @file_put_contents(
+            $cacheFile,
+            json_encode(
+                ['expires' => time() + $ttl, 'map' => $map],
+                JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES
+            ),
+            LOCK_EX
+        );
+        return $id;
+    }
+
+    return null;
+}
+
+/**
+ * ??????????????????????????0???????
+ *
+ * @return list<array{title: string, url: string, image: ?string, pubDate: string, modDate: string}>
+ */
+function get_blog_items_by_tag(string $tagSlug, int $limit = 20): array
+{
+    $limit = max(1, min(50, $limit));
+    $tagId = aiken_blog_tag_id_by_slug($tagSlug);
+    if ($tagId === null) {
+        return [];
+    }
+
+    $cacheDir = __DIR__ . '/../cache';
+    $cacheFile = $cacheDir . '/blog-tag-' . md5($tagSlug) . '.json';
+    $ttl = 3600;
+
+    if (is_readable($cacheFile)) {
+        $cached = json_decode((string) file_get_contents($cacheFile), true);
+        if (is_array($cached) && (int) ($cached['expires'] ?? 0) > time() && isset($cached['items']) && is_array($cached['items'])) {
+            return array_slice($cached['items'], 0, $limit);
+        }
+    }
+
+    $api = aiken_blog_rest_posts_url() . '?' . http_build_query([
+        'tags' => $tagId,
+        'per_page' => $limit,
+        'orderby' => 'modified',
+        'order' => 'desc',
+        '_embed' => 1,
+    ]);
+    $json = aiken_http_get($api);
+    $items = [];
+    if ($json !== null) {
+        $posts = json_decode($json, true);
+        if (is_array($posts)) {
+            foreach ($posts as $post) {
+                if (!is_array($post)) {
+                    continue;
+                }
+                $item = aiken_wp_rest_item_from_post($post);
+                if ($item !== null) {
+                    $items[] = $item;
+                }
+            }
+        }
+    }
+
+    if ($items !== []) {
+        if (!is_dir($cacheDir)) {
+            @mkdir($cacheDir, 0755, true);
+        }
+        @file_put_contents(
+            $cacheFile,
+            json_encode(
+                ['expires' => time() + $ttl, 'items' => $items],
+                JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES
+            ),
+            LOCK_EX
+        );
+    }
+
+    return $items;
+}
+

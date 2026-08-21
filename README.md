@@ -22,13 +22,14 @@
 | `/terms` | 利用規約 |
 | `/privacy` | プライバシーポリシー |
 | `/tokushoho` | 特定商取引法に基づく表記（noindex） |
-| `/1kyu/` | 英検1級＋AI対策 |
-| `/jun1kyu/` | 英検準1級＋AI対策 |
-| `/2kyu/` | 英検2級＋AI対策 |
-| `/jun2kyu/` | 英検準2級＋AI対策 |
-| `/3kyu/` | 英検3級＋AI対策 |
-| `/4kyu/` | 英検4級＋AI対策 |
-| `/5kyu/` | 英検5級＋AI対策 |
+| `/1kyu/` | 英検1級対策アプリ |
+| `/jun1kyu/` | 英検準1級対策アプリ |
+| `/2kyu/` | 英検2級対策アプリ |
+| `/jun2kyu-plus/` | 英検準2級プラス対策アプリ |
+| `/jun2kyu/` | 英検準2級対策アプリ |
+| `/3kyu/` | 英検3級対策アプリ |
+| `/4kyu/` | 英検4級対策アプリ |
+| `/5kyu/` | 英検5級対策アプリ |
 
 `/about`・`/faq`・`/terms`・`/privacy`・`/tokushoho` のメタは `config.php` の `$PAGE_META` で管理しています。フッター著作権は **Bluepiece Lab.** → `BLUEPIECE_LAB_URL`（`https://bluepiece.me/link`）。  
 各級ページのタイトル・description は `config.php` の `$GRADES` で管理しています。

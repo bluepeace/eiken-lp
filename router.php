@@ -19,7 +19,7 @@ if (preg_match('#^/sitemap\.xml$#', $uri)) {
     return true;
 }
 
-if (preg_match('#^/(1kyu|jun1kyu|2kyu|jun2kyu|3kyu|4kyu|5kyu)/?$#', $uri, $m)) {
+if (preg_match('#^/(1kyu|jun1kyu|2kyu|jun2kyu-plus|jun2kyu|3kyu|4kyu|5kyu)/?$#', $uri, $m)) {
     $_GET['level'] = $m[1];
     require __DIR__ . '/grade.php';
     return true;
@@ -52,6 +52,36 @@ if (preg_match('#^/terms/?$#', $uri)) {
 
 if (preg_match('#^/privacy/?$#', $uri)) {
     require __DIR__ . '/privacy.php';
+    return true;
+}
+
+if (preg_match('#^/contact/?$#', $uri)) {
+    require __DIR__ . '/contact.php';
+    return true;
+}
+
+if (preg_match('#^/external-transmission/?$#', $uri)) {
+    require __DIR__ . '/external-transmission.php';
+    return true;
+}
+
+if (preg_match('#^/company/?$#', $uri)) {
+    require __DIR__ . '/company.php';
+    return true;
+}
+
+if (preg_match('#^/cancel/?$#', $uri)) {
+    require __DIR__ . '/cancel.php';
+    return true;
+}
+
+if (preg_match('#^/parents/?$#', $uri)) {
+    require __DIR__ . '/parents.php';
+    return true;
+}
+
+if (preg_match('#^/guide/?$#', $uri)) {
+    require __DIR__ . '/guide.php';
     return true;
 }
 

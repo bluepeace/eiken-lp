@@ -18,8 +18,14 @@ DirectoryIndex index.php
   RewriteRule ^tokushoho/?$ tokushoho.php [L,QSA]
   RewriteRule ^terms/?$ terms.php [L,QSA]
   RewriteRule ^privacy/?$ privacy.php [L,QSA]
-  # 級別入り口ページ: /1kyu/, /jun1kyu/, /2kyu/, /jun2kyu/, /3kyu/, /4kyu/, /5kyu/
-  RewriteRule ^(1kyu|jun1kyu|2kyu|jun2kyu|3kyu|4kyu|5kyu)/?$ grade.php?level=$1 [L,QSA]
+  RewriteRule ^contact/?$ contact.php [L,QSA]
+  RewriteRule ^external-transmission/?$ external-transmission.php [L,QSA]
+  RewriteRule ^company/?$ company.php [L,QSA]
+  RewriteRule ^cancel/?$ cancel.php [L,QSA]
+  RewriteRule ^parents/?$ parents.php [L,QSA]
+  RewriteRule ^guide/?$ guide.php [L,QSA]
+  # 級別入り口ページ
+  RewriteRule ^(1kyu|jun1kyu|2kyu|jun2kyu-plus|jun2kyu|3kyu|4kyu|5kyu)/?$ grade.php?level=$1 [L,QSA]
   # トップは index.php
   RewriteRule ^$ index.php [L]
 </IfModule>

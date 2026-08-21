@@ -14,9 +14,13 @@ $canonical = rtrim(SITE_URL, '/') . '/tokushoho';
 $tokushoho_rows = [
     ['事業者名', 'AiKen'],
     ['事業者氏名', '森山卓'],
-    ['所在地', '〒182-0006 東京都調布市西つつじヶ丘4-23-59-703'],
-    ['電話番号', '090-1743-3178'],
-    ['メールアドレス', 'aiken.mame@gmail.com'],
+    ['所在地', '請求があった場合は、遅滞なく開示いたします。（ご請求はお問い合わせフォームより）'],
+    ['電話番号', '請求があった場合は、遅滞なく開示いたします。（ご請求はお問い合わせフォームより）'],
+    [
+        'メールアドレス',
+        'お問い合わせフォームよりご連絡ください。<br><a class="font-medium text-[#50c2cb] underline-offset-2 hover:underline" href="/contact?subject=tokushoho">お問い合わせフォームを開く</a>',
+        true, // HTML 可
+    ],
     ['営業時間', '平日 10:00〜18:00'],
     ['販売価格', open_campaign_active()
         ? 'プレミアムプラン：定価' . monthly_price_regular_label() . '。OPEN記念価格として' . monthly_price_label() . '（' . open_campaign_end_label() . 'まで）。表示価格は全て税込です。'
@@ -50,16 +54,18 @@ include __DIR__ . '/includes/header.php';
     <div class="mt-8 overflow-x-auto rounded-xl border border-slate-200 shadow-sm">
       <table class="w-full min-w-[280px] border-collapse text-left text-sm text-slate-800">
         <tbody>
-          <?php foreach ($tokushoho_rows as $row): ?>
+          <?php foreach ($tokushoho_rows as $row):
+              $isHtml = !empty($row[2]);
+              ?>
           <tr class="border-b border-slate-200 last:border-b-0">
             <th scope="row" class="w-[min(32%,11rem)] align-top bg-slate-50 px-4 py-3 font-semibold text-slate-900 sm:px-5 sm:py-4"><?php echo htmlspecialchars($row[0]); ?></th>
-            <td class="px-4 py-3 leading-relaxed text-slate-700 sm:px-5 sm:py-4"><?php echo nl2br(htmlspecialchars($row[1])); ?></td>
+            <td class="px-4 py-3 leading-relaxed text-slate-700 sm:px-5 sm:py-4"><?php echo $isHtml ? $row[1] : nl2br(htmlspecialchars($row[1])); ?></td>
           </tr>
           <?php endforeach; ?>
         </tbody>
       </table>
     </div>
-    <p class="mt-8 text-xs text-slate-500">最終更新：2026年2月16日</p>
+    <p class="mt-8 text-xs text-slate-500">最終更新：2026年8月21日</p>
     <p class="mt-6 text-center text-sm">
       <a class="font-medium text-[#50c2cb] underline-offset-2 hover:underline" href="/">トップに戻る</a>
     </p>

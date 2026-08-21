@@ -3,6 +3,9 @@ if (!defined('SITE_NAME')) {
     require_once __DIR__ . '/../config.php';
 }
 $current_page = $page ?? 'top';
+$current_grade = $grade ?? '';
+$show_main_nav = in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy', 'contact', 'external', 'company', 'cancel', 'parents', 'guide', 'grade'], true);
+$lp_index = in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy', 'contact', 'external', 'company', 'cancel', 'parents', 'guide', 'grade'], true);
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -14,7 +17,7 @@ $current_page = $page ?? 'top';
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TW48595R"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<div class="min-h-screen bg-white<?php echo in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy'], true) ? ' lp-index' : ''; ?>">
+<div class="min-h-screen bg-white<?php echo $lp_index ? ' lp-index' : ''; ?>">
 <?php
 // LP 内リンクはルート相対にし、localhost でも現在のホストで開く（SITE_URL 固定だと本番未反映ページが開けない）
 $nav_links = [
@@ -23,18 +26,51 @@ $nav_links = [
     ['label' => 'よくあるご質問', 'href' => '/faq'],
     ['label' => '英検コラム', 'href' => '/blog'],
 ];
+$grade_nav_items = grade_nav_items();
 ?>
 <header class="site-header sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-md">
   <div class="lp-container site-header__inner px-4">
     <a class="flex shrink-0 items-center" href="/">
       <img alt="<?php echo htmlspecialchars(SITE_NAME); ?>" width="160" height="48" class="site-header__logo" src="<?php echo asset('assets/images/logo-aiken.png'); ?>">
     </a>
-    <?php if (in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy', 'grade'], true)): ?>
-    <nav class="min-w-0 flex-1 overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" aria-label="サイト内リンク">
-      <div class="flex justify-start gap-1 sm:justify-center md:gap-2">
-        <?php foreach ($nav_links as $nl):
-            $is_current = ($current_page === 'about' && $nl['href'] === '/about')
-                || ($current_page === 'plan' && $nl['href'] === '/plan')
+    <?php if ($show_main_nav): ?>
+    <nav class="site-header__nav min-w-0 flex-1" aria-label="サイト内リンク">
+      <div class="site-header__nav-inner flex flex-wrap justify-start gap-1 sm:justify-center md:gap-2">
+        <?php
+        // AiKenとは → 級別対策 → 料金 → FAQ → コラム
+        $about = $nav_links[0];
+        $rest = array_slice($nav_links, 1);
+        $is_about = ($current_page === 'about');
+        ?>
+        <a class="site-header__nav-link<?php echo $is_about ? ' is-current' : ''; ?>" href="<?php echo htmlspecialchars($about['href']); ?>"<?php echo $is_about ? ' aria-current="page"' : ''; ?>><?php echo htmlspecialchars($about['label']); ?></a>
+
+        <div class="site-header__dropdown<?php echo $current_page === 'grade' ? ' is-current' : ''; ?>">
+          <button
+            type="button"
+            class="site-header__nav-link site-header__dropdown-toggle<?php echo $current_page === 'grade' ? ' is-current' : ''; ?>"
+            aria-expanded="false"
+            aria-haspopup="true"
+            aria-controls="grade-nav-menu"
+            id="grade-nav-toggle"
+          >級別対策<span class="site-header__dropdown-caret" aria-hidden="true">▾</span></button>
+          <ul id="grade-nav-menu" class="site-header__dropdown-menu" role="menu" aria-labelledby="grade-nav-toggle" hidden>
+            <?php foreach ($grade_nav_items as $gi):
+                $is_grade_current = ($current_page === 'grade' && $current_grade === $gi['slug']);
+                ?>
+            <li role="none">
+              <a
+                role="menuitem"
+                class="site-header__dropdown-link<?php echo $is_grade_current ? ' is-current' : ''; ?>"
+                href="<?php echo htmlspecialchars($gi['href']); ?>"
+                <?php echo $is_grade_current ? ' aria-current="page"' : ''; ?>
+              ><?php echo htmlspecialchars($gi['name']); ?></a>
+            </li>
+            <?php endforeach; ?>
+          </ul>
+        </div>
+
+        <?php foreach ($rest as $nl):
+            $is_current = ($current_page === 'plan' && $nl['href'] === '/plan')
                 || ($current_page === 'faq' && $nl['href'] === '/faq');
             $link_class = 'site-header__nav-link' . ($is_current ? ' is-current' : '');
             ?>
@@ -51,4 +87,68 @@ $nav_links = [
     </nav>
   </div>
 </header>
+<?php if ($show_main_nav): ?>
+<script>
+(function () {
+  var root = document.querySelector('.site-header__dropdown');
+  var btn = document.getElementById('grade-nav-toggle');
+  var menu = document.getElementById('grade-nav-menu');
+  if (!root || !btn || !menu) return;
+
+  var closeTimer = null;
+  var canHover = false;
+  try {
+    canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  } catch (e) {}
+
+  function setOpen(open) {
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    menu.hidden = !open;
+    root.classList.toggle('is-open', open);
+  }
+
+  function openNow() {
+    if (closeTimer) {
+      clearTimeout(closeTimer);
+      closeTimer = null;
+    }
+    setOpen(true);
+  }
+
+  function closeSoon() {
+    if (closeTimer) clearTimeout(closeTimer);
+    closeTimer = window.setTimeout(function () {
+      setOpen(false);
+      closeTimer = null;
+    }, 160);
+  }
+
+  // PC: マウスオーバーで開く
+  if (canHover) {
+    root.addEventListener('mouseenter', openNow);
+    root.addEventListener('mouseleave', closeSoon);
+    btn.addEventListener('focus', openNow);
+    menu.addEventListener('focusin', openNow);
+    root.addEventListener('focusout', function (e) {
+      if (!root.contains(e.relatedTarget)) closeSoon();
+    });
+  }
+
+  // タッチ／クリックでも開閉できるようにする
+  btn.addEventListener('click', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    setOpen(btn.getAttribute('aria-expanded') !== 'true');
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!root.contains(e.target)) setOpen(false);
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') setOpen(false);
+  });
+})();
+</script>
+<?php endif; ?>
 <main>

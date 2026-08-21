@@ -11,6 +11,9 @@ define('APP_URL', 'https://app.aiken.life');
 /** LP フッター著作権表示のリンク先 */
 define('BLUEPIECE_LAB_URL', 'https://bluepiece.me/link');
 define('BRAND_COLOR', '#50c2cb');
+/** お問い合わせフォームの受信先・自動返信の From */
+define('CONTACT_EMAIL', 'aiken.mame@gmail.com');
+define('CONTACT_FROM_NAME', 'AiKen');
 /** キーカラーより濃いテキスト用（キャッチコピーなど） */
 define('BRAND_TEXT_COLOR', '#00a2af');
 /** LP 本文・ナビの統一テキスト色 */
@@ -80,20 +83,88 @@ $PAGE_META = [
         'og_type' => 'website',
         'omit_jsonld' => true,
     ],
+    'contact' => [
+        'title' => 'お問い合わせ｜AiKen（アイケン）',
+        'description' => '英検対策アプリAiKen（アイケン）へのお問い合わせフォームです。サービス内容・料金・不具合などについてご連絡ください。',
+        'og_type' => 'website',
+        'omit_jsonld' => true,
+    ],
+    'external' => [
+        'title' => '外部送信に関する公表｜AiKen（アイケン）',
+        'description' => 'AiKen（アイケン）公式サイトにおける、Google Tag Manager等への利用者情報の外部送信についての公表です。',
+        'og_type' => 'website',
+        'omit_jsonld' => true,
+    ],
+    'company' => [
+        'title' => '会社・運営者情報｜AiKen（アイケン）',
+        'description' => '英検対策アプリAiKen（アイケン）の運営者情報。Bluepiece Lab.／事業者名・お問い合わせ先のご案内です。',
+        'og_type' => 'website',
+        'omit_jsonld' => true,
+    ],
+    'cancel' => [
+        'title' => '退会・解約の手順｜AiKen（アイケン）',
+        'description' => 'AiKen（アイケン）のプレミアムプラン解約・退会の手順。アプリ内の「サブスクリプションを管理」からの流れを案内します。',
+        'og_type' => 'website',
+        'omit_jsonld' => true,
+    ],
+    'parents' => [
+        'title' => '保護者の方へ｜英検対策アプリAiKen（アイケン）',
+        'description' => 'お子さまの英検対策アプリAiKen。料金・安全・学習の進め方を保護者向けにまとめました。5日間無料・カード登録不要。',
+        'og_type' => 'website',
+    ],
+    'guide' => [
+        'title' => '使い方ガイド｜英検対策アプリAiKen（アイケン）',
+        'description' => 'AiKen（アイケン）の始め方、単語・読解・リスニング・ライティングの使い方、プラン確認までの手順ガイドです。',
+        'og_type' => 'website',
+    ],
 ];
 
 /**
  * 級別ページ用データ（URLスラッグ => 表示名・説明）
- * 入り口ページ: /1kyu/, /jun1kyu/, /2kyu/, /jun2kyu/, /3kyu/, /4kyu/, /5kyu/
+ * 入り口: /1kyu/, /jun1kyu/, /2kyu/, /jun2kyu-plus/, /jun2kyu/, /3kyu/, /4kyu/, /5kyu/
+ * ナビ表示順はこの配列順。
  */
 $GRADES = [
-    '1kyu'    => [ 'name' => '英検1級',   'name_short' => '1級',   'description' => '英検1級対策アプリAiKen。単語・リーディング・リスニング・ライティング・スピーキングを本試験形式で対策。AI採点・10,000問超。' ],
-    'jun1kyu' => [ 'name' => '英検準1級', 'name_short' => '準1級', 'description' => '英検準1級対策アプリAiKen。単語・リーディング・リスニング・ライティング・スピーキングを本試験形式で対策。AI採点・10,000問超。' ],
-    '2kyu'    => [ 'name' => '英検2級',   'name_short' => '2級',   'description' => '英検2級対策アプリAiKen。単語・リーディング・リスニング・ライティング・スピーキングを本試験形式で対策。AI採点・10,000問超。' ],
-    'jun2kyu' => [ 'name' => '英検準2級', 'name_short' => '準2級', 'description' => '英検準2級対策アプリAiKen。単語・リーディング・リスニング・ライティング・スピーキングを本試験形式で対策。AI採点・10,000問超。' ],
-    '3kyu'    => [ 'name' => '英検3級',   'name_short' => '3級',   'description' => '英検3級対策アプリAiKen。単語・リーディング・リスニング・ライティング・スピーキングを本試験形式で対策。AI採点・10,000問超。' ],
-    '4kyu'    => [ 'name' => '英検4級',   'name_short' => '4級',   'description' => '英検4級対策アプリAiKen。単語・リーディングを本試験形式で効率よく対策。10,000問超。' ],
-    '5kyu'    => [ 'name' => '英検5級',   'name_short' => '5級',   'description' => '英検5級対策アプリAiKen。単語・リーディングを本試験形式で効率よく対策。10,000問超。' ],
+    '1kyu' => [
+        'name' => '英検1級',
+        'name_short' => '1級',
+        'description' => '英検1級対策アプリAiKen。大学上級程度の語彙・読解・リスニング・ライティングを本試験形式で対策。AI添削・10,000問超。月額プラン・5日間無料体験あり。',
+    ],
+    'jun1kyu' => [
+        'name' => '英検準1級',
+        'name_short' => '準1級',
+        'description' => '英検準1級対策アプリAiKen。大学中級程度の単語・リーディング・リスニング・ライティングを本試験形式で対策。AI添削・10,000問超。月額プラン・5日間無料体験あり。',
+    ],
+    '2kyu' => [
+        'name' => '英検2級',
+        'name_short' => '2級',
+        'description' => '英検2級対策アプリAiKen。高校卒業程度の単語・リーディング・リスニング・ライティングを本試験形式で対策。AI添削・10,000問超。月額プラン・5日間無料体験あり。',
+    ],
+    'jun2kyu-plus' => [
+        'name' => '英検準2級プラス',
+        'name_short' => '準2級プラス',
+        'description' => '英検準2級プラス対策アプリAiKen。高校上級程度の単語・リーディング・リスニング・ライティングを本試験形式で対策。AI添削・10,000問超。月額プラン・5日間無料体験あり。',
+    ],
+    'jun2kyu' => [
+        'name' => '英検準2級',
+        'name_short' => '準2級',
+        'description' => '英検準2級対策アプリAiKen。高校中級程度の単語・リーディング・リスニング・ライティング・スピーキングを本試験形式で対策。AI添削・10,000問超。月額プラン・5日間無料体験あり。',
+    ],
+    '3kyu' => [
+        'name' => '英検3級',
+        'name_short' => '3級',
+        'description' => '英検3級対策アプリAiKen。中学卒業程度の単語・リーディング・リスニング・ライティングを本試験形式で対策。AI添削・10,000問超。月額プラン・5日間無料体験あり。',
+    ],
+    '4kyu' => [
+        'name' => '英検4級',
+        'name_short' => '4級',
+        'description' => '英検4級対策アプリAiKen。中学中級程度の単語・リーディング・リスニングを本試験形式で対策。10,000問超。月額プラン・5日間無料体験あり。',
+    ],
+    '5kyu' => [
+        'name' => '英検5級',
+        'name_short' => '5級',
+        'description' => '英検5級対策アプリAiKen。中学初級程度の単語・リーディング・リスニングを本試験形式で対策。10,000問超。月額プラン・5日間無料体験あり。',
+    ],
 ];
 
 function get_page_meta(string $page = 'top'): array {
@@ -122,6 +193,21 @@ function get_grade_meta(string $level): array {
         'robots' => '',
         'omit_jsonld' => false,
     ];
+}
+
+/** ナビ・級一覧用。$GRADES の定義順を返す */
+function grade_nav_items(): array {
+    global $GRADES;
+    $items = [];
+    foreach ($GRADES as $slug => $g) {
+        $items[] = [
+            'slug' => $slug,
+            'name' => $g['name'],
+            'name_short' => $g['name_short'],
+            'href' => '/' . $slug . '/',
+        ];
+    }
+    return $items;
 }
 
 function get_grade(string $level): ?array {

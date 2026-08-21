@@ -19,7 +19,7 @@ function faq_monthly_price_answer(bool $with_plan_link = false): string
 function faq_categories(): array
 {
     $plan_url = rtrim(SITE_URL, '/') . '/plan';
-    $contact_url = APP_URL . '/contact';
+    $contact_url = rtrim(SITE_URL, '/') . '/contact';
 
     return [
         [
@@ -187,7 +187,7 @@ function faq_categories(): array
                 ],
                 [
                     'q' => 'お問い合わせはどこから行えますか？',
-                    'a' => 'アプリのお問い合わせページ（' . $contact_url . '）からご連絡いただけます。',
+                    'a' => '本サイトのお問い合わせページ（' . $contact_url . '）からご連絡いただけます。',
                 ],
             ],
         ],
