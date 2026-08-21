@@ -14,7 +14,7 @@ $current_page = $page ?? 'top';
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TW48595R"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<div class="min-h-screen bg-white<?php echo in_array($current_page, ['top', 'about', 'faq', 'tokushoho', 'terms', 'privacy'], true) ? ' lp-index' : ''; ?>">
+<div class="min-h-screen bg-white<?php echo in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy'], true) ? ' lp-index' : ''; ?>">
 <?php
 // LP 内リンクはルート相対にし、localhost でも現在のホストで開く（SITE_URL 固定だと本番未反映ページが開けない）
 $nav_links = [
@@ -29,11 +29,12 @@ $nav_links = [
     <a class="flex shrink-0 items-center" href="/">
       <img alt="<?php echo htmlspecialchars(SITE_NAME); ?>" width="160" height="48" class="site-header__logo" src="<?php echo asset('assets/images/logo-aiken.png'); ?>">
     </a>
-    <?php if (in_array($current_page, ['top', 'about', 'faq', 'tokushoho', 'terms', 'privacy', 'grade'], true)): ?>
+    <?php if (in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy', 'grade'], true)): ?>
     <nav class="min-w-0 flex-1 overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" aria-label="サイト内リンク">
       <div class="flex justify-start gap-1 sm:justify-center md:gap-2">
         <?php foreach ($nav_links as $nl):
             $is_current = ($current_page === 'about' && $nl['href'] === '/about')
+                || ($current_page === 'plan' && $nl['href'] === '/plan')
                 || ($current_page === 'faq' && $nl['href'] === '/faq');
             $link_class = 'site-header__nav-link' . ($is_current ? ' is-current' : '');
             ?>
