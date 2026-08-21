@@ -1,7 +1,7 @@
 <?php
 /**
  * 級別SEO LP の本文・技能データ
- * 画像は assets/images/grade/{slug}/{key}.png|jpg|webp があればそれを、なければプレースホルダー。
+ * 級別画像は assets/images/grade/{slug}/{key}.webp|jpg（webp 優先）。なければ共通画面／プレースホルダー。
  */
 if (!defined('SITE_NAME')) {
     require_once __DIR__ . '/../config.php';
@@ -10,11 +10,12 @@ require_once __DIR__ . '/faq-data.php';
 
 /**
  * 級別キャプチャ画像URL（差し替え用キー）
+ * 級別ファイルは .webp → .jpg の順。共通フォールバックは既存 png 等も許可。
  */
 function grade_screen_url(string $slug, string $key): string
 {
     $dir = __DIR__ . '/../assets/images/grade/' . $slug . '/';
-    foreach (['.png', '.jpg', '.jpeg', '.webp'] as $ext) {
+    foreach (['.webp', '.jpg'] as $ext) {
         if (is_file($dir . $key . $ext)) {
             return '/assets/images/grade/' . rawurlencode($slug) . '/' . $key . $ext;
         }
@@ -42,7 +43,7 @@ function grade_screen_url(string $slug, string $key): string
     $skill = $fallbackMap[$key] ?? null;
     if ($skill !== null) {
         $commonDir = __DIR__ . '/../assets/images/';
-        foreach (['.png', '.jpg', '.jpeg', '.webp'] as $ext) {
+        foreach (['.webp', '.jpg', '.jpeg', '.png'] as $ext) {
             $file = 'app-screen-' . $skill . $ext;
             if (is_file($commonDir . $file)) {
                 return '/assets/images/' . $file;
