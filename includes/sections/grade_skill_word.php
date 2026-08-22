@@ -46,7 +46,7 @@ $images = $skill['images'] ?? [];
           ?>
       <figure class="grade-capture-card">
         <div class="grade-capture-card__frame">
-          <img src="<?php echo htmlspecialchars($src); ?>" alt="" class="grade-capture-card__img" loading="lazy" decoding="async" width="360" height="640">
+          <img src="<?php echo htmlspecialchars($src); ?>" alt="" class="grade-capture-card__img" loading="lazy" decoding="async" width="640" height="480">
         </div>
         <?php if ($caption !== ''): ?>
         <figcaption class="grade-capture-card__caption"><?php echo htmlspecialchars($caption); ?></figcaption>

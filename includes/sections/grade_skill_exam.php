@@ -52,7 +52,7 @@ $bgClass = in_array($skill_key, ['listening', 'speaking'], true) ? 'bg-slate-50/
           ?>
       <article class="grade-capture-card">
         <div class="grade-capture-card__frame">
-          <img src="<?php echo htmlspecialchars($src); ?>" alt="" class="grade-capture-card__img" loading="lazy" decoding="async" width="360" height="640">
+          <img src="<?php echo htmlspecialchars($src); ?>" alt="" class="grade-capture-card__img" loading="lazy" decoding="async" width="640" height="480">
         </div>
         <?php if ($title !== ''): ?>
         <h3 class="grade-capture-card__title"><?php echo htmlspecialchars($title); ?></h3>

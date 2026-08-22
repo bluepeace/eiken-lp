@@ -51,7 +51,7 @@ $is_about = ($current_page === 'about');
             aria-haspopup="true"
             aria-controls="grade-nav-menu"
             id="grade-nav-toggle"
-          >級別対策<span class="site-header__dropdown-caret" aria-hidden="true">▾</span></button>
+          >級別対策<span class="site-header__dropdown-caret" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
           <ul id="grade-nav-menu" class="site-header__dropdown-menu" role="menu" aria-labelledby="grade-nav-toggle" hidden>
             <?php foreach ($grade_nav_items as $gi):
                 $is_grade_current = ($current_page === 'grade' && $current_grade === $gi['slug']);
@@ -114,7 +114,7 @@ $is_about = ($current_page === 'about');
           id="grade-mobile-toggle"
           aria-expanded="<?php echo $current_page === 'grade' ? 'true' : 'false'; ?>"
           aria-controls="grade-mobile-menu"
-        >級別対策<span class="site-header__dropdown-caret" aria-hidden="true">▾</span></button>
+        >級別対策<span class="site-header__dropdown-caret" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
         <ul id="grade-mobile-menu" class="site-header__mobile-sub"<?php echo $current_page === 'grade' ? '' : ' hidden'; ?>>
           <?php foreach ($grade_nav_items as $gi):
               $is_grade_current = ($current_page === 'grade' && $current_grade === $gi['slug']);
