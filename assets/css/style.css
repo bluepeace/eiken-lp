@@ -2381,6 +2381,14 @@ body.is-lightbox-locked {
   color: rgba(255, 255, 255, 0.75);
 }
 
+.site-footer__col-subtitle {
+  margin: 1.15rem 0 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.75);
+}
+
 .site-footer__list {
   margin: 0;
   padding: 0;

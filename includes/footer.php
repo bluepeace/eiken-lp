@@ -2,6 +2,7 @@
 if (!defined('SITE_NAME')) {
     require_once __DIR__ . '/../config.php';
 }
+$footer_grade_items = grade_nav_items();
 ?>
 </main>
 <footer class="site-footer">
@@ -29,6 +30,12 @@ if (!defined('SITE_NAME')) {
           <li><a href="/plan">料金</a></li>
           <li><a href="/blog">英検コラム</a></li>
         </ul>
+        <p class="site-footer__col-subtitle">級別対策</p>
+        <ul class="site-footer__list">
+          <?php foreach ($footer_grade_items as $gi): ?>
+          <li><a href="<?php echo htmlspecialchars($gi['href']); ?>"><?php echo htmlspecialchars($gi['name']); ?></a></li>
+          <?php endforeach; ?>
+        </ul>
       </nav>
       <nav class="site-footer__col" aria-label="サポート">
         <p class="site-footer__col-title">サポート</p>
@@ -44,6 +51,7 @@ if (!defined('SITE_NAME')) {
         <p class="site-footer__col-title">法務・運営</p>
         <ul class="site-footer__list">
           <li><a href="/company">運営者情報</a></li>
+          <li><a href="https://note.com/wu_moriyama" rel="noopener noreferrer" target="_blank">開発者note</a></li>
           <li><a href="/tokushoho">特定商取引法に基づく表記</a></li>
           <li><a href="/terms">利用規約</a></li>
           <li><a href="/privacy">プライバシーポリシー</a></li>
