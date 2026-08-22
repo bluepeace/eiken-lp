@@ -1458,6 +1458,199 @@ img[loading="lazy"] {
   }
 }
 
+/* ========== ヘッダー：モバイルハンバーガー ========== */
+.site-header__menu-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-right: -0.4rem;
+  padding: 0;
+  border: 0;
+  border-radius: 0.5rem;
+  background: transparent;
+  cursor: pointer;
+  color: var(--lp-text);
+}
+
+.site-header__menu-btn:hover,
+.site-header__menu-btn:focus-visible {
+  background-color: #f1f5f9;
+}
+
+.site-header__menu-icon {
+  position: relative;
+  display: block;
+  width: 1.25rem;
+  height: 0.875rem;
+}
+
+.site-header__menu-icon span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transition: transform 0.2s ease, opacity 0.2s ease, top 0.2s ease, bottom 0.2s ease;
+}
+
+.site-header__menu-icon span:nth-child(1) {
+  top: 0;
+}
+
+.site-header__menu-icon span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.site-header__menu-icon span:nth-child(3) {
+  bottom: 0;
+}
+
+.site-header__menu-btn[aria-expanded="true"] .site-header__menu-icon span:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.site-header__menu-btn[aria-expanded="true"] .site-header__menu-icon span:nth-child(2) {
+  opacity: 0;
+}
+
+.site-header__menu-btn[aria-expanded="true"] .site-header__menu-icon span:nth-child(3) {
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.site-header__backdrop {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  height: 100dvh;
+  background: rgba(15, 23, 42, 0.4);
+}
+
+.site-header__backdrop[hidden],
+.site-header__mobile[hidden] {
+  display: none !important;
+}
+
+.site-header__mobile {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 60;
+  max-height: min(calc(100dvh - 4.5rem), 36rem);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  border-bottom: 1px solid #e2e8f0;
+  background: #fff;
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.12);
+}
+
+.site-header__mobile-inner {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 1rem 1.25rem;
+}
+
+.site-header__mobile-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 3rem;
+  padding: 0.75rem 0.25rem;
+  border: 0;
+  border-bottom: 1px solid #f1f5f9;
+  background: transparent;
+  color: var(--lp-text);
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.site-header__mobile-link.is-current,
+.site-header__mobile-sublink.is-current {
+  color: var(--aiken-brand-text);
+}
+
+.site-header__mobile-accordion-toggle .site-header__dropdown-caret {
+  transition: transform 0.2s ease;
+}
+
+.site-header__mobile-accordion.is-open .site-header__dropdown-caret {
+  transform: rotate(180deg);
+}
+
+.site-header__mobile-sub {
+  margin: 0 0 0.25rem;
+  padding: 0 0 0.35rem 0.75rem;
+  list-style: none;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.site-header__mobile-sub[hidden] {
+  display: none !important;
+}
+
+.site-header__mobile-sublink {
+  display: block;
+  min-height: 2.75rem;
+  padding: 0.6rem 0.25rem;
+  color: #334155;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.site-header__mobile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 1rem;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.site-header__mobile-actions .site-header__btn {
+  width: 100%;
+}
+
+body.is-nav-locked {
+  overflow: hidden;
+}
+
+@media (max-width: 1023px) {
+  .site-header__inner {
+    justify-content: space-between;
+  }
+
+  .site-header__nav,
+  .site-header__account {
+    display: none !important;
+  }
+
+  .site-header__menu-btn {
+    display: inline-flex;
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-header__menu-btn,
+  .site-header__backdrop,
+  .site-header__mobile {
+    display: none !important;
+  }
+}
+
 /* ========== 級別SEO：技能キャプチャ枠 ========== */
 .grade-skill-points {
   display: grid;
