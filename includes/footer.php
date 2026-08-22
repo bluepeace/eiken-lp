@@ -57,6 +57,12 @@ $footer_grade_items = grade_nav_items();
           <li><a href="/privacy">プライバシーポリシー</a></li>
           <li><a href="/external-transmission">外部送信に関する公表</a></li>
         </ul>
+        <p class="site-footer__col-subtitle">Thanks</p>
+        <ul class="site-footer__list">
+          <li><a href="https://www.worldtalk.jp/mypages/eiken" rel="noopener noreferrer" target="_blank">ワールドトーク</a></li>
+          <li><a href="https://academy.kirihara.co.jp/wte/eiken1" rel="noopener noreferrer" target="_blank">KIRIHARA Online Academy</a></li>
+          <li><a href="https://pr.wte.jp/column" rel="noopener noreferrer" target="_blank">WTE</a></li>
+        </ul>
       </nav>
     </div>
 
