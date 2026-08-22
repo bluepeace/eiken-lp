@@ -46,6 +46,11 @@ $footer_grade_items = grade_nav_items();
           <li><a href="/cancel">退会・解約</a></li>
           <li><a href="/contact">お問い合わせ</a></li>
         </ul>
+        <p class="site-footer__col-subtitle">アプリ</p>
+        <ul class="site-footer__list">
+          <li><a href="<?php echo htmlspecialchars(APP_URL); ?>/signup">AiKen無料登録</a></li>
+          <li><a href="<?php echo htmlspecialchars(APP_URL); ?>/login">AiKenログイン</a></li>
+        </ul>
       </nav>
       <nav class="site-footer__col" aria-label="法務・運営">
         <p class="site-footer__col-title">法務・運営</p>
