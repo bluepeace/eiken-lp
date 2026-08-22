@@ -1734,7 +1734,53 @@ body.is-nav-locked {
   min-width: 0;
 }
 
+.grade-capture-card__zoom {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+  text-align: left;
+  border-radius: 1rem;
+}
+
+.grade-capture-card__zoom:focus-visible {
+  outline: 2px solid var(--aiken-brand);
+  outline-offset: 3px;
+}
+
+.grade-capture-card__zoom:hover .grade-capture-card__img,
+.grade-capture-card__zoom:focus-visible .grade-capture-card__img {
+  transform: scale(1.03);
+}
+
+.grade-capture-card__zoom:hover .grade-capture-card__zoom-hint,
+.grade-capture-card__zoom:focus-visible .grade-capture-card__zoom-hint {
+  opacity: 1;
+}
+
+.grade-capture-card__zoom-hint {
+  position: absolute;
+  right: 0.65rem;
+  bottom: 0.65rem;
+  z-index: 1;
+  padding: 0.25rem 0.55rem;
+  border-radius: 9999px;
+  background: rgba(15, 23, 42, 0.72);
+  color: #fff;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  pointer-events: none;
+}
+
 .grade-capture-card__frame {
+  display: block;
   overflow: hidden;
   border: 1px solid #e2e8f0;
   border-radius: 1rem;
@@ -1748,6 +1794,100 @@ body.is-nav-locked {
   height: 100%;
   object-fit: cover;
   object-position: top center;
+  transition: transform 0.25s ease;
+}
+
+body.is-lightbox-locked {
+  overflow: hidden;
+}
+
+.grade-lightbox[hidden] {
+  display: none !important;
+}
+
+.grade-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.grade-lightbox__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.72);
+  cursor: zoom-out;
+}
+
+.grade-lightbox__panel {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 56rem);
+  max-height: min(92vh, 52rem);
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.35);
+  overflow: hidden;
+}
+
+.grade-lightbox__close {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  z-index: 2;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0;
+  border-radius: 9999px;
+  background: rgba(15, 23, 42, 0.75);
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.grade-lightbox__close:hover,
+.grade-lightbox__close:focus-visible {
+  background: rgba(15, 23, 42, 0.92);
+}
+
+.grade-lightbox__close:focus-visible {
+  outline: 2px solid var(--aiken-brand);
+  outline-offset: 2px;
+}
+
+.grade-lightbox__figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  max-height: inherit;
+}
+
+.grade-lightbox__img {
+  display: block;
+  width: 100%;
+  max-height: min(78vh, 44rem);
+  object-fit: contain;
+  background: #0f172a;
+}
+
+.grade-lightbox__caption {
+  margin: 0;
+  padding: 0.85rem 1rem 1rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #0f172a;
+  text-align: center;
+}
+
+.grade-lightbox__caption[hidden] {
+  display: none !important;
 }
 
 .grade-capture-card__caption,

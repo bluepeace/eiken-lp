@@ -47,4 +47,5 @@ include __DIR__ . '/includes/sections/howto.php';
 include __DIR__ . '/includes/sections/grade_faq.php';
 include __DIR__ . '/includes/sections/grade_blog.php';
 include __DIR__ . '/includes/sections/cta.php';
+include __DIR__ . '/includes/grade-lightbox.php';
 include __DIR__ . '/includes/footer.php';

@@ -49,11 +49,22 @@ $bgClass = in_array($skill_key, ['listening', 'speaking'], true) ? 'bg-slate-50/
           $desc = (string) ($part['desc'] ?? '');
           $imageKey = (string) ($part['image'] ?? '');
           $src = grade_screen_url($grade, $imageKey);
+          $zoomLabel = $title !== '' ? $title . 'を拡大表示' : '画面キャプチャを拡大表示';
           ?>
       <article class="grade-capture-card">
-        <div class="grade-capture-card__frame">
-          <img src="<?php echo htmlspecialchars($src); ?>" alt="" class="grade-capture-card__img" loading="lazy" decoding="async" width="640" height="480">
-        </div>
+        <button
+          type="button"
+          class="grade-capture-card__zoom"
+          data-grade-lightbox="<?php echo htmlspecialchars($src); ?>"
+          data-grade-lightbox-caption="<?php echo htmlspecialchars($title); ?>"
+          data-grade-lightbox-alt="<?php echo htmlspecialchars($title !== '' ? $title : '技能対策の画面'); ?>"
+          aria-label="<?php echo htmlspecialchars($zoomLabel); ?>"
+        >
+          <span class="grade-capture-card__frame">
+            <img src="<?php echo htmlspecialchars($src); ?>" alt="" class="grade-capture-card__img" loading="lazy" decoding="async" width="640" height="480">
+          </span>
+          <span class="grade-capture-card__zoom-hint" aria-hidden="true">拡大</span>
+        </button>
         <?php if ($title !== ''): ?>
         <h3 class="grade-capture-card__title"><?php echo htmlspecialchars($title); ?></h3>
         <?php endif; ?>

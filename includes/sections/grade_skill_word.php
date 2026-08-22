@@ -43,11 +43,22 @@ $images = $skill['images'] ?? [];
           $key = (string) ($img['key'] ?? '');
           $caption = (string) ($img['caption'] ?? '');
           $src = grade_screen_url($grade, $key);
+          $zoomLabel = $caption !== '' ? $caption . 'を拡大表示' : '画面キャプチャを拡大表示';
           ?>
       <figure class="grade-capture-card">
-        <div class="grade-capture-card__frame">
-          <img src="<?php echo htmlspecialchars($src); ?>" alt="" class="grade-capture-card__img" loading="lazy" decoding="async" width="640" height="480">
-        </div>
+        <button
+          type="button"
+          class="grade-capture-card__zoom"
+          data-grade-lightbox="<?php echo htmlspecialchars($src); ?>"
+          data-grade-lightbox-caption="<?php echo htmlspecialchars($caption); ?>"
+          data-grade-lightbox-alt="<?php echo htmlspecialchars($caption !== '' ? $caption : '単語対策の画面'); ?>"
+          aria-label="<?php echo htmlspecialchars($zoomLabel); ?>"
+        >
+          <span class="grade-capture-card__frame">
+            <img src="<?php echo htmlspecialchars($src); ?>" alt="" class="grade-capture-card__img" loading="lazy" decoding="async" width="640" height="480">
+          </span>
+          <span class="grade-capture-card__zoom-hint" aria-hidden="true">拡大</span>
+        </button>
         <?php if ($caption !== ''): ?>
         <figcaption class="grade-capture-card__caption"><?php echo htmlspecialchars($caption); ?></figcaption>
         <?php endif; ?>
