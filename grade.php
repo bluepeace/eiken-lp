@@ -25,7 +25,7 @@ if ($grade_content === null) {
     exit;
 }
 
-$faq_schema_items = $grade_content['faq'] ?? [];
+$faq_schema_items = grade_faq_items($grade_content, $grade_data);
 $sections = $grade_content['sections'] ?? ['word', 'reading', 'listening'];
 
 include __DIR__ . '/includes/header.php';

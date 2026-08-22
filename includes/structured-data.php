@@ -40,11 +40,15 @@ if (!empty($faq_schema_items) && is_array($faq_schema_items)) {
         ];
     }
     if ($faqMainEntity) {
+        $faqPageName = 'よくあるご質問｜' . SITE_NAME . '（英検対策アプリ）';
+        if (($page ?? '') === 'grade' && !empty($grade_data['name'])) {
+            $faqPageName = $grade_data['name'] . 'のよくある質問｜' . SITE_NAME . '（英検対策アプリ）';
+        }
         $faqLd = [
             '@context' => 'https://schema.org',
             '@type' => 'FAQPage',
             'inLanguage' => 'ja',
-            'name' => 'よくあるご質問｜' . SITE_NAME . '（英検対策アプリ）',
+            'name' => $faqPageName,
             'url' => $canonical ?? rtrim(SITE_URL, '/') . '/',
             'mainEntity' => $faqMainEntity,
         ];

@@ -35,7 +35,7 @@ function grade_screen_url(string $slug, string $key): string
         'listening-4' => 'listening',
         'writing-1' => 'writing',
         'writing-2' => 'writing',
-        'writing-ai' => 'writing',
+        'writing-3' => 'writing',
         'speaking-1' => 'speaking',
         'speaking-2' => 'speaking',
         'speaking-3' => 'speaking',
@@ -60,6 +60,84 @@ function get_grade_content(string $slug): ?array
 {
     $all = grade_content_all();
     return $all[$slug] ?? null;
+}
+
+/**
+ * 「英検●級におすすめのアプリは？」→ AiKen を紹介するFAQ
+ *
+ * @param list<string> $sections
+ * @return array{q: string, a: string}
+ */
+function grade_recommend_faq_item(string $gradeName, array $sections = []): array
+{
+    $skillLabels = [
+        'word' => '単語',
+        'reading' => 'リーディング',
+        'listening' => 'リスニング',
+        'writing' => 'ライティング',
+        'speaking' => 'スピーキング',
+    ];
+    $skills = [];
+    foreach ($sections as $section) {
+        if (isset($skillLabels[$section])) {
+            $skills[] = $skillLabels[$section];
+        }
+    }
+    $skillText = $skills !== []
+        ? implode('・', $skills)
+        : '単語・リーディング・リスニング・ライティング・スピーキング';
+
+    $hasWriting = in_array('writing', $sections, true);
+    $hasSpeaking = in_array('speaking', $sections, true);
+    if ($hasWriting && $hasSpeaking) {
+        $aiNote = 'ライティングとスピーキングはAIがその場で採点・フィードバックします。';
+    } elseif ($hasWriting) {
+        $aiNote = 'ライティングはAIがその場で添削・フィードバックします。';
+    } elseif ($hasSpeaking) {
+        $aiNote = 'スピーキングはAIがその場で採点・フィードバックします。';
+    } else {
+        $aiNote = '間違えた問題は履歴から復習でき、スキマ時間の学習にも向いています。';
+    }
+
+    return [
+        'q' => $gradeName . 'におすすめのアプリは？',
+        'a' => $gradeName . 'におすすめのアプリは、AiKen（アイケン）です。'
+            . $gradeName . 'の' . $skillText . 'を本試験に近い形式で対策できます。'
+            . $aiNote
+            . '収録問題は10,000問超。今なら' . monthly_price_label() . 'で、'
+            . FREE_TRIAL_DAYS . '日間の無料体験から始められます。',
+    ];
+}
+
+/**
+ * 級別FAQ（おすすめアプリ質問を先頭に付与）
+ *
+ * @param array<string, mixed>|null $grade_content
+ * @param array<string, mixed>|null $grade_data
+ * @return list<array{q: string, a: string}>
+ */
+function grade_faq_items(?array $grade_content, ?array $grade_data): array
+{
+    $items = [];
+    if (is_array($grade_content['faq'] ?? null)) {
+        $items = $grade_content['faq'];
+    }
+    if ($items === []) {
+        $items = faq_top_items();
+    }
+
+    $name = $grade_data['name'] ?? '英検';
+    $sections = is_array($grade_content['sections'] ?? null) ? $grade_content['sections'] : [];
+    $recommend = grade_recommend_faq_item($name, $sections);
+
+    foreach ($items as $item) {
+        if (($item['q'] ?? '') === $recommend['q']) {
+            return $items;
+        }
+    }
+
+    array_unshift($items, $recommend);
+    return $items;
 }
 
 /**
@@ -119,7 +197,7 @@ function grade_content_all(): array
                 'parts' => [
                     ['title' => '英文要約', 'desc' => '与えられた英文の要点を英語で短くまとめます。', 'image' => 'writing-1'],
                     ['title' => '英作文（意見論述）', 'desc' => '指定トピックについて意見を論述します。', 'image' => 'writing-2'],
-                    ['title' => 'AIによるリアルタイム添削', 'desc' => '文法・語彙・構成のフィードバックがその場で届きます。', 'image' => 'writing-ai'],
+                    ['title' => 'AIによるリアルタイム添削', 'desc' => '文法・語彙・構成のフィードバックがその場で届きます。', 'image' => 'writing-3'],
                 ],
             ],
             'faq' => [
@@ -169,7 +247,7 @@ function grade_content_all(): array
                 'parts' => [
                     ['title' => '英文要約', 'desc' => '文章の要点を英語で簡潔にまとめます。', 'image' => 'writing-1'],
                     ['title' => '英作文（意見論述）', 'desc' => '指定トピックについて意見を論述します。', 'image' => 'writing-2'],
-                    ['title' => 'AIによるリアルタイム添削', 'desc' => '文法・構成・語彙のフィードバックをその場で受け取れます。', 'image' => 'writing-ai'],
+                    ['title' => 'AIによるリアルタイム添削', 'desc' => '文法・構成・語彙のフィードバックをその場で受け取れます。', 'image' => 'writing-3'],
                 ],
             ],
             'faq' => [
@@ -218,7 +296,7 @@ function grade_content_all(): array
                 'parts' => [
                     ['title' => '英文要約', 'desc' => '文章の内容を英語で要約します。', 'image' => 'writing-1'],
                     ['title' => '英作文（意見論述）', 'desc' => '指定トピックについて意見を論述します。', 'image' => 'writing-2'],
-                    ['title' => 'AIによるリアルタイム添削', 'desc' => '書いた直後に文法・構成のフィードバックが届きます。', 'image' => 'writing-ai'],
+                    ['title' => 'AIによるリアルタイム添削', 'desc' => '書いた直後に文法・構成のフィードバックが届きます。', 'image' => 'writing-3'],
                 ],
             ],
             'faq' => [
@@ -267,7 +345,7 @@ function grade_content_all(): array
                 'parts' => [
                     ['title' => '英文要約', 'desc' => '文章の内容を英語で要約します。', 'image' => 'writing-1'],
                     ['title' => '英作文（意見論述）', 'desc' => '質問に対する意見を論述します。', 'image' => 'writing-2'],
-                    ['title' => 'AIによるリアルタイム添削', 'desc' => '文法・理由の明確さなどをその場でフィードバック。', 'image' => 'writing-ai'],
+                    ['title' => 'AIによるリアルタイム添削', 'desc' => '文法・理由の明確さなどをその場でフィードバック。', 'image' => 'writing-3'],
                 ],
             ],
             'faq' => [
@@ -318,7 +396,7 @@ function grade_content_all(): array
                 'parts' => [
                     ['title' => 'Eメール', 'desc' => '依頼・質問への返信メールを英文で書きます。', 'image' => 'writing-1'],
                     ['title' => '英作文（意見論述）', 'desc' => '質問に対する意見を論述します。', 'image' => 'writing-2'],
-                    ['title' => 'AIによるリアルタイム添削', 'desc' => '文法や条件の満たし方をその場でフィードバック。', 'image' => 'writing-ai'],
+                    ['title' => 'AIによるリアルタイム添削', 'desc' => '文法や条件の満たし方をその場でフィードバック。', 'image' => 'writing-3'],
                 ],
             ],
             'speaking' => [
@@ -377,7 +455,7 @@ function grade_content_all(): array
                 'parts' => [
                     ['title' => 'Eメール', 'desc' => '返信メールを英文で書きます。', 'image' => 'writing-1'],
                     ['title' => '英作文（意見論述）', 'desc' => '質問に対する意見を1〜2文で述べます。', 'image' => 'writing-2'],
-                    ['title' => 'AIによるリアルタイム添削', 'desc' => '文法や内容の過不足をその場でフィードバック。', 'image' => 'writing-ai'],
+                    ['title' => 'AIによるリアルタイム添削', 'desc' => '文法や内容の過不足をその場でフィードバック。', 'image' => 'writing-3'],
                 ],
             ],
             'faq' => [

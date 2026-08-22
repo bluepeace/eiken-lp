@@ -10,10 +10,7 @@ if (!defined('SITE_NAME')) {
 require_once __DIR__ . '/../faq-data.php';
 
 $name = $grade_data['name'] ?? '英検';
-$faq_items = $grade_content['faq'] ?? [];
-if ($faq_items === []) {
-    $faq_items = faq_top_items();
-}
+$faq_items = grade_faq_items($grade_content ?? null, $grade_data ?? null);
 $faq_id_prefix = 'grade-faq';
 ?>
 <section class="faq-section border-t border-slate-100 px-4 py-16 sm:py-20" aria-labelledby="grade-faq-heading">
