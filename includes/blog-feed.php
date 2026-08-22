@@ -447,6 +447,45 @@ function get_blog_carousel_items(array $pickupUrls = [], int $limit = 20): array
 /**
  * WordPress ?? slug ? ID?????????
  */
+/**
+ * 級タグ検索用の候補（「1級」と「英検1級」の両対応）
+ *
+ * @return list<string>
+ */
+function aiken_blog_tag_query_candidates(string $slug): array
+{
+    $slug = trim($slug);
+    if ($slug === '') {
+        return [];
+    }
+    $candidates = [$slug];
+    if (!str_starts_with($slug, '英検')) {
+        $candidates[] = '英検' . $slug;
+    } else {
+        $short = substr($slug, strlen('英検'));
+        if ($short !== '') {
+            $candidates[] = $short;
+        }
+    }
+    return array_values(array_unique($candidates));
+}
+
+/**
+ * WPタグ行がクエリに一致するか（名前優先・スラッグはデコードして比較）
+ */
+function aiken_blog_tag_row_matches(array $row, string $query): bool
+{
+    $name = (string) ($row['name'] ?? '');
+    $rowSlug = (string) ($row['slug'] ?? '');
+    $decodedSlug = rawurldecode($rowSlug);
+    return $name === $query
+        || $rowSlug === $query
+        || $decodedSlug === $query;
+}
+
+/**
+ * WordPressタグIDを名前／スラッグから解決
+ */
 function aiken_blog_tag_id_by_slug(string $slug): ?int
 {
     $slug = trim($slug);
@@ -469,40 +508,71 @@ function aiken_blog_tag_id_by_slug(string $slug): ?int
         }
     }
 
-    $base = preg_replace('#/posts/?$#', '', aiken_blog_rest_posts_url());
-    $url = rtrim((string) $base, '/') . '/tags?' . http_build_query([
-        'slug' => $slug,
-        'per_page' => 1,
-        '_fields' => 'id,slug,name',
-    ]);
-    $json = aiken_http_get($url);
+    $base = rtrim((string) preg_replace('#/posts/?$#', '', aiken_blog_rest_posts_url()), '/');
+    $candidates = aiken_blog_tag_query_candidates($slug);
     $id = null;
-    if ($json !== null) {
+
+    // 1) slug パラメータ（ローマ字スラッグ向け）
+    foreach ($candidates as $candidate) {
+        $url = $base . '/tags?' . http_build_query([
+            'slug' => $candidate,
+            'per_page' => 1,
+            '_fields' => 'id,slug,name',
+        ]);
+        $json = aiken_http_get($url);
+        if ($json === null) {
+            continue;
+        }
         $rows = json_decode($json, true);
-        if (is_array($rows) && isset($rows[0]['id'])) {
-            $id = (int) $rows[0]['id'];
+        if (is_array($rows) && isset($rows[0]) && is_array($rows[0]) && aiken_blog_tag_row_matches($rows[0], $candidate)) {
+            $id = (int) ($rows[0]['id'] ?? 0);
+            break;
         }
     }
 
-    // slug ????? name ??????????
-    if ($id === null) {
-        $searchUrl = rtrim((string) $base, '/') . '/tags?' . http_build_query([
-            'search' => $slug,
-            'per_page' => 20,
+    // 2) search + 名前の完全一致（英検付き日本語タグ向け）
+    if ($id === null || $id <= 0) {
+        foreach ($candidates as $candidate) {
+            $searchUrl = $base . '/tags?' . http_build_query([
+                'search' => $candidate,
+                'per_page' => 20,
+                '_fields' => 'id,slug,name',
+            ]);
+            $searchJson = aiken_http_get($searchUrl);
+            if ($searchJson === null) {
+                continue;
+            }
+            $rows = json_decode($searchJson, true);
+            if (!is_array($rows)) {
+                continue;
+            }
+            foreach ($candidates as $matchQuery) {
+                foreach ($rows as $row) {
+                    if (is_array($row) && aiken_blog_tag_row_matches($row, $matchQuery)) {
+                        $id = (int) ($row['id'] ?? 0);
+                        break 3;
+                    }
+                }
+            }
+        }
+    }
+
+    // 3) タグ一覧を取得して名前完全一致（最終フォールバック）
+    if ($id === null || $id <= 0) {
+        $listUrl = $base . '/tags?' . http_build_query([
+            'per_page' => 100,
             '_fields' => 'id,slug,name',
         ]);
-        $searchJson = aiken_http_get($searchUrl);
-        if ($searchJson !== null) {
-            $rows = json_decode($searchJson, true);
+        $listJson = aiken_http_get($listUrl);
+        if ($listJson !== null) {
+            $rows = json_decode($listJson, true);
             if (is_array($rows)) {
-                foreach ($rows as $row) {
-                    if (!is_array($row)) {
-                        continue;
-                    }
-                    $name = (string) ($row['name'] ?? '');
-                    if ($name === $slug || (string) ($row['slug'] ?? '') === $slug) {
-                        $id = (int) ($row['id'] ?? 0);
-                        break;
+                foreach ($candidates as $matchQuery) {
+                    foreach ($rows as $row) {
+                        if (is_array($row) && aiken_blog_tag_row_matches($row, $matchQuery)) {
+                            $id = (int) ($row['id'] ?? 0);
+                            break 2;
+                        }
                     }
                 }
             }
@@ -511,6 +581,9 @@ function aiken_blog_tag_id_by_slug(string $slug): ?int
 
     if ($id !== null && $id > 0) {
         $map[$slug] = $id;
+        foreach ($candidates as $candidate) {
+            $map[$candidate] = $id;
+        }
         if (!is_dir($cacheDir)) {
             @mkdir($cacheDir, 0755, true);
         }

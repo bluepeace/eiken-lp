@@ -160,7 +160,7 @@ function grade_content_all(): array
         '1kyu' => [
             'level_label' => '大学上級程度',
             'hero_lead' => '英検1級は、社会生活で求められる高度な英語力を測る最終目標の級です。AiKenなら、難度の高い語彙から長文・要約・英作文・リスニングまで、本試験に近い形式でまとめて対策できます。',
-            'blog_tag_slug' => '1級',
+            'blog_tag_slug' => '英検1級',
             'sections' => ['word', 'reading', 'listening', 'writing'],
             'word' => [
                 'lead' => '1級の短文空所補充は、難度の高い語彙・語法が中心です。社会・科学・ビジネスなど幅広い分野の語を、4択クイズで反復しながら定着させましょう。',
@@ -211,7 +211,7 @@ function grade_content_all(): array
         'jun1kyu' => [
             'level_label' => '大学中級程度',
             'hero_lead' => '英検準1級は、社会生活で通用する英語力の目安として広く使われる級です。AiKenなら、語彙・長文・要約・英作文・リスニングを本試験形式で効率よく対策できます。',
-            'blog_tag_slug' => '準1級',
+            'blog_tag_slug' => '英検準1級',
             'sections' => ['word', 'reading', 'listening', 'writing'],
             'word' => [
                 'lead' => '準1級の短文空所は、準1級レベルの語彙・語法が中心。学術・社会寄りの語も増え、意味だけでなくコロケーションの理解も大切です。',
@@ -261,7 +261,7 @@ function grade_content_all(): array
         '2kyu' => [
             'level_label' => '高校卒業程度',
             'hero_lead' => '英検2級は、入試・就職・留学などで広く評価される級です。AiKenなら、社会的な話題の読解・要約・英作文・リスニングまで、本試験形式で対策を一本化できます。',
-            'blog_tag_slug' => '2級',
+            'blog_tag_slug' => '英検2級',
             'sections' => ['word', 'reading', 'listening', 'writing'],
             'word' => [
                 'lead' => '2級では社会的な話題に登場する語彙が増えます。短文空所で頻出の語法・熟語を、4択と解説で定着させましょう。',
@@ -310,7 +310,7 @@ function grade_content_all(): array
         'jun2kyu-plus' => [
             'level_label' => '高校上級程度',
             'hero_lead' => '英検準2級プラスは、準2級と2級の間をつなぐ級です。身近な社会的な話題を扱い、要約も出題されます。AiKenなら、単語から読解・リスニング・ライティングまで本試験形式で対策できます。',
-            'blog_tag_slug' => '準2級プラス',
+            'blog_tag_slug' => '英検準2級プラス',
             'sections' => ['word', 'reading', 'listening', 'writing'],
             'word' => [
                 'lead' => '日常から一歩進んだ「身近な社会的話題」の語彙が増えます。4択と解説で、意味と使い方をセットで覚えましょう。',
@@ -359,7 +359,7 @@ function grade_content_all(): array
         'jun2kyu' => [
             'level_label' => '高校中級程度',
             'hero_lead' => '英検準2級は、日常的な話題を扱う高校中級程度の級です。AiKenなら、単語・読解・リスニング・Eメール／英作文に加え、スピーキング（面接形式）までアプリで対策できます。',
-            'blog_tag_slug' => '準2級',
+            'blog_tag_slug' => '英検準2級',
             'sections' => ['word', 'reading', 'listening', 'writing', 'speaking'],
             'word' => [
                 'lead' => '学校・趣味・旅行など日常生活の語彙が中心。4択でテンポよく回し、間違えた語だけ履歴で復習するのが効率的です。',
@@ -419,7 +419,7 @@ function grade_content_all(): array
         '3kyu' => [
             'level_label' => '中学卒業程度',
             'hero_lead' => '英検3級は、中学卒業程度の英語力の目安です。AiKenなら、単語・読解・リスニング・Eメール／英作文を本試験形式で対策でき、高校入試前の基礎固めにも向いています。',
-            'blog_tag_slug' => '3級',
+            'blog_tag_slug' => '英検3級',
             'sections' => ['word', 'reading', 'listening', 'writing'],
             'word' => [
                 'lead' => '中学で学ぶ語彙が中心。4択でテンポよく回し、間違えた語を履歴で復習すると定着が早くなります。',
@@ -469,7 +469,7 @@ function grade_content_all(): array
         '4kyu' => [
             'level_label' => '中学中級程度',
             'hero_lead' => '英検4級は、中学中級程度の英語力の目安です。一次にライティングはなく、単語・リーディング・リスニングが中心。AiKenなら本試験形式で効率よく反復できます。',
-            'blog_tag_slug' => '4級',
+            'blog_tag_slug' => '英検4級',
             'sections' => ['word', 'reading', 'listening'],
             'word' => [
                 'lead' => '中学前半〜中盤の語彙が中心。短い4択で毎日少しずつ回し、間違えた語を履歴で復習しましょう。',
@@ -511,7 +511,7 @@ function grade_content_all(): array
         '5kyu' => [
             'level_label' => '中学初級程度',
             'hero_lead' => '英検5級は、英検の入門級です。身近な話題の短い英文・音声から情報を取る力が中心。AiKenなら、単語・リーディング・リスニングを本試験形式で楽しく始められます。',
-            'blog_tag_slug' => '5級',
+            'blog_tag_slug' => '英検5級',
             'sections' => ['word', 'reading', 'listening'],
             'word' => [
                 'lead' => '中1中心の基本語彙。be動詞・一般動詞・疑問詞などとセットで、4択クイズを短時間繰り返すのがおすすめです。',

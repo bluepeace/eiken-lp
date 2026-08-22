@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* AiKen LP - 追加スタイル・SEO用フォールバック */
 :root {
   --aiken-brand: #50c2cb;
@@ -1320,14 +1321,16 @@ img[loading="lazy"] {
 
 @media (min-width: 1024px) {
   .howto-step:not(:last-child)::after {
-    content: "→";
+    content: "";
     position: absolute;
     top: 3.15rem;
     right: -1.35rem;
     z-index: 1;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #50c2cb;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--aiken-brand);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='m12 5 7 7-7 7'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='m12 5 7 7-7 7'/%3E%3C/svg%3E") center / contain no-repeat;
     pointer-events: none;
   }
 }
