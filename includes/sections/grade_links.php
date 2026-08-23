@@ -11,7 +11,7 @@ global $GRADES;
       <?php foreach ($GRADES as $slug => $g): ?>
       <li>
         <a class="flex items-center justify-between rounded-xl border border-slate-200 bg-slate-50/50 px-5 py-4 text-slate-800 transition hover:border-[#50c2cb]/50 hover:bg-[#50c2cb]/5 hover:text-slate-900" href="<?php echo grade_url($slug); ?>">
-          <span class="font-semibold"><?php echo htmlspecialchars($g['name']); ?>＋AI対策</span>
+          <span class="font-semibold">英検<span class="heading-accent"><?php echo htmlspecialchars($g['name_short']); ?></span>＋AIアプリ対策</span>
           <span class="text-slate-400"><?php echo lp_icon('arrow-right', 'w-5 h-5'); ?></span>
         </a>
       </li>
