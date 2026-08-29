@@ -14,7 +14,7 @@ include __DIR__ . '/includes/header.php';
   <div class="mx-auto max-w-3xl text-slate-800">
     <h1 id="privacy-heading" class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">プライバシーポリシー</h1>
     <p class="mt-4 text-sm leading-relaxed text-slate-600">AiKen（アイケン）（以下「当サービス」）は、ユーザーの個人情報の取り扱いについて以下のとおり定めます。</p>
-    <p class="mt-4 text-sm text-slate-600">制定日：2026年2月16日<br>最終更新：2026年8月21日</p>
+    <p class="mt-4 text-sm text-slate-600">制定日：2026年2月16日<br>最終更新：2026年8月30日</p>
 
     <div class="mt-10 space-y-10 text-sm leading-relaxed">
       <section aria-labelledby="privacy-s1">
@@ -45,7 +45,7 @@ include __DIR__ . '/includes/header.php';
         <p class="mt-4 font-semibold text-slate-900">【お問い合わせ】（公式サイト）</p>
         <ul class="mt-2 list-disc space-y-2 pl-5">
           <li>お問い合わせフォームから送信されたお名前、メールアドレス、お問い合わせ種別、本文</li>
-          <li>送信日時、迷惑対策のためのセッション情報（連続送信防止等）</li>
+          <li>送信日時、送信元IPアドレス、ユーザーエージェント、迷惑対策のためのセッション情報（連続送信防止等）</li>
         </ul>
         <p class="mt-2">公式サイトのお問い合わせは、サーバーのメール機能により運営者宛（<?php echo htmlspecialchars(CONTACT_EMAIL); ?>）へ送信され、受付確認のため送信者へ自動返信メールを送る場合があります。</p>
 

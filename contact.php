@@ -7,6 +7,7 @@ declare(strict_types=1);
 
 $page = 'contact';
 require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/includes/contact-guard.php';
 $canonical = rtrim(SITE_URL, '/') . '/contact';
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
@@ -79,6 +80,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $form['message'] = trim((string) ($_POST['message'] ?? ''));
     $honeypot = trim((string) ($_POST['website'] ?? ''));
     $token = (string) ($_POST['csrf'] ?? '');
+    $clientIp = contact_client_ip();
+    $userAgent = contact_user_agent();
 
     if ($honeypot !== '') {
         // ボットは成功風に見せて終わる
@@ -112,14 +115,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         if ($errors === []) {
+            $silentSpam = contact_is_silent_spam($form['subject'], $form['message'])
+                || contact_submitted_too_fast();
+            if ($silentSpam) {
+                contact_rate_record($clientIp, $form['email']);
+                $success = true;
+                $form = ['name' => '', 'email' => '', 'subject' => 'service', 'message' => ''];
+            } elseif (!contact_has_kana($form['message'])) {
+                $errors[] = 'お問い合わせ内容は日本語でご記入ください。';
+            } elseif (contact_rate_exceeded($clientIp, $form['email'])) {
+                $errors[] = '連続送信を防ぐため、少し時間をおいてから再度お送りください。';
+            }
+        }
+
+        if ($errors === [] && !$success) {
             $subjectLabel = $subjects[$form['subject']];
             $now = date('Y-m-d H:i:s');
+            $ipLine = $clientIp !== '' ? $clientIp : '-';
+            $uaLine = $userAgent !== '' ? $userAgent : '-';
             $adminSubject = '【AiKenお問い合わせ】' . $subjectLabel;
             $adminBody = "AiKen LP お問い合わせフォームより送信がありました。\n\n"
                 . "日時: {$now}\n"
                 . "お名前: {$form['name']}\n"
                 . "メール: {$form['email']}\n"
-                . "種別: {$subjectLabel}\n\n"
+                . "種別: {$subjectLabel}\n"
+                . "IP: {$ipLine}\n"
+                . "UA: {$uaLine}\n\n"
                 . "---- 内容 ----\n"
                 . $form['message'] . "\n";
 
@@ -162,11 +183,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($adminOk && $autoOk) {
                 $success = true;
                 $_SESSION['contact_last_sent'] = time();
+                contact_rate_record($clientIp, $form['email']);
                 $form = ['name' => '', 'email' => '', 'subject' => 'service', 'message' => ''];
             } elseif ($adminOk) {
                 // 管理者には届いたが自動返信だけ失敗した場合も受付完了扱い
                 $success = true;
                 $_SESSION['contact_last_sent'] = time();
+                contact_rate_record($clientIp, $form['email']);
                 $form = ['name' => '', 'email' => '', 'subject' => 'service', 'message' => ''];
             } else {
                 $errors[] = '送信に失敗しました。時間をおいて再度お試しいただくか、' . CONTACT_EMAIL . ' まで直接メールをお送りください。';
@@ -177,6 +200,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 $_SESSION['contact_csrf'] = bin2hex(random_bytes(16));
 $csrf = $_SESSION['contact_csrf'];
+if ($_SERVER['REQUEST_METHOD'] !== 'POST' || $success) {
+    $_SESSION['contact_shown_at'] = time();
+}
 
 include __DIR__ . '/includes/header.php';
 ?>
@@ -233,6 +259,7 @@ include __DIR__ . '/includes/header.php';
       <div>
         <label for="contact-message" class="block text-sm font-semibold text-slate-900">お問い合わせ内容 <span class="font-normal text-slate-500">必須</span></label>
         <textarea id="contact-message" name="message" required rows="8" maxlength="4000" class="mt-1.5 w-full rounded-lg border border-slate-300 px-3 py-2.5 text-sm text-slate-900 shadow-sm outline-none transition focus:border-[#50c2cb] focus:ring-2 focus:ring-[#50c2cb]/25"><?php echo htmlspecialchars($form['message'], ENT_QUOTES, 'UTF-8'); ?></textarea>
+        <p class="mt-1.5 text-xs text-slate-500">日本語でご記入ください。</p>
       </div>
 
       <p class="text-xs leading-relaxed text-slate-500"><?php echo br_after_period('送信いただいた内容は、お問い合わせ対応の目的で利用します。詳細は<a class="font-medium text-[#50c2cb] underline-offset-2 hover:underline" href="/privacy">プライバシーポリシー</a>をご確認ください。'); ?></p>
