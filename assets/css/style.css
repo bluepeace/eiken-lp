@@ -258,6 +258,93 @@ img[loading="lazy"] {
   }
 }
 
+/* ========== 愛犬（バディ）紹介 ========== */
+.buddies-grid {
+  display: grid;
+  gap: 1.75rem 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .buddies-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .buddies-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1.5rem 1rem;
+  }
+}
+
+.buddy-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 0;
+}
+
+.buddy-card__media {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  max-width: 14rem;
+  aspect-ratio: 1;
+  margin: 0 auto;
+  padding: 0.75rem;
+  border-radius: 1.25rem;
+  background:
+    radial-gradient(circle at 50% 62%, rgba(80, 194, 203, 0.22) 0%, rgba(80, 194, 203, 0.08) 42%, transparent 68%),
+    linear-gradient(180deg, #f0fbfc 0%, #e8f6f8 100%);
+}
+
+.buddy-card__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.buddy-card__name {
+  margin: 1rem 0 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #0f172a;
+}
+
+.buddy-card__text {
+  margin: 0.5rem 0 0;
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  color: #64748b;
+}
+
+@media (min-width: 1024px) {
+  .buddy-card__media {
+    max-width: none;
+    padding: 0.5rem;
+    border-radius: 1rem;
+  }
+
+  .buddy-card__name {
+    font-size: 1.05rem;
+  }
+
+  .buddy-card__text {
+    font-size: 0.75rem;
+    line-height: 1.65;
+  }
+}
+
 .problems-list__item {
   display: flex;
   align-items: flex-start;

@@ -20,6 +20,7 @@ include __DIR__ . '/includes/sections/app_skills.php';
 include __DIR__ . '/includes/sections/plan.php';
 include __DIR__ . '/includes/sections/target.php';
 include __DIR__ . '/includes/sections/grade_links.php';
+include __DIR__ . '/includes/sections/buddies.php';
 include __DIR__ . '/includes/sections/benefits.php';
 include __DIR__ . '/includes/sections/howto.php';
 include __DIR__ . '/includes/sections/faq.php';
