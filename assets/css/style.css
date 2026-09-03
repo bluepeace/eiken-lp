@@ -2597,3 +2597,101 @@ body.is-lightbox-locked {
   opacity: 0.9;
 }
 
+/* ========== 英検対策コンテンツ（/eiken/） ========== */
+.eiken-hub__toc {
+  position: sticky;
+  top: 3.75rem;
+  z-index: 40;
+  border-bottom: 1px solid #e2e8f0;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+}
+
+.eiken-hub__toc-list {
+  display: flex;
+  gap: 0.35rem 0.75rem;
+  margin: 0;
+  padding: 0.65rem 0;
+  list-style: none;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.eiken-hub__toc-list a {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 9999px;
+  background: #fff;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #334155;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.eiken-hub__toc-list a:hover {
+  border-color: rgba(80, 194, 203, 0.55);
+  color: var(--aiken-brand-text);
+}
+
+.eiken-hub__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.eiken-hub__table th,
+.eiken-hub__table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: left;
+  vertical-align: top;
+}
+
+.eiken-hub__table thead th {
+  background: #f8fafc;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.eiken-hub__table tbody th {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.eiken-hub__table tbody th a {
+  color: var(--aiken-brand-text);
+  text-decoration: none;
+}
+
+.eiken-hub__table tbody th a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.eiken-hub__table tbody tr:last-child th,
+.eiken-hub__table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.eiken-hub__note a {
+  font-weight: 600;
+}
+
+@media (min-width: 1024px) {
+  .eiken-hub__toc {
+    top: 4.25rem;
+  }
+
+  .eiken-hub__toc-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: visible;
+  }
+}
+

@@ -27,6 +27,7 @@ $footer_grade_items = grade_nav_items();
         <ul class="site-footer__list">
           <li><a href="/">トップ</a></li>
           <li><a href="/about">AiKenとは</a></li>
+          <li><a href="/eiken/">英検対策コンテンツ</a></li>
           <li><a href="/plan">料金</a></li>
           <li><a href="/blog">英検コラム</a></li>
         </ul>

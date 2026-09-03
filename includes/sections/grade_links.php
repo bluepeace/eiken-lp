@@ -7,6 +7,7 @@ global $GRADES;
     <p class="section-badge section-badge--center" aria-hidden="true">GRADES</p>
     <h2 id="grade-links-heading" class="text-center text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">級別の英検対策アプリページ</h2>
     <p class="mt-3 text-center text-slate-600"><?php echo br_after_period('目標の級を選んで、<strong>英検○級 勉強法</strong>・<strong>単語</strong>・<strong>スピーキング</strong>・ライティング対策をはじめよう。各級の出題形式に合わせた内容です。'); ?></p>
+    <p class="mt-3 text-center text-sm"><a class="font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="/eiken/">英検対策コンテンツ（日程・勉強法・教材まとめ）を見る</a></p>
     <ul class="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
       <?php foreach ($GRADES as $slug => $g): ?>
       <li>

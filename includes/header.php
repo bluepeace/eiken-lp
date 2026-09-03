@@ -4,8 +4,8 @@ if (!defined('SITE_NAME')) {
 }
 $current_page = $page ?? 'top';
 $current_grade = $grade ?? '';
-$show_main_nav = in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy', 'contact', 'external', 'company', 'cancel', 'parents', 'guide', 'grade'], true);
-$lp_index = in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy', 'contact', 'external', 'company', 'cancel', 'parents', 'guide', 'grade'], true);
+$show_main_nav = in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy', 'contact', 'external', 'company', 'cancel', 'parents', 'guide', 'grade', 'eiken'], true);
+$lp_index = in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy', 'contact', 'external', 'company', 'cancel', 'parents', 'guide', 'grade', 'eiken'], true);
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -22,6 +22,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 // LP 内リンクはルート相対にし、localhost でも現在のホストで開く（SITE_URL 固定だと本番未反映ページが開けない）
 $nav_links = [
     ['label' => 'Aikenとは', 'href' => '/about'],
+    ['label' => '英検対策', 'href' => '/eiken/'],
     ['label' => '料金', 'href' => '/plan'],
     ['label' => 'よくあるご質問', 'href' => '/faq'],
     ['label' => '英検コラム', 'href' => '/blog'],
@@ -70,7 +71,8 @@ $is_about = ($current_page === 'about');
 
         <?php foreach ($rest as $nl):
             $is_current = ($current_page === 'plan' && $nl['href'] === '/plan')
-                || ($current_page === 'faq' && $nl['href'] === '/faq');
+                || ($current_page === 'faq' && $nl['href'] === '/faq')
+                || ($current_page === 'eiken' && ($nl['href'] === '/eiken/' || $nl['href'] === '/eiken'));
             $link_class = 'site-header__nav-link' . ($is_current ? ' is-current' : '');
             ?>
         <a class="<?php echo $link_class; ?>" href="<?php echo htmlspecialchars($nl['href']); ?>"<?php echo $is_current ? ' aria-current="page"' : ''; ?>><?php echo htmlspecialchars($nl['label']); ?></a>
@@ -132,7 +134,8 @@ $is_about = ($current_page === 'about');
 
       <?php foreach ($rest as $nl):
           $is_current = ($current_page === 'plan' && $nl['href'] === '/plan')
-              || ($current_page === 'faq' && $nl['href'] === '/faq');
+              || ($current_page === 'faq' && $nl['href'] === '/faq')
+              || ($current_page === 'eiken' && ($nl['href'] === '/eiken/' || $nl['href'] === '/eiken'));
           ?>
       <a class="site-header__mobile-link<?php echo $is_current ? ' is-current' : ''; ?>" href="<?php echo htmlspecialchars($nl['href']); ?>"<?php echo $is_current ? ' aria-current="page"' : ''; ?>><?php echo htmlspecialchars($nl['label']); ?></a>
       <?php endforeach; ?>

@@ -85,6 +85,11 @@ if (preg_match('#^/guide/?$#', $uri)) {
     return true;
 }
 
+if (preg_match('#^/eiken/?$#', $uri)) {
+    require __DIR__ . '/eiken.php';
+    return true;
+}
+
 if ($uri === '/' || $uri === '') {
     require __DIR__ . '/index.php';
     return true;

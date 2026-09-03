@@ -16,6 +16,7 @@ $blog_index_url = rtrim(SITE_URL, '/') . '/blog/';
     <p class="section-badge section-badge--center" aria-hidden="true">COLUMN</p>
     <h2 id="blog-column-heading" class="text-center text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">英検対策コラム</h2>
     <p class="mt-2 text-center text-slate-600"><?php echo br_after_period('英検の試験形式・勉強法・級別のポイントを、コラムでわかりやすく解説しています。英検対策アプリAiKenの活用法も書いているので、受験生はぜひチェックしてみてください。'); ?></p>
+    <p class="mt-2 text-center text-sm"><a class="font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="/eiken/">英検全体のまとめは「英検対策コンテンツ」へ</a></p>
 
     <?php if ($blog_items === []): ?>
     <p class="mt-10 text-center text-slate-600">記事一覧の取得に失敗したか、まだ公開がありません。</p>

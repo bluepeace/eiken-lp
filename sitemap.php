@@ -23,6 +23,7 @@ $entries[] = ['loc' => $base . '/', 'changefreq' => 'weekly', 'priority' => '1.0
 $entries[] = ['loc' => $base . '/about', 'changefreq' => 'monthly', 'priority' => '0.8'];
 $entries[] = ['loc' => $base . '/parents', 'changefreq' => 'monthly', 'priority' => '0.8'];
 $entries[] = ['loc' => $base . '/guide', 'changefreq' => 'monthly', 'priority' => '0.7'];
+$entries[] = ['loc' => $base . '/eiken/', 'changefreq' => 'weekly', 'priority' => '0.9'];
 $entries[] = ['loc' => $base . '/faq', 'changefreq' => 'monthly', 'priority' => '0.8'];
 $entries[] = ['loc' => $base . '/plan', 'changefreq' => 'monthly', 'priority' => '0.8'];
 $entries[] = ['loc' => $base . '/cancel', 'changefreq' => 'yearly', 'priority' => '0.5'];
