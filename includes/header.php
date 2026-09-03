@@ -12,7 +12,7 @@ $lp_index = in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho',
 <head>
 <?php include __DIR__ . '/head.php'; ?>
 </head>
-<body class="min-h-screen bg-slate-950 text-slate-50 antialiased">
+<body class="min-h-screen bg-white text-slate-900 antialiased">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TW48595R"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>

@@ -33,7 +33,7 @@ define('BLOG_API_URL', 'https://aiken.life/blog/wp-json/wp/v2/posts');
 /** 英検コラム RSS（REST 失敗時のフォールバック） */
 define('BLOG_FEED_URL', 'https://aiken.life/blog/feed/');
 /** TOPコラムカルーセルの表示件数（先頭はピックアップ、残りは最新記事） */
-define('BLOG_CAROUSEL_LIMIT', 20);
+define('BLOG_CAROUSEL_LIMIT', 50);
 /**
  * TOPの英検対策コラムで先頭に出す記事URL（指定した順）。
  * 指定以外は更新日の新しい順で埋める。古い記事もこのURLから拾います。

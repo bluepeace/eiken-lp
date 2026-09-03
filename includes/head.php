@@ -23,7 +23,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $base; ?>/assets/images/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="48x48" href="<?php echo $base; ?>/assets/images/favicon-48x48.png">
 <link rel="canonical" href="<?php echo htmlspecialchars($canonical); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <title><?php echo htmlspecialchars($meta['title']); ?></title>
 <meta name="description" content="<?php echo htmlspecialchars($meta['description']); ?>">
 <?php if (!empty($meta['robots'])): ?>
