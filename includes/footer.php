@@ -63,6 +63,12 @@ $footer_grade_items = grade_nav_items();
           <li><a href="/privacy">プライバシーポリシー</a></li>
           <li><a href="/external-transmission">外部送信に関する公表</a></li>
         </ul>
+        <p class="site-footer__col-subtitle">関連</p>
+        <ul class="site-footer__list">
+          <li><a href="https://www.youtube.com/@aiken.english" rel="noopener noreferrer" target="_blank">AiKen公式YouTube</a></li>
+          <li><a href="https://bluepiece.me/" rel="noopener noreferrer" target="_blank">bluepiece lab.</a></li>
+          <li><a href="https://uchiuta.online/" rel="noopener noreferrer" target="_blank">うちうた</a></li>
+        </ul>
         <p class="site-footer__col-subtitle">Thanks</p>
         <ul class="site-footer__list">
           <li><a href="https://www.worldtalk.jp/mypages/eiken" rel="noopener noreferrer" target="_blank">ワールドトーク</a></li>
