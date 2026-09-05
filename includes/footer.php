@@ -31,7 +31,9 @@ $footer_grade_items = grade_nav_items();
           <li><a href="/plan">料金</a></li>
           <li><a href="/blog">英検コラム</a></li>
         </ul>
-        <p class="site-footer__col-subtitle">級別対策</p>
+      </nav>
+      <nav class="site-footer__col" aria-label="級別対策">
+        <p class="site-footer__col-title">級別対策</p>
         <ul class="site-footer__list">
           <?php foreach ($footer_grade_items as $gi): ?>
           <li><a href="<?php echo htmlspecialchars($gi['href']); ?>"><?php echo htmlspecialchars($gi['name']); ?></a></li>
@@ -63,9 +65,12 @@ $footer_grade_items = grade_nav_items();
           <li><a href="/privacy">プライバシーポリシー</a></li>
           <li><a href="/external-transmission">外部送信に関する公表</a></li>
         </ul>
-        <p class="site-footer__col-subtitle">関連</p>
+      </nav>
+      <nav class="site-footer__col" aria-label="関連">
+        <p class="site-footer__col-title">関連</p>
         <ul class="site-footer__list">
           <li><a href="https://www.youtube.com/@aiken.english" rel="noopener noreferrer" target="_blank">AiKen公式YouTube</a></li>
+          <li><a href="https://note.com/wu_moriyama/m/mc163c29fa30b" rel="noopener noreferrer" target="_blank">noteマガジン</a></li>
           <li><a href="https://bluepiece.me/" rel="noopener noreferrer" target="_blank">bluepiece lab.</a></li>
           <li><a href="https://uchiuta.online/" rel="noopener noreferrer" target="_blank">うちうた</a></li>
         </ul>
@@ -74,10 +79,24 @@ $footer_grade_items = grade_nav_items();
           <li><a href="https://www.worldtalk.jp/mypages/eiken" rel="noopener noreferrer" target="_blank">ワールドトーク</a></li>
           <li><a href="https://academy.kirihara.co.jp/wte/eiken1" rel="noopener noreferrer" target="_blank">KIRIHARA Online Academy</a></li>
           <li><a href="https://pr.wte.jp/column" rel="noopener noreferrer" target="_blank">WTE</a></li>
-          <li><a href="https://note.com/wu_moriyama/m/mc163c29fa30b" rel="noopener noreferrer" target="_blank">noteマガジン</a></li>
         </ul>
       </nav>
     </div>
+
+    <nav class="site-footer__social" aria-label="ソーシャル">
+      <a class="site-footer__social-link" href="https://note.com/wu_moriyama/m/mc163c29fa30b" rel="noopener noreferrer" target="_blank">
+        <span class="site-footer__social-icon">
+          <img alt="" width="48" height="48" src="<?php echo asset('assets/images/social-note.svg'); ?>">
+        </span>
+        <span class="sr-only">noteマガジン</span>
+      </a>
+      <a class="site-footer__social-link" href="https://www.youtube.com/@aiken.english" rel="noopener noreferrer" target="_blank">
+        <span class="site-footer__social-icon">
+          <img alt="" width="48" height="48" src="<?php echo asset('assets/images/social-youtube.svg'); ?>">
+        </span>
+        <span class="sr-only">AiKen公式YouTube</span>
+      </a>
+    </nav>
 
     <div class="site-footer__bottom">
       <p class="site-footer__copy">© <?php echo date('Y'); ?> <a href="<?php echo htmlspecialchars(BLUEPIECE_LAB_URL); ?>" rel="noopener noreferrer" target="_blank">Bluepiece Lab.</a></p>
