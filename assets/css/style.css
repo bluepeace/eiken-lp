@@ -2608,20 +2608,21 @@ body.is-lightbox-locked {
 }
 
 .site-footer__social-icon {
-  display: block;
-  width: 2.75rem;
-  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
-  overflow: hidden;
-  background: #fff;
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.35);
+  background: transparent;
+  box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, 0.5);
 }
 
 .site-footer__social-icon img {
   display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
   object-position: center;
 }
 
