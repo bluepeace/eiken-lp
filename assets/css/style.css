@@ -955,6 +955,246 @@ img[loading="lazy"] {
   }
 }
 
+/* 級別ヒーロー: 専用イラスト（PCは全面背景、スマホは本文下） */
+.grade-seo-hero--scene {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  background-color: #eef9fa;
+}
+
+.grade-seo-hero__scene {
+  position: relative;
+  order: 2;
+  width: 100%;
+}
+
+.grade-seo-hero__scene-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.grade-seo-hero__scene-overlay {
+  display: none;
+}
+
+.grade-seo-hero--scene .lp-container {
+  order: 1;
+}
+
+@media (min-width: 1024px) {
+  .grade-seo-hero--scene {
+    display: block;
+    gap: 0;
+  }
+
+  .grade-seo-hero__scene {
+    position: absolute;
+    inset: 0;
+    order: 0;
+    width: auto;
+    pointer-events: none;
+  }
+
+  .grade-seo-hero__scene-img {
+    height: 100%;
+    border-radius: 0;
+    object-position: center 68%;
+  }
+
+  .grade-seo-hero__scene-overlay {
+    display: block;
+    background:
+      linear-gradient(to right, rgba(255, 255, 255, 0.90) 0%, rgba(255, 255, 255, 0.82) 32%, rgba(255, 255, 255, 0.35) 52%, rgba(255, 255, 255, 0.06) 72%, rgba(255, 255, 255, 0) 100%);
+  }
+}
+
+/* 級の位置づけ */
+.grade-position__intro,
+.grade-position__outro {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.grade-position__media {
+  margin: 0;
+  line-height: 0;
+}
+
+.grade-position__image {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  object-fit: cover;
+  aspect-ratio: 3 / 2;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.grade-position__copy {
+  min-width: 0;
+  color: var(--lp-text);
+  font-size: 1rem;
+}
+
+.grade-position__steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.grade-position__step {
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  background: #fff;
+  padding: 1.125rem 1.25rem;
+}
+
+.grade-position__step.is-current {
+  border-color: rgba(80, 194, 203, 0.55);
+  background: #f3fbfc;
+}
+
+.grade-position__step-kicker {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--aiken-brand-text);
+}
+
+.grade-position__step-title {
+  margin: 0.35rem 0 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.grade-position__step-text {
+  margin: 0.35rem 0 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #475569;
+}
+
+.grade-position__subhead {
+  margin: 0 0 1rem;
+  text-align: center;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.grade-position__subhead--left {
+  text-align: left;
+}
+
+.grade-position__scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  background: #fff;
+}
+
+.grade-position__table {
+  width: 100%;
+  min-width: 36rem;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.grade-position__table th,
+.grade-position__table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: left;
+  vertical-align: top;
+}
+
+.grade-position__table thead th {
+  background: #f8fafc;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.grade-position__table tbody th {
+  font-weight: 600;
+  color: #0f172a;
+  white-space: nowrap;
+}
+
+.grade-position__table tbody tr:last-child th,
+.grade-position__table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.grade-position__table .is-current {
+  background: rgba(80, 194, 203, 0.12);
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.grade-position__note {
+  margin: 0.75rem 0 0;
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  color: #64748b;
+}
+
+.grade-position__points {
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.grade-position__points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin: 0 0 0.85rem;
+  line-height: 1.75;
+  color: var(--lp-text);
+}
+
+.grade-position__points li:last-child {
+  margin-bottom: 0;
+}
+
+.grade-position__check {
+  display: flex;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+  color: var(--aiken-brand);
+}
+
+@media (min-width: 768px) {
+  .grade-position__steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grade-position__intro,
+  .grade-position__outro {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .grade-position__outro .grade-position__media {
+    order: 2;
+  }
+}
+
 /* 英検コラム: セクション全幅（100vw は縦スクロールバー分はみ出して横スクロールの原因になる） */
 .blog-carousel-bleed {
   width: 100%;

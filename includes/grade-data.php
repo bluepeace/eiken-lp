@@ -54,6 +54,25 @@ function grade_screen_url(string $slug, string $key): string
 }
 
 /**
+ * 級別ヒーロー背景。`hero-bg.webp|jpg|png` があればそれを、なければ TOP 共通背景。
+ */
+function grade_hero_bg_url(string $slug): string
+{
+    $dir = __DIR__ . '/../assets/images/grade/' . $slug . '/';
+    foreach (['.webp', '.jpg', '.png'] as $ext) {
+        if (is_file($dir . 'hero-bg' . $ext)) {
+            return '/assets/images/grade/' . rawurlencode($slug) . '/hero-bg' . $ext;
+        }
+    }
+    return '/assets/images/hero-bg.png';
+}
+
+function grade_has_hero_scene(string $slug): bool
+{
+    return grade_hero_bg_url($slug) !== '/assets/images/hero-bg.png';
+}
+
+/**
  * @return array<string, mixed>|null
  */
 function get_grade_content(string $slug): ?array
@@ -310,10 +329,118 @@ function grade_content_all(): array
         'jun2kyu-plus' => [
             'level_label' => '高校上級程度',
             'hero_kicker' => '英検対策アプリ',
-            'hero_headline' => '英検準2級プラス対策を、本試験形式で。',
+            'hero_headline' => '準2級プラス対策を、本試験形式で。',
             'hero_chips' => ['要約対応', '身近な社会的話題', '準2級と2級の間'],
-            'hero_lead' => '準2級と2級の間をつなぐ級です。身近な社会的な話題と、初めて出る要約を、単語からライティングまで本試験形式で対策できます。',
+            'hero_lead' => '準2級と2級の間をつなぐ級です。身近な社会的な話題と、初めて出る要約を、単語からスピーキングまで本試験形式で対策できます。',
             'blog_tag_slug' => '英検準2級プラス',
+            'trust_badges' => [
+                ['icon' => 'sparkles', 'label' => 'AI添削'],
+                ['icon' => 'pencil-line', 'label' => '要約問題'],
+                ['icon' => 'mic', 'label' => 'スピーキング採点'],
+                ['icon' => 'clipboard-list', 'label' => '問題数10,000問以上'],
+                ['icon' => 'badge-check', 'label' => FREE_TRIAL_DAYS . '日間無料'],
+            ],
+            'positioning' => [
+                'heading' => '英検準2級プラスのレベル｜準2級・2級との違い',
+                'lead' => '2025年度に新設された、準2級と2級のあいだの級です。高校上級程度として、日常から一歩進んだ「身近な社会」の英語が問われます。',
+                'image' => '/assets/images/grade/jun2kyu-plus/position-classroom.jpg',
+                'image_alt' => '教室で英検対策の授業を受ける高校生',
+                'image_2' => '/assets/images/strength-01.png',
+                'image_2_alt' => '通学中にスマホで英検対策をする高校生',
+                'highlight' => 'jun2kyu-plus',
+                'intro' => [
+                    '準2級は<strong>日常的な話題</strong>、2級は<strong>社会的な話題</strong>。その谷が大きかったため、あいだをつなぐ級として準2級プラスが生まれました。学校・仕事・環境・テクノロジーなど、<span class="lp-marker">身近な社会的な話題</span>が中心です。',
+                    '試験時間は2級と同じで、リーディング・ライティング85分、リスニング約25分、面接約7分。ライティングには準2級にはない<strong>英文要約</strong>も入ります。準2級の延長や単語帳だけでは足りない部分を、本試験の形式で慣らす級です。',
+                ],
+                'steps' => [
+                    ['kicker' => '準2級', 'title' => '日常', 'text' => '学校・趣味・買い物など、身近なやりとり'],
+                    ['kicker' => '準2級プラス', 'title' => '身近な社会', 'text' => '教育・環境・テクノロジーなど、身の回りの社会', 'current' => true],
+                    ['kicker' => '2級', 'title' => '社会', 'text' => '社会生活に必要な、より広い分野の話題'],
+                ],
+                'table' => [
+                    'heading' => '準2級・準2級プラス・2級の比較',
+                    'headers' => ['', '準2級', '準2級プラス', '2級'],
+                    'header_keys' => ['', 'jun2kyu', 'jun2kyu-plus', '2kyu'],
+                    'rows' => [
+                        ['レベル目安', '高校中級程度', '高校上級程度', '高校卒業程度'],
+                        ['話題', '日常的な話題', '身近な社会的な話題', '社会的な話題'],
+                        ['一次（R+W / L）', '80分 / 約25分', '85分 / 約25分', '85分 / 約25分'],
+                        ['ライティング', 'Eメール＋英作文', '要約＋英作文', '要約＋英作文'],
+                        ['二次面接', '約6分', '約7分', '約7分'],
+                    ],
+                    'note' => '時間・形式の目安は日本英語検定協会の公表内容に基づきます。最新の出題は公式サイトでご確認ください。',
+                ],
+                'takeaways_lead' => '準2級から上がるときに、変わること',
+                'takeaways' => [
+                    'ライティングが<strong>Eメールから要約</strong>に変わる。要点を短い英文にまとめる練習が必要です。',
+                    '題材が日常会話から、<strong>教育・環境・テクノロジー</strong>など身近な社会へ広がります。',
+                    '一次の時間と面接の長さは<strong>2級と同じ</strong>。形式に慣れておくと、次の級にもつながります。',
+                    'AiKenなら、要約のAI添削からスピーキング採点まで、この級の出題に合わせて対策できます。',
+                ],
+            ],
+            'problems' => [
+                'heading' => '準2級プラス対策、<span class="heading-accent">こんなお悩み</span>ありませんか？',
+                'lead' => '準2級からステップアップするあなたへ。英検準2級プラス、こんなことで止まっていませんか。',
+                'buddy_image' => '/assets/images/buddy-worries.png',
+                'buddy_alt' => 'AiKenのバディ「チョコ」',
+                'items' => [
+                    '準2級プラスから<strong>要約</strong>が出て、書き方の型がわからない',
+                    '準2級と2級の<strong>谷</strong>が大きくて、何から手をつければいいか迷う',
+                    '新設の級で<strong>過去問が少なく</strong>、練習量が足りない',
+                    '要約や英作文を、保護者がその場で<strong>添削できない</strong>',
+                    '題材が<strong>身近な社会</strong>になって、読解やリスニングが急に難しく感じる',
+                    '<strong>本番に近い形式</strong>で、この級の大問をまとめて練習したい',
+                ],
+                'solution' => 'だからこそ、<span class="text-brand-accent">初めての要約</span>も<strong>AIがその場で添削</strong>。本試験形式の問題を、アプリひとつで。',
+            ],
+            'strengths' => [
+                'heading' => '英検準2級プラス対策アプリ' . htmlspecialchars(SITE_NAME) . 'の<span class="heading-accent">7つの強み</span>',
+                'lead' => 'さきほどのお悩みを、ひとつのアプリでまとめて解決。',
+                'items' => [
+                    [
+                        'title' => '準2級プラスの本試験形式で、大問どおりに',
+                        'text' => '単語・リーディング・リスニング・ライティングを、<span class="lp-marker">英検準2級プラスの本番に近い形式で出題</span>します。身近な社会的話題の題材に合わせてあるので、「本当にこの級の対策になっているのかな」という不安も減らせます。教材をバラバラに揃えず、ひとつのアプリで今日やるべきことが明確になります。',
+                        'image' => '/assets/images/strength-01.png',
+                        'alt' => '電車の中でスマホを使う女子学生',
+                    ],
+                    [
+                        'title' => '過去問が少ない新級でも、類似問題が解き放題',
+                        'text' => '準2級プラスは新しい級のため、市販の過去問だけでは量が足りないことがあります。<span class="lp-marker">10,000問超</span>の問題数で、同じ形式の類似問題を何度でも解けるので、反復で定着させやすく、本番のパターンにも慣れられます。',
+                        'image' => '/assets/images/strength-02.png',
+                        'alt' => 'スマホを一緒に見て笑う二人',
+                    ],
+                    [
+                        'title' => '初めての要約を、AIがその場で添削',
+                        'text' => '準2級にはなかった<strong>英文要約</strong>が、準2級プラスから出題されます。書いた直後に、<span class="lp-marker">AIが要点のまとめ方・文法・構成をフィードバック</span>するので、保護者の方が毎回添削しなくても、その日のうちに書いて直せます。初めて要約に取り組む方の、いちばんの不安をカバーします。',
+                        'image' => '/assets/images/strength-03.png',
+                        'alt' => 'AiKenのライティング添削結果画面',
+                    ],
+                    [
+                        'title' => '準2級と2級の谷を、身近な社会の題材で埋める',
+                        'text' => '日常会話から社会問題へ一気に飛び級しなくてよいよう、教育・環境・テクノロジーなど<span class="lp-marker">身近な社会的話題</span>の読解・リスニングを用意しています。準2級の延長だけでは足りない部分を、2級の手前で慣らしていけます。',
+                        'image' => '/assets/images/strength-04.png',
+                        'alt' => 'タブレットで学習する学生',
+                    ],
+                    [
+                        'title' => '間違えた問題をあとから復習',
+                        'text' => '解いた問題は学習履歴として残るので、<span class="lp-marker">間違えた問題だけをあとから集中的にやり直せます</span>。要約の型も語彙も、一度解いて終わりにせず弱点を潰せます。どこでつまずいているか把握しやすいので、保護者の方も安心です。',
+                        'image' => '/assets/images/strength-05.png',
+                        'alt' => 'スマホと参考書で復習する女子学生',
+                    ],
+                    [
+                        'title' => 'スキマ時間にスマホから',
+                        'text' => '部活や塾で忙しいお子さんでも、通学の電車や待ち時間など、<span class="lp-marker">5〜10分の空き時間で準2級プラスの練習</span>ができます。単語やリスニングはスキマで、要約は自宅で、と役割を分けやすいのもポイントです。',
+                        'image' => '/assets/images/strength-06.png',
+                        'alt' => 'ヘッドフォンをつけて待ち時間に学習する女子学生',
+                    ],
+                    [
+                        'title' => '次の2級も、同じアプリで続けられる',
+                        'text' => '準2級プラスで慣らした要約や社会的話題は、2級でも活きます。級が上がっても<span class="lp-marker">乗り換え不要</span>。' . FREE_TRIAL_DAYS . '日間は全機能を無料で試せるので、まずはお子さんと一緒に触ってみて、「続けられそうか」を確かめてから始められます。',
+                        'image' => '/assets/images/strength-07.png',
+                        'alt' => '保護者とお子さんが一緒に勉強する様子',
+                    ],
+                ],
+            ],
             'sections' => ['word', 'reading', 'listening', 'writing'],
             'word' => [
                 'lead' => '日常から一歩進んだ「身近な社会的話題」の語彙が増えます。4択と解説で、意味と使い方をセットで覚えましょう。',
@@ -352,7 +479,8 @@ function grade_content_all(): array
                 ],
             ],
             'faq' => [
-                ['q' => '英検準2級プラスにもAiKenは対応していますか？', 'a' => 'はい。単語・リーディング・リスニング・ライティングを本試験に近い形式で対策できます。'],
+                ['q' => '英検準2級プラスにもAiKenは対応していますか？', 'a' => 'はい。単語・リーディング・リスニング・ライティング・スピーキングを本試験に近い形式で対策できます。ライティングはAI添削、スピーキングはAIがその場で採点します。'],
+                ['q' => '準2級プラスと準2級の違いは何ですか？', 'a' => '準2級は日常的な話題、準2級プラスは身近な社会的な話題が中心です。試験時間は2級と同じ（リーディング・ライティング85分、リスニング約25分、面接約7分）で、ライティングには準2級にない英文要約が出ます。'],
                 ['q' => '準2級プラスの要約問題は練習できますか？', 'a' => 'はい。英文要約の練習ができ、提出後はAIがリアルタイムで添削します。'],
                 ['q' => '準2級からステップアップしたいのですが向いていますか？', 'a' => 'はい。準2級と2級のギャップを埋める級として設計されており、身近な社会的話題の読解・作文に慣れるのに適しています。'],
                 ['q' => '無料で始められますか？', 'a' => '登録から' . FREE_TRIAL_DAYS . '日間は全機能無料。カード登録は不要です。'],

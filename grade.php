@@ -30,6 +30,10 @@ $sections = $grade_content['sections'] ?? ['word', 'reading', 'listening'];
 
 include __DIR__ . '/includes/header.php';
 include __DIR__ . '/includes/sections/grade_seo_hero.php';
+include __DIR__ . '/includes/sections/grade_trust_badges.php';
+include __DIR__ . '/includes/sections/grade_position.php';
+include __DIR__ . '/includes/sections/grade_problems.php';
+include __DIR__ . '/includes/sections/grade_strengths.php';
 
 if (in_array('word', $sections, true)) {
     include __DIR__ . '/includes/sections/grade_skill_word.php';
