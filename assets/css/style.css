@@ -922,6 +922,39 @@ img[loading="lazy"] {
   }
 }
 
+/* 級別ヒーロー: TOPより一段コンパクト */
+#grade-seo-hero-heading {
+  line-height: 1.4;
+}
+
+.grade-seo-hero__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.grade-seo-hero__chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(80, 194, 203, 0.38);
+  background-color: rgba(255, 255, 255, 0.78);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.grade-seo-hero__mockup .hero-mockup__image {
+  max-width: 28rem;
+}
+
+@media (min-width: 1024px) {
+  .grade-seo-hero__mockup .hero-mockup__image {
+    max-width: 32.5rem;
+  }
+}
+
 /* 英検コラム: セクション全幅（100vw は縦スクロールバー分はみ出して横スクロールの原因になる） */
 .blog-carousel-bleed {
   width: 100%;

@@ -309,7 +309,10 @@ function grade_content_all(): array
 
         'jun2kyu-plus' => [
             'level_label' => '高校上級程度',
-            'hero_lead' => '英検準2級プラスは、準2級と2級の間をつなぐ級です。身近な社会的な話題を扱い、要約も出題されます。AiKenなら、単語から読解・リスニング・ライティングまで本試験形式で対策できます。',
+            'hero_kicker' => '英検対策アプリ',
+            'hero_headline' => '英検準2級プラス対策を、本試験形式で。',
+            'hero_chips' => ['要約対応', '身近な社会的話題', '準2級と2級の間'],
+            'hero_lead' => '準2級と2級の間をつなぐ級です。身近な社会的な話題と、初めて出る要約を、単語からライティングまで本試験形式で対策できます。',
             'blog_tag_slug' => '英検準2級プラス',
             'sections' => ['word', 'reading', 'listening', 'writing'],
             'word' => [
