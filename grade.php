@@ -47,10 +47,21 @@ foreach (['reading', 'listening', 'writing', 'speaking'] as $skill_key) {
     include __DIR__ . '/includes/sections/grade_skill_exam.php';
 }
 
+include __DIR__ . '/includes/sections/grade_format.php';
+if (!empty($grade_content['plan']['heading'])) {
+    $plan_heading = (string) $grade_content['plan']['heading'];
+    $plan_heading_id = 'grade-plan-heading';
+}
 include __DIR__ . '/includes/sections/plan.php';
+include __DIR__ . '/includes/sections/grade_target.php';
 include __DIR__ . '/includes/sections/howto.php';
 include __DIR__ . '/includes/sections/grade_faq.php';
 include __DIR__ . '/includes/sections/grade_blog.php';
-include __DIR__ . '/includes/sections/cta.php';
+if (!empty($grade_content['cta']) && is_array($grade_content['cta'])) {
+    include __DIR__ . '/includes/sections/grade_cta.php';
+} else {
+    include __DIR__ . '/includes/sections/cta.php';
+}
+include __DIR__ . '/includes/sections/grade_breadcrumbs.php';
 include __DIR__ . '/includes/grade-lightbox.php';
 include __DIR__ . '/includes/footer.php';

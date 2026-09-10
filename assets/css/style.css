@@ -1064,6 +1064,158 @@ img[loading="lazy"] {
   }
 }
 
+/* 級別・出題形式 + 週間の使い方 */
+.grade-format__table .is-mark td {
+  background: rgba(80, 194, 203, 0.10);
+  font-weight: 600;
+}
+
+.grade-format__week-intro {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.grade-format__media {
+  margin: 0;
+  line-height: 0;
+}
+
+.grade-format__image {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  object-fit: cover;
+  aspect-ratio: 3 / 2;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.grade-format__week-copy {
+  min-width: 0;
+  color: var(--lp-text);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.grade-format__roles {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.grade-format__role {
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  background: #f8fafc;
+  padding: 1.15rem 1.25rem;
+}
+
+.grade-format__role-when {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.55rem;
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--aiken-brand-text);
+}
+
+.grade-format__role-icon {
+  display: inline-flex;
+  color: var(--aiken-brand);
+}
+
+.grade-format__role-time {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  background: rgba(80, 194, 203, 0.14);
+  padding: 0.1rem 0.5rem;
+  font-size: 0.6875rem;
+  letter-spacing: 0;
+}
+
+.grade-format__role-title {
+  margin: 0.45rem 0 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.grade-format__role-text {
+  margin: 0.4rem 0 0;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: #475569;
+}
+
+.grade-format__days {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.grade-format__days li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  border-radius: 0.85rem;
+  background: #eef9fa;
+  padding: 0.7rem 0.75rem;
+}
+
+.grade-format__day-name {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--aiken-brand-text);
+}
+
+.grade-format__day-text {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.grade-format__footnote {
+  margin: 0.9rem 0 0;
+  font-size: 0.8125rem;
+  color: #64748b;
+}
+
+@media (min-width: 640px) {
+  .grade-format__days {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+
+  .grade-format__days li {
+    text-align: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .grade-format__roles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grade-format__week-intro {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 2.5rem;
+  }
+}
+
 /* 級の位置づけ */
 .grade-position__intro,
 .grade-position__outro {
@@ -2752,6 +2904,52 @@ body.is-lightbox-locked {
   height: 100%;
   object-fit: cover;
   object-position: top center;
+}
+
+/* 級別パンくず（最終CTAの下） */
+.lp-breadcrumb {
+  border-top: 1px solid #e2e8f0;
+  background: #f8fafc;
+  padding: 0.85rem 1rem 1.15rem;
+}
+
+.lp-breadcrumb__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: #64748b;
+}
+
+.lp-breadcrumb__list li {
+  display: inline-flex;
+  align-items: center;
+}
+
+.lp-breadcrumb__list li:not(:last-child)::after {
+  content: "/";
+  margin: 0 0.5rem;
+  color: #94a3b8;
+}
+
+.lp-breadcrumb a {
+  color: #475569;
+  text-decoration: none;
+}
+
+.lp-breadcrumb a:hover {
+  color: var(--aiken-brand-text);
+  text-decoration: underline;
+}
+
+.lp-breadcrumb [aria-current="page"] {
+  color: #0f172a;
+  font-weight: 600;
 }
 
 /* ========== サイトフッター（キーカラー） ========== */
