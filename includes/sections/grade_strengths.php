@@ -1,6 +1,6 @@
 <?php
 /**
- * 級特化の強み（TOPの strengths と同じ7点の型。画像は仮でTOP流用）
+ * 級特化の強み（TOPの strengths と同じ7点の型）
  * @var array $grade_content
  * @var array $grade_data
  */

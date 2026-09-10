@@ -31,22 +31,14 @@ if ($has_scene) {
 $hero_mockup_alt = $name !== ''
     ? htmlspecialchars(SITE_NAME, ENT_QUOTES, 'UTF-8') . 'の' . htmlspecialchars($name, ENT_QUOTES, 'UTF-8') . '対策画面'
     : htmlspecialchars(SITE_NAME, ENT_QUOTES, 'UTF-8') . 'アプリの画面イメージ';
-$hero_scene_alt = htmlspecialchars(SITE_NAME, ENT_QUOTES, 'UTF-8') . 'のバディが英検対策の勉強をしているイラスト';
 ?>
 <section class="<?php echo $hero_section_class; ?>" aria-labelledby="grade-seo-hero-heading">
-  <?php if ($has_scene): ?>
-  <div class="grade-seo-hero__scene">
-    <img src="<?php echo htmlspecialchars($hero_bg, ENT_QUOTES, 'UTF-8'); ?>" alt="<?php echo $hero_scene_alt; ?>" class="grade-seo-hero__scene-img" width="1536" height="1024" loading="eager" fetchpriority="high">
-    <div class="hero-bg-overlay grade-seo-hero__scene-overlay" aria-hidden="true"></div>
-  </div>
-  <?php else: ?>
-  <div class="grade-seo-hero__bg pointer-events-none absolute inset-0" aria-hidden="true">
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
     <img src="<?php echo htmlspecialchars($hero_bg, ENT_QUOTES, 'UTF-8'); ?>" alt="" class="hero-bg-image h-full w-full object-cover" loading="eager" fetchpriority="high" width="1920" height="1080">
     <div class="hero-bg-overlay absolute inset-0"></div>
   </div>
-  <?php endif; ?>
   <div class="relative z-10 lp-container flex flex-col items-start gap-8 lg:flex-row lg:items-center lg:gap-12">
-    <div class="w-full<?php echo $has_scene ? ' lg:max-w-xl lg:flex-none' : ' flex-1'; ?> space-y-4 text-left sm:space-y-5">
+    <div class="w-full flex-1 space-y-4 text-left sm:space-y-5">
       <h1 id="grade-seo-hero-heading" class="text-2xl font-bold leading-[1.4] tracking-tight sm:text-3xl md:text-4xl">
         <span class="block text-brand-accent"><?php echo htmlspecialchars($hero_kicker); ?></span>
         <span class="hero-heading__sub block"><?php echo htmlspecialchars($hero_headline); ?></span>
@@ -64,10 +56,8 @@ $hero_scene_alt = htmlspecialchars(SITE_NAME, ENT_QUOTES, 'UTF-8') . 'のバデ�
         <a class="inline-flex items-center justify-center rounded-full border-2 border-[#50c2cb] bg-white px-8 py-3.5 text-base font-semibold text-slate-800 transition hover:border-[#46adb5] hover:bg-[#50c2cb]/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#50c2cb]/60 focus-visible:ring-offset-2" href="#grade-skill-word"><?php echo htmlspecialchars($name_short); ?>の学習内容を見る</a>
       </div>
     </div>
-    <?php if (!$has_scene): ?>
     <div class="grade-seo-hero__mockup hero-mockup flex-1 w-full">
       <img src="/assets/images/hero-mockup.png" alt="<?php echo $hero_mockup_alt; ?>" width="640" height="480" class="hero-mockup__image mx-auto" loading="eager">
     </div>
-    <?php endif; ?>
   </div>
 </section>
