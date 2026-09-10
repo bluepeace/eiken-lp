@@ -969,6 +969,10 @@ img[loading="lazy"] {
   .grade-seo-hero--scene .hero-bg-image {
     object-position: 5% 40%;
   }
+
+  .grade-seo-hero--2kyu .hero-bg-image {
+    object-position: 10% 42%;
+  }
 }
 
 /* 級別・中間CTA（証拠の前） */

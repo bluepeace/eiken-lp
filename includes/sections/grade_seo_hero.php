@@ -28,6 +28,10 @@ $hero_section_class = 'grade-seo-hero relative overflow-hidden px-4 py-10 sm:py-
 if ($has_scene) {
     $hero_section_class .= ' grade-seo-hero--scene';
 }
+$grade_slug = preg_replace('/[^a-z0-9-]/', '', (string) $grade);
+if ($grade_slug !== '') {
+    $hero_section_class .= ' grade-seo-hero--' . $grade_slug;
+}
 $hero_mockup_alt = $name !== ''
     ? htmlspecialchars(SITE_NAME, ENT_QUOTES, 'UTF-8') . 'の' . htmlspecialchars($name, ENT_QUOTES, 'UTF-8') . '対策画面'
     : htmlspecialchars(SITE_NAME, ENT_QUOTES, 'UTF-8') . 'アプリの画面イメージ';

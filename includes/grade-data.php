@@ -279,8 +279,18 @@ function grade_content_all(): array
 
         '2kyu' => [
             'level_label' => '高校卒業程度',
-            'hero_lead' => '英検2級は、入試・就職・留学などで広く評価される級です。AiKenなら、社会的な話題の読解・要約・英作文・リスニングまで、本試験形式で対策を一本化できます。',
+            'hero_kicker' => '英検対策アプリ',
+            'hero_headline' => '2級対策を、本試験形式で。',
+            'hero_chips' => ['要約対応', '社会的な話題', '高校卒業程度'],
+            'hero_lead' => '入試・就職・留学でも評価される級です。社会的な話題の読解と、要約・英作文を、単語からスピーキングまで本試験形式で対策できます。',
             'blog_tag_slug' => '英検2級',
+            'trust_badges' => [
+                ['icon' => 'sparkles', 'label' => 'AI添削'],
+                ['icon' => 'pencil-line', 'label' => '要約問題'],
+                ['icon' => 'mic', 'label' => 'スピーキング採点'],
+                ['icon' => 'clipboard-list', 'label' => '問題数10,000問以上'],
+                ['icon' => 'badge-check', 'label' => FREE_TRIAL_DAYS . '日間無料'],
+            ],
             'sections' => ['word', 'reading', 'listening', 'writing'],
             'word' => [
                 'lead' => '2級では社会的な話題に登場する語彙が増えます。短文空所で頻出の語法・熟語を、4択と解説で定着させましょう。',
