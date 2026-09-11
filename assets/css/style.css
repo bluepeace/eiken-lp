@@ -2910,7 +2910,7 @@ body.is-lightbox-locked {
   object-position: top center;
 }
 
-/* 級別パンくず（最終CTAの下） */
+/* パンくず（フッター直上） */
 .lp-breadcrumb {
   border-top: 1px solid #e2e8f0;
   background: #f8fafc;

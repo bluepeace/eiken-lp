@@ -3,6 +3,7 @@ if (!defined('SITE_NAME')) {
     require_once __DIR__ . '/../config.php';
 }
 $footer_grade_items = grade_nav_items();
+include __DIR__ . '/breadcrumbs.php';
 ?>
 </main>
 <footer class="site-footer">

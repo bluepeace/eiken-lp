@@ -62,6 +62,5 @@ if (!empty($grade_content['cta']) && is_array($grade_content['cta'])) {
 } else {
     include __DIR__ . '/includes/sections/cta.php';
 }
-include __DIR__ . '/includes/sections/grade_breadcrumbs.php';
 include __DIR__ . '/includes/grade-lightbox.php';
 include __DIR__ . '/includes/footer.php';

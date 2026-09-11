@@ -16,7 +16,7 @@ if (!$skill) {
 }
 $images = $skill['images'] ?? [];
 ?>
-<section id="grade-skill-word" class="grade-skill-section border-t border-slate-100 bg-white px-4 py-16 sm:py-20" aria-labelledby="grade-word-heading">
+<section id="grade-skill-word" class="grade-skill-section border-t border-slate-100 bg-slate-50/50 px-4 py-16 sm:py-20" aria-labelledby="grade-word-heading">
   <div class="lp-container">
     <div class="mx-auto max-w-3xl text-center">
       <p class="section-badge section-badge--center" aria-hidden="true">WORD</p>

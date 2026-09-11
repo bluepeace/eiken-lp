@@ -55,31 +55,4 @@ if (!empty($faq_schema_items) && is_array($faq_schema_items)) {
         echo '<script type="application/ld+json">' . json_encode($faqLd, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . '</script>' . "\n";
     }
 }
-if (($page ?? '') === 'grade' && !empty($grade_data['name']) && !empty($grade)) {
-    $crumbLd = [
-        '@context' => 'https://schema.org',
-        '@type' => 'BreadcrumbList',
-        'itemListElement' => [
-            [
-                '@type' => 'ListItem',
-                'position' => 1,
-                'name' => 'TOP',
-                'item' => rtrim(SITE_URL, '/') . '/',
-            ],
-            [
-                '@type' => 'ListItem',
-                'position' => 2,
-                'name' => '英検対策',
-                'item' => rtrim(SITE_URL, '/') . '/eiken/',
-            ],
-            [
-                '@type' => 'ListItem',
-                'position' => 3,
-                'name' => $grade_data['name'],
-                'item' => grade_url((string) $grade),
-            ],
-        ],
-    ];
-    echo '<script type="application/ld+json">' . json_encode($crumbLd, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . '</script>' . "\n";
-}
 ?>
