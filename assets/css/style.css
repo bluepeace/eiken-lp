@@ -970,7 +970,8 @@ img[loading="lazy"] {
     object-position: 5% 40%;
   }
 
-  .grade-seo-hero--2kyu .hero-bg-image {
+  .grade-seo-hero--2kyu .hero-bg-image,
+  .grade-seo-hero--jun1kyu .hero-bg-image {
     object-position: 10% 42%;
   }
 }
