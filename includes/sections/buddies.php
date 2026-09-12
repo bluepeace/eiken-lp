@@ -29,6 +29,31 @@ $buddy_items = [
         'slug' => 'marron',
         'text' => 'とにかく懐っこい。初対面でも距離を縮めるのが上手。「ねえねえ！」と自然に懐に入ってくる。',
     ],
+    [
+        'name' => 'シロ',
+        'slug' => 'shiro',
+        'text' => '上品で穏やか。憧れられる存在だけど、実はただのんびり屋。そっとそばで、みんなのペースに寄り添う。',
+    ],
+    [
+        'name' => 'ティア',
+        'slug' => 'tia',
+        'text' => 'しっかり者でまとめ役。誰とでも話せるけれど、気を遣いすぎて疲れることも。それでも自然と、みんなをまとめる。',
+    ],
+    [
+        'name' => 'ルーク',
+        'slug' => 'luke',
+        'text' => '自分をしっかり持っていて頼もしい。小柄だけど、みんなに頼られる兄貴タイプ。困ったときは、いちばん先に動く。',
+    ],
+    [
+        'name' => 'ソラ',
+        'slug' => 'sora',
+        'text' => '体を動かすのが大好き。いつも走り回っていて、面白いものを見つけるとすぐカバンに入れる。',
+    ],
+    [
+        'name' => 'ジン',
+        'slug' => 'jin',
+        'text' => '知識が豊富で物知り。自慢はせず、謙虚で物静か。聞かれたときに、そっと正しい答えをくれる。',
+    ],
 ];
 ?>
 <section class="buddies-section border-t border-slate-100 bg-white px-4 py-16 sm:py-20" aria-labelledby="buddies-heading">
@@ -36,7 +61,7 @@ $buddy_items = [
     <div class="mx-auto max-w-3xl text-center">
       <p class="section-badge section-badge--center" aria-hidden="true">BUDDIES</p>
       <h2 id="buddies-heading" class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">愛犬（バディ）紹介</h2>
-      <p class="mt-3 text-slate-600"><?php echo br_after_period('学習のそばにいてくれる5匹のバディ。あなたに合う子を選んで、一緒に英検対策を続けましょう。'); ?></p>
+      <p class="mt-3 text-slate-600"><?php echo br_after_period('学習のそばにいてくれる10匹のバディ。あなたに合う子を選んで、一緒に英検対策を続けましょう。'); ?></p>
     </div>
 
     <ul class="buddies-grid mt-10 sm:mt-12">
