@@ -1081,9 +1081,9 @@ function grade_content_all(): array
                 'heading' => '英検準2級のレベル｜3級・準2級プラスとの違い',
                 'lead' => '高校中級程度として、日常的な話題の英語が問われる級です。3級の延長から一歩進み、次の準2級プラスでは身近な社会と要約へ変わります。',
                 'image' => '/assets/images/grade/jun2kyu/position-classroom.jpg',
-                'image_alt' => '教室で教科書を開き、準2級対策を考える高校生',
+                'image_alt' => '制服でノートに書きながら準2級の学習をする高校生',
                 'image_2' => '/assets/images/grade/jun2kyu/position-takeaways.jpg',
-                'image_2_alt' => '机でノートに書きながら準2級の学習をする生徒',
+                'image_2_alt' => 'ヘッドセットを着けてスピーキング練習をする高校生',
                 'highlight' => 'jun2kyu',
                 'intro' => [
                     '3級も準2級も<strong>日常的な話題</strong>が中心です。準2級は高校中級程度として、学校・趣味・旅行などのやりとりが長く、語彙も一段上がります。その先の準2級プラスは<strong>身近な社会的な話題</strong>になり、ライティングが要約に変わります。',
@@ -1228,9 +1228,9 @@ function grade_content_all(): array
                 'lead' => '準2級の二次は約6分。音読、パッセージの質問、1枚絵（Picture A・B）の状況説明、身近な事柄についての意見質問の流れです。AiKenでは本試験に近いカード形式で繰り返し練習でき、話した内容はAIがその場で採点します。',
                 'tips' => 'イラストは「誰が何をしているか」を短く。意見はYes/Noに理由を1〜2文。準2級プラスの3コマより短い型です。',
                 'parts' => [
-                    ['title' => 'イラストの質問', 'desc' => '1枚絵の状況・行動を英語で説明する練習です。準2級プラスの3コマと違い、いま見えている場面を描写します。', 'image' => 'speaking-1'],
-                    ['title' => 'トピックの質問', 'desc' => 'パッセージや日常の話題に関連した質問へ、自分の考えで答えます。', 'image' => 'speaking-2'],
-                    ['title' => '意見の質問', 'desc' => '身近な事柄について、理由をつけて短く意見を述べます。', 'image' => 'speaking-3'],
+                    ['title' => 'パッセージとイラスト', 'desc' => '問題カードのパッセージと、Picture A・Bの2枚絵を使った練習です。準2級プラスの3コマと違い、いま見えている場面を描写します。', 'image' => 'speaking-1'],
+                    ['title' => '意見を問う質問', 'desc' => 'カードを見ずに、日常の話題について理由をつけて短く意見を述べます。本番のNo.4に近い練習です。', 'image' => 'speaking-2'],
+                    ['title' => '自身の経験', 'desc' => '身近な出来事について、自分の経験で答えます。カードを裏返したあとの本番後半に近い練習です。', 'image' => 'speaking-3'],
                 ],
             ],
             'format_plan' => [
@@ -1257,7 +1257,7 @@ function grade_content_all(): array
                     'heading' => '忙しい週でも、役割を分ければ続く',
                     'lead' => '毎日1時間じゃなくて大丈夫。スキマ・夜・週末で役割を分けると、部活のある週でも続きやすいです。',
                     'image' => '/assets/images/grade/jun2kyu/format-week.jpg',
-                    'image_alt' => 'ノートを開き、次の学習を考える高校生',
+                    'image_alt' => 'ノートにペンで書き進める手元',
                     'roles' => [
                         ['when' => '通学・待ち時間', 'time' => '5〜10分', 'title' => '単語とリスニング', 'text' => '応答文と放送1回の本番に慣れる。間違えた語だけ履歴でやり直せます。', 'icon' => 'smartphone'],
                         ['when' => '夜の机', 'time' => '15〜20分', 'title' => '週に1回はEメール', 'text' => '書いた直後にAIが添削するので、保護者の方が見なくてもその日のうちに直せます。', 'icon' => 'pencil-line'],
@@ -1318,6 +1318,21 @@ function grade_content_all(): array
                         'image' => '/assets/images/grade/jun2kyu/strength-7.jpg',
                         'alt' => 'タブレットを見ながら学習を続ける高校生',
                     ],
+                ],
+            ],
+            'youtube' => [
+                'heading' => '準2級の単語を、<span class="heading-accent">YouTubeで聞き流し</span>',
+                'lead' => '通学や家事のあいだに流せる、英単語100語の聞き流し動画を公開しています。英語→日本語→例文の順なので、耳から語彙を増やしたいときにどうぞ。よかったらチャンネル登録もお願いします。',
+                'button' => 'YouTubeで聞き流し動画を見る',
+                'playlist' => 'https://www.youtube.com/playlist?list=PLQ_x1Z8jTrSk',
+                'channel' => 'https://www.youtube.com/@aiken.english',
+                'embed' => 'https://youtu.be/KA4P_K5ZUJE',
+                'videos' => [
+                    ['title' => '【英検準2級 英単語100語】聞き流し Part1｜英語→日本語→例文付き', 'url' => 'https://youtu.be/KA4P_K5ZUJE'],
+                    ['title' => '【英検準2級 英単語100語】聞き流し Part2｜英語→日本語→例文付き', 'url' => 'https://youtu.be/uPdq5E2WYBE'],
+                    ['title' => '【英検準2級 英単語100語】聞き流し Part3｜英語→日本語→例文付き', 'url' => 'https://youtu.be/Bxw2iKTTfvE'],
+                    ['title' => '【英検準2級 英単語100語】聞き流し Part4｜英語→日本語→例文付き', 'url' => 'https://youtu.be/8_Y8MzQVETQ'],
+                    ['title' => '【英検準2級 英単語100語】聞き流し Part5｜英語→日本語→例文付き', 'url' => 'https://youtu.be/0lDDBniXd70'],
                 ],
             ],
             'faq' => [
