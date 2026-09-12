@@ -18,7 +18,12 @@
         <span class="block text-brand-accent">英検対策アプリはAiKen</span>
         <span class="hero-heading__sub block">5級〜1級を本試験形式で</span>
       </h1>
-      <p class="max-w-lg text-base leading-relaxed text-[#232323] sm:text-lg"><?php echo br_after_period('<strong>単語</strong>・<strong>リーディング</strong>・<strong>リスニング</strong>・<strong>ライティング</strong>・<strong>スピーキング</strong>を本試験形式で対策。10,000問超・AI採点・復習対応。<strong>' . monthly_price_label() . '</strong>で5級〜1級まで。'); ?></p>
+      <ul class="grade-seo-hero__chips">
+        <li class="grade-seo-hero__chip">要約対応</li>
+        <li class="grade-seo-hero__chip">Eメール対応</li>
+        <li class="grade-seo-hero__chip">準2級プラス</li>
+      </ul>
+      <p class="max-w-lg text-base leading-relaxed text-[#232323] sm:text-lg"><?php echo br_after_period('<strong>単語</strong>・<strong>リーディング</strong>・<strong>リスニング</strong>・<strong>ライティング</strong>・<strong>スピーキング</strong>を本試験形式で対策。2024年度からの<strong>英文要約</strong>・<strong>Eメール</strong>にも対応。10,000問超・AI採点・復習。<strong>' . monthly_price_label() . '</strong>で5級〜1級まで。'); ?></p>
       <div class="flex flex-col gap-3 sm:flex-row sm:justify-start">
         <a class="inline-flex items-center justify-center rounded-full bg-[#50c2cb] px-10 py-4 text-[21px] font-semibold text-white shadow-lg shadow-[#50c2cb]/25 transition hover:bg-[#46adb5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#50c2cb]/60 focus-visible:ring-offset-2" href="<?php echo APP_URL; ?>/signup"><?php echo FREE_TRIAL_DAYS; ?>日間無料で試す</a>
         <a class="inline-flex items-center justify-center rounded-full border-2 border-[#50c2cb] bg-white px-10 py-4 text-[21px] font-semibold text-slate-800 transition hover:border-[#46adb5] hover:bg-[#50c2cb]/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#50c2cb]/60 focus-visible:ring-offset-2" href="/plan">料金を見る</a>

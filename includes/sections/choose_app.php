@@ -20,7 +20,7 @@ $aiken_col = count($headers) - 1;
     <div class="mx-auto max-w-3xl text-center">
       <p class="section-badge section-badge--center" aria-hidden="true">COMPARE</p>
       <h2 id="choose-app-heading" class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl"><span class="heading-accent">英検対策アプリ</span>の選び方</h2>
-      <p class="mt-3 text-slate-600"><?php echo br_after_period('単語だけ・塾・過去問、どれが合うかは目的次第です。級をまたいで本試験形式で進めたいなら、技能の範囲と添削の有無を先に見ると迷いません。'); ?></p>
+      <p class="mt-3 text-slate-600"><?php echo br_after_period('単語だけ・塾・過去問、どれが合うかは目的次第です。2024年度以降の要約・Eメールまで本試験形式で進めたいなら、技能の範囲と添削の有無を先に見ると迷いません。'); ?></p>
     </div>
 
     <div class="choose-app__table-wrap mt-10 sm:mt-12">

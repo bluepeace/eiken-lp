@@ -19,7 +19,7 @@
         <h2 id="intro-heading" class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl"><span class="heading-accent">英検対策アプリ<?php echo htmlspecialchars(SITE_NAME); ?></span>でできること</h2>
         <div class="intro-body mt-6 space-y-6 leading-relaxed sm:space-y-7">
           <p><?php echo br_after_period('お子さんの英検は、<strong>入試や進学にも関わる</strong>大切な検定です。保護者の方にとっても、<strong>単語</strong>・<strong>リーディング</strong>・<strong>面接対策</strong>…と教材やアプリをバラバラに揃えるのは、時間も費用もかかります。「うちの子、本当に<strong>英検対策</strong>できているのかな」と不安になる方も多いはずです。'); ?></p>
-          <p><?php echo br_after_period('<span class="lp-marker">' . htmlspecialchars(SITE_NAME) . '（' . htmlspecialchars(SITE_READING) . '）は、英検5級から1級まで対応した英検対策アプリです。</span><strong>単語</strong>・<strong>リーディング</strong>・<strong>リスニング</strong>・<strong>ライティング</strong>・<strong>スピーキング</strong>を、本試験に近い形式でひとつにまとめました。学習履歴が残るので<strong>間違えた問題の復習</strong>もでき、ライティングとスピーキングは<span class="lp-marker">AIがその場で採点・フィードバックします。</span><strong>ご家庭だけでは難しい部分</strong>も、アプリ内で対策できます。'); ?></p>
+          <p><?php echo br_after_period('<span class="lp-marker">' . htmlspecialchars(SITE_NAME) . '（' . htmlspecialchars(SITE_READING) . '）は、英検5級から1級まで対応した英検対策アプリです。</span><strong>単語</strong>・<strong>リーディング</strong>・<strong>リスニング</strong>・<strong>ライティング</strong>・<strong>スピーキング</strong>を、本試験に近い形式でひとつにまとめました。<strong>2024年度からの英文要約・Eメール</strong>や<strong>準2級プラス</strong>も、古い過去問だけに頼らず練習できます。学習履歴が残るので<strong>間違えた問題の復習</strong>もでき、ライティングとスピーキングは<span class="lp-marker">AIがその場で採点・フィードバックします。</span><strong>ご家庭だけでは難しい部分</strong>も、アプリ内で対策できます。'); ?></p>
         </div>
       </div>
     </div>
