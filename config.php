@@ -228,6 +228,58 @@ function asset(string $path): string {
     return rtrim(SITE_URL, '/') . '/' . ltrim($path, '/');
 }
 
+/**
+ * WebP があれば picture、なければ img。
+ *
+ * @param array{src: string, alt: string, width?: int, height?: int, class?: string, loading?: string, fetchpriority?: string, decoding?: string, webp?: string} $img
+ */
+function lp_picture(array $img): string
+{
+    $src = (string) ($img['src'] ?? '');
+    $alt = (string) ($img['alt'] ?? '');
+    $width = (int) ($img['width'] ?? 0);
+    $height = (int) ($img['height'] ?? 0);
+    $class = (string) ($img['class'] ?? '');
+    $loading = (string) ($img['loading'] ?? 'lazy');
+    $fetch = (string) ($img['fetchpriority'] ?? '');
+    $decoding = (string) ($img['decoding'] ?? 'async');
+    $webp = (string) ($img['webp'] ?? '');
+    if ($webp === '') {
+        $webp = (string) preg_replace('/\.(png|jpe?g)$/i', '.webp', $src);
+    }
+
+    $rel = ltrim((string) (parse_url($webp, PHP_URL_PATH) ?: $webp), '/');
+    $hasWebp = $webp !== $src && is_file(__DIR__ . '/' . $rel);
+
+    $attrs = 'src="' . htmlspecialchars($src, ENT_QUOTES, 'UTF-8') . '"'
+        . ' alt="' . htmlspecialchars($alt, ENT_QUOTES, 'UTF-8') . '"';
+    if ($width > 0) {
+        $attrs .= ' width="' . $width . '"';
+    }
+    if ($height > 0) {
+        $attrs .= ' height="' . $height . '"';
+    }
+    if ($class !== '') {
+        $attrs .= ' class="' . htmlspecialchars($class, ENT_QUOTES, 'UTF-8') . '"';
+    }
+    if ($loading !== '') {
+        $attrs .= ' loading="' . htmlspecialchars($loading, ENT_QUOTES, 'UTF-8') . '"';
+    }
+    if ($decoding !== '') {
+        $attrs .= ' decoding="' . htmlspecialchars($decoding, ENT_QUOTES, 'UTF-8') . '"';
+    }
+    if ($fetch !== '') {
+        $attrs .= ' fetchpriority="' . htmlspecialchars($fetch, ENT_QUOTES, 'UTF-8') . '"';
+    }
+
+    $imgTag = '<img ' . $attrs . '>';
+    if (!$hasWebp) {
+        return $imgTag;
+    }
+
+    return '<picture><source type="image/webp" srcset="' . htmlspecialchars($webp, ENT_QUOTES, 'UTF-8') . '">' . $imgTag . '</picture>';
+}
+
 /** 句点（。）の直後に改行を挿入（index用） */
 function br_after_period(string $html): string {
     return str_replace('。', '。<br>', $html);

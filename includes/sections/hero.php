@@ -1,7 +1,15 @@
 <?php if (!defined('SITE_NAME')) { require_once __DIR__ . '/../../config.php'; } ?>
 <section class="relative overflow-hidden px-4 py-16 sm:py-20 md:py-24" aria-labelledby="hero-heading">
   <div class="pointer-events-none absolute inset-0" aria-hidden="true">
-    <img src="/assets/images/hero-bg.png" alt="" class="hero-bg-image h-full w-full object-cover" loading="eager" fetchpriority="high" width="1920" height="1080">
+    <?php echo lp_picture([
+        'src' => '/assets/images/hero-bg.png',
+        'alt' => '',
+        'width' => 1920,
+        'height' => 1080,
+        'class' => 'hero-bg-image h-full w-full object-cover',
+        'loading' => 'eager',
+        'fetchpriority' => 'high',
+    ]); ?>
     <div class="hero-bg-overlay absolute inset-0"></div>
   </div>
   <div class="relative z-10 lp-container flex flex-col items-start gap-12 lg:flex-row lg:items-center lg:gap-16">
@@ -17,7 +25,14 @@
       </div>
     </div>
     <div class="hero-mockup flex-1 w-full">
-      <img src="/assets/images/hero-mockup.png" alt="AiKenアプリの画面イメージ" width="640" height="480" class="hero-mockup__image mx-auto" loading="eager">
+      <?php echo lp_picture([
+          'src' => '/assets/images/hero-mockup.png',
+          'alt' => 'AiKenアプリの画面イメージ',
+          'width' => 640,
+          'height' => 480,
+          'class' => 'hero-mockup__image mx-auto',
+          'loading' => 'eager',
+      ]); ?>
     </div>
   </div>
 </section>

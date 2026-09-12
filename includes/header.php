@@ -37,7 +37,14 @@ $is_about = ($current_page === 'about');
 <header class="site-header sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-md">
   <div class="lp-container site-header__inner px-4">
     <a class="flex shrink-0 items-center" href="/">
-      <img alt="<?php echo htmlspecialchars(SITE_NAME); ?>" width="160" height="48" class="site-header__logo" src="<?php echo asset('assets/images/logo-aiken.png'); ?>">
+      <?php echo lp_picture([
+          'src' => '/assets/images/logo-aiken.png',
+          'alt' => SITE_NAME,
+          'width' => 160,
+          'height' => 48,
+          'class' => 'site-header__logo',
+          'loading' => 'eager',
+      ]); ?>
     </a>
     <?php if ($show_main_nav): ?>
     <nav class="site-header__nav min-w-0 flex-1" aria-label="サイト内リンク">

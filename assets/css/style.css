@@ -37,6 +37,11 @@ img.logo:not(.site-header__logo) {
   padding-bottom: 0.75rem;
 }
 
+.site-header a > picture {
+  display: block;
+  line-height: 0;
+}
+
 .site-header__logo {
   display: block;
   height: 2.25rem;

@@ -11,7 +11,14 @@ include __DIR__ . '/breadcrumbs.php';
     <div class="site-footer__top">
       <div class="site-footer__brand">
         <a class="site-footer__logo-link" href="/">
-          <img alt="<?php echo htmlspecialchars(SITE_NAME); ?>" width="120" height="36" class="site-footer__logo logo" src="<?php echo asset('assets/images/logo-aiken.png'); ?>">
+          <?php echo lp_picture([
+              'src' => '/assets/images/logo-aiken.png',
+              'alt' => SITE_NAME,
+              'width' => 120,
+              'height' => 36,
+              'class' => 'site-footer__logo logo',
+              'loading' => 'lazy',
+          ]); ?>
         </a>
         <p class="site-footer__tagline">英検対策アプリ AiKen（アイケン）</p>
       </div>

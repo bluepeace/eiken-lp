@@ -41,7 +41,14 @@ $buddy_alt = (string) ($problems['buddy_alt'] ?? 'AiKenのバディ「チョコ�
           <?php endforeach; ?>
         </ul>
         <figure class="problems-buddy">
-          <img src="<?php echo htmlspecialchars($buddy_src); ?>" alt="<?php echo htmlspecialchars($buddy_alt); ?>" width="320" height="320" class="problems-buddy__image" loading="lazy">
+          <?php echo lp_picture([
+              'src' => $buddy_src,
+              'alt' => $buddy_alt,
+              'width' => 320,
+              'height' => 320,
+              'class' => 'problems-buddy__image',
+              'loading' => 'lazy',
+          ]); ?>
         </figure>
       </div>
     </div>

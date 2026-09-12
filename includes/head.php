@@ -41,9 +41,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:locale" content="ja_JP">
 <meta property="og:site_name" content="<?php echo htmlspecialchars(SITE_NAME); ?>">
 
+<?php if (($page ?? '') === 'top' && empty($grade)): ?>
+<link rel="preload" as="image" href="<?php echo $base; ?>/assets/images/hero-bg.webp" type="image/webp" fetchpriority="high">
+<?php endif; ?>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"></noscript>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="<?php echo $base; ?>/assets/css/style.css?v=<?php echo @filemtime(__DIR__ . '/../assets/css/style.css') ?: '1'; ?>">
 <?php if (empty($meta['omit_jsonld'])): ?>

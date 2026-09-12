@@ -27,7 +27,14 @@ $problem_items = [
           <?php endforeach; ?>
         </ul>
         <figure class="problems-buddy">
-          <img src="/assets/images/buddy-worries.png" alt="AiKenのバディ" width="320" height="320" class="problems-buddy__image" loading="lazy">
+          <?php echo lp_picture([
+              'src' => '/assets/images/buddy-worries.png',
+              'alt' => 'AiKenのバディ',
+              'width' => 320,
+              'height' => 320,
+              'class' => 'problems-buddy__image',
+              'loading' => 'lazy',
+          ]); ?>
         </figure>
       </div>
     </div>

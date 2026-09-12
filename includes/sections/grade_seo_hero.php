@@ -61,7 +61,14 @@ $hero_mockup_alt = $name !== ''
       </div>
     </div>
     <div class="grade-seo-hero__mockup hero-mockup flex-1 w-full">
-      <img src="/assets/images/hero-mockup.png" alt="<?php echo $hero_mockup_alt; ?>" width="640" height="480" class="hero-mockup__image mx-auto" loading="eager">
+      <?php echo lp_picture([
+          'src' => '/assets/images/hero-mockup.png',
+          'alt' => html_entity_decode($hero_mockup_alt, ENT_QUOTES, 'UTF-8'),
+          'width' => 640,
+          'height' => 480,
+          'class' => 'hero-mockup__image mx-auto',
+          'loading' => 'eager',
+      ]); ?>
     </div>
   </div>
 </section>
