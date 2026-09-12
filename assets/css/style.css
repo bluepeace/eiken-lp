@@ -1431,6 +1431,15 @@ img[loading="lazy"] {
   font-weight: 700;
 }
 
+.choose-app__table {
+  min-width: 44rem;
+}
+
+.choose-app__table thead th:last-child,
+.choose-app__table td.is-current {
+  white-space: nowrap;
+}
+
 .grade-position__note {
   margin: 0.75rem 0 0;
   font-size: 0.8125rem;
