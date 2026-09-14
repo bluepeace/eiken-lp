@@ -1270,6 +1270,22 @@ function grade_content_all(): array
                     ],
                 ],
             ],
+            'youtube' => [
+                'heading' => '準2級プラスの単語を、<span class="heading-accent">YouTubeで聞き流し</span>',
+                'lead' => '通学や家事のあいだに流せる、英単語100語の聞き流し動画を公開しています。英語→日本語→例文の順なので、耳から語彙を増やしたいときにどうぞ。よかったらチャンネル登録もお願いします。',
+                'button' => 'YouTubeで聞き流し動画を見る',
+                'playlist' => 'https://www.youtube.com/playlist?list=PLeX_nG41EtgA',
+                'channel' => 'https://www.youtube.com/@aiken.english',
+                'embed' => 'https://www.youtube.com/watch?v=sJfGEwjqPPI',
+                'embed_title' => '【英検準2級プラス 英単語100語】聞き流し Part1｜英語→日本語→例文付き',
+                'videos' => [
+                    ['title' => '【英検準2級プラス 英単語100語】聞き流し Part1｜英語→日本語→例文付き', 'url' => 'https://www.youtube.com/watch?v=sJfGEwjqPPI'],
+                    ['title' => '【英検準2級プラス 英単語100語】聞き流し Part2｜英語→日本語→例文付き', 'url' => 'https://www.youtube.com/watch?v=yfXEW9zdICo'],
+                    ['title' => '【英検準2級プラス 英単語100語】聞き流し Part3｜英語→日本語→例文付き', 'url' => 'https://www.youtube.com/watch?v=POxXLoBlSB8'],
+                    ['title' => '【英検準2級プラス 英単語100語】聞き流し Part4｜英語→日本語→例文付き', 'url' => 'https://www.youtube.com/watch?v=Yop16u9UfGA'],
+                    ['title' => '【英検準2級プラス 英単語100語】聞き流し Part5｜英語→日本語→例文付き', 'url' => 'https://www.youtube.com/watch?v=e4B93zTndMg'],
+                ],
+            ],
             'faq' => [
                 ['q' => '準2級プラスと準2級の違いは何ですか？', 'a' => '準2級は日常的な話題、準2級プラスは身近な社会的な話題が中心です。試験時間は2級と同じ（リーディング・ライティング85分、リスニング約25分、面接約7分）で、ライティングには準2級にない英文要約が出ます。二次も3コマのイラスト展開になり、準2級の1枚絵より2級に近い流れです。'],
                 ['q' => '準2級プラスの要約問題は練習できますか？', 'a' => 'はい。英文要約の練習ができ、書いた直後にAIが要点のまとめ方・文法・構成をフィードバックします。準2級のEメールから変わる大問なので、初めて取り組む方もその場で直しながら型を覚えられます。'],
