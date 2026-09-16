@@ -1623,11 +1623,10 @@ function grade_content_all(): array
             'positioning' => [
                 'heading' => '英検3級のレベル｜4級・準2級との違い',
                 'lead' => '中学卒業程度として、日常的な話題の英語が問われる級です。4級までの読解・リスニングから一歩進み、次の準2級では一次の時間と語彙が一段上がります。',
-                // 画像は後で grade/3kyu/position-*.jpg を置く
-                'image' => '',
-                'image_alt' => 'ノートに書きながら3級の学習をする中学生',
-                'image_2' => '',
-                'image_2_alt' => 'ヘッドセットを着けてスピーキング練習をする中学生',
+                'image' => '/assets/images/grade/3kyu/position-classroom.jpg',
+                'image_alt' => '教室で授業を聞く制服の中学生',
+                'image_2' => '/assets/images/grade/3kyu/position-takeaways.jpg',
+                'image_2_alt' => '教室でノートを取りながら学ぶ制服の中学生',
                 'highlight' => '3kyu',
                 'intro' => [
                     '4級も3級も<strong>日常的な話題</strong>が中心です。3級は中学卒業程度として、掲示・Eメール・説明文などの読解に加え、<strong>ライティング（Eメール＋英作文）</strong>と二次面接が入ります。その先の準2級は高校中級程度で、一次が長くなり語彙も一段上がります。',
