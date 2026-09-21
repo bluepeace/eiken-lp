@@ -992,6 +992,22 @@ function grade_content_all(): array
                     ],
                 ],
             ],
+            'youtube' => [
+                'heading' => '2級の単語を、<span class="heading-accent">YouTubeで聞き流し</span>',
+                'lead' => '通学や家事のあいだに流せる、英単語100語の聞き流し動画を公開しています。英語→日本語→例文の順なので、耳から語彙を増やしたいときにどうぞ。よかったらチャンネル登録もお願いします。',
+                'button' => 'YouTubeで聞き流し動画を見る',
+                'playlist' => 'https://www.youtube.com/playlist?list=PLG6Yn7h5E19E',
+                'channel' => 'https://www.youtube.com/@aiken.english',
+                'embed' => 'https://youtu.be/onMXqcb0T8c',
+                'embed_title' => '【英検2級 英単語100語】聞き流し Part1｜英語→日本語→例文付き',
+                'videos' => [
+                    ['title' => '【英検2級 英単語100語】聞き流し Part1｜英語→日本語→例文付き', 'url' => 'https://youtu.be/onMXqcb0T8c'],
+                    ['title' => '【英検2級 英単語100語】聞き流し Part2｜英語→日本語→例文付き', 'url' => 'https://youtu.be/et59fZooKII'],
+                    ['title' => '【英検2級 英単語100語】聞き流し Part3｜英語→日本語→例文付き', 'url' => 'https://youtu.be/bCGpHGbudcA'],
+                    ['title' => '【英検2級 英単語100語】聞き流し Part4｜英語→日本語→例文付き', 'url' => 'https://youtu.be/I_JBbkp70NU'],
+                    ['title' => '【英検2級 英単語100語】聞き流し Part5｜英語→日本語→例文付き', 'url' => 'https://youtu.be/z0gOvOiFmYk'],
+                ],
+            ],
             'faq' => [
                 ['q' => '準2級プラスと2級の違いは何ですか？', 'a' => '準2級プラスは身近な社会的な話題、2級は社会的な話題が中心です。レベル目安は高校上級程度と高校卒業程度。一次の時間と面接（約7分・3コマ）は同じで、ライティングもどちらも要約＋英作文です。いちばんの差は、語彙と読解の抽象度が上がることです。'],
                 ['q' => '2級の要約・英作文はアプリで練習できますか？', 'a' => 'はい。英文要約と意見論述の両方に対応し、書いた直後にAIが要点のまとめ方・文法・構成をフィードバックします。指定語数内に落とさずまとめる練習を、その場で直しながら進められます。'],
