@@ -1,7 +1,7 @@
 <?php
 /**
  * 特定商取引法に基づく表記（noindex・サイトマップ除外）
- * 掲載内容は app.aiken.life/tokushoho と同一の趣旨（Stripe 審査・表示用）
+ * 掲載内容はアプリ内課金（App Store / Google Play）と Web（Stripe）を併記
  */
 declare(strict_types=1);
 
@@ -22,16 +22,19 @@ $tokushoho_rows = [
         true, // HTML 可
     ],
     ['営業時間', '平日 10:00〜18:00'],
-    ['販売価格', open_campaign_active()
-        ? 'プレミアムプラン：定価' . monthly_price_regular_label() . '。OPEN記念価格として' . monthly_price_label() . '（' . open_campaign_end_label() . 'まで）。表示価格は全て税込です。'
-        : 'プレミアムプラン：' . monthly_price_regular_label() . '。表示価格は全て税込です。'],
-    ['支払方法', 'クレジットカード決済（Stripe）。代金は各課金サイクル（月額の場合は毎月の契約日）に自動課金されます。'],
+    ['販売価格', (open_campaign_active()
+        ? 'プレミアムプラン：定価' . monthly_price_regular_label() . '。OPEN記念価格として' . monthly_price_label() . '（' . open_campaign_end_label() . 'まで）。'
+        : 'プレミアムプラン：' . monthly_price_regular_label() . '。')
+        . 'アプリ内課金の表示価格は App Store / Google Play の価格に従います。表示価格は全て税込です。'],
+    ['支払方法', 'アプリ内課金（Apple App Store / Google Play）またはクレジットカード決済（Stripe）。代金は各課金サイクル（月額の場合は毎月の契約日）に自動課金されます。'],
     ['支払時期', 'サブスクリプション登録時に初回分を請求。以降、毎月の契約日に自動で請求します。'],
     ['役務の提供時期', 'お支払い完了後、即時にお申し込みのプランをご利用いただけます。'],
     [
         '返品・キャンセル・解約',
         "【サブスクリプションの解約】\n"
-        . "・いつでも解約可能です。解約手続きは「プレミアム」ページ内の「サブスクリプションを管理」より行ってください。\n"
+        . "・いつでも解約可能です。\n"
+        . "・Web（Stripe）契約：プレミアムページ内の「サブスクリプションを管理」より行ってください。\n"
+        . "・アプリ内課金：端末の設定（Apple ID / Google アカウント）のサブスクリプション管理から行ってください。\n"
         . "・解約後も、お支払い済みの期間まではサービスをご利用いただけます。\n"
         . "・解約後の返金はいたしかねます。\n"
         . "\n"
@@ -65,7 +68,7 @@ include __DIR__ . '/includes/header.php';
         </tbody>
       </table>
     </div>
-    <p class="mt-8 text-xs text-slate-500">最終更新：2026年8月21日</p>
+    <p class="mt-8 text-xs text-slate-500">最終更新：2026年9月21日</p>
     <p class="mt-6 text-center text-sm">
       <a class="font-medium text-[#50c2cb] underline-offset-2 hover:underline" href="/">トップに戻る</a>
     </p>

@@ -19,7 +19,8 @@ include __DIR__ . '/includes/header.php';
     <div class="mt-8 rounded-xl border border-[#50c2cb]/30 bg-[#e8f8f9] px-5 py-4 text-sm text-slate-800">
       <p class="font-semibold text-slate-900">ポイント</p>
       <ul class="mt-2 list-disc space-y-1 pl-5">
-        <li>解約はアプリ内からいつでも可能です</li>
+        <li>Web（Stripe）契約は、アプリのプレミアム画面からいつでも解約できます</li>
+        <li>アプリ内課金は、端末のストア設定から解約します</li>
         <li>解約後も、お支払い済みの期間まではご利用いただけます</li>
         <li>解約後の返金はいたしかねます</li>
       </ul>
@@ -40,8 +41,9 @@ include __DIR__ . '/includes/header.php';
         </li>
         <li class="rounded-xl border border-slate-200 bg-slate-50/50 px-5 py-4">
           <p class="text-xs font-semibold tracking-wide text-[#50c2cb]">STEP 3</p>
-          <h3 class="mt-1 font-semibold text-slate-900">「サブスクリプションを管理」から解約する</h3>
-          <p class="mt-2 text-sm text-slate-600">画面の案内に従い、解約手続きを完了してください。決済は Stripe 経由のため、必要に応じて Stripe の顧客ポータルでも確認できます。</p>
+          <h3 class="mt-1 font-semibold text-slate-900">契約経路に応じて解約する</h3>
+          <p class="mt-2 text-sm text-slate-600">Web（Stripe）で契約した場合は、プレミアム画面の「サブスクリプションを管理」から解約してください。</p>
+          <p class="mt-2 text-sm text-slate-600">アプリ内課金（App Store / Google Play）の場合は、端末の設定 → Apple ID または Google アカウント → サブスクリプションから解約してください。アプリのアカウント削除だけでは、ストアの課金は止まりません。</p>
         </li>
       </ol>
     </section>
@@ -57,7 +59,7 @@ include __DIR__ . '/includes/header.php';
 
     <section class="mt-12" aria-labelledby="cancel-account-heading">
       <h2 id="cancel-account-heading" class="text-lg font-bold text-slate-900">アカウント退会（データの削除）について</h2>
-      <p class="mt-3 text-sm leading-relaxed text-slate-700"><?php echo br_after_period('サブスクリプション解約と、アカウント退会（削除）は別の手続きです。アカウント自体を削除したい場合は、アプリ内の設定、または<a class="font-medium text-[#50c2cb] underline-offset-2 hover:underline" href="/contact">お問い合わせフォーム</a>よりご連絡ください。'); ?></p>
+      <p class="mt-3 text-sm leading-relaxed text-slate-700"><?php echo br_after_period('サブスクリプション解約と、アカウント退会（削除）は別の手続きです。アカウント自体を削除したい場合は、アプリのプロフィール（またはアカウント設定）から「アカウントを削除」を選んでください。Web からもヘルプの退会手続きが可能です。ご不明な点は<a class="font-medium text-[#50c2cb] underline-offset-2 hover:underline" href="/contact">お問い合わせフォーム</a>よりご連絡ください。'); ?></p>
     </section>
 
     <section class="mt-12" aria-labelledby="cancel-mistake-heading">

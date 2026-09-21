@@ -14,7 +14,7 @@ include __DIR__ . '/includes/header.php';
   <div class="mx-auto max-w-3xl text-slate-800">
     <h1 id="privacy-heading" class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">プライバシーポリシー</h1>
     <p class="mt-4 text-sm leading-relaxed text-slate-600">AiKen（アイケン）（以下「当サービス」）は、ユーザーの個人情報の取り扱いについて以下のとおり定めます。</p>
-    <p class="mt-4 text-sm text-slate-600">制定日：2026年2月16日<br>最終更新：2026年8月30日</p>
+    <p class="mt-4 text-sm text-slate-600">制定日：2026年2月16日<br>最終更新：2026年9月21日</p>
 
     <div class="mt-10 space-y-10 text-sm leading-relaxed">
       <section aria-labelledby="privacy-s1">
@@ -31,14 +31,16 @@ include __DIR__ . '/includes/header.php';
           <li>メールアドレス（認証用）</li>
           <li>パスワード（暗号化して保存）</li>
           <li>表示名・ニックネーム</li>
+          <li>生年月日（年齢確認・アプリ内課金の表示判定）</li>
           <li>プロフィール設定（目標級、目標受験日など）</li>
           <li>Google アカウントでログインする場合：Google から提供されるメールアドレス・表示名</li>
         </ul>
 
         <p class="mt-4 font-semibold text-slate-900">【学習データ】（アプリ）</p>
         <ul class="mt-2 list-disc space-y-2 pl-5">
-          <li>単語の学習履歴・習熟度</li>
+          <li>単語・リーディング・リスニングの学習履歴・習熟度</li>
           <li>ライティングの提出内容・添削結果</li>
+          <li>スピーキング練習の回答（入力テキストまたは音声認識による文字起こし）と添削結果</li>
           <li>学習時間・連続学習日数などの統計</li>
         </ul>
 
@@ -49,8 +51,8 @@ include __DIR__ . '/includes/header.php';
         </ul>
         <p class="mt-2">公式サイトのお問い合わせは、サーバーのメール機能により運営者宛（<?php echo htmlspecialchars(CONTACT_EMAIL); ?>）へ送信され、受付確認のため送信者へ自動返信メールを送る場合があります。</p>
 
-        <p class="mt-4 font-semibold text-slate-900">【決済情報】（アプリ）</p>
-        <p class="mt-2">クレジットカード番号等の決済情報は当サービスでは保持せず、決済代行会社（Stripe）にて処理されます。</p>
+        <p class="mt-4 font-semibold text-slate-900">【決済情報】</p>
+        <p class="mt-2">クレジットカード番号等の決済情報は当サービスでは保持しません。Web での契約は決済代行会社（Stripe）、アプリ内課金は Apple App Store / Google Play にて処理されます。ストアから提供される購読・レシート情報を、権利確認のためにサーバーで照合することがあります。</p>
 
         <p class="mt-4 font-semibold text-slate-900">【アクセス・端末情報】（公式サイト・アプリ）</p>
         <ul class="mt-2 list-disc space-y-2 pl-5">
@@ -66,10 +68,10 @@ include __DIR__ . '/includes/header.php';
           <li>サービスの提供・運営</li>
           <li>ユーザー認証・アカウント管理</li>
           <li>学習進捗の記録・表示・パーソナライズ</li>
-          <li>AI によるライティング添削</li>
+          <li>AI によるライティング添削・スピーキング添削・サポート対応</li>
           <li>お問い合わせへの対応および受付確認の自動返信</li>
           <li>特定商取引法に関する開示請求への対応</li>
-          <li>有料プランの課金処理</li>
+          <li>有料プランの課金処理（Stripe およびアプリ内課金の権利確認）</li>
           <li>サイト・アプリの利用状況の把握、サービス改善・新機能の開発</li>
           <li>重要なお知らせの送信</li>
           <li>利用規約違反への対応</li>
@@ -87,15 +89,21 @@ include __DIR__ . '/includes/header.php';
           <li>関連情報：<a class="text-[#50c2cb] underline-offset-2 hover:underline" href="https://supabase.com/legal/privacy" rel="noopener noreferrer" target="_blank">https://supabase.com/legal/privacy</a></li>
         </ul>
 
-        <p class="mt-4 font-semibold text-slate-900">【Stripe】（アプリ）</p>
+        <p class="mt-4 font-semibold text-slate-900">【Stripe】（Web 決済）</p>
         <ul class="mt-2 list-disc space-y-2 pl-5">
           <li>決済処理（カード情報等は Stripe が直接処理）</li>
           <li>関連情報：<a class="text-[#50c2cb] underline-offset-2 hover:underline" href="https://stripe.com/jp/legal" rel="noopener noreferrer" target="_blank">https://stripe.com/jp/legal</a></li>
         </ul>
 
+        <p class="mt-4 font-semibold text-slate-900">【Apple / Google】（アプリ内課金）</p>
+        <ul class="mt-2 list-disc space-y-2 pl-5">
+          <li>App Store / Google Play を通じた定期購入の決済および購読管理</li>
+          <li>関連情報：<a class="text-[#50c2cb] underline-offset-2 hover:underline" href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer" target="_blank">https://www.apple.com/legal/privacy/</a> ／ <a class="text-[#50c2cb] underline-offset-2 hover:underline" href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">https://policies.google.com/privacy</a></li>
+        </ul>
+
         <p class="mt-4 font-semibold text-slate-900">【OpenAI】（アプリ）</p>
         <ul class="mt-2 list-disc space-y-2 pl-5">
-          <li>ライティングの AI 添削（提出内容を送信）</li>
+          <li>ライティング・スピーキングの AI 添削、サポートチャット（提出内容を送信）</li>
           <li>関連情報：<a class="text-[#50c2cb] underline-offset-2 hover:underline" href="https://openai.com/policies/privacy-policy" rel="noopener noreferrer" target="_blank">https://openai.com/policies/privacy-policy</a></li>
         </ul>
 
@@ -143,7 +151,7 @@ include __DIR__ . '/includes/header.php';
         <ul class="mt-3 list-disc space-y-2 pl-5">
           <li>アクセス権：収集した情報の開示を請求できます。</li>
           <li>訂正権：誤りのある情報の訂正を請求できます。</li>
-          <li>削除権：アカウント削除により、関連データの削除を請求できます。</li>
+          <li>削除権：アカウント削除により、関連データの削除を請求できます。アプリ内の「アカウントを削除」、または公式サイトの<a class="font-medium text-[#50c2cb] underline-offset-2 hover:underline" href="/cancel">退会・解約</a>から手続きできます。</li>
         </ul>
         <p class="mt-3">これらの請求は、<a class="font-medium text-[#50c2cb] underline-offset-2 hover:underline" href="/contact">お問い合わせフォーム</a>までご連絡ください。</p>
       </section>
@@ -155,7 +163,7 @@ include __DIR__ . '/includes/header.php';
 
       <section aria-labelledby="privacy-s9">
         <h2 id="privacy-s9" class="text-lg font-bold text-slate-900">9. 子どもの利用</h2>
-        <p class="mt-3">当サービスは、16歳未満の方が保護者の同意なくご利用になることを想定していません。保護者が同意の上でご利用いただくことを推奨します。</p>
+        <p class="mt-3">当サービスは、16歳未満の方が保護者の同意なくご利用になることを想定していません。保護者が同意の上でご利用いただくことを推奨します。アプリ内課金は満18歳以上の方のみ表示します。未成年の有料契約は、保護者の方と Web サイトでお手続きください。</p>
       </section>
 
       <section aria-labelledby="privacy-s10">

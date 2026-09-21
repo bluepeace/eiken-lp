@@ -14,7 +14,7 @@ include __DIR__ . '/includes/header.php';
   <div class="mx-auto max-w-3xl text-slate-800">
     <h1 id="terms-heading" class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">利用規約</h1>
     <p class="mt-3 text-sm leading-relaxed text-slate-600">AiKen（アイケン、以下「本サービス」）の利用に関する規約です。</p>
-    <p class="mt-4 text-sm text-slate-600">制定日：2026年2月16日<br>最終更新：2026年2月16日</p>
+    <p class="mt-4 text-sm text-slate-600">制定日：2026年2月16日<br>最終更新：2026年9月21日</p>
 
     <div class="mt-10 space-y-10 text-sm leading-relaxed">
       <section aria-labelledby="terms-s1">
@@ -41,8 +41,8 @@ include __DIR__ . '/includes/header.php';
         <h2 id="terms-s4" class="text-lg font-bold text-slate-900">第4条（利用料金）</h2>
         <ol class="mt-3 list-decimal space-y-2 pl-5">
           <li>本サービスには無料でご利用いただける範囲と、有料プラン（プレミアム）があります。</li>
-          <li>有料プランの料金・支払方法は、サービス内の料金表および特定商取引法に基づく表記に従います。</li>
-          <li>有料プランは、解約手続きを行うまで毎月自動更新されます。解約後も、お支払い済みの期間まではご利用いただけます。</li>
+          <li>有料プランの料金・支払方法は、サービス内の料金表および特定商取引法に基づく表記に従います。アプリでは Apple App Store / Google Play のアプリ内課金、Web ではクレジットカード決済（Stripe）をご利用いただけます。</li>
+          <li>有料プランは、解約手続きを行うまで毎月自動更新されます。解約後も、お支払い済みの期間まではご利用いただけます。アプリ内課金の解約は、各ストアのサブスクリプション管理から行えます。</li>
           <li>一度お支払いいただいた料金の返金は、法令で認められる場合を除き行いません。</li>
         </ol>
       </section>
