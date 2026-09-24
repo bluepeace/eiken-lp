@@ -28,6 +28,11 @@
         <a class="inline-flex items-center justify-center rounded-full bg-[#50c2cb] px-10 py-4 text-[21px] font-semibold text-white shadow-lg shadow-[#50c2cb]/25 transition hover:bg-[#46adb5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#50c2cb]/60 focus-visible:ring-offset-2" href="<?php echo APP_URL; ?>/signup"><?php echo FREE_TRIAL_DAYS; ?>日間無料で試す</a>
         <a class="inline-flex items-center justify-center rounded-full border-2 border-[#50c2cb] bg-white px-10 py-4 text-[21px] font-semibold text-slate-800 transition hover:border-[#46adb5] hover:bg-[#50c2cb]/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#50c2cb]/60 focus-visible:ring-offset-2" href="/plan">料金を見る</a>
       </div>
+      <?php
+      $store_align = 'start';
+      $store_on_hero = true;
+      include __DIR__ . '/../store-cta.php';
+      ?>
     </div>
     <div class="hero-mockup flex-1 w-full">
       <?php echo lp_picture([

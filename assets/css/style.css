@@ -1080,6 +1080,134 @@ img[loading="lazy"] {
   }
 }
 
+/* Web CTA 下のストア導線 */
+.store-cta {
+  margin-top: 1.15rem;
+}
+
+.store-cta--on-hero {
+  margin-top: 1.35rem;
+  max-width: 22.5rem;
+  padding: 0.85rem 1rem 0.95rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.store-cta__divider {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0 0 0.75rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #64748b;
+}
+
+.store-cta__divider span {
+  flex: 0 0 auto;
+}
+
+.store-cta__divider::before,
+.store-cta__divider::after {
+  content: "";
+  height: 1px;
+  flex: 1 1 auto;
+  background: #e2e8f0;
+}
+
+.store-cta--start .store-cta__divider::before {
+  display: none;
+}
+
+.store-cta--start .store-cta__divider::after {
+  max-width: 5rem;
+}
+
+.store-cta--center .store-cta__divider::before,
+.store-cta--center .store-cta__divider::after {
+  max-width: 3.5rem;
+}
+
+.store-cta--center .store-cta__divider {
+  justify-content: center;
+}
+
+.store-cta__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem 0.85rem;
+}
+
+.store-cta--center .store-cta__row {
+  justify-content: center;
+}
+
+.store-cta__badge {
+  display: inline-flex;
+  line-height: 0;
+  border-radius: 0.45rem;
+  transition: transform 0.15s, opacity 0.15s;
+}
+
+.store-cta__badge:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+.store-cta__badge:focus-visible {
+  outline: 2px solid #50c2cb;
+  outline-offset: 3px;
+}
+
+.store-cta__badge img {
+  display: block;
+  height: 40px;
+  width: auto;
+}
+
+.store-cta__soon {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 7.25rem;
+  min-height: 40px;
+  margin: 0;
+  padding: 0.2rem 0.75rem;
+  border: 1px dashed #cbd5e1;
+  border-radius: 0.45rem;
+  background: #f8fafc;
+  color: #64748b;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.store-cta__soon-kicker {
+  display: block;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.store-cta__note {
+  margin: 0.6rem 0 0;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: #64748b;
+}
+
+.store-cta--center .store-cta__note {
+  text-align: center;
+}
+
 /* 級別・YouTube聞き流し */
 .grade-youtube__embed-wrap {
   position: relative;

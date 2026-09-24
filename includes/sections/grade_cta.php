@@ -37,6 +37,7 @@ $note = (string) ($cta['note'] ?? 'カード登録不要・1分で完了');
       <a class="inline-flex items-center justify-center rounded-full border-2 border-slate-300 bg-white px-10 py-4 text-lg font-semibold text-slate-800 transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 focus-visible:ring-offset-2" href="<?php echo htmlspecialchars($secondary_href); ?>"><?php echo htmlspecialchars($secondary_label); ?></a>
       <?php endif; ?>
     </div>
+    <?php include __DIR__ . '/../store-cta.php'; ?>
     <?php if ($note !== ''): ?>
     <p class="mt-4 text-sm text-slate-500"><?php echo htmlspecialchars($note); ?></p>
     <?php endif; ?>

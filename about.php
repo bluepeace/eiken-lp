@@ -80,8 +80,8 @@ include __DIR__ . '/includes/header.php';
       </article>
       <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
         <span class="inline-flex text-[#50c2cb]"><?php echo lp_icon('smartphone', 'w-7 h-7'); ?></span>
-        <h3 class="mt-3 font-semibold text-slate-900">ブラウザですぐはじめられる</h3>
-        <p class="mt-2 text-sm leading-relaxed text-slate-600"><?php echo br_after_period('スマートフォン・タブレット・PC から利用可能。<strong>会員登録後</strong>、すぐに練習をスタートできます。'); ?></p>
+        <h3 class="mt-3 font-semibold text-slate-900">ブラウザでも、アプリでも</h3>
+        <p class="mt-2 text-sm leading-relaxed text-slate-600"><?php echo br_after_period('ブラウザですぐ始められるほか、<strong>iPhone・iPadアプリ</strong>もあります。会員登録後、同じアカウントですぐに練習をスタートできます。Androidは近日公開です。'); ?></p>
       </article>
     </div>
   </div>

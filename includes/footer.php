@@ -61,6 +61,9 @@ include __DIR__ . '/breadcrumbs.php';
         <ul class="site-footer__list">
           <li><a href="<?php echo htmlspecialchars(APP_URL); ?>/signup">AiKen無料登録</a></li>
           <li><a href="<?php echo htmlspecialchars(APP_URL); ?>/login">AiKenログイン</a></li>
+          <?php if (defined('APP_STORE_URL') && APP_STORE_URL !== ''): ?>
+          <li><a href="<?php echo htmlspecialchars(APP_STORE_URL); ?>" rel="noopener noreferrer" target="_blank">App Store</a></li>
+          <?php endif; ?>
         </ul>
       </nav>
       <nav class="site-footer__col" aria-label="法務・運営">

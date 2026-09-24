@@ -27,6 +27,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#ffffff">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
+<?php if (defined('APP_STORE_ID') && APP_STORE_ID !== ''): ?>
+<meta name="apple-itunes-app" content="app-id=<?php echo htmlspecialchars(APP_STORE_ID, ENT_QUOTES, 'UTF-8'); ?>">
+<?php endif; ?>
 <title><?php echo htmlspecialchars($meta['title']); ?></title>
 <meta name="description" content="<?php echo htmlspecialchars($meta['description']); ?>">
 <?php if (!empty($meta['robots'])): ?>

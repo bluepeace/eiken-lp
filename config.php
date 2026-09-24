@@ -8,6 +8,11 @@ define('SITE_READING', 'アイケン');
 define('SITE_DESCRIPTION', '英検対策アプリならAiKen（アイケン）。5級〜1級を本試験形式でまとめて対策。単語・リーディング・リスニング・ライティング・スピーキングに対応。10,000問超、AI採点・添削。5日間無料体験で始められます。');
 define('SITE_URL', 'https://aiken.life');
 define('APP_URL', 'https://app.aiken.life');
+/** iPhone / iPad（App Store）。LP のストア導線はここを正とする */
+define('APP_STORE_URL', 'https://apps.apple.com/jp/app/aiken/id6814042355');
+define('APP_STORE_ID', '6814042355');
+/** Android（Google Play）。公開まで空文字のまま */
+define('PLAY_STORE_URL', '');
 /** LP フッター著作権表示のリンク先 */
 define('BLUEPIECE_LAB_URL', 'https://bluepiece.me/link');
 define('BRAND_COLOR', '#50c2cb');
