@@ -1,9 +1,14 @@
 # AiKen LP（ランディングページ）
 
 英検対策アプリ **AiKen** の公式ランディングページ用リポジトリです。  
-ドメイン **aiken.life** で公開し、アプリ本体（**app.aiken.life**）への導線として使います。
+ドメイン **aiken.life** で公開し、Webアプリ（**app.aiken.life**）およびストアアプリへの導線として使います。
 
-**構成の詳細メモ** → [docs/構成メモ.md](docs/構成メモ.md)
+- **Webアプリ**: [https://app.aiken.life](https://app.aiken.life)
+- **iPhone / iPad**: [App Store](https://apps.apple.com/jp/app/aiken/id6814042355)（2026年9月公開）
+- **Android**: 近日公開（Google Play 予定）
+
+**構成の詳細メモ** → [docs/構成メモ.md](docs/構成メモ.md)  
+**ストア公開情報** → [docs/ストア公開.md](docs/ストア公開.md)
 
 ## 技術構成
 
@@ -126,3 +131,4 @@ Cursor / VS Code では **タスク「PHP: localhost:8000 (AiKen LP)」** から
 
 - **aiken.life** はレンサバや静的ホスティングで運用する想定です
 - ログイン・会員登録リンクはすべて **app.aiken.life**（`config.php` の `APP_URL`）に向けています
+- ネイティブアプリのストア URL・課金注意は [docs/ストア公開.md](docs/ストア公開.md) を参照（iOS 公開済み、Android は近日公開）
