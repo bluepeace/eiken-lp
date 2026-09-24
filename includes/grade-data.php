@@ -714,6 +714,22 @@ function grade_content_all(): array
                     ],
                 ],
             ],
+            'youtube' => [
+                'heading' => '準1級の単語を、<span class="heading-accent">YouTubeで聞き流し</span>',
+                'lead' => '通学や家事のあいだに流せる、英単語100語の聞き流し動画を公開しています。英語→日本語→例文の順なので、耳から語彙を増やしたいときにどうぞ。よかったらチャンネル登録もお願いします。',
+                'button' => 'YouTubeで聞き流し動画を見る',
+                'playlist' => 'https://www.youtube.com/playlist?list=PLPwtGUz3hYo0',
+                'channel' => 'https://www.youtube.com/@aiken.english',
+                'embed' => 'https://youtu.be/2iUotii4FtE',
+                'embed_title' => '【英検準1級 英単語100語】聞き流し Part1｜英語→日本語→例文付き',
+                'videos' => [
+                    ['title' => '【英検準1級 英単語100語】聞き流し Part1｜英語→日本語→例文付き', 'url' => 'https://youtu.be/2iUotii4FtE'],
+                    ['title' => '【英検準1級 英単語100語】聞き流し Part2｜英語→日本語→例文付き', 'url' => 'https://youtu.be/f7vJ01Z9fXM'],
+                    ['title' => '【英検準1級 英単語100語】聞き流し Part3｜英語→日本語→例文付き', 'url' => 'https://youtu.be/AtNYXCeOYqM'],
+                    ['title' => '【英検準1級 英単語100語】聞き流し Part4｜英語→日本語→例文付き', 'url' => 'https://youtu.be/kpIr3xmLrY8'],
+                    ['title' => '【英検準1級 英単語100語】聞き流し Part5｜英語→日本語→例文付き', 'url' => 'https://youtu.be/up-33C3rymI'],
+                ],
+            ],
             'faq' => [
                 ['q' => '2級と準1級の違いは何ですか？', 'a' => '2級は社会的な話題、準1級は社会生活の幅広い分野が中心です。レベル目安は高校卒業程度と大学中級程度。一次は85分・約25分から90分・約30分へ延び、リスニングにReal-Lifeが加わります。ライティングはどちらも要約＋英作文ですが、準1級の英作文は主張・理由・反論・結論まで求められます。二次は約7分の3コマから、約8分の4コマへ変わります。'],
                 ['q' => '準1級の要約・英作文はアプリで練習できますか？', 'a' => 'はい。英文要約と意見論述の両方に対応し、書いた直後にAIが要点のまとめ方・文法・構成をフィードバックします。英作文は主張・理由・反論・結論の型を、その場で直しながら進められます。'],
