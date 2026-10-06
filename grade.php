@@ -58,6 +58,7 @@ include __DIR__ . '/includes/sections/howto.php';
 include __DIR__ . '/includes/sections/grade_faq.php';
 include __DIR__ . '/includes/sections/grade_youtube.php';
 include __DIR__ . '/includes/sections/grade_blog.php';
+include __DIR__ . '/includes/sections/news.php';
 if (!empty($grade_content['cta']) && is_array($grade_content['cta'])) {
     include __DIR__ . '/includes/sections/grade_cta.php';
 } else {
