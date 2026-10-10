@@ -6,11 +6,12 @@ require_once __DIR__ . '/speaking-data.php';
 require_once __DIR__ . '/writing-data.php';
 require_once __DIR__ . '/reading-data.php';
 require_once __DIR__ . '/listening-data.php';
+require_once __DIR__ . '/vocabulary-data.php';
 $current_page = $page ?? 'top';
 $current_grade = $grade ?? '';
-$show_main_nav = in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy', 'contact', 'external', 'company', 'cancel', 'parents', 'guide', 'grade', 'speaking', 'writing', 'reading', 'listening', 'eiken'], true);
-$lp_index = in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy', 'contact', 'external', 'company', 'cancel', 'parents', 'guide', 'grade', 'speaking', 'writing', 'reading', 'listening', 'eiken'], true);
-$is_grade_section = in_array($current_page, ['grade', 'speaking', 'writing', 'reading', 'listening'], true);
+$show_main_nav = in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy', 'contact', 'external', 'company', 'cancel', 'parents', 'guide', 'grade', 'speaking', 'writing', 'reading', 'listening', 'vocabulary', 'eiken'], true);
+$lp_index = in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy', 'contact', 'external', 'company', 'cancel', 'parents', 'guide', 'grade', 'speaking', 'writing', 'reading', 'listening', 'vocabulary', 'eiken'], true);
+$is_grade_section = in_array($current_page, ['grade', 'speaking', 'writing', 'reading', 'listening', 'vocabulary'], true);
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -69,6 +70,8 @@ $is_about = ($current_page === 'about');
             <?php foreach ($grade_nav_items as $gi):
                 $is_this_grade = ($current_grade === $gi['slug']);
                 $grade_current = ($current_page === 'grade' && $is_this_grade);
+                $word_href = vocabulary_page_path($gi['slug']);
+                $word_current = ($current_page === 'vocabulary' && $is_this_grade && $word_href !== null);
                 $reading_href = reading_page_path($gi['slug']);
                 $reading_current = ($current_page === 'reading' && $is_this_grade && $reading_href !== null);
                 $listening_href = listening_page_path($gi['slug']);
@@ -85,8 +88,17 @@ $is_about = ($current_page === 'about');
                 href="<?php echo htmlspecialchars($gi['href']); ?>"
                 <?php echo $grade_current ? ' aria-current="page"' : ''; ?>
               ><?php echo htmlspecialchars($gi['name']); ?></a>
-              <?php if ($reading_href !== null || $listening_href !== null || $writing_href !== null || $speaking_href !== null): ?>
+              <?php if ($word_href !== null || $reading_href !== null || $listening_href !== null || $writing_href !== null || $speaking_href !== null): ?>
               <span class="site-header__dropdown-subs">
+                <?php if ($word_href !== null): ?>
+                <a
+                  role="menuitem"
+                  class="site-header__dropdown-sublink<?php echo $word_current ? ' is-current' : ''; ?>"
+                  href="<?php echo htmlspecialchars($word_href); ?>"
+                  aria-label="<?php echo htmlspecialchars($gi['name'] . 'の単語'); ?>"
+                  <?php echo $word_current ? ' aria-current="page"' : ''; ?>
+                >単語</a>
+                <?php endif; ?>
                 <?php if ($reading_href !== null): ?>
                 <a
                   role="menuitem"
@@ -182,6 +194,8 @@ $is_about = ($current_page === 'about');
           <?php foreach ($grade_nav_items as $gi):
               $is_this_grade = ($current_grade === $gi['slug']);
               $grade_current = ($current_page === 'grade' && $is_this_grade);
+              $word_href = vocabulary_page_path($gi['slug']);
+              $word_current = ($current_page === 'vocabulary' && $is_this_grade && $word_href !== null);
               $reading_href = reading_page_path($gi['slug']);
               $reading_current = ($current_page === 'reading' && $is_this_grade && $reading_href !== null);
               $listening_href = listening_page_path($gi['slug']);
@@ -197,8 +211,16 @@ $is_about = ($current_page === 'about');
               href="<?php echo htmlspecialchars($gi['href']); ?>"
               <?php echo $grade_current ? ' aria-current="page"' : ''; ?>
             ><?php echo htmlspecialchars($gi['name']); ?></a>
-            <?php if ($reading_href !== null || $listening_href !== null || $writing_href !== null || $speaking_href !== null): ?>
+            <?php if ($word_href !== null || $reading_href !== null || $listening_href !== null || $writing_href !== null || $speaking_href !== null): ?>
             <span class="site-header__mobile-subs">
+              <?php if ($word_href !== null): ?>
+              <a
+                class="site-header__mobile-speaking<?php echo $word_current ? ' is-current' : ''; ?>"
+                href="<?php echo htmlspecialchars($word_href); ?>"
+                aria-label="<?php echo htmlspecialchars($gi['name'] . 'の単語'); ?>"
+                <?php echo $word_current ? ' aria-current="page"' : ''; ?>
+              >単語</a>
+              <?php endif; ?>
               <?php if ($reading_href !== null): ?>
               <a
                 class="site-header__mobile-speaking<?php echo $reading_current ? ' is-current' : ''; ?>"

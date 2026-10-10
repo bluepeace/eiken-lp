@@ -6,6 +6,7 @@ require_once __DIR__ . '/speaking-data.php';
 require_once __DIR__ . '/writing-data.php';
 require_once __DIR__ . '/reading-data.php';
 require_once __DIR__ . '/listening-data.php';
+require_once __DIR__ . '/vocabulary-data.php';
 $footer_grade_items = grade_nav_items();
 include __DIR__ . '/breadcrumbs.php';
 ?>
@@ -48,6 +49,8 @@ include __DIR__ . '/breadcrumbs.php';
         <p class="site-footer__col-title">級別対策</p>
         <ul class="site-footer__list">
           <?php foreach ($footer_grade_items as $gi):
+              $word_href = vocabulary_page_path($gi['slug']);
+              $word_current = (($page ?? '') === 'vocabulary' && ($grade ?? '') === $gi['slug'] && $word_href !== null);
               $reading_href = reading_page_path($gi['slug']);
               $reading_current = (($page ?? '') === 'reading' && ($grade ?? '') === $gi['slug'] && $reading_href !== null);
               $listening_href = listening_page_path($gi['slug']);
@@ -59,8 +62,11 @@ include __DIR__ . '/breadcrumbs.php';
               ?>
           <li class="site-footer__grade">
             <a href="<?php echo htmlspecialchars($gi['href']); ?>"><?php echo htmlspecialchars($gi['name']); ?></a>
-            <?php if ($reading_href !== null || $listening_href !== null || $writing_href !== null || $speaking_href !== null): ?>
+            <?php if ($word_href !== null || $reading_href !== null || $listening_href !== null || $writing_href !== null || $speaking_href !== null): ?>
             <ul class="site-footer__sublist">
+              <?php if ($word_href !== null): ?>
+              <li><a href="<?php echo htmlspecialchars($word_href); ?>"<?php echo $word_current ? ' aria-current="page"' : ''; ?>>単語</a></li>
+              <?php endif; ?>
               <?php if ($reading_href !== null): ?>
               <li><a href="<?php echo htmlspecialchars($reading_href); ?>"<?php echo $reading_current ? ' aria-current="page"' : ''; ?>>リーディング</a></li>
               <?php endif; ?>

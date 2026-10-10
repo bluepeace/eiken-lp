@@ -9,6 +9,7 @@ if (!defined('SITE_NAME')) {
     require_once __DIR__ . '/../../config.php';
 }
 require_once __DIR__ . '/../grade-data.php';
+require_once __DIR__ . '/../vocabulary-data.php';
 $name_short = $grade_data['name_short'] ?? '';
 $skill = $grade_content['word'] ?? null;
 if (!$skill) {
@@ -65,5 +66,12 @@ $images = $skill['images'] ?? [];
       </figure>
       <?php endforeach; ?>
     </div>
+
+    <?php $word_href = vocabulary_page_path((string) $grade); ?>
+    <?php if ($word_href !== null): ?>
+    <p class="mt-10 text-center">
+      <a class="inline-flex items-center justify-center rounded-full bg-[#50c2cb] px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-[#50c2cb]/25 transition hover:bg-[#46adb5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#50c2cb]/60 focus-visible:ring-offset-2" href="<?php echo htmlspecialchars($word_href); ?>"><?php echo htmlspecialchars($name_short); ?>の単語対策を詳しく見る</a>
+    </p>
+    <?php endif; ?>
   </div>
 </section>

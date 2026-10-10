@@ -10,6 +10,7 @@ require_once __DIR__ . '/includes/speaking-data.php';
 require_once __DIR__ . '/includes/writing-data.php';
 require_once __DIR__ . '/includes/reading-data.php';
 require_once __DIR__ . '/includes/listening-data.php';
+require_once __DIR__ . '/includes/vocabulary-data.php';
 
 header('Content-Type: application/xml; charset=UTF-8');
 
@@ -54,6 +55,18 @@ foreach (speaking_grade_slugs() as $level) {
     }
     $entries[] = [
         'loc' => $base . $speaking_path,
+        'changefreq' => 'weekly',
+        'priority' => '0.8',
+    ];
+}
+
+foreach (vocabulary_grade_slugs() as $level) {
+    $vocabulary_path = vocabulary_page_path($level);
+    if ($vocabulary_path === null) {
+        continue;
+    }
+    $entries[] = [
+        'loc' => $base . $vocabulary_path,
         'changefreq' => 'weekly',
         'priority' => '0.8',
     ];
