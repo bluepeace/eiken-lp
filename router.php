@@ -19,6 +19,12 @@ if (preg_match('#^/sitemap\.xml$#', $uri)) {
     return true;
 }
 
+if (preg_match('#^/(1kyu|jun1kyu|2kyu|jun2kyu-plus|jun2kyu|3kyu)/speaking/?$#', $uri, $m)) {
+    $_GET['level'] = $m[1];
+    require __DIR__ . '/speaking.php';
+    return true;
+}
+
 if (preg_match('#^/(1kyu|jun1kyu|2kyu|jun2kyu-plus|jun2kyu|3kyu|4kyu|5kyu)/?$#', $uri, $m)) {
     $_GET['level'] = $m[1];
     require __DIR__ . '/grade.php';

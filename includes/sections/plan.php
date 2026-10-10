@@ -12,9 +12,13 @@ $plan_heading_id = $plan_heading_id ?? 'top-plan-heading';
     <div class="mx-auto max-w-3xl text-center">
       <p class="section-badge section-badge--center" aria-hidden="true">PLAN</p>
       <h2 id="<?php echo htmlspecialchars($plan_heading_id); ?>" class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl"><?php echo $plan_heading; ?></h2>
+      <?php if (!empty($plan_lead)): ?>
+      <p class="mt-3 text-slate-600"><?php echo br_after_period($plan_lead); ?></p>
+      <?php else: ?>
       <p class="mt-3 text-slate-600"><?php echo br_after_period(open_campaign_active()
           ? '最初の' . FREE_TRIAL_DAYS . '日間は、単語テスト・AI添削・リーディング・リスニングなど<strong>全機能が無料</strong>です。その後はOPEN記念価格の<strong>' . monthly_price_label() . '</strong>で続けられます。（定価' . monthly_price_regular_label() . '・' . open_campaign_end_label() . 'まで）'
           : '最初の' . FREE_TRIAL_DAYS . '日間は、単語テスト・AI添削・リーディング・リスニングなど<strong>全機能が無料</strong>です。その後は<strong>' . monthly_price_regular_label() . '</strong>で続けられます。'); ?></p>
+      <?php endif; ?>
     </div>
     <div class="mx-auto mt-10 max-w-2xl sm:mt-12">
       <?php

@@ -6,6 +6,7 @@
 declare(strict_types=1);
 
 require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/includes/speaking-data.php';
 
 header('Content-Type: application/xml; charset=UTF-8');
 
@@ -40,6 +41,18 @@ foreach (array_keys($GRADES) as $level) {
         'loc' => grade_url($level),
         'changefreq' => 'weekly',
         'priority' => '0.9',
+    ];
+}
+
+foreach (speaking_grade_slugs() as $level) {
+    $speaking_path = speaking_page_path($level);
+    if ($speaking_path === null) {
+        continue;
+    }
+    $entries[] = [
+        'loc' => $base . $speaking_path,
+        'changefreq' => 'weekly',
+        'priority' => '0.8',
     ];
 }
 

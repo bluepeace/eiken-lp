@@ -4,8 +4,9 @@ if (!defined('SITE_NAME')) {
 }
 $current_page = $page ?? 'top';
 $current_grade = $grade ?? '';
-$show_main_nav = in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy', 'contact', 'external', 'company', 'cancel', 'parents', 'guide', 'grade', 'eiken'], true);
-$lp_index = in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy', 'contact', 'external', 'company', 'cancel', 'parents', 'guide', 'grade', 'eiken'], true);
+$show_main_nav = in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy', 'contact', 'external', 'company', 'cancel', 'parents', 'guide', 'grade', 'speaking', 'eiken'], true);
+$lp_index = in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy', 'contact', 'external', 'company', 'cancel', 'parents', 'guide', 'grade', 'speaking', 'eiken'], true);
+$is_grade_section = in_array($current_page, ['grade', 'speaking'], true);
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -51,10 +52,10 @@ $is_about = ($current_page === 'about');
       <div class="site-header__nav-inner flex flex-wrap justify-start gap-1 sm:justify-center md:gap-2">
         <a class="site-header__nav-link<?php echo $is_about ? ' is-current' : ''; ?>" href="<?php echo htmlspecialchars($about['href']); ?>"<?php echo $is_about ? ' aria-current="page"' : ''; ?>><?php echo htmlspecialchars($about['label']); ?></a>
 
-        <div class="site-header__dropdown<?php echo $current_page === 'grade' ? ' is-current' : ''; ?>">
+        <div class="site-header__dropdown<?php echo $is_grade_section ? ' is-current' : ''; ?>">
           <button
             type="button"
-            class="site-header__nav-link site-header__dropdown-toggle<?php echo $current_page === 'grade' ? ' is-current' : ''; ?>"
+            class="site-header__nav-link site-header__dropdown-toggle<?php echo $is_grade_section ? ' is-current' : ''; ?>"
             aria-expanded="false"
             aria-haspopup="true"
             aria-controls="grade-nav-menu"
@@ -62,14 +63,14 @@ $is_about = ($current_page === 'about');
           >級別対策<span class="site-header__dropdown-caret" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
           <ul id="grade-nav-menu" class="site-header__dropdown-menu" role="menu" aria-labelledby="grade-nav-toggle" hidden>
             <?php foreach ($grade_nav_items as $gi):
-                $is_grade_current = ($current_page === 'grade' && $current_grade === $gi['slug']);
+                $is_grade_current = ($is_grade_section && $current_grade === $gi['slug']);
                 ?>
             <li role="none">
               <a
                 role="menuitem"
                 class="site-header__dropdown-link<?php echo $is_grade_current ? ' is-current' : ''; ?>"
                 href="<?php echo htmlspecialchars($gi['href']); ?>"
-                <?php echo $is_grade_current ? ' aria-current="page"' : ''; ?>
+                <?php echo ($current_page === 'grade' && $is_grade_current) ? ' aria-current="page"' : ''; ?>
               ><?php echo htmlspecialchars($gi['name']); ?></a>
             </li>
             <?php endforeach; ?>
@@ -116,23 +117,23 @@ $is_about = ($current_page === 'about');
     <div class="site-header__mobile-inner">
       <a class="site-header__mobile-link<?php echo $is_about ? ' is-current' : ''; ?>" href="<?php echo htmlspecialchars($about['href']); ?>"<?php echo $is_about ? ' aria-current="page"' : ''; ?>><?php echo htmlspecialchars($about['label']); ?></a>
 
-      <div class="site-header__mobile-accordion<?php echo $current_page === 'grade' ? ' is-open' : ''; ?>">
+      <div class="site-header__mobile-accordion<?php echo $is_grade_section ? ' is-open' : ''; ?>">
         <button
           type="button"
-          class="site-header__mobile-link site-header__mobile-accordion-toggle<?php echo $current_page === 'grade' ? ' is-current' : ''; ?>"
+          class="site-header__mobile-link site-header__mobile-accordion-toggle<?php echo $is_grade_section ? ' is-current' : ''; ?>"
           id="grade-mobile-toggle"
-          aria-expanded="<?php echo $current_page === 'grade' ? 'true' : 'false'; ?>"
+          aria-expanded="<?php echo $is_grade_section ? 'true' : 'false'; ?>"
           aria-controls="grade-mobile-menu"
         >級別対策<span class="site-header__dropdown-caret" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-        <ul id="grade-mobile-menu" class="site-header__mobile-sub"<?php echo $current_page === 'grade' ? '' : ' hidden'; ?>>
+        <ul id="grade-mobile-menu" class="site-header__mobile-sub"<?php echo $is_grade_section ? '' : ' hidden'; ?>>
           <?php foreach ($grade_nav_items as $gi):
-              $is_grade_current = ($current_page === 'grade' && $current_grade === $gi['slug']);
+              $is_grade_current = ($is_grade_section && $current_grade === $gi['slug']);
               ?>
           <li>
             <a
               class="site-header__mobile-sublink<?php echo $is_grade_current ? ' is-current' : ''; ?>"
               href="<?php echo htmlspecialchars($gi['href']); ?>"
-              <?php echo $is_grade_current ? ' aria-current="page"' : ''; ?>
+              <?php echo ($current_page === 'grade' && $is_grade_current) ? ' aria-current="page"' : ''; ?>
             ><?php echo htmlspecialchars($gi['name']); ?></a>
           </li>
           <?php endforeach; ?>

@@ -7,6 +7,7 @@ declare(strict_types=1);
 $page = 'eiken';
 require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/includes/eiken-hub-data.php';
+require_once __DIR__ . '/includes/speaking-data.php';
 
 $canonical = rtrim(SITE_URL, '/') . '/eiken/';
 $toc = eiken_hub_toc();
@@ -116,6 +117,7 @@ include __DIR__ . '/includes/header.php';
           <li><a class="text-sm font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="<?php echo htmlspecialchars($a['url']); ?>"><?php echo htmlspecialchars($a['label']); ?></a></li>
           <?php endforeach; ?>
           <li><a class="text-sm font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="<?php echo htmlspecialchars($featured['lp']); ?>">英検準2級プラスの対策アプリページ</a></li>
+          <li><a class="text-sm font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="<?php echo htmlspecialchars((string) speaking_page_path('jun2kyu-plus')); ?>">英検準2級プラスのスピーキング・面接対策</a></li>
           <li><a class="text-sm font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="<?php echo htmlspecialchars($featured['official_exam']); ?>" rel="noopener noreferrer" target="_blank">準2級プラスの過去問・試験内容（公式）</a></li>
         </ul>
       </div>
@@ -131,6 +133,10 @@ include __DIR__ . '/includes/header.php';
           <?php endif; ?>
           <ul class="mt-3 flex flex-wrap gap-x-4 gap-y-2">
             <li><a class="text-sm font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="<?php echo htmlspecialchars($g['lp']); ?>"><?php echo htmlspecialchars($g['name']); ?>のアプリ対策</a></li>
+            <?php $speaking_href = speaking_page_path((string) ($g['slug'] ?? '')); ?>
+            <?php if ($speaking_href !== null): ?>
+            <li><a class="text-sm font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="<?php echo htmlspecialchars($speaking_href); ?>"><?php echo htmlspecialchars($g['short']); ?>のスピーキング・面接</a></li>
+            <?php endif; ?>
             <li><a class="text-sm font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="<?php echo htmlspecialchars($g['official_exam']); ?>" rel="noopener noreferrer" target="_blank"><?php echo htmlspecialchars($g['short']); ?>の過去問・試験内容（公式）</a></li>
             <?php foreach (array_slice($g['articles'], 0, 4) as $a): ?>
             <li><a class="text-sm font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="<?php echo htmlspecialchars($a['url']); ?>"><?php echo htmlspecialchars($a['label']); ?></a></li>
@@ -248,7 +254,7 @@ include __DIR__ . '/includes/header.php';
     <div class="lp-container">
       <div class="mx-auto max-w-3xl text-center">
         <h2 id="eiken-by-grade-heading" class="text-2xl font-bold tracking-tight text-slate-900">級別の英検対策</h2>
-        <p class="mt-3 text-slate-600"><?php echo br_after_period('級ごとのレベル・技能別コラムと、AiKenの級別ページへのリンクです。スピーキング専用のコラムがまだない級は、アプリの級別ページや公式の試験内容をご覧ください。'); ?></p>
+        <p class="mt-3 text-slate-600"><?php echo br_after_period('級ごとのレベル・技能別コラムと、AiKenの級別ページへのリンクです。面接のある級は、スピーキング対策のページから練習へ進めます。'); ?></p>
       </div>
 
       <div class="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
@@ -265,6 +271,10 @@ include __DIR__ . '/includes/header.php';
           </ul>
           <p class="mt-5 border-t border-slate-100 pt-4 text-sm">
             <a class="font-semibold text-slate-800 underline-offset-2 hover:text-[#50c2cb] hover:underline" href="<?php echo htmlspecialchars($g['lp']); ?>"><?php echo htmlspecialchars($g['name']); ?>の対策アプリページ</a>
+            <?php $card_speaking = speaking_page_path((string) ($g['slug'] ?? '')); ?>
+            <?php if ($card_speaking !== null): ?>
+            <a class="mt-2 block font-semibold text-slate-800 underline-offset-2 hover:text-[#50c2cb] hover:underline" href="<?php echo htmlspecialchars($card_speaking); ?>"><?php echo htmlspecialchars($g['name']); ?>のスピーキング対策</a>
+            <?php endif; ?>
           </p>
         </article>
         <?php endforeach; ?>

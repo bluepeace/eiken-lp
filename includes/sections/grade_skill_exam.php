@@ -75,5 +75,14 @@ $bgClass = in_array($skill_key, ['listening', 'speaking'], true) ? 'bg-slate-50/
       <?php endforeach; ?>
     </div>
     <?php endif; ?>
+    <?php if ($skill_key === 'speaking'):
+        require_once __DIR__ . '/../speaking-data.php';
+        $speaking_href = speaking_page_path((string) $grade);
+        if ($speaking_href !== null): ?>
+    <p class="mt-10 text-center">
+      <a class="inline-flex items-center justify-center rounded-full bg-[#50c2cb] px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-[#50c2cb]/25 transition hover:bg-[#46adb5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#50c2cb]/60 focus-visible:ring-offset-2" href="<?php echo htmlspecialchars($speaking_href); ?>"><?php echo htmlspecialchars($name_short); ?>のスピーキング・面接対策を詳しく見る</a>
+    </p>
+        <?php endif; ?>
+    <?php endif; ?>
   </div>
 </section>

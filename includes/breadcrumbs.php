@@ -20,16 +20,20 @@ function lp_breadcrumb_items(string $page = 'top', string $grade = '', ?array $g
     if ($page === 'top' || $page === '') {
         return [];
     }
-    if ($page === 'grade') {
+    if ($page === 'grade' || $page === 'speaking') {
         $name = (string) ($grade_data['name'] ?? '');
         if ($name === '' || $grade === '') {
             return [];
         }
-        return [
+        $items = [
             $top,
             ['name' => '英検対策', 'url' => '/eiken/'],
             ['name' => $name, 'url' => '/' . rawurlencode($grade) . '/'],
         ];
+        if ($page === 'speaking') {
+            $items[] = ['name' => 'スピーキング', 'url' => '/' . rawurlencode($grade) . '/speaking/'];
+        }
+        return $items;
     }
     $pages = [
         'about' => ['name' => 'AiKenとは', 'url' => '/about'],

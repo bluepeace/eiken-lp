@@ -2,7 +2,9 @@
 if (!defined('SITE_NAME')) {
     require_once __DIR__ . '/../config.php';
 }
-if (!empty($grade)) {
+if (!empty($meta_override) && is_array($meta_override)) {
+    $meta = $meta_override;
+} elseif (!empty($grade)) {
     $meta = get_grade_meta($grade);
 } else {
     $meta = get_page_meta($page ?? 'top');
