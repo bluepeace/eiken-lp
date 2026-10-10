@@ -3,6 +3,7 @@ if (!defined('SITE_NAME')) {
     require_once __DIR__ . '/../config.php';
 }
 require_once __DIR__ . '/speaking-data.php';
+require_once __DIR__ . '/writing-data.php';
 $footer_grade_items = grade_nav_items();
 include __DIR__ . '/breadcrumbs.php';
 ?>
@@ -45,14 +46,21 @@ include __DIR__ . '/breadcrumbs.php';
         <p class="site-footer__col-title">級別対策</p>
         <ul class="site-footer__list">
           <?php foreach ($footer_grade_items as $gi):
+              $writing_href = writing_page_path($gi['slug']);
+              $writing_current = (($page ?? '') === 'writing' && ($grade ?? '') === $gi['slug'] && $writing_href !== null);
               $speaking_href = speaking_page_path($gi['slug']);
               $speaking_current = (($page ?? '') === 'speaking' && ($grade ?? '') === $gi['slug'] && $speaking_href !== null);
               ?>
           <li class="site-footer__grade">
             <a href="<?php echo htmlspecialchars($gi['href']); ?>"><?php echo htmlspecialchars($gi['name']); ?></a>
-            <?php if ($speaking_href !== null): ?>
+            <?php if ($writing_href !== null || $speaking_href !== null): ?>
             <ul class="site-footer__sublist">
+              <?php if ($writing_href !== null): ?>
+              <li><a href="<?php echo htmlspecialchars($writing_href); ?>"<?php echo $writing_current ? ' aria-current="page"' : ''; ?>>ライティング</a></li>
+              <?php endif; ?>
+              <?php if ($speaking_href !== null): ?>
               <li><a href="<?php echo htmlspecialchars($speaking_href); ?>"<?php echo $speaking_current ? ' aria-current="page"' : ''; ?>>スピーキング</a></li>
+              <?php endif; ?>
             </ul>
             <?php endif; ?>
           </li>

@@ -43,6 +43,8 @@ if (!empty($faq_schema_items) && is_array($faq_schema_items)) {
         $faqPageName = 'よくあるご質問｜' . SITE_NAME . '（英検対策アプリ）';
         if (($page ?? '') === 'speaking' && !empty($grade_data['name'])) {
             $faqPageName = $grade_data['name'] . 'のスピーキング対策｜よくある質問｜' . SITE_NAME;
+        } elseif (($page ?? '') === 'writing' && !empty($grade_data['name'])) {
+            $faqPageName = $grade_data['name'] . 'のライティング対策｜よくある質問｜' . SITE_NAME;
         } elseif (($page ?? '') === 'grade' && !empty($grade_data['name'])) {
             $faqPageName = $grade_data['name'] . 'のよくある質問｜' . SITE_NAME . '（英検対策アプリ）';
         }
