@@ -9,6 +9,7 @@ require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/includes/eiken-hub-data.php';
 require_once __DIR__ . '/includes/speaking-data.php';
 require_once __DIR__ . '/includes/writing-data.php';
+require_once __DIR__ . '/includes/reading-data.php';
 
 $canonical = rtrim(SITE_URL, '/') . '/eiken/';
 $toc = eiken_hub_toc();
@@ -118,6 +119,7 @@ include __DIR__ . '/includes/header.php';
           <li><a class="text-sm font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="<?php echo htmlspecialchars($a['url']); ?>"><?php echo htmlspecialchars($a['label']); ?></a></li>
           <?php endforeach; ?>
           <li><a class="text-sm font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="<?php echo htmlspecialchars($featured['lp']); ?>">英検準2級プラスの対策アプリページ</a></li>
+          <li><a class="text-sm font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="<?php echo htmlspecialchars((string) reading_page_path('jun2kyu-plus')); ?>">英検準2級プラスのリーディング対策</a></li>
           <li><a class="text-sm font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="<?php echo htmlspecialchars((string) writing_page_path('jun2kyu-plus')); ?>">英検準2級プラスのライティング・AI添削</a></li>
           <li><a class="text-sm font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="<?php echo htmlspecialchars((string) speaking_page_path('jun2kyu-plus')); ?>">英検準2級プラスのスピーキング・面接対策</a></li>
           <li><a class="text-sm font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="<?php echo htmlspecialchars($featured['official_exam']); ?>" rel="noopener noreferrer" target="_blank">準2級プラスの過去問・試験内容（公式）</a></li>
@@ -135,6 +137,10 @@ include __DIR__ . '/includes/header.php';
           <?php endif; ?>
           <ul class="mt-3 flex flex-wrap gap-x-4 gap-y-2">
             <li><a class="text-sm font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="<?php echo htmlspecialchars($g['lp']); ?>"><?php echo htmlspecialchars($g['name']); ?>のアプリ対策</a></li>
+            <?php $reading_href = reading_page_path((string) ($g['slug'] ?? '')); ?>
+            <?php if ($reading_href !== null): ?>
+            <li><a class="text-sm font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="<?php echo htmlspecialchars($reading_href); ?>"><?php echo htmlspecialchars($g['short']); ?>のリーディング</a></li>
+            <?php endif; ?>
             <?php $writing_href = writing_page_path((string) ($g['slug'] ?? '')); ?>
             <?php if ($writing_href !== null): ?>
             <li><a class="text-sm font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="<?php echo htmlspecialchars($writing_href); ?>"><?php echo htmlspecialchars($g['short']); ?>のライティング</a></li>
@@ -260,7 +266,7 @@ include __DIR__ . '/includes/header.php';
     <div class="lp-container">
       <div class="mx-auto max-w-3xl text-center">
         <h2 id="eiken-by-grade-heading" class="text-2xl font-bold tracking-tight text-slate-900">級別の英検対策</h2>
-        <p class="mt-3 text-slate-600"><?php echo br_after_period('級ごとのレベル・技能別コラムと、AiKenの級別ページへのリンクです。ライティングと、面接のある級のスピーキングは、それぞれの対策ページから練習へ進めます。'); ?></p>
+        <p class="mt-3 text-slate-600"><?php echo br_after_period('級ごとのレベル・技能別コラムと、AiKenの級別ページへのリンクです。リーディング、ライティング、面接のある級のスピーキングは、それぞれの対策ページから練習へ進めます。'); ?></p>
       </div>
 
       <div class="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
@@ -277,6 +283,10 @@ include __DIR__ . '/includes/header.php';
           </ul>
           <p class="mt-5 border-t border-slate-100 pt-4 text-sm">
             <a class="font-semibold text-slate-800 underline-offset-2 hover:text-[#50c2cb] hover:underline" href="<?php echo htmlspecialchars($g['lp']); ?>"><?php echo htmlspecialchars($g['name']); ?>の対策アプリページ</a>
+            <?php $card_reading = reading_page_path((string) ($g['slug'] ?? '')); ?>
+            <?php if ($card_reading !== null): ?>
+            <a class="mt-2 block font-semibold text-slate-800 underline-offset-2 hover:text-[#50c2cb] hover:underline" href="<?php echo htmlspecialchars($card_reading); ?>"><?php echo htmlspecialchars($g['name']); ?>のリーディング対策</a>
+            <?php endif; ?>
             <?php $card_writing = writing_page_path((string) ($g['slug'] ?? '')); ?>
             <?php if ($card_writing !== null): ?>
             <a class="mt-2 block font-semibold text-slate-800 underline-offset-2 hover:text-[#50c2cb] hover:underline" href="<?php echo htmlspecialchars($card_writing); ?>"><?php echo htmlspecialchars($g['name']); ?>のライティング対策</a>

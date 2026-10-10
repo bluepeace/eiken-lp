@@ -1524,7 +1524,7 @@ img[loading="lazy"] {
 
 .grade-position__table {
   width: 100%;
-  min-width: 36rem;
+  min-width: 24rem;
   border-collapse: collapse;
   font-size: 0.9375rem;
 }
@@ -2291,7 +2291,7 @@ img[loading="lazy"] {
   top: calc(100% + 0.25rem);
   left: 0;
   z-index: 70;
-  min-width: 24rem;
+  min-width: 36rem;
   margin: 0;
   padding: 0.4rem;
   list-style: none;

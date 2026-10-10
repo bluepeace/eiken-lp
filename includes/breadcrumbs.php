@@ -20,7 +20,7 @@ function lp_breadcrumb_items(string $page = 'top', string $grade = '', ?array $g
     if ($page === 'top' || $page === '') {
         return [];
     }
-    if ($page === 'grade' || $page === 'speaking' || $page === 'writing') {
+    if ($page === 'grade' || $page === 'speaking' || $page === 'writing' || $page === 'reading') {
         $name = (string) ($grade_data['name'] ?? '');
         if ($name === '' || $grade === '') {
             return [];
@@ -35,6 +35,9 @@ function lp_breadcrumb_items(string $page = 'top', string $grade = '', ?array $g
         }
         if ($page === 'writing') {
             $items[] = ['name' => 'ライティング', 'url' => '/' . rawurlencode($grade) . '/writing/'];
+        }
+        if ($page === 'reading') {
+            $items[] = ['name' => 'リーディング', 'url' => '/' . rawurlencode($grade) . '/reading/'];
         }
         return $items;
     }

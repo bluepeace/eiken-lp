@@ -4,11 +4,12 @@ if (!defined('SITE_NAME')) {
 }
 require_once __DIR__ . '/speaking-data.php';
 require_once __DIR__ . '/writing-data.php';
+require_once __DIR__ . '/reading-data.php';
 $current_page = $page ?? 'top';
 $current_grade = $grade ?? '';
-$show_main_nav = in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy', 'contact', 'external', 'company', 'cancel', 'parents', 'guide', 'grade', 'speaking', 'writing', 'eiken'], true);
-$lp_index = in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy', 'contact', 'external', 'company', 'cancel', 'parents', 'guide', 'grade', 'speaking', 'writing', 'eiken'], true);
-$is_grade_section = in_array($current_page, ['grade', 'speaking', 'writing'], true);
+$show_main_nav = in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy', 'contact', 'external', 'company', 'cancel', 'parents', 'guide', 'grade', 'speaking', 'writing', 'reading', 'eiken'], true);
+$lp_index = in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy', 'contact', 'external', 'company', 'cancel', 'parents', 'guide', 'grade', 'speaking', 'writing', 'reading', 'eiken'], true);
+$is_grade_section = in_array($current_page, ['grade', 'speaking', 'writing', 'reading'], true);
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -67,6 +68,8 @@ $is_about = ($current_page === 'about');
             <?php foreach ($grade_nav_items as $gi):
                 $is_this_grade = ($current_grade === $gi['slug']);
                 $grade_current = ($current_page === 'grade' && $is_this_grade);
+                $reading_href = reading_page_path($gi['slug']);
+                $reading_current = ($current_page === 'reading' && $is_this_grade && $reading_href !== null);
                 $writing_href = writing_page_path($gi['slug']);
                 $writing_current = ($current_page === 'writing' && $is_this_grade && $writing_href !== null);
                 $speaking_href = speaking_page_path($gi['slug']);
@@ -79,8 +82,17 @@ $is_about = ($current_page === 'about');
                 href="<?php echo htmlspecialchars($gi['href']); ?>"
                 <?php echo $grade_current ? ' aria-current="page"' : ''; ?>
               ><?php echo htmlspecialchars($gi['name']); ?></a>
-              <?php if ($writing_href !== null || $speaking_href !== null): ?>
+              <?php if ($reading_href !== null || $writing_href !== null || $speaking_href !== null): ?>
               <span class="site-header__dropdown-subs">
+                <?php if ($reading_href !== null): ?>
+                <a
+                  role="menuitem"
+                  class="site-header__dropdown-sublink<?php echo $reading_current ? ' is-current' : ''; ?>"
+                  href="<?php echo htmlspecialchars($reading_href); ?>"
+                  aria-label="<?php echo htmlspecialchars($gi['name'] . 'のリーディング'); ?>"
+                  <?php echo $reading_current ? ' aria-current="page"' : ''; ?>
+                >リーディング</a>
+                <?php endif; ?>
                 <?php if ($writing_href !== null): ?>
                 <a
                   role="menuitem"
@@ -158,6 +170,8 @@ $is_about = ($current_page === 'about');
           <?php foreach ($grade_nav_items as $gi):
               $is_this_grade = ($current_grade === $gi['slug']);
               $grade_current = ($current_page === 'grade' && $is_this_grade);
+              $reading_href = reading_page_path($gi['slug']);
+              $reading_current = ($current_page === 'reading' && $is_this_grade && $reading_href !== null);
               $writing_href = writing_page_path($gi['slug']);
               $writing_current = ($current_page === 'writing' && $is_this_grade && $writing_href !== null);
               $speaking_href = speaking_page_path($gi['slug']);
@@ -169,8 +183,16 @@ $is_about = ($current_page === 'about');
               href="<?php echo htmlspecialchars($gi['href']); ?>"
               <?php echo $grade_current ? ' aria-current="page"' : ''; ?>
             ><?php echo htmlspecialchars($gi['name']); ?></a>
-            <?php if ($writing_href !== null || $speaking_href !== null): ?>
+            <?php if ($reading_href !== null || $writing_href !== null || $speaking_href !== null): ?>
             <span class="site-header__mobile-subs">
+              <?php if ($reading_href !== null): ?>
+              <a
+                class="site-header__mobile-speaking<?php echo $reading_current ? ' is-current' : ''; ?>"
+                href="<?php echo htmlspecialchars($reading_href); ?>"
+                aria-label="<?php echo htmlspecialchars($gi['name'] . 'のリーディング'); ?>"
+                <?php echo $reading_current ? ' aria-current="page"' : ''; ?>
+              >リーディング</a>
+              <?php endif; ?>
               <?php if ($writing_href !== null): ?>
               <a
                 class="site-header__mobile-speaking<?php echo $writing_current ? ' is-current' : ''; ?>"
