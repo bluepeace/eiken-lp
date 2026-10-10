@@ -5,6 +5,7 @@ if (!defined('SITE_NAME')) {
 require_once __DIR__ . '/speaking-data.php';
 require_once __DIR__ . '/writing-data.php';
 require_once __DIR__ . '/reading-data.php';
+require_once __DIR__ . '/listening-data.php';
 $footer_grade_items = grade_nav_items();
 include __DIR__ . '/breadcrumbs.php';
 ?>
@@ -49,6 +50,8 @@ include __DIR__ . '/breadcrumbs.php';
           <?php foreach ($footer_grade_items as $gi):
               $reading_href = reading_page_path($gi['slug']);
               $reading_current = (($page ?? '') === 'reading' && ($grade ?? '') === $gi['slug'] && $reading_href !== null);
+              $listening_href = listening_page_path($gi['slug']);
+              $listening_current = (($page ?? '') === 'listening' && ($grade ?? '') === $gi['slug'] && $listening_href !== null);
               $writing_href = writing_page_path($gi['slug']);
               $writing_current = (($page ?? '') === 'writing' && ($grade ?? '') === $gi['slug'] && $writing_href !== null);
               $speaking_href = speaking_page_path($gi['slug']);
@@ -56,10 +59,13 @@ include __DIR__ . '/breadcrumbs.php';
               ?>
           <li class="site-footer__grade">
             <a href="<?php echo htmlspecialchars($gi['href']); ?>"><?php echo htmlspecialchars($gi['name']); ?></a>
-            <?php if ($reading_href !== null || $writing_href !== null || $speaking_href !== null): ?>
+            <?php if ($reading_href !== null || $listening_href !== null || $writing_href !== null || $speaking_href !== null): ?>
             <ul class="site-footer__sublist">
               <?php if ($reading_href !== null): ?>
               <li><a href="<?php echo htmlspecialchars($reading_href); ?>"<?php echo $reading_current ? ' aria-current="page"' : ''; ?>>リーディング</a></li>
+              <?php endif; ?>
+              <?php if ($listening_href !== null): ?>
+              <li><a href="<?php echo htmlspecialchars($listening_href); ?>"<?php echo $listening_current ? ' aria-current="page"' : ''; ?>>リスニング</a></li>
               <?php endif; ?>
               <?php if ($writing_href !== null): ?>
               <li><a href="<?php echo htmlspecialchars($writing_href); ?>"<?php echo $writing_current ? ' aria-current="page"' : ''; ?>>ライティング</a></li>

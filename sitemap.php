@@ -9,6 +9,7 @@ require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/includes/speaking-data.php';
 require_once __DIR__ . '/includes/writing-data.php';
 require_once __DIR__ . '/includes/reading-data.php';
+require_once __DIR__ . '/includes/listening-data.php';
 
 header('Content-Type: application/xml; charset=UTF-8');
 
@@ -53,6 +54,18 @@ foreach (speaking_grade_slugs() as $level) {
     }
     $entries[] = [
         'loc' => $base . $speaking_path,
+        'changefreq' => 'weekly',
+        'priority' => '0.8',
+    ];
+}
+
+foreach (listening_grade_slugs() as $level) {
+    $listening_path = listening_page_path($level);
+    if ($listening_path === null) {
+        continue;
+    }
+    $entries[] = [
+        'loc' => $base . $listening_path,
         'changefreq' => 'weekly',
         'priority' => '0.8',
     ];

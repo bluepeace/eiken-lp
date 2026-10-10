@@ -2291,7 +2291,7 @@ img[loading="lazy"] {
   top: calc(100% + 0.25rem);
   left: 0;
   z-index: 70;
-  min-width: 36rem;
+  min-width: 46rem;
   margin: 0;
   padding: 0.4rem;
   list-style: none;
@@ -2303,6 +2303,7 @@ img[loading="lazy"] {
 
 .site-header__dropdown-item {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.15rem;
 }
@@ -2344,7 +2345,9 @@ img[loading="lazy"] {
 .site-header__mobile-subs {
   display: flex;
   flex-shrink: 0;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: flex-end;
   gap: 0.15rem;
 }
 

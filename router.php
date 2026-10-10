@@ -31,6 +31,12 @@ if (preg_match('#^/(1kyu|jun1kyu|2kyu|jun2kyu-plus|jun2kyu|3kyu)/writing/?$#', $
     return true;
 }
 
+if (preg_match('#^/(1kyu|jun1kyu|2kyu|jun2kyu-plus|jun2kyu|3kyu|4kyu|5kyu)/listening/?$#', $uri, $m)) {
+    $_GET['level'] = $m[1];
+    require __DIR__ . '/listening.php';
+    return true;
+}
+
 if (preg_match('#^/(1kyu|jun1kyu|2kyu|jun2kyu-plus|jun2kyu|3kyu|4kyu|5kyu)/reading/?$#', $uri, $m)) {
     $_GET['level'] = $m[1];
     require __DIR__ . '/reading.php';

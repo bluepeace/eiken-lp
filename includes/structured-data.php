@@ -47,6 +47,8 @@ if (!empty($faq_schema_items) && is_array($faq_schema_items)) {
             $faqPageName = $grade_data['name'] . 'のライティング対策｜よくある質問｜' . SITE_NAME;
         } elseif (($page ?? '') === 'reading' && !empty($grade_data['name'])) {
             $faqPageName = $grade_data['name'] . 'のリーディング対策｜よくある質問｜' . SITE_NAME;
+        } elseif (($page ?? '') === 'listening' && !empty($grade_data['name'])) {
+            $faqPageName = $grade_data['name'] . 'のリスニング対策｜よくある質問｜' . SITE_NAME;
         } elseif (($page ?? '') === 'grade' && !empty($grade_data['name'])) {
             $faqPageName = $grade_data['name'] . 'のよくある質問｜' . SITE_NAME . '（英検対策アプリ）';
         }

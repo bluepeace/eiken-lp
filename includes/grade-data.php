@@ -1989,7 +1989,7 @@ function grade_content_all(): array
                 'parts' => [
                     ['title' => '会話の応答文選択', 'desc' => '補助イラスト付きの応答選択です。', 'image' => 'listening-1'],
                     ['title' => '会話の内容一致選択', 'desc' => '会話の内容に関する質問です。', 'image' => 'listening-2'],
-                    ['title' => 'イラストの内容一致選択', 'desc' => '短文を聞き、イラストの動作・状況を選びます。', 'image' => 'listening-3'],
+                    ['title' => 'イラストの内容一致選択', 'desc' => 'イラストを見て、読み上げられる3つの英文から様子に合うものを選びます。', 'image' => 'listening-3'],
                 ],
             ],
             'faq' => [

@@ -33,6 +33,8 @@ DirectoryIndex index.php
   RewriteRule ^(1kyu|jun1kyu|2kyu|jun2kyu-plus|jun2kyu|3kyu)/writing/?$ writing.php?level=$1 [L,QSA]
   # 級別リーディング（5級〜1級）
   RewriteRule ^(1kyu|jun1kyu|2kyu|jun2kyu-plus|jun2kyu|3kyu|4kyu|5kyu)/reading/?$ reading.php?level=$1 [L,QSA]
+  # 級別リスニング（5級〜1級）
+  RewriteRule ^(1kyu|jun1kyu|2kyu|jun2kyu-plus|jun2kyu|3kyu|4kyu|5kyu)/listening/?$ listening.php?level=$1 [L,QSA]
   # 級別入り口ページ
   RewriteRule ^(1kyu|jun1kyu|2kyu|jun2kyu-plus|jun2kyu|3kyu|4kyu|5kyu)/?$ grade.php?level=$1 [L,QSA]
   # トップは index.php
