@@ -2,6 +2,7 @@
 if (!defined('SITE_NAME')) {
     require_once __DIR__ . '/../config.php';
 }
+require_once __DIR__ . '/speaking-data.php';
 $current_page = $page ?? 'top';
 $current_grade = $grade ?? '';
 $show_main_nav = in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy', 'contact', 'external', 'company', 'cancel', 'parents', 'guide', 'grade', 'speaking', 'eiken'], true);
@@ -63,15 +64,27 @@ $is_about = ($current_page === 'about');
           >級別対策<span class="site-header__dropdown-caret" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
           <ul id="grade-nav-menu" class="site-header__dropdown-menu" role="menu" aria-labelledby="grade-nav-toggle" hidden>
             <?php foreach ($grade_nav_items as $gi):
-                $is_grade_current = ($is_grade_section && $current_grade === $gi['slug']);
+                $is_this_grade = ($current_grade === $gi['slug']);
+                $grade_current = ($current_page === 'grade' && $is_this_grade);
+                $speaking_href = speaking_page_path($gi['slug']);
+                $speaking_current = ($current_page === 'speaking' && $is_this_grade && $speaking_href !== null);
                 ?>
-            <li role="none">
+            <li class="site-header__dropdown-item" role="none">
               <a
                 role="menuitem"
-                class="site-header__dropdown-link<?php echo $is_grade_current ? ' is-current' : ''; ?>"
+                class="site-header__dropdown-link<?php echo $grade_current ? ' is-current' : ''; ?>"
                 href="<?php echo htmlspecialchars($gi['href']); ?>"
-                <?php echo ($current_page === 'grade' && $is_grade_current) ? ' aria-current="page"' : ''; ?>
+                <?php echo $grade_current ? ' aria-current="page"' : ''; ?>
               ><?php echo htmlspecialchars($gi['name']); ?></a>
+              <?php if ($speaking_href !== null): ?>
+              <a
+                role="menuitem"
+                class="site-header__dropdown-sublink<?php echo $speaking_current ? ' is-current' : ''; ?>"
+                href="<?php echo htmlspecialchars($speaking_href); ?>"
+                aria-label="<?php echo htmlspecialchars($gi['name'] . 'のスピーキング'); ?>"
+                <?php echo $speaking_current ? ' aria-current="page"' : ''; ?>
+              >スピーキング</a>
+              <?php endif; ?>
             </li>
             <?php endforeach; ?>
           </ul>
@@ -127,14 +140,25 @@ $is_about = ($current_page === 'about');
         >級別対策<span class="site-header__dropdown-caret" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
         <ul id="grade-mobile-menu" class="site-header__mobile-sub"<?php echo $is_grade_section ? '' : ' hidden'; ?>>
           <?php foreach ($grade_nav_items as $gi):
-              $is_grade_current = ($is_grade_section && $current_grade === $gi['slug']);
+              $is_this_grade = ($current_grade === $gi['slug']);
+              $grade_current = ($current_page === 'grade' && $is_this_grade);
+              $speaking_href = speaking_page_path($gi['slug']);
+              $speaking_current = ($current_page === 'speaking' && $is_this_grade && $speaking_href !== null);
               ?>
-          <li>
+          <li class="site-header__mobile-grade">
             <a
-              class="site-header__mobile-sublink<?php echo $is_grade_current ? ' is-current' : ''; ?>"
+              class="site-header__mobile-sublink<?php echo $grade_current ? ' is-current' : ''; ?>"
               href="<?php echo htmlspecialchars($gi['href']); ?>"
-              <?php echo ($current_page === 'grade' && $is_grade_current) ? ' aria-current="page"' : ''; ?>
+              <?php echo $grade_current ? ' aria-current="page"' : ''; ?>
             ><?php echo htmlspecialchars($gi['name']); ?></a>
+            <?php if ($speaking_href !== null): ?>
+            <a
+              class="site-header__mobile-speaking<?php echo $speaking_current ? ' is-current' : ''; ?>"
+              href="<?php echo htmlspecialchars($speaking_href); ?>"
+              aria-label="<?php echo htmlspecialchars($gi['name'] . 'のスピーキング'); ?>"
+              <?php echo $speaking_current ? ' aria-current="page"' : ''; ?>
+            >スピーキング</a>
+            <?php endif; ?>
           </li>
           <?php endforeach; ?>
         </ul>

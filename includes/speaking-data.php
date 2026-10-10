@@ -34,9 +34,17 @@ function speaking_url(string $slug): string
     return rtrim(SITE_URL, '/') . $path;
 }
 
+function speaking_try_slug(string $slug): string
+{
+    if ($slug === 'jun2kyu-plus') {
+        return 'jun2kyuplus';
+    }
+    return $slug;
+}
+
 function speaking_try_url(string $slug): string
 {
-    return rtrim(APP_URL, '/') . '/try/speaking/' . rawurlencode($slug);
+    return rtrim(APP_URL, '/') . '/try/speaking/' . rawurlencode(speaking_try_slug($slug));
 }
 
 function speaking_signup_url(): string
@@ -93,9 +101,16 @@ function speaking_faq_items(string $slug, array $content): array
     $items = [];
 
     if ($hasTry) {
+        if ($slug === '1kyu') {
+            $tryAnswer = 'はい。登録なしで2問、採点されます。マイクでも、文字の入力だけでも大丈夫です。残りの質疑とフル模擬は登録後です。準備中のメモは取れません。';
+        } elseif ($slug === 'jun1kyu') {
+            $tryAnswer = 'はい。登録なしで2問、採点されます。マイクでも、文字の入力だけでも大丈夫です。残りの質問とフル模擬は登録後です。';
+        } else {
+            $tryAnswer = 'はい。イラスト描写と、それに続く1問は、登録なしで採点されます。マイクでも、文字の入力だけでも大丈夫です。音読、残りの質問、フル模擬は登録後です。登録後は、音読と残りの質問も同じ採点で練習できます。';
+        }
         $items[] = [
             'q' => '登録なしで試せますか？',
-            'a' => 'はい。イラスト描写と、それに続く1問は、登録なしで採点されます。マイクでも、文字の入力だけでも大丈夫です。音読、残りの質問、フル模擬は登録後です。登録後は、音読と残りの質問も同じ採点で練習できます。',
+            'a' => $tryAnswer,
         ];
         $items[] = [
             'q' => '声を出さなくても練習できますか？',
@@ -357,11 +372,11 @@ function speaking_content_all(): array
             ],
         ],
         'jun1kyu' => [
-            'has_try' => false,
-            'primary_label' => '登録してこの4コマで2分話す',
-            'description' => '英検準1級のスピーキング・面接・二次試験を、英検対策アプリで練習。音読はありません。4コマを2分で話し、意見4問をAIが採点します。無料登録から始められます。',
+            'has_try' => true,
+            'primary_label' => '登録なしで2問試す',
+            'description' => '英検準1級のスピーキング・面接・二次試験を、英検対策アプリで練習。音読はありません。4コマを2分で話し、意見4問をAIが採点します。登録なしで2問試せます。',
             'lead' => '音読はありません。4コマを1分考えて、2分で話し、そのあと意見が4問。約8分です。',
-            'hero_note' => 'この級は登録なしの体験がありません。無料登録すると、Shared Bicycles の4コマから練習を始められます。',
+            'hero_note' => '登録なしで試せるのは2問です。マイクでも、入力だけでも採点されます。',
             'chips' => ['二次試験', '約8分', '4コマ', '音読なし'],
             'screen_alt' => '英検準1級のスピーキング練習画面。Shared Bicycles の4コマイラストと指定文が表示されている',
             'screen_caption' => 'Shared Bicycles の練習画面です。指定文から4コマを話し、4コマ目は I\'d be thinking で考えを言います。',
@@ -401,7 +416,7 @@ function speaking_content_all(): array
                 ['title' => 'もう一段広い意見', 'text' => '社会の話に広げます。理由は2文です。'],
                 ['title' => '抽象的な意見', 'text' => 'カードは非表示です。結論を先に言い、理由を2文続けます。'],
             ],
-            'compare' => '2級は音読と3コマです。準1級は音読がなく、4コマを1分考えて2分で話します。そのあと意見が4問です。登録なしの2問体験はないので、最初から登録して練習します。',
+            'compare' => '2級は音読と3コマです。準1級は音読がなく、4コマを1分考えて2分で話します。そのあと意見が4問です。',
             'points' => [
                 ['title' => '2分で4コマを話し切る', 'text' => '1コマで丁寧に止めないこと。1コマ2〜3文で、4コマまで届かせます。'],
                 ['title' => '時間と However', 'text' => 'The next week / Six months later で時間を進め、最後のコマは However でひっくり返します。'],
@@ -409,11 +424,11 @@ function speaking_content_all(): array
             ],
         ],
         '1kyu' => [
-            'has_try' => false,
-            'primary_label' => '登録してこのトピックで2分話す',
-            'description' => '英検1級のスピーキング・面接・二次試験を、英検対策アプリで練習。イラストはなく、5トピックから1つ選んで2分スピーチと質疑をAIが採点します。無料登録から始められます。',
+            'has_try' => true,
+            'primary_label' => '登録なしで2問試す',
+            'description' => '英検1級のスピーキング・面接・二次試験を、英検対策アプリで練習。イラストはなく、5トピックから1つ選んで2分スピーチと質疑をAIが採点します。登録なしで2問試せます。',
             'lead' => 'イラストはありません。5つのトピックから1つ選び、1分で構成し、2分スピーチ。そのあと質疑です。約10分です。',
-            'hero_note' => 'この級は登録なしの体験がありません。準備中のメモは、本番と同じく取れません。',
+            'hero_note' => '登録なしで試せるのは2問です。マイクでも、入力だけでも採点されます。準備中のメモは、本番と同じく取れません。',
             'chips' => ['二次試験', '約10分', '2分スピーチ', 'イラストなし'],
             'screen_alt' => '英検1級のスピーキング準備画面。Education and Work の5トピックと、メモ不可のカウントダウンが表示されている',
             'screen_caption' => 'Education and Work の準備画面です。2分スピーチの構成を考えます。本番はメモ不可、と画面に出ています。',
