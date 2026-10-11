@@ -45,9 +45,9 @@ include __DIR__ . '/breadcrumbs.php';
           <li><a href="/blog">英検コラム</a></li>
         </ul>
       </nav>
-      <nav class="site-footer__col" aria-label="級別対策">
+      <nav class="site-footer__col site-footer__col--grades" aria-label="級別対策">
         <p class="site-footer__col-title">級別対策</p>
-        <ul class="site-footer__list">
+        <ul class="site-footer__list site-footer__list--grades">
           <?php foreach ($footer_grade_items as $gi):
               $word_href = vocabulary_page_path($gi['slug']);
               $word_current = (($page ?? '') === 'vocabulary' && ($grade ?? '') === $gi['slug'] && $word_href !== null);

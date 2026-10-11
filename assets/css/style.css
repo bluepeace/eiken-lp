@@ -3441,8 +3441,12 @@ body.is-lightbox-locked {
 
 @media (min-width: 1100px) {
   .site-footer__columns {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: 1.75rem 1.15rem;
+  }
+
+  .site-footer__col--grades {
+    grid-column: span 2;
   }
 }
 
@@ -3469,6 +3473,14 @@ body.is-lightbox-locked {
   list-style: none;
   display: grid;
   gap: 0.45rem;
+}
+
+@media (min-width: 640px) {
+  .site-footer__list--grades {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 1rem;
+    align-items: start;
+  }
 }
 
 .site-footer__list a {
