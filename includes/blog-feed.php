@@ -307,6 +307,48 @@ function aiken_blog_item_from_url(string $url): ?array
 }
 
 /**
+ * URL指定の記事情報をキャッシュ付きで取得する。
+ * API取得に失敗した場合は、期限切れのキャッシュもフォールバックとして使う。
+ *
+ * @return array{title: string, url: string, image: ?string, pubDate: string, modDate: string}|null
+ */
+function aiken_blog_item_from_url_cached(string $url, int $ttl = 21600): ?array
+{
+    if (!filter_var($url, FILTER_VALIDATE_URL)) {
+        return null;
+    }
+    $cacheDir = __DIR__ . '/../cache';
+    $cacheFile = $cacheDir . '/blog-item-' . md5(aiken_normalize_blog_url($url)) . '.json';
+    $cachedItem = null;
+
+    if (is_readable($cacheFile)) {
+        $cached = json_decode((string) file_get_contents($cacheFile), true);
+        if (is_array($cached) && isset($cached['item']) && is_array($cached['item'])) {
+            $cachedItem = $cached['item'];
+            if ((int) ($cached['expires'] ?? 0) > time()) {
+                return $cachedItem;
+            }
+        }
+    }
+
+    $item = aiken_blog_item_from_url($url);
+    if ($item === null) {
+        return $cachedItem;
+    }
+    if (!is_dir($cacheDir)) {
+        @mkdir($cacheDir, 0775, true);
+    }
+    if (is_dir($cacheDir) && is_writable($cacheDir)) {
+        @file_put_contents(
+            $cacheFile,
+            json_encode(['expires' => time() + max(300, $ttl), 'item' => $item], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
+            LOCK_EX
+        );
+    }
+    return $item;
+}
+
+/**
  * ??????????????WordPress REST????? RSS??
  *
  * @return list<array{title: string, url: string, image: ?string, pubDate: string, modDate: string}>

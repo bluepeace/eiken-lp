@@ -19,6 +19,7 @@ if ($grade_data === null || $vocabulary === null) {
 
 $grade = $level;
 $page = 'vocabulary';
+$grade_content = get_grade_content($grade);
 $canonical = vocabulary_url($grade);
 $meta_override = vocabulary_meta($grade_data, $vocabulary);
 $faq_schema_items = vocabulary_faq_items($vocabulary);
@@ -42,6 +43,7 @@ include __DIR__ . '/includes/sections/vocabulary_points.php';
 include __DIR__ . '/includes/sections/vocabulary_reasons.php';
 include __DIR__ . '/includes/sections/plan.php';
 include __DIR__ . '/includes/sections/vocabulary_faq.php';
+include __DIR__ . '/includes/sections/grade_youtube.php';
 include __DIR__ . '/includes/sections/skill_column.php';
 include __DIR__ . '/includes/sections/vocabulary_related.php';
 include __DIR__ . '/includes/sections/vocabulary_cta.php';
