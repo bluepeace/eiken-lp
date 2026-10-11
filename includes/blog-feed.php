@@ -66,7 +66,7 @@ function aiken_blog_modified_display(string $modified): ?array
     if (preg_match('/^(\d{4})-(\d{2})-(\d{2})/', $modified, $m)) {
         return [
             'datetime' => $m[1] . '-' . $m[2] . '-' . $m[3],
-            'label' => ((int) $m[1]) . '?' . ((int) $m[2]) . '?' . ((int) $m[3]) . '? ??',
+            'label' => ((int) $m[1]) . '年' . ((int) $m[2]) . '月' . ((int) $m[3]) . '日 更新',
         ];
     }
     $ts = @strtotime($modified);
@@ -75,7 +75,7 @@ function aiken_blog_modified_display(string $modified): ?array
     }
     return [
         'datetime' => date('Y-m-d', $ts),
-        'label' => date('Y?n?j?', $ts) . ' ??',
+        'label' => date('Y年n月j日', $ts) . ' 更新',
     ];
 }
 /**
