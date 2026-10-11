@@ -40,6 +40,7 @@ include __DIR__ . '/includes/sections/listening_points.php';
 include __DIR__ . '/includes/sections/listening_reasons.php';
 include __DIR__ . '/includes/sections/plan.php';
 include __DIR__ . '/includes/sections/listening_faq.php';
+include __DIR__ . '/includes/sections/skill_column.php';
 include __DIR__ . '/includes/sections/listening_related.php';
 include __DIR__ . '/includes/sections/listening_cta.php';
 include __DIR__ . '/includes/grade-lightbox.php';

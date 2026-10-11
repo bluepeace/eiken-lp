@@ -42,6 +42,7 @@ include __DIR__ . '/includes/sections/vocabulary_points.php';
 include __DIR__ . '/includes/sections/vocabulary_reasons.php';
 include __DIR__ . '/includes/sections/plan.php';
 include __DIR__ . '/includes/sections/vocabulary_faq.php';
+include __DIR__ . '/includes/sections/skill_column.php';
 include __DIR__ . '/includes/sections/vocabulary_related.php';
 include __DIR__ . '/includes/sections/vocabulary_cta.php';
 include __DIR__ . '/includes/grade-lightbox.php';

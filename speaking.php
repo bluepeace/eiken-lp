@@ -40,6 +40,7 @@ include __DIR__ . '/includes/sections/speaking_example.php';
 include __DIR__ . '/includes/sections/speaking_points.php';
 include __DIR__ . '/includes/sections/plan.php';
 include __DIR__ . '/includes/sections/speaking_faq.php';
+include __DIR__ . '/includes/sections/skill_column.php';
 include __DIR__ . '/includes/sections/speaking_related.php';
 include __DIR__ . '/includes/sections/speaking_cta.php';
 include __DIR__ . '/includes/grade-lightbox.php';
