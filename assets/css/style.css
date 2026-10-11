@@ -2110,14 +2110,15 @@ img[loading="lazy"] {
 
 @media (min-width: 768px) {
   .howto-steps {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.5rem;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .howto-steps {
-    gap: 2rem;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1.25rem;
   }
 }
 
@@ -2182,12 +2183,12 @@ img[loading="lazy"] {
   color: #475569;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .howto-step:not(:last-child)::after {
     content: "";
     position: absolute;
     top: 3.15rem;
-    right: -1.35rem;
+    right: -1.05rem;
     z-index: 1;
     width: 1.5rem;
     height: 1.5rem;
@@ -2196,6 +2197,96 @@ img[loading="lazy"] {
     mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='m12 5 7 7-7 7'/%3E%3C/svg%3E") center / contain no-repeat;
     pointer-events: none;
   }
+}
+
+/* TOP 級別・技能別対応表 */
+.grade-skill-table-wrap {
+  overflow-x: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+  scrollbar-width: thin;
+}
+
+.grade-skill-table {
+  width: 100%;
+  min-width: 880px;
+  border-collapse: separate;
+  border-spacing: 0;
+  text-align: center;
+}
+
+.grade-skill-table th,
+.grade-skill-table td {
+  padding: 0.9rem 0.75rem;
+  border-right: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 0.875rem;
+  vertical-align: middle;
+}
+
+.grade-skill-table tr:last-child th,
+.grade-skill-table tr:last-child td { border-bottom: 0; }
+.grade-skill-table th:last-child,
+.grade-skill-table td:last-child { border-right: 0; }
+
+.grade-skill-table thead th {
+  background: #e8fafb;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.grade-skill-table thead th span,
+.grade-skill-table thead th small { display: block; }
+.grade-skill-table thead th small {
+  margin-top: 0.2rem;
+  color: #64748b;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.grade-skill-table tbody th {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  min-width: 9rem;
+  background: #f8fafc;
+  text-align: left;
+}
+
+.grade-skill-table a {
+  color: #007f89;
+  font-weight: 700;
+  text-decoration: none;
+}
+.grade-skill-table a:hover { text-decoration: underline; }
+.grade-skill-table td a { display: inline-flex; align-items: center; gap: 0.35rem; }
+.grade-skill-table__check { color: #22a66f; }
+.grade-skill-table__none { color: #94a3b8; }
+
+.grade-skill-guides {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.grade-skill-guides a {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.9rem;
+  background: #f8fafc;
+  color: #0f172a;
+  transition: border-color 0.15s, background-color 0.15s;
+}
+.grade-skill-guides a:hover { border-color: rgba(80, 194, 203, 0.65); background: rgba(80, 194, 203, 0.07); }
+.grade-skill-guides span { color: #64748b; font-size: 0.8rem; line-height: 1.6; }
+
+@media (min-width: 768px) {
+  .grade-skill-guides { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 .howto-cta {

@@ -59,6 +59,9 @@ $skill_items = [
         'key' => 'writing',
         'icon' => 'pencil-line',
         'title' => 'ライティング',
+        'image' => '/assets/images/grade/2kyu/writing-3.webp',
+        'image_alt' => 'AiKenの英検2級ライティングAI添削結果。総合点と語彙・文法・内容・構成・指示遵守の評価を表示',
+        'caption' => '英検2級ライティングのAI添削・観点別フィードバック例',
         'tagline' => '英作文を書いて、AIがその場で添削・フィードバック',
         'text' => '意見論述など級に合った英作文をアプリ内で作成。<span class="lp-marker">音声入力や写真からの読み取り</span>にも対応し、語数目安を見ながら書けます。書いた内容はAIが添削するので、家庭でも続けやすいのが強みです。',
         'points' => [
@@ -92,7 +95,9 @@ $skill_items = [
     <div class="app-skills-list mt-12 sm:mt-16">
       <?php foreach ($skill_items as $index => $item):
           $reverse = $index % 2 === 1;
-          $screen_url = app_skill_screen_url($item['key']);
+          $screen_url = (string) ($item['image'] ?? app_skill_screen_url($item['key']));
+          $screen_alt = (string) ($item['image_alt'] ?? (SITE_NAME . 'の' . $item['title'] . '学習画面'));
+          $screen_caption = (string) ($item['caption'] ?? ($item['title'] . 'の画面イメージ'));
           ?>
       <article class="app-skills-row<?php echo $reverse ? ' app-skills-row--reverse' : ''; ?>" id="skill-<?php echo htmlspecialchars($item['key']); ?>">
         <div class="app-skills-row__content">
@@ -119,7 +124,7 @@ $skill_items = [
             <div class="app-skills-window__screen">
               <img
                 src="<?php echo htmlspecialchars($screen_url); ?>"
-                alt="<?php echo htmlspecialchars(SITE_NAME . 'の' . $item['title'] . '学習画面'); ?>"
+                alt="<?php echo htmlspecialchars($screen_alt); ?>"
                 width="1280"
                 height="800"
                 class="app-skills-window__image"
@@ -128,10 +133,13 @@ $skill_items = [
               >
             </div>
           </div>
-          <figcaption class="app-skills-caption"><?php echo htmlspecialchars($item['title']); ?>の画面イメージ</figcaption>
+          <figcaption class="app-skills-caption"><?php echo htmlspecialchars($screen_caption); ?></figcaption>
         </figure>
       </article>
       <?php endforeach; ?>
     </div>
+    <p class="mt-12 text-center">
+      <a class="inline-flex items-center gap-2 font-semibold text-[#008b96] underline-offset-4 hover:underline" href="#grade-skill-coverage">目標級で使える技能と問題形式を見る<?php echo lp_icon('arrow-right', 'w-5 h-5'); ?></a>
+    </p>
   </div>
 </section>
