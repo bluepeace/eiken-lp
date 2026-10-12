@@ -44,7 +44,7 @@ $is_about = ($current_page === 'about');
   <div class="lp-container site-header__inner px-4">
     <a class="flex shrink-0 items-center" href="/">
       <?php echo lp_picture([
-          'src' => '/assets/images/logo-aiken.png',
+          'src' => lp_versioned_asset('/assets/images/logo-aiken.png'),
           'alt' => SITE_NAME,
           'width' => 1630,
           'height' => 524,

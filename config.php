@@ -233,6 +233,24 @@ function asset(string $path): string {
     return rtrim(SITE_URL, '/') . '/' . ltrim($path, '/');
 }
 
+/** 静的画像の更新日時を付け、Nginx / ブラウザの長期キャッシュを避ける */
+function lp_versioned_asset(string $path): string
+{
+    $rel = ltrim((string) (parse_url($path, PHP_URL_PATH) ?: $path), '/');
+    $full = __DIR__ . '/' . $rel;
+    $ver = is_file($full) ? (int) filemtime($full) : 0;
+    $webp = (string) preg_replace('/\.(png|jpe?g)$/i', '.webp', $full);
+    if (is_file($webp)) {
+        $ver = max($ver, (int) filemtime($webp));
+    }
+    if ($ver <= 0) {
+        return $path;
+    }
+    $sep = strpos($path, '?') !== false ? '&' : '?';
+
+    return $path . $sep . 'v=' . $ver;
+}
+
 /**
  * WebP があれば picture、なければ img。
  *

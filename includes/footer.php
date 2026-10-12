@@ -17,7 +17,7 @@ include __DIR__ . '/breadcrumbs.php';
       <div class="site-footer__brand">
         <a class="site-footer__logo-link" href="/">
           <?php echo lp_picture([
-              'src' => '/assets/images/logo-aiken.png',
+              'src' => lp_versioned_asset('/assets/images/logo-aiken.png'),
               'alt' => SITE_NAME,
               'width' => 1630,
               'height' => 524,
