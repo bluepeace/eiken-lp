@@ -268,7 +268,12 @@ function lp_picture(array $img): string
     $decoding = (string) ($img['decoding'] ?? 'async');
     $webp = (string) ($img['webp'] ?? '');
     if ($webp === '') {
-        $webp = (string) preg_replace('/\.(png|jpe?g)$/i', '.webp', $src);
+        $srcPath = (string) (parse_url($src, PHP_URL_PATH) ?: $src);
+        $srcQuery = (string) (parse_url($src, PHP_URL_QUERY) ?: '');
+        $webp = (string) preg_replace('/\.(png|jpe?g)$/i', '.webp', $srcPath);
+        if ($srcQuery !== '') {
+            $webp .= '?' . $srcQuery;
+        }
     }
 
     $rel = ltrim((string) (parse_url($webp, PHP_URL_PATH) ?: $webp), '/');
