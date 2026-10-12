@@ -19,8 +19,8 @@ include __DIR__ . '/breadcrumbs.php';
           <?php echo lp_picture([
               'src' => '/assets/images/logo-aiken.png',
               'alt' => SITE_NAME,
-              'width' => 120,
-              'height' => 36,
+              'width' => 1630,
+              'height' => 524,
               'class' => 'site-footer__logo logo',
               'loading' => 'lazy',
           ]); ?>

@@ -46,8 +46,8 @@ $is_about = ($current_page === 'about');
       <?php echo lp_picture([
           'src' => '/assets/images/logo-aiken.png',
           'alt' => SITE_NAME,
-          'width' => 160,
-          'height' => 48,
+          'width' => 1630,
+          'height' => 524,
           'class' => 'site-header__logo',
           'loading' => 'eager',
       ]); ?>
