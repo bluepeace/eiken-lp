@@ -8,9 +8,7 @@ $page = 'parents';
 require_once __DIR__ . '/config.php';
 $canonical = rtrim(SITE_URL, '/') . '/parents';
 
-$priceLead = open_campaign_active()
-    ? '最初の' . FREE_TRIAL_DAYS . '日間は全機能無料。その後はOPEN記念価格の<strong>' . monthly_price_label() . '</strong>（定価' . monthly_price_regular_label() . '・' . open_campaign_end_label() . 'まで）。'
-    : '最初の' . FREE_TRIAL_DAYS . '日間は全機能無料。その後は<strong>' . monthly_price_regular_label() . '</strong>。';
+$priceLead = 'Freeプランは追加料金なしで、単語テストを回数の制限なく続けられます。リーディング・リスニング・ライティング・スピーキングも、毎日少しずつ無料で使えます。';
 
 include __DIR__ . '/includes/header.php';
 ?>
@@ -21,16 +19,15 @@ include __DIR__ . '/includes/header.php';
       <h1 id="parents-heading" class="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">保護者の方へ</h1>
       <p class="mt-4 text-base leading-relaxed text-slate-700 sm:text-lg"><?php echo br_after_period('お子さまの英検対策を、スマホひとつで。料金・安全・学習の進め方をまとめました。'); ?></p>
       <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
-        <a class="inline-flex items-center justify-center rounded-full bg-[#50c2cb] px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-[#46adb5]" href="<?php echo htmlspecialchars(APP_URL); ?>/signup"><?php echo FREE_TRIAL_DAYS; ?>日間無料で始める</a>
-        <a class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3.5 text-sm font-semibold text-slate-700 transition hover:border-[#50c2cb]/50" href="/plan">料金を見る</a>
+        <a class="inline-flex items-center justify-center gap-2 rounded-full bg-[#50c2cb] px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-[#46adb5]" href="<?php echo htmlspecialchars(APP_URL); ?>/signup"><?php echo lp_start_cta_inner('h-4 w-4'); ?></a>
       </div>
     </div>
   </section>
 
   <section class="px-4 py-14 sm:py-16" aria-labelledby="parents-price">
     <div class="mx-auto max-w-3xl">
-      <h2 id="parents-price" class="text-2xl font-bold tracking-tight text-slate-900">料金がわかりやすい</h2>
-      <p class="mt-3 text-slate-600"><?php echo br_after_period($priceLead . 'カード登録なしで体験を開始できます。'); ?></p>
+      <h2 id="parents-price" class="text-2xl font-bold tracking-tight text-slate-900">無料ではじめられて、続ける範囲も選べる</h2>
+      <p class="mt-3 text-slate-600"><?php echo br_after_period($priceLead . 'カード登録なしで、今日から始められます。'); ?></p>
       <ul class="mt-6 space-y-3 text-sm text-slate-700">
         <li class="flex gap-2"><span class="shrink-0 text-[#50c2cb]"><?php echo lp_icon('check', 'w-5 h-5'); ?></span>登録無料・カード不要で始められる</li>
         <li class="flex gap-2"><span class="shrink-0 text-[#50c2cb]"><?php echo lp_icon('check', 'w-5 h-5'); ?></span>解約はいつでもOK（お支払い済み期間は利用可）</li>
@@ -76,9 +73,9 @@ include __DIR__ . '/includes/header.php';
 
   <section class="border-t border-slate-100 bg-[#e8f8f9] px-4 py-14 sm:py-16">
     <div class="mx-auto max-w-3xl text-center">
-      <h2 class="text-2xl font-bold tracking-tight text-slate-900">まずは<?php echo FREE_TRIAL_DAYS; ?>日間、無料で試せます</h2>
-      <p class="mt-3 text-slate-600"><?php echo br_after_period('カード登録は不要です。合わなければ解約もかんたんです。'); ?></p>
-      <a class="mt-8 inline-flex items-center justify-center rounded-full bg-[#50c2cb] px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-[#46adb5]" href="<?php echo htmlspecialchars(APP_URL); ?>/signup">無料ではじめる</a>
+      <h2 class="text-2xl font-bold tracking-tight text-slate-900">今日から、学習を始められます</h2>
+      <p class="mt-3 text-slate-600"><?php echo br_after_period('カード登録は不要です。単語テストは無料で続けられます。'); ?></p>
+      <a class="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-[#50c2cb] px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-[#46adb5]" href="<?php echo htmlspecialchars(APP_URL); ?>/signup"><?php echo lp_start_cta_inner('h-4 w-4'); ?></a>
     </div>
   </section>
 </article>

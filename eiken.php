@@ -334,11 +334,10 @@ include __DIR__ . '/includes/header.php';
         <li class="flex gap-2 rounded-xl border border-white bg-white/80 px-4 py-3 text-sm text-slate-700"><span class="shrink-0 text-[#50c2cb]"><?php echo lp_icon('check', 'w-5 h-5'); ?></span>AIスピーキング練習</li>
         <li class="flex gap-2 rounded-xl border border-white bg-white/80 px-4 py-3 text-sm text-slate-700"><span class="shrink-0 text-[#50c2cb]"><?php echo lp_icon('check', 'w-5 h-5'); ?></span>間違えた問題の復習・スマホ学習</li>
       </ul>
-      <p class="mt-4 text-sm text-slate-600"><?php echo br_after_period(FREE_TRIAL_DAYS . '日間は全機能を無料でお試しいただけます（カード登録不要）。料金は' . monthly_price_label() . 'です。'); ?></p>
+      <p class="mt-4 text-sm text-slate-600"><?php echo br_after_period('カード登録不要で、今日から始められます。単語テストは無料で続けられます。'); ?></p>
       <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-        <a class="inline-flex items-center justify-center rounded-full bg-[#50c2cb] px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-[#46adb5]" href="<?php echo htmlspecialchars($signup); ?>"><?php echo FREE_TRIAL_DAYS; ?>日間無料で試す</a>
+        <a class="inline-flex items-center justify-center gap-2 rounded-full bg-[#50c2cb] px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-[#46adb5]" href="<?php echo htmlspecialchars($signup); ?>"><?php echo lp_start_cta_inner('h-4 w-4'); ?></a>
         <a class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-8 py-3.5 text-sm font-semibold text-slate-700 transition hover:border-[#50c2cb]/50" href="/about">AiKenとは</a>
-        <a class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-8 py-3.5 text-sm font-semibold text-slate-700 transition hover:border-[#50c2cb]/50" href="/plan">料金を見る</a>
       </div>
       <p class="mt-6 text-sm text-slate-500"><a class="font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="/blog/">英検コラム一覧</a> ／ <a class="font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="/guide">使い方ガイド</a></p>
     </div>

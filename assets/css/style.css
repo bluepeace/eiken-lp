@@ -1020,6 +1020,7 @@ img[loading="lazy"] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.4rem;
   min-height: 3.5rem;
   padding: 0.9rem 2rem;
   border-radius: 9999px;
@@ -1868,8 +1869,28 @@ img[loading="lazy"] {
 }
 
 /* ========== 料金プラン ========== */
+.plan-grid {
+  display: grid;
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+@media (min-width: 768px) {
+  .plan-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .plan-card {
   border-color: rgba(80, 194, 203, 0.4);
+}
+
+.plan-card--free {
+  border-color: #cbd5e1;
+}
+
+.plan-card--free .plan-card__header {
+  background-color: #334155;
 }
 
 .plan-card__header {
@@ -2301,6 +2322,7 @@ img[loading="lazy"] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.4rem;
   width: 100%;
   max-width: 28rem;
   min-height: 3.75rem;
@@ -2941,6 +2963,7 @@ body.is-lightbox-locked {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.4rem;
   border-radius: 9999px;
   background-color: var(--aiken-brand);
   padding: 0.9rem 2rem;

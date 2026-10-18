@@ -17,8 +17,9 @@ $jsonLd = [
     'operatingSystem' => 'Any',
     'offers' => [
         '@type' => 'Offer',
-        'price' => (string) MONTHLY_PRICE,
+        'price' => '0',
         'priceCurrency' => 'JPY',
+        'description' => 'Freeプラン。単語テストは回数制限なく利用できます。',
     ],
 ];
 ?>

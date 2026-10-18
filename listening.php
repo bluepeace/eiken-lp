@@ -24,12 +24,9 @@ $meta_override = listening_meta($grade_data, $listening);
 $faq_schema_items = listening_faq_items($listening);
 $listening_signup_href = listening_signup_url();
 
-$plan_heading = '料金・無料体験';
+$plan_heading = '料金・プラン';
 $plan_heading_id = 'listening-plan';
-$plan_lead = '無料登録はメールアドレスだけで始められます。クレジットカードは不要です。登録から' . FREE_TRIAL_DAYS . '日間は、リスニングを<strong>回数の制限なく</strong>練習できます。6日目以降の無料プランは、<strong>1日1セット</strong>までです。' . (string) ($listening['day6'] ?? '') . '単語は登録後も回数の制限なく使えます。'
-    . (open_campaign_active()
-        ? 'プレミアムは今なら<strong>' . monthly_price_label() . '</strong>です（OPEN記念価格・定価' . monthly_price_regular_label() . '・' . open_campaign_end_label() . 'まで）。'
-        : 'プレミアムは<strong>' . monthly_price_regular_label() . '</strong>です。');
+$plan_lead = '無料登録はメールアドレスだけで始められます。クレジットカードは不要です。登録から' . FREE_TRIAL_DAYS . '日間は、リスニングを<strong>回数の制限なく</strong>練習できます。6日目以降の無料プランは、<strong>1日1セット</strong>までです。' . (string) ($listening['day6'] ?? '') . '単語は登録後も回数の制限なく使えます。制限なく使うときはプレミアムプランです。';
 
 include __DIR__ . '/includes/header.php';
 include __DIR__ . '/includes/sections/listening_hero.php';

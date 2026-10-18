@@ -12,14 +12,12 @@ include __DIR__ . '/includes/header.php';
   <div class="mx-auto max-w-3xl text-center">
     <p class="section-badge section-badge--center" aria-hidden="true">PLAN</p>
     <h1 id="plan-heading" class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">料金・プラン</h1>
-    <p class="mt-4 text-lg text-slate-700"><?php echo br_after_period(open_campaign_active()
-        ? '最初の' . FREE_TRIAL_DAYS . '日間は、単語テスト・AI添削・リーディング・リスニングなど<strong>全機能が無料</strong>です。その後はOPEN記念価格の<strong>' . monthly_price_label() . '</strong>で続けられます。（定価' . monthly_price_regular_label() . '・' . open_campaign_end_label() . 'まで）'
-        : '最初の' . FREE_TRIAL_DAYS . '日間は、単語テスト・AI添削・リーディング・リスニングなど<strong>全機能が無料</strong>です。その後は<strong>' . monthly_price_regular_label() . '</strong>で続けられます。'); ?></p>
+    <p class="mt-4 text-lg text-slate-700"><?php echo br_after_period('Freeプランは追加料金なし。単語テストは回数の制限なく続けられます。プレミアムに加入すると、リーディング・リスニング・ライティング・スピーキングも制限なく使えます。'); ?></p>
   </div>
 </section>
 
-<section class="border-b border-slate-100 bg-white px-4 py-14 sm:py-20" aria-labelledby="plan-premium-heading">
-  <div class="mx-auto max-w-2xl">
+<section class="border-b border-slate-100 bg-white px-4 py-14 sm:py-20" aria-label="Freeプランとプレミアムプラン">
+  <div class="mx-auto max-w-5xl">
     <?php include __DIR__ . '/includes/sections/plan_card.php'; ?>
   </div>
 </section>

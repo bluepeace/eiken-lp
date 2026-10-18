@@ -56,7 +56,7 @@ $hero_mockup_alt = $name !== ''
       <?php endif; ?>
       <p class="max-w-lg text-base leading-relaxed text-[#232323]"><?php echo br_after_period($hero_lead); ?></p>
       <div class="flex flex-col gap-3 sm:flex-row sm:justify-start">
-        <a class="inline-flex items-center justify-center rounded-full bg-[#50c2cb] px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-[#50c2cb]/25 transition hover:bg-[#46adb5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#50c2cb]/60 focus-visible:ring-offset-2" href="<?php echo APP_URL; ?>/signup"><?php echo FREE_TRIAL_DAYS; ?>日間無料で試す</a>
+        <a class="inline-flex items-center justify-center gap-2 rounded-full bg-[#50c2cb] px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-[#50c2cb]/25 transition hover:bg-[#46adb5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#50c2cb]/60 focus-visible:ring-offset-2" href="<?php echo APP_URL; ?>/signup"><?php echo lp_start_cta_inner('h-5 w-5'); ?></a>
         <a class="inline-flex items-center justify-center rounded-full border-2 border-[#50c2cb] bg-white px-8 py-3.5 text-base font-semibold text-slate-800 transition hover:border-[#46adb5] hover:bg-[#50c2cb]/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#50c2cb]/60 focus-visible:ring-offset-2" href="#grade-skill-word"><?php echo htmlspecialchars($name_short); ?>の学習内容を見る</a>
       </div>
       <?php

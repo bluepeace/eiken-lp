@@ -19,7 +19,6 @@ if ($heading === '') {
 
 $lead = (string) ($mid['lead'] ?? '');
 $note = (string) ($mid['note'] ?? 'カード登録不要・1分で完了');
-$button = (string) ($mid['button'] ?? (FREE_TRIAL_DAYS . '日間無料で試す'));
 $secondary_label = (string) ($mid['secondary_label'] ?? '');
 $secondary_href = (string) ($mid['secondary_href'] ?? '');
 ?>
@@ -31,7 +30,7 @@ $secondary_href = (string) ($mid['secondary_href'] ?? '');
     <p class="grade-mid-cta__lead"><?php echo br_after_period($lead); ?></p>
     <?php endif; ?>
     <div class="grade-mid-cta__actions">
-      <a class="grade-mid-cta__button" href="<?php echo APP_URL; ?>/signup"><?php echo htmlspecialchars($button); ?></a>
+      <a class="grade-mid-cta__button" href="<?php echo APP_URL; ?>/signup"><?php echo lp_start_cta_inner('h-5 w-5'); ?></a>
       <?php if ($secondary_label !== '' && $secondary_href !== ''): ?>
       <a class="grade-mid-cta__secondary" href="<?php echo htmlspecialchars($secondary_href); ?>"><?php echo htmlspecialchars($secondary_label); ?></a>
       <?php endif; ?>

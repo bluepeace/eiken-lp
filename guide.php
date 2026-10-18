@@ -136,7 +136,7 @@ include __DIR__ . '/includes/header.php';
       <p class="mt-4 text-lg font-semibold leading-relaxed text-slate-900 sm:text-xl">今日から、英検の勉強が始まります</p>
       <p class="mt-4 text-base leading-relaxed text-slate-700"><?php echo br_after_period('AiKenは、単語・リーディング・ライティング・リスニングをひとつにまとめた英検対策アプリです。まずは3つのステップ。最初の10分で、自分の級の問題に触れられます。'); ?></p>
       <p class="mt-6">
-        <a class="guide-cta-btn" href="<?php echo htmlspecialchars($signup_url); ?>"><?php echo FREE_TRIAL_DAYS; ?>日間無料で試す</a>
+        <a class="guide-cta-btn" href="<?php echo htmlspecialchars($signup_url); ?>"><?php echo lp_start_cta_inner('h-4 w-4'); ?></a>
       </p>
       <p class="mt-3 text-sm text-slate-500">カード登録不要・1分で完了</p>
     </div>
@@ -232,13 +232,13 @@ include __DIR__ . '/includes/header.php';
           <p class="guide-trial__card-body"><?php echo br_after_period('単語・リーディング・ライティング・リスニングを、回数の制限なく使えます。自分に合うか、じっくり見てみてください。'); ?></p>
         </div>
         <div class="guide-trial__card">
-          <h3 class="guide-trial__card-title"><?php echo FREE_TRIAL_DAYS + 1; ?>日目以降も、毎日お試しできます</h3>
-          <p class="guide-trial__card-body"><?php echo br_after_period('各技能を1日1セットまで（ライティングはAI添削1回まで）無料で続けられます。受験までしっかり取り組みたいときは、プレミアムプランをご検討ください。'); ?></p>
+          <h3 class="guide-trial__card-title"><?php echo FREE_TRIAL_DAYS + 1; ?>日目以降も、毎日続けられます</h3>
+          <p class="guide-trial__card-body"><?php echo br_after_period('単語テストは回数の制限なく無料です。その他の技能は1日1セットまで（ライティングはAI添削1回まで）無料で続けられます。受験までしっかり取り組みたいときは、プレミアムプランをご検討ください。'); ?></p>
           <p class="mt-3"><a class="text-sm font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="/plan">料金プランを見る</a></p>
         </div>
       </div>
       <p class="mt-8 text-center">
-        <a class="guide-cta-btn" href="<?php echo htmlspecialchars($signup_url); ?>"><?php echo FREE_TRIAL_DAYS; ?>日間無料で試す</a>
+        <a class="guide-cta-btn" href="<?php echo htmlspecialchars($signup_url); ?>"><?php echo lp_start_cta_inner('h-4 w-4'); ?></a>
       </p>
     </section>
 
@@ -265,7 +265,7 @@ include __DIR__ . '/includes/header.php';
       <h2 id="guide-closing-heading" class="guide-closing__title">最初の1問は、すぐそこです</h2>
       <p class="guide-closing__lead"><?php echo br_after_period('会員登録が終わったら、ダッシュボードの単語カードを押してみてください。10問終わったころには、今日の学習リズムができています。'); ?></p>
       <p class="mt-6">
-        <a class="guide-cta-btn" href="<?php echo htmlspecialchars($signup_url); ?>"><?php echo FREE_TRIAL_DAYS; ?>日間無料で試す</a>
+        <a class="guide-cta-btn" href="<?php echo htmlspecialchars($signup_url); ?>"><?php echo lp_start_cta_inner('h-4 w-4'); ?></a>
       </p>
       <p class="mt-6 text-sm text-slate-500">
         <a class="underline-offset-2 hover:underline" href="/cancel">退会・解約の手順</a>

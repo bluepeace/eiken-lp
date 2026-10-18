@@ -11,7 +11,7 @@ $rows = [
     ['添削・面接', 'なし', '先生が添削', '自己採点が中心', 'AIがその場で'],
     ['いまの形式', '弱いことが多い', '講座次第', '要約・Eメールは不足しがち', '要約・Eメール対応'],
     ['続け方', 'スキマ向き', '通う必要がある', '机が必要になりやすい', 'スキマ＋自宅'],
-    ['費用感', '安い〜中', '高い', '都度購入', monthly_price_label(false)],
+    ['費用感', '安い〜中', '高い', '都度購入', '無料ではじめられる'],
 ];
 $aiken_col = count($headers) - 1;
 ?>
@@ -49,11 +49,11 @@ $aiken_col = count($headers) - 1;
           </tbody>
         </table>
       </div>
-      <p class="grade-position__note"><?php echo br_after_period('一般的な傾向です。講座や教材によって内容は異なります。AiKenは' . FREE_TRIAL_DAYS . '日間、カード登録なしで全機能を試せます。'); ?></p>
+      <p class="grade-position__note"><?php echo br_after_period('一般的な傾向です。講座や教材によって内容は異なります。AiKenはカード登録なしで、今日から始められます。'); ?></p>
     </div>
 
     <div class="mt-10 flex justify-center">
-      <a class="inline-flex items-center justify-center rounded-full bg-[#50c2cb] px-10 py-4 text-lg font-semibold text-white shadow-lg shadow-[#50c2cb]/25 transition hover:bg-[#46adb5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#50c2cb]/60 focus-visible:ring-offset-2" href="<?php echo APP_URL; ?>/signup"><?php echo FREE_TRIAL_DAYS; ?>日間無料で試す</a>
+      <a class="inline-flex items-center justify-center gap-2 rounded-full bg-[#50c2cb] px-10 py-4 text-lg font-semibold text-white shadow-lg shadow-[#50c2cb]/25 transition hover:bg-[#46adb5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#50c2cb]/60 focus-visible:ring-offset-2" href="<?php echo APP_URL; ?>/signup"><?php echo lp_start_cta_inner('h-5 w-5'); ?></a>
     </div>
   </div>
 </section>

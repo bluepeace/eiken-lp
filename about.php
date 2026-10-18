@@ -15,7 +15,7 @@ include __DIR__ . '/includes/header.php';
     <p class="mt-4 text-lg font-medium text-slate-800">英検対策 × AI × バディ（愛犬）— 合格まで、ひとつのアプリにまとめました。</p>
     <p class="mt-5 text-left text-slate-600 sm:text-center"><?php echo br_after_period('<strong>AiKen</strong>は、英検<strong>1級から5級まで全級</strong>の出題形式に沿って、<strong>AIが練習問題を出題</strong>する英検対策アプリです。リーディング・リスニング・ライティング・スピーキングの<strong>4技能</strong>をアプリ内で鍛え、学習履歴も残るので<strong>間違えた問題の復習</strong>がかんたん。そして<strong>バディ</strong>がそばで励まし、続けやすい環境をつくります。'); ?></p>
     <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:justify-center">
-      <a class="inline-flex items-center justify-center rounded-full bg-[#50c2cb] px-10 py-4 text-lg font-semibold text-white shadow-lg shadow-[#50c2cb]/25 transition hover:bg-[#46adb5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#50c2cb]/60 focus-visible:ring-offset-2" href="<?php echo APP_URL; ?>/signup">無料で会員登録する</a>
+      <a class="inline-flex items-center justify-center gap-2 rounded-full bg-[#50c2cb] px-10 py-4 text-lg font-semibold text-white shadow-lg shadow-[#50c2cb]/25 transition hover:bg-[#46adb5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#50c2cb]/60 focus-visible:ring-offset-2" href="<?php echo APP_URL; ?>/signup"><?php echo lp_start_cta_inner('h-5 w-5'); ?></a>
       <a class="inline-flex items-center justify-center rounded-full border-2 border-slate-300 bg-white px-10 py-4 text-lg font-semibold text-slate-800 transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 focus-visible:ring-offset-2" href="<?php echo APP_URL; ?>/login">ログイン</a>
     </div>
     <p class="mt-6 text-sm text-slate-500"><a class="font-medium text-[#50c2cb] underline-offset-2 hover:underline" href="<?php echo rtrim(SITE_URL, '/') . '/'; ?>">トップページ</a>で級別の特徴も見る</p>
@@ -42,7 +42,7 @@ include __DIR__ . '/includes/header.php';
     </ul>
     <p class="mt-10 rounded-2xl border border-[#50c2cb]/30 bg-[#50c2cb]/5 px-5 py-5 text-center text-slate-800 sm:px-8"><?php echo br_after_period('AiKen は、その<strong>「散らばり」「添削」「継続」</strong>をアプリひとつにまとめます。<strong>級に合った問題</strong>を AI が出し、履歴で復習まで回せるので、<strong>初めて英検に取り組む方</strong>でも「次にやること」がはっきりします。'); ?></p>
     <div class="mt-8 text-center">
-      <a class="inline-flex items-center justify-center rounded-full bg-[#50c2cb] px-8 py-3 text-sm font-semibold text-white transition hover:bg-[#46adb5]" href="<?php echo APP_URL; ?>/signup">まずは無料で試す</a>
+      <a class="inline-flex items-center justify-center gap-2 rounded-full bg-[#50c2cb] px-8 py-3 text-sm font-semibold text-white transition hover:bg-[#46adb5]" href="<?php echo APP_URL; ?>/signup"><?php echo lp_start_cta_inner('h-4 w-4'); ?></a>
     </div>
   </div>
 </section>
@@ -139,10 +139,8 @@ include __DIR__ . '/includes/header.php';
       </li>
     </ol>
     <div class="mt-12 flex flex-col gap-3 sm:flex-row sm:justify-center">
-      <a class="inline-flex items-center justify-center rounded-full bg-[#50c2cb] px-10 py-4 text-lg font-semibold text-white shadow-lg shadow-[#50c2cb]/25 transition hover:bg-[#46adb5]" href="<?php echo APP_URL; ?>/signup">会員登録へ進む</a>
-      <a class="inline-flex items-center justify-center rounded-full border-2 border-slate-300 bg-white px-8 py-4 text-base font-semibold text-slate-800 transition hover:bg-slate-50" href="<?php echo rtrim(SITE_URL, '/') . '/plan'; ?>">料金・プランを見る</a>
+      <a class="inline-flex items-center justify-center gap-2 rounded-full bg-[#50c2cb] px-10 py-4 text-lg font-semibold text-white shadow-lg shadow-[#50c2cb]/25 transition hover:bg-[#46adb5]" href="<?php echo APP_URL; ?>/signup"><?php echo lp_start_cta_inner('h-5 w-5'); ?></a>
     </div>
-    <p class="mt-6 text-xs text-slate-500"><?php echo br_after_period('現在の料金は<strong>' . monthly_price_label() . '</strong>（' . FREE_TRIAL_DAYS . '日間無料体験あり）。詳細は<strong>料金ページ</strong>をご確認ください。'); ?></p>
   </div>
 </section>
 <?php
