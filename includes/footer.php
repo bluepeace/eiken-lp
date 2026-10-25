@@ -40,8 +40,11 @@ include __DIR__ . '/breadcrumbs.php';
         <ul class="site-footer__list">
           <li><a href="/">トップ</a></li>
           <li><a href="/about">AiKenとは</a></li>
+          <li><a href="/plan">料金プラン</a></li>
+          <li><a href="/guide">使い方ガイド</a></li>
+          <li><a href="/study">合格までの道</a></li>
+          <li><a href="/parents">保護者の方へ</a></li>
           <li><a href="/eiken/">英検対策コンテンツ</a></li>
-          <li><a href="/plan">料金</a></li>
           <li><a href="/blog">英検コラム</a></li>
         </ul>
       </nav>
@@ -88,9 +91,6 @@ include __DIR__ . '/breadcrumbs.php';
       <nav class="site-footer__col" aria-label="サポート">
         <p class="site-footer__col-title">サポート</p>
         <ul class="site-footer__list">
-          <li><a href="/parents">保護者の方へ</a></li>
-          <li><a href="/guide">使い方ガイド</a></li>
-          <li><a href="/study">合格までの道</a></li>
           <li><a href="/faq">よくあるご質問</a></li>
           <li><a href="/cancel">退会・解約</a></li>
           <li><a href="/contact">お問い合わせ</a></li>
