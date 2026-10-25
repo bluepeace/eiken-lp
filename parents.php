@@ -67,7 +67,7 @@ include __DIR__ . '/includes/header.php';
           <p class="mt-2 text-sm text-slate-600"><?php echo br_after_period('本試験に近い形式で反復。ライティングはAIがその場で添削するので、保護者が添削しにくい部分も続けやすいです。'); ?></p>
         </li>
       </ol>
-      <p class="mt-6 text-sm"><a class="font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="/guide">使い方ガイドを見る</a> ／ <a class="font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="/faq">よくあるご質問</a></p>
+      <p class="mt-6 text-sm"><a class="font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="/guide">使い方ガイドを見る</a> ／ <a class="font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="/study">合格までの道を見る</a> ／ <a class="font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="/faq">よくあるご質問</a></p>
     </div>
   </section>
 

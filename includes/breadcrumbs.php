@@ -54,6 +54,7 @@ function lp_breadcrumb_items(string $page = 'top', string $grade = '', ?array $g
         'faq' => ['name' => 'よくあるご質問', 'url' => '/faq'],
         'parents' => ['name' => '保護者の方へ', 'url' => '/parents'],
         'guide' => ['name' => '使い方ガイド', 'url' => '/guide'],
+        'study' => ['name' => '合格までの道', 'url' => '/study'],
         'cancel' => ['name' => '退会・解約', 'url' => '/cancel'],
         'contact' => ['name' => 'お問い合わせ', 'url' => '/contact'],
         'company' => ['name' => '運営者情報', 'url' => '/company'],

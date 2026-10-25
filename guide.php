@@ -264,6 +264,7 @@ include __DIR__ . '/includes/header.php';
     <section class="guide-closing" aria-labelledby="guide-closing-heading">
       <h2 id="guide-closing-heading" class="guide-closing__title">最初の1問は、すぐそこです</h2>
       <p class="guide-closing__lead"><?php echo br_after_period('会員登録が終わったら、ダッシュボードの単語カードを押してみてください。10問終わったころには、今日の学習リズムができています。'); ?></p>
+      <p class="mt-4 text-sm leading-relaxed text-slate-600">受験日までの回し方は、<a class="font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="/study">AiKenで英検合格の道</a>にまとめています。</p>
       <p class="mt-6">
         <a class="guide-cta-btn" href="<?php echo htmlspecialchars($signup_url); ?>"><?php echo lp_start_cta_inner('h-4 w-4'); ?></a>
       </p>

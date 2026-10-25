@@ -176,6 +176,7 @@ include __DIR__ . '/includes/header.php';
     <div class="mx-auto max-w-3xl">
       <h2 id="eiken-study-heading" class="text-2xl font-bold tracking-tight text-slate-900">英検の勉強法</h2>
       <p class="mt-3 text-slate-600"><?php echo br_after_period('英検対策は、級を決めて形式を知り、単語から技能練習、過去問確認の順で進めると迷いが減ります。'); ?></p>
+      <p class="mt-3 text-sm"><a class="font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="/study">AiKenで英検合格の道を見る</a></p>
       <ol class="mt-6 space-y-4">
         <li class="rounded-xl border border-slate-200 bg-white px-5 py-4">
           <h3 class="font-semibold text-slate-900">1. 受験する級を決める</h3>
@@ -339,7 +340,7 @@ include __DIR__ . '/includes/header.php';
         <a class="inline-flex items-center justify-center gap-2 rounded-full bg-[#50c2cb] px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-[#46adb5]" href="<?php echo htmlspecialchars($signup); ?>"><?php echo lp_start_cta_inner('h-4 w-4'); ?></a>
         <a class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-8 py-3.5 text-sm font-semibold text-slate-700 transition hover:border-[#50c2cb]/50" href="/about">AiKenとは</a>
       </div>
-      <p class="mt-6 text-sm text-slate-500"><a class="font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="/blog/">英検コラム一覧</a> ／ <a class="font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="/guide">使い方ガイド</a></p>
+      <p class="mt-6 text-sm text-slate-500"><a class="font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="/blog/">英検コラム一覧</a> ／ <a class="font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="/guide">使い方ガイド</a> ／ <a class="font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="/study">合格までの道</a></p>
     </div>
   </section>
 </article>

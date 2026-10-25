@@ -2414,6 +2414,11 @@ img[loading="lazy"] {
   box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
 }
 
+.site-header__dropdown-menu.site-header__dropdown-menu--plain {
+  min-width: 12.5rem;
+  width: max-content;
+}
+
 .site-header__dropdown-item {
   display: flex;
   flex-wrap: wrap;
@@ -3302,6 +3307,239 @@ body.is-lightbox-locked {
   height: 100%;
   object-fit: cover;
   object-position: top center;
+}
+
+/* 合格までの道 */
+.study-when {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .study-when {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.study-when__card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem 1.15rem 1.35rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  background: #fff;
+}
+
+.study-when__card--best {
+  border-color: rgba(80, 194, 203, 0.45);
+  background: linear-gradient(180deg, #e8f8f9 0%, #ffffff 62%);
+}
+
+.study-when__kicker {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--aiken-brand-text);
+}
+
+.study-when__when {
+  margin: 0.55rem 0 0;
+  font-size: 1.375rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+}
+
+.study-when__tag {
+  display: inline-flex;
+  align-self: flex-start;
+  margin-top: 0.65rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  background: #f1f5f9;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+.study-when__card--best .study-when__tag {
+  background: rgba(80, 194, 203, 0.16);
+  color: #0f6f78;
+}
+
+.study-when__body {
+  margin: 0.75rem 0 0;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: #475569;
+}
+
+.study-skills {
+  display: grid;
+  gap: 2.75rem;
+  margin-top: 2rem;
+}
+
+.study-skill {
+  display: grid;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+@media (min-width: 800px) {
+  .study-skill {
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    gap: 2.25rem;
+  }
+  .study-skill--reverse .study-skill__figure {
+    order: -1;
+  }
+}
+
+.study-skill__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+.study-skill__chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  background: #e8f8f9;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #0f6f78;
+}
+
+.study-skill__title {
+  margin: 0.7rem 0 0;
+  font-size: 1.375rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+}
+
+.study-skill__body {
+  margin: 0.7rem 0 0;
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  color: #475569;
+}
+
+.study-skill__steps {
+  margin: 0.9rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.study-skill__steps li {
+  display: flex;
+  gap: 0.55rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #0f172a;
+}
+
+.study-skill__steps span {
+  flex-shrink: 0;
+  color: var(--aiken-brand);
+}
+
+.study-skill__note {
+  margin: 0.85rem 0 0;
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  color: #64748b;
+}
+
+.study-shot {
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  background: #f8fafc;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.study-shot picture {
+  display: block;
+}
+
+.study-shot__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.study-shot__img--listen {
+  object-position: center 28%;
+}
+
+.study-shot figcaption {
+  margin: 0;
+  padding: 0.7rem 0.9rem 0.85rem;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: #64748b;
+  background: #fff;
+}
+
+.study-day {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 800px) {
+  .study-day {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.study-day__item {
+  padding: 1rem 1rem 1.1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  background: #fff;
+}
+
+.study-day__num {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--aiken-brand);
+}
+
+.study-day__name {
+  margin: 0.4rem 0 0;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.study-day__time {
+  margin: 0.35rem 0 0;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #0f6f78;
+}
+
+.study-day__place {
+  margin: 0.25rem 0 0;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: #64748b;
 }
 
 /* パンくず（フッター直上） */

@@ -9,9 +9,23 @@ require_once __DIR__ . '/listening-data.php';
 require_once __DIR__ . '/vocabulary-data.php';
 $current_page = $page ?? 'top';
 $current_grade = $grade ?? '';
-$show_main_nav = in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy', 'contact', 'external', 'company', 'cancel', 'parents', 'guide', 'grade', 'speaking', 'writing', 'reading', 'listening', 'vocabulary', 'eiken'], true);
-$lp_index = in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy', 'contact', 'external', 'company', 'cancel', 'parents', 'guide', 'grade', 'speaking', 'writing', 'reading', 'listening', 'vocabulary', 'eiken'], true);
+$show_main_nav = in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy', 'contact', 'external', 'company', 'cancel', 'parents', 'guide', 'study', 'grade', 'speaking', 'writing', 'reading', 'listening', 'vocabulary', 'eiken'], true);
+$lp_index = in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy', 'contact', 'external', 'company', 'cancel', 'parents', 'guide', 'study', 'grade', 'speaking', 'writing', 'reading', 'listening', 'vocabulary', 'eiken'], true);
 $is_grade_section = in_array($current_page, ['grade', 'speaking', 'writing', 'reading', 'listening', 'vocabulary'], true);
+$about_nav = [
+    ['label' => 'AiKenとは', 'href' => '/about', 'current' => $current_page === 'about'],
+    ['label' => '使い方ガイド', 'href' => '/guide', 'current' => $current_page === 'guide'],
+    ['label' => '英検合格の道', 'href' => '/study', 'current' => $current_page === 'study'],
+    ['label' => '保護者の方へ', 'href' => '/parents', 'current' => $current_page === 'parents'],
+    ['label' => '英検対策コンテンツ', 'href' => '/eiken/', 'current' => $current_page === 'eiken'],
+];
+$is_about_section = false;
+foreach ($about_nav as $about_item) {
+    if ($about_item['current']) {
+        $is_about_section = true;
+        break;
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -27,18 +41,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <?php
 // LP 内リンクはルート相対にし、localhost でも現在のホストで開く（SITE_URL 固定だと本番未反映ページが開けない）
 $nav_links = [
-    ['label' => 'Aikenとは', 'href' => '/about'],
-    ['label' => '英検対策', 'href' => '/eiken/'],
-    ['label' => '料金', 'href' => '/plan'],
-    ['label' => 'よくあるご質問', 'href' => '/faq'],
-    ['label' => '英検コラム', 'href' => '/blog'],
+    ['label' => '料金', 'href' => '/plan', 'current' => $current_page === 'plan'],
+    ['label' => 'よくあるご質問', 'href' => '/faq', 'current' => $current_page === 'faq'],
+    ['label' => '英検コラム', 'href' => '/blog', 'current' => false],
 ];
 $grade_nav_items = grade_nav_items();
-?>
-<?php
-$about = $nav_links[0];
-$rest = array_slice($nav_links, 1);
-$is_about = ($current_page === 'about');
+$nav_caret = '<span class="site-header__dropdown-caret" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>';
 ?>
 <header class="site-header sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-md">
   <div class="lp-container site-header__inner px-4">
@@ -55,7 +63,28 @@ $is_about = ($current_page === 'about');
     <?php if ($show_main_nav): ?>
     <nav class="site-header__nav min-w-0 flex-1" aria-label="サイト内リンク">
       <div class="site-header__nav-inner flex flex-wrap justify-start gap-1 sm:justify-center md:gap-2">
-        <a class="site-header__nav-link<?php echo $is_about ? ' is-current' : ''; ?>" href="<?php echo htmlspecialchars($about['href']); ?>"<?php echo $is_about ? ' aria-current="page"' : ''; ?>><?php echo htmlspecialchars($about['label']); ?></a>
+        <div class="site-header__dropdown<?php echo $is_about_section ? ' is-current' : ''; ?>">
+          <button
+            type="button"
+            class="site-header__nav-link site-header__dropdown-toggle<?php echo $is_about_section ? ' is-current' : ''; ?>"
+            aria-expanded="false"
+            aria-haspopup="true"
+            aria-controls="about-nav-menu"
+            id="about-nav-toggle"
+          >AiKenとは<?php echo $nav_caret; ?></button>
+          <ul id="about-nav-menu" class="site-header__dropdown-menu site-header__dropdown-menu--plain" role="menu" aria-labelledby="about-nav-toggle" hidden>
+            <?php foreach ($about_nav as $item): ?>
+            <li class="site-header__dropdown-item" role="none">
+              <a
+                role="menuitem"
+                class="site-header__dropdown-link<?php echo $item['current'] ? ' is-current' : ''; ?>"
+                href="<?php echo htmlspecialchars($item['href']); ?>"
+                <?php echo $item['current'] ? ' aria-current="page"' : ''; ?>
+              ><?php echo htmlspecialchars($item['label']); ?></a>
+            </li>
+            <?php endforeach; ?>
+          </ul>
+        </div>
 
         <div class="site-header__dropdown<?php echo $is_grade_section ? ' is-current' : ''; ?>">
           <button
@@ -65,7 +94,7 @@ $is_about = ($current_page === 'about');
             aria-haspopup="true"
             aria-controls="grade-nav-menu"
             id="grade-nav-toggle"
-          >級別対策<span class="site-header__dropdown-caret" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+          >級別対策<?php echo $nav_caret; ?></button>
           <ul id="grade-nav-menu" class="site-header__dropdown-menu" role="menu" aria-labelledby="grade-nav-toggle" hidden>
             <?php foreach ($grade_nav_items as $gi):
                 $is_this_grade = ($current_grade === $gi['slug']);
@@ -142,13 +171,8 @@ $is_about = ($current_page === 'about');
           </ul>
         </div>
 
-        <?php foreach ($rest as $nl):
-            $is_current = ($current_page === 'plan' && $nl['href'] === '/plan')
-                || ($current_page === 'faq' && $nl['href'] === '/faq')
-                || ($current_page === 'eiken' && ($nl['href'] === '/eiken/' || $nl['href'] === '/eiken'));
-            $link_class = 'site-header__nav-link' . ($is_current ? ' is-current' : '');
-            ?>
-        <a class="<?php echo $link_class; ?>" href="<?php echo htmlspecialchars($nl['href']); ?>"<?php echo $is_current ? ' aria-current="page"' : ''; ?>><?php echo htmlspecialchars($nl['label']); ?></a>
+        <?php foreach ($nav_links as $nl): ?>
+        <a class="site-header__nav-link<?php echo $nl['current'] ? ' is-current' : ''; ?>" href="<?php echo htmlspecialchars($nl['href']); ?>"<?php echo $nl['current'] ? ' aria-current="page"' : ''; ?>><?php echo htmlspecialchars($nl['label']); ?></a>
         <?php endforeach; ?>
       </div>
     </nav>
@@ -180,7 +204,26 @@ $is_about = ($current_page === 'about');
   <div class="site-header__backdrop" id="site-mobile-backdrop" hidden></div>
   <nav class="site-header__mobile" id="site-mobile-nav" aria-label="サイト内リンク" hidden>
     <div class="site-header__mobile-inner">
-      <a class="site-header__mobile-link<?php echo $is_about ? ' is-current' : ''; ?>" href="<?php echo htmlspecialchars($about['href']); ?>"<?php echo $is_about ? ' aria-current="page"' : ''; ?>><?php echo htmlspecialchars($about['label']); ?></a>
+      <div class="site-header__mobile-accordion<?php echo $is_about_section ? ' is-open' : ''; ?>">
+        <button
+          type="button"
+          class="site-header__mobile-link site-header__mobile-accordion-toggle<?php echo $is_about_section ? ' is-current' : ''; ?>"
+          id="about-mobile-toggle"
+          aria-expanded="<?php echo $is_about_section ? 'true' : 'false'; ?>"
+          aria-controls="about-mobile-menu"
+        >AiKenとは<?php echo $nav_caret; ?></button>
+        <ul id="about-mobile-menu" class="site-header__mobile-sub"<?php echo $is_about_section ? '' : ' hidden'; ?>>
+          <?php foreach ($about_nav as $item): ?>
+          <li>
+            <a
+              class="site-header__mobile-sublink<?php echo $item['current'] ? ' is-current' : ''; ?>"
+              href="<?php echo htmlspecialchars($item['href']); ?>"
+              <?php echo $item['current'] ? ' aria-current="page"' : ''; ?>
+            ><?php echo htmlspecialchars($item['label']); ?></a>
+          </li>
+          <?php endforeach; ?>
+        </ul>
+      </div>
 
       <div class="site-header__mobile-accordion<?php echo $is_grade_section ? ' is-open' : ''; ?>">
         <button
@@ -189,7 +232,7 @@ $is_about = ($current_page === 'about');
           id="grade-mobile-toggle"
           aria-expanded="<?php echo $is_grade_section ? 'true' : 'false'; ?>"
           aria-controls="grade-mobile-menu"
-        >級別対策<span class="site-header__dropdown-caret" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+        >級別対策<?php echo $nav_caret; ?></button>
         <ul id="grade-mobile-menu" class="site-header__mobile-sub"<?php echo $is_grade_section ? '' : ' hidden'; ?>>
           <?php foreach ($grade_nav_items as $gi):
               $is_this_grade = ($current_grade === $gi['slug']);
@@ -260,12 +303,8 @@ $is_about = ($current_page === 'about');
         </ul>
       </div>
 
-      <?php foreach ($rest as $nl):
-          $is_current = ($current_page === 'plan' && $nl['href'] === '/plan')
-              || ($current_page === 'faq' && $nl['href'] === '/faq')
-              || ($current_page === 'eiken' && ($nl['href'] === '/eiken/' || $nl['href'] === '/eiken'));
-          ?>
-      <a class="site-header__mobile-link<?php echo $is_current ? ' is-current' : ''; ?>" href="<?php echo htmlspecialchars($nl['href']); ?>"<?php echo $is_current ? ' aria-current="page"' : ''; ?>><?php echo htmlspecialchars($nl['label']); ?></a>
+      <?php foreach ($nav_links as $nl): ?>
+      <a class="site-header__mobile-link<?php echo $nl['current'] ? ' is-current' : ''; ?>" href="<?php echo htmlspecialchars($nl['href']); ?>"<?php echo $nl['current'] ? ' aria-current="page"' : ''; ?>><?php echo htmlspecialchars($nl['label']); ?></a>
       <?php endforeach; ?>
 
       <div class="site-header__mobile-actions">
@@ -283,8 +322,6 @@ $is_about = ($current_page === 'about');
   var menuBtn = document.getElementById('site-menu-toggle');
   var mobileNav = document.getElementById('site-mobile-nav');
   var backdrop = document.getElementById('site-mobile-backdrop');
-  var gradeToggle = document.getElementById('grade-mobile-toggle');
-  var gradeList = document.getElementById('grade-mobile-menu');
   var desktopMq = window.matchMedia('(min-width: 1024px)');
 
   function setMenuOpen(open) {
@@ -307,14 +344,17 @@ $is_about = ($current_page === 'about');
       setMenuOpen(false);
     });
   }
-  if (gradeToggle && gradeList) {
-    gradeToggle.addEventListener('click', function () {
-      var open = gradeToggle.getAttribute('aria-expanded') !== 'true';
-      gradeToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      gradeList.hidden = !open;
-      gradeToggle.parentElement.classList.toggle('is-open', open);
+  document.querySelectorAll('.site-header__mobile-accordion').forEach(function (acc) {
+    var toggle = acc.querySelector('.site-header__mobile-accordion-toggle');
+    var list = acc.querySelector('.site-header__mobile-sub');
+    if (!toggle || !list) return;
+    toggle.addEventListener('click', function () {
+      var open = toggle.getAttribute('aria-expanded') !== 'true';
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      list.hidden = !open;
+      acc.classList.toggle('is-open', open);
     });
-  }
+  });
 
   function onDesktopChange(e) {
     if (e.matches) setMenuOpen(false);
@@ -325,62 +365,79 @@ $is_about = ($current_page === 'about');
     desktopMq.addListener(onDesktopChange);
   }
 
-  var root = document.querySelector('.site-header__dropdown');
-  var btn = document.getElementById('grade-nav-toggle');
-  var menu = document.getElementById('grade-nav-menu');
-  if (!root || !btn || !menu) return;
-
-  var closeTimer = null;
   var canHover = false;
   try {
     canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   } catch (e) {}
 
-  function setOpen(open) {
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    menu.hidden = !open;
-    root.classList.toggle('is-open', open);
-  }
+  var dropdowns = [];
+  document.querySelectorAll('.site-header__dropdown').forEach(function (root) {
+    var btn = root.querySelector('.site-header__dropdown-toggle');
+    var menu = root.querySelector('.site-header__dropdown-menu');
+    if (!btn || !menu) return;
+    var closeTimer = null;
 
-  function openNow() {
-    if (closeTimer) {
-      clearTimeout(closeTimer);
-      closeTimer = null;
+    function setOpen(open) {
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      menu.hidden = !open;
+      root.classList.toggle('is-open', open);
     }
-    setOpen(true);
-  }
 
-  function closeSoon() {
-    if (closeTimer) clearTimeout(closeTimer);
-    closeTimer = window.setTimeout(function () {
-      setOpen(false);
-      closeTimer = null;
-    }, 160);
-  }
+    function closeOthers() {
+      dropdowns.forEach(function (other) {
+        if (other.root !== root) other.setOpen(false);
+      });
+    }
 
-  if (canHover) {
-    root.addEventListener('mouseenter', openNow);
-    root.addEventListener('mouseleave', closeSoon);
-    btn.addEventListener('focus', openNow);
-    menu.addEventListener('focusin', openNow);
-    root.addEventListener('focusout', function (e) {
-      if (!root.contains(e.relatedTarget)) closeSoon();
+    function openNow() {
+      if (closeTimer) {
+        clearTimeout(closeTimer);
+        closeTimer = null;
+      }
+      closeOthers();
+      setOpen(true);
+    }
+
+    function closeSoon() {
+      if (closeTimer) clearTimeout(closeTimer);
+      closeTimer = window.setTimeout(function () {
+        setOpen(false);
+        closeTimer = null;
+      }, 160);
+    }
+
+    if (canHover) {
+      root.addEventListener('mouseenter', openNow);
+      root.addEventListener('mouseleave', closeSoon);
+      btn.addEventListener('focus', openNow);
+      menu.addEventListener('focusin', openNow);
+      root.addEventListener('focusout', function (e) {
+        if (!root.contains(e.relatedTarget)) closeSoon();
+      });
+    }
+
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var open = btn.getAttribute('aria-expanded') !== 'true';
+      if (open) closeOthers();
+      setOpen(open);
     });
-  }
 
-  btn.addEventListener('click', function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    setOpen(btn.getAttribute('aria-expanded') !== 'true');
+    dropdowns.push({ root: root, setOpen: setOpen });
   });
 
   document.addEventListener('click', function (e) {
-    if (!root.contains(e.target)) setOpen(false);
+    dropdowns.forEach(function (item) {
+      if (!item.root.contains(e.target)) item.setOpen(false);
+    });
   });
 
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
-      setOpen(false);
+      dropdowns.forEach(function (item) {
+        item.setOpen(false);
+      });
       setMenuOpen(false);
     }
   });

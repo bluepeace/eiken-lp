@@ -26,6 +26,7 @@ DirectoryIndex index.php
   RewriteRule ^cancel/?$ cancel.php [L,QSA]
   RewriteRule ^parents/?$ parents.php [L,QSA]
   RewriteRule ^guide/?$ guide.php [L,QSA]
+  RewriteRule ^study/?$ study.php [L,QSA]
   RewriteRule ^eiken/?$ eiken.php [L,QSA]
   # 級別スピーキング（面接のある級のみ）
   RewriteRule ^(1kyu|jun1kyu|2kyu|jun2kyu-plus|jun2kyu|3kyu)/speaking/?$ speaking.php?level=$1 [L,QSA]
