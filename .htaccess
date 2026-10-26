@@ -57,7 +57,13 @@ DirectoryIndex index.php
   ExpiresByType application/javascript "access plus 7 days"
   ExpiresByType font/woff2 "access plus 1 year"
 </IfModule>
+# フィードは検索結果に出さない（robots.txt でクロールも拒否）
+<IfModule mod_setenvif.c>
+  SetEnvIf Request_URI "/feed(/|$|\?)" aiken_noindex_feed
+  SetEnvIf Query_String "(^|&)feed=" aiken_noindex_feed
+</IfModule>
 <IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, follow" env=aiken_noindex_feed
   <FilesMatch "\.(png|jpe?g|gif|webp|svg|ico|woff2)$">
     Header set Cache-Control "public, max-age=2592000"
   </FilesMatch>

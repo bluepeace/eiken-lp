@@ -1,5 +1,12 @@
 User-agent: *
 Allow: /
+
+# WordPress の RSS/Atom（本体・記事・カテゴリ・タグ・コメント、?feed= 形式）
+Disallow: /blog/feed/
+Disallow: /blog/feed$
 Disallow: /blog/*/feed/
+Disallow: /blog/*/feed$
+Disallow: /blog/*?feed=
+Disallow: /blog/*&feed=
 
 Sitemap: https://aiken.life/sitemap.xml
