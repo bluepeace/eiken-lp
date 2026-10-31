@@ -1835,6 +1835,22 @@ function grade_content_all(): array
             'plan' => [
                 'heading' => 'この級も同じプラン',
             ],
+            'youtube' => [
+                'heading' => '3級の単語を、<span class="heading-accent">YouTubeで聞き流し</span>',
+                'lead' => '通学や家事のあいだに流せる、英単語100語の聞き流し動画を公開しています。英語→日本語→例文の順なので、耳から語彙を増やしたいときにどうぞ。よかったらチャンネル登録もお願いします。',
+                'button' => 'YouTubeで聞き流し動画を見る',
+                'playlist' => 'https://www.youtube.com/playlist?list=PLMN79uZO8o8g',
+                'channel' => 'https://www.youtube.com/@aiken.english',
+                'embed' => 'https://youtu.be/HZsjgDdwNCc',
+                'embed_title' => '【英検3級 英単語100語】聞き流し Part1｜英語→日本語→例文付き',
+                'videos' => [
+                    ['title' => '【英検3級 英単語100語】聞き流し Part1｜英語→日本語→例文付き', 'url' => 'https://youtu.be/HZsjgDdwNCc'],
+                    ['title' => '【英検3級 英単語100語】聞き流し Part2｜英語→日本語→例文付き', 'url' => 'https://youtu.be/j6eiP0oHFjs'],
+                    ['title' => '【英検3級 英単語100語】聞き流し Part3｜英語→日本語→例文付き', 'url' => 'https://youtu.be/9WccB-rQRP8'],
+                    ['title' => '【英検3級 英単語100語】聞き流し Part4｜英語→日本語→例文付き', 'url' => 'https://youtu.be/eR6vBLQwPUk'],
+                    ['title' => '【英検3級 英単語100語】聞き流し Part5｜英語→日本語→例文付き', 'url' => 'https://youtu.be/6vG2k26c30U'],
+                ],
+            ],
             'target' => [
                 'heading' => 'こんな方におすすめです',
                 'lead' => '3級は、4級から上がる人にも、高校入試前の基礎固めにも選ばれています。',

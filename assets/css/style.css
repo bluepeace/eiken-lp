@@ -1279,6 +1279,43 @@ img[loading="lazy"] {
   text-decoration: underline;
 }
 
+.top-youtube__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  max-width: 40rem;
+  margin: 1.75rem auto 0;
+}
+
+.top-youtube__tab {
+  appearance: none;
+  border: 1px solid rgba(80, 194, 203, 0.55);
+  border-radius: 9999px;
+  background: #fff;
+  color: var(--aiken-brand-text);
+  padding: 0.45rem 0.95rem;
+  font-size: 0.875rem;
+  font-weight: 800;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.top-youtube__tab[aria-selected="true"] {
+  border-color: #50c2cb;
+  background: #50c2cb;
+  color: #fff;
+}
+
+.top-youtube__tab:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px rgba(80, 194, 203, 0.6);
+}
+
+.top-youtube__panel[hidden] {
+  display: none;
+}
+
 /* 級別・出題形式 + 週間の使い方 */
 .grade-format__table .is-mark td {
   background: rgba(80, 194, 203, 0.10);

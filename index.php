@@ -26,6 +26,7 @@ include __DIR__ . '/includes/sections/benefits.php';
 include __DIR__ . '/includes/sections/howto.php';
 include __DIR__ . '/includes/sections/faq.php';
 include __DIR__ . '/includes/sections/blog_carousel.php';
+include __DIR__ . '/includes/sections/top_youtube.php';
 include __DIR__ . '/includes/sections/news.php';
 include __DIR__ . '/includes/sections/cta.php';
 include __DIR__ . '/includes/footer.php';

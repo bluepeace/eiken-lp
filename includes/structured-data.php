@@ -6,20 +6,34 @@
 if (!defined('SITE_NAME')) {
     require_once __DIR__ . '/../config.php';
 }
+$appSameAs = [rtrim(APP_URL, '/')];
+if (defined('APP_STORE_URL') && APP_STORE_URL !== '') {
+    $appSameAs[] = APP_STORE_URL;
+}
 $jsonLd = [
     '@context' => 'https://schema.org',
     '@type' => 'WebApplication',
     'name' => SITE_NAME . '（英検対策アプリ）',
     'alternateName' => [SITE_READING, '英検対策アプリ', '英検対策アプリ AiKen'],
     'description' => SITE_DESCRIPTION,
-    'url' => APP_URL,
+    'url' => rtrim(SITE_URL, '/') . '/',
+    'sameAs' => $appSameAs,
+    'inLanguage' => 'ja',
     'applicationCategory' => 'EducationalApplication',
-    'operatingSystem' => 'Any',
+    'operatingSystem' => 'Web, iOS',
     'offers' => [
-        '@type' => 'Offer',
-        'price' => '0',
-        'priceCurrency' => 'JPY',
-        'description' => 'Freeプラン。単語テストは回数制限なく利用できます。',
+        [
+            '@type' => 'Offer',
+            'price' => '0',
+            'priceCurrency' => 'JPY',
+            'description' => 'Freeプラン。単語テストは回数制限なく利用できます。',
+        ],
+        [
+            '@type' => 'Offer',
+            'price' => (string) MONTHLY_PRICE,
+            'priceCurrency' => 'JPY',
+            'description' => 'プレミアムプラン（月額・税込）。リーディング・リスニング・ライティング・スピーキングも制限なく使えます。',
+        ],
     ],
 ];
 ?>
