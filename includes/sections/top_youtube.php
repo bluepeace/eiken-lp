@@ -58,35 +58,35 @@ $channel = 'https://www.youtube.com/@aiken.english';
     </div>
 
     <div class="top-youtube__tabs" role="tablist" aria-label="聞き流しの級">
-      <?php foreach ($youtube_grades as $i => $grade): ?>
+      <?php foreach ($youtube_grades as $i => $youtube_grade): ?>
       <button
         type="button"
         class="top-youtube__tab"
         role="tab"
-        id="top-youtube-tab-<?php echo htmlspecialchars($grade['slug']); ?>"
-        aria-controls="top-youtube-panel-<?php echo htmlspecialchars($grade['slug']); ?>"
+        id="top-youtube-tab-<?php echo htmlspecialchars($youtube_grade['slug']); ?>"
+        aria-controls="top-youtube-panel-<?php echo htmlspecialchars($youtube_grade['slug']); ?>"
         aria-selected="<?php echo $i === 0 ? 'true' : 'false'; ?>"
         tabindex="<?php echo $i === 0 ? '0' : '-1'; ?>"
-        data-youtube-tab="<?php echo htmlspecialchars($grade['slug']); ?>"
-      ><?php echo htmlspecialchars($grade['label']); ?></button>
+        data-youtube-tab="<?php echo htmlspecialchars($youtube_grade['slug']); ?>"
+      ><?php echo htmlspecialchars($youtube_grade['label']); ?></button>
       <?php endforeach; ?>
     </div>
 
-    <?php foreach ($youtube_grades as $i => $grade): ?>
+    <?php foreach ($youtube_grades as $i => $youtube_grade): ?>
     <div
       class="top-youtube__panel"
       role="tabpanel"
-      id="top-youtube-panel-<?php echo htmlspecialchars($grade['slug']); ?>"
-      aria-labelledby="top-youtube-tab-<?php echo htmlspecialchars($grade['slug']); ?>"
-      data-youtube-panel="<?php echo htmlspecialchars($grade['slug']); ?>"
+      id="top-youtube-panel-<?php echo htmlspecialchars($youtube_grade['slug']); ?>"
+      aria-labelledby="top-youtube-tab-<?php echo htmlspecialchars($youtube_grade['slug']); ?>"
+      data-youtube-panel="<?php echo htmlspecialchars($youtube_grade['slug']); ?>"
       <?php echo $i === 0 ? '' : 'hidden'; ?>
     >
-      <?php if ($grade['embed_id'] !== ''): ?>
+      <?php if ($youtube_grade['embed_id'] !== ''): ?>
       <div class="grade-youtube__embed-wrap mt-8 sm:mt-10">
         <iframe
           class="grade-youtube__embed"
-          <?php echo $i === 0 ? 'src' : 'data-src'; ?>="https://www.youtube-nocookie.com/embed/<?php echo htmlspecialchars($grade['embed_id'], ENT_QUOTES, 'UTF-8'); ?>"
-          title="<?php echo htmlspecialchars($grade['embed_title']); ?>"
+          <?php echo $i === 0 ? 'src' : 'data-src'; ?>="https://www.youtube-nocookie.com/embed/<?php echo htmlspecialchars($youtube_grade['embed_id'], ENT_QUOTES, 'UTF-8'); ?>"
+          title="<?php echo htmlspecialchars($youtube_grade['embed_title']); ?>"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen
@@ -95,19 +95,19 @@ $channel = 'https://www.youtube.com/@aiken.english';
       </div>
       <?php endif; ?>
 
-      <?php if ($grade['playlist'] !== ''): ?>
+      <?php if ($youtube_grade['playlist'] !== ''): ?>
       <p class="mt-8 text-center">
         <a
           class="grade-youtube__button"
-          href="<?php echo htmlspecialchars($grade['playlist']); ?>"
+          href="<?php echo htmlspecialchars($youtube_grade['playlist']); ?>"
           target="_blank"
           rel="noopener noreferrer"
-        ><?php echo htmlspecialchars($grade['button']); ?></a>
+        ><?php echo htmlspecialchars($youtube_grade['button']); ?></a>
       </p>
       <?php endif; ?>
 
       <ul class="grade-youtube__list">
-        <?php foreach ($grade['videos'] as $video):
+        <?php foreach ($youtube_grade['videos'] as $video):
             $title = (string) ($video['title'] ?? '');
             $url = (string) ($video['url'] ?? '');
             if ($title === '' || $url === '') {
