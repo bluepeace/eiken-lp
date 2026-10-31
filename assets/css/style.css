@@ -2106,6 +2106,10 @@ img[loading="lazy"] {
   padding: 0 0 0 1.15rem;
 }
 
+.news-item li {
+  list-style-type: disc;
+}
+
 .news-item li + li {
   margin-top: 0.2rem;
 }
