@@ -125,7 +125,7 @@ function writing_faq_items(string $slug, array $content): array
     ];
     $items[] = [
         'q' => 'スマートフォンやiPadでも使えますか？',
-        'a' => 'ブラウザ、iPhone、iPadで使えます。ノートに書いた答案は、写真から読み取れます。',
+        'a' => 'ブラウザ、iPhone、iPad、Androidで使えます。ノートに書いた答案は、写真から読み取れます。',
     ];
     $items[] = [
         'q' => 'ライティング以外の技能も対策できますか？',

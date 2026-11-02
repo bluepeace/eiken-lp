@@ -118,7 +118,7 @@ $faqs = [
     ],
     [
         'q' => 'スマートフォンでも使えますか？',
-        'a' => 'はい。Safari や Chrome など、いつものブラウザから使えます。iPhone・iPadなら App Store のアプリでも、同じアカウントで学習できます。Androidアプリは近日公開です。',
+        'a' => 'はい。Safari や Chrome など、いつものブラウザから使えます。iPhone・iPadは App Store、Androidは Google Play のアプリでも、同じアカウントで学習できます。',
     ],
     [
         'q' => 'わからないことがあったら？',

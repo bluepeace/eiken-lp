@@ -44,7 +44,14 @@ if ($store_on_hero) {
       href="<?php echo htmlspecialchars($play_url, ENT_QUOTES, 'UTF-8'); ?>"
       target="_blank"
       rel="noopener noreferrer"
-    >Google Play で手に入れる</a>
+    >
+      <img
+        src="/assets/images/badge-google-play.png"
+        alt="Google Play で手に入れよう"
+        width="135"
+        height="40"
+      >
+    </a>
     <?php else: ?>
     <p class="store-cta__soon">
       <span class="store-cta__soon-kicker">Google Play</span>

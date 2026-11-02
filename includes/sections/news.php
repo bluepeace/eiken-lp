@@ -5,6 +5,22 @@ if (!defined('SITE_NAME')) {
 
 $news_items = [
     [
+        'date' => '2026/11/02',
+        'title' => 'Androidアプリを公開しました',
+        'lead' => [
+            'いつも' . SITE_NAME . 'をご利用いただきありがとうございます。',
+        ],
+        'sections' => [
+            [
+                'heading' => '今月の主なご案内',
+                'items' => [
+                    'Androidアプリを Google Play で公開しました。ブラウザや iPhone・iPad と同じアカウントで、単語と4技能の学習を続けられます。',
+                ],
+            ],
+        ],
+        'closing' => [],
+    ],
+    [
         'date' => '2026/10/31',
         'title' => '10月アップデートのお知らせ',
         'lead' => [

@@ -29,8 +29,8 @@ $reasons = [
     ],
     [
         'icon' => 'smartphone',
-        'title' => 'ブラウザ、iPhone、iPad',
-        'text' => 'ブラウザ、iPhone、iPadで使えます。発音と例文は、その端末の読み上げです。',
+        'title' => 'ブラウザ、iPhone、iPad、Android',
+        'text' => 'ブラウザ、iPhone、iPad、Androidで使えます。発音と例文は、その端末の読み上げです。',
     ],
 ];
 ?>

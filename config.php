@@ -11,8 +11,8 @@ define('APP_URL', 'https://app.aiken.life');
 /** iPhone / iPad（App Store）。LP のストア導線はここを正とする */
 define('APP_STORE_URL', 'https://apps.apple.com/jp/app/aiken/id6814042355');
 define('APP_STORE_ID', '6814042355');
-/** Android（Google Play）。公開まで空文字のまま */
-define('PLAY_STORE_URL', '');
+/** Android（Google Play）。LP のストア導線はここを正とする */
+define('PLAY_STORE_URL', 'https://play.google.com/store/apps/details?id=jp.eikenapp.app');
 /** LP フッター著作権表示のリンク先 */
 define('BLUEPIECE_LAB_URL', 'https://bluepiece.me/link');
 define('BRAND_COLOR', '#50c2cb');

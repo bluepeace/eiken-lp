@@ -29,8 +29,8 @@ $reasons = [
     ],
     [
         'icon' => 'smartphone',
-        'title' => 'ブラウザ、iPhone、iPad',
-        'text' => 'ブラウザ、iPhone、iPadで使えます。',
+        'title' => 'ブラウザ、iPhone、iPad、Android',
+        'text' => 'ブラウザ、iPhone、iPad、Androidで使えます。',
     ],
 ];
 ?>

@@ -138,7 +138,7 @@ function vocabulary_faq_items(array $content): array
         ],
         [
             'q' => 'スマートフォンやiPadでも利用できますか？',
-            'a' => 'ブラウザ、iPhone、iPadで使えます。発音と例文は、その端末の読み上げです。',
+            'a' => 'ブラウザ、iPhone、iPad、Androidで使えます。発音と例文は、その端末の読み上げです。',
         ],
         [
             'q' => '単語以外の技能も対策できますか？',

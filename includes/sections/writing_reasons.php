@@ -11,7 +11,7 @@ $reasons = [
     ['icon' => 'pencil-line', 'title' => '英文は自分で書く', 'text' => 'AIが答案を代わりに作る機能はありません。書く練習そのものが残ります。'],
     ['icon' => 'badge-check', 'title' => '直し方と次に足すことが同時に見える', 'text' => '赤字の修正と、日本語のコメントが一緒に返ります。どこを足せば語数と形式に合うかが見えます。'],
     ['icon' => 'book-open', 'title' => 'ほかの技能も同じアカウント', 'text' => $bridge],
-    ['icon' => 'smartphone', 'title' => 'ブラウザ、iPhone、iPad', 'text' => 'ノートの写真からも入力できます。手書きの答案を、その場で添削に回せます。'],
+    ['icon' => 'smartphone', 'title' => 'ブラウザ、iPhone、iPad、Android', 'text' => 'ノートの写真からも入力できます。手書きの答案を、その場で添削に回せます。'],
 ];
 ?>
 <section id="writing-reasons" class="border-t border-slate-100 bg-white px-4 py-16 sm:py-20" aria-labelledby="writing-reasons-heading">

@@ -10,6 +10,9 @@ $appSameAs = [rtrim(APP_URL, '/')];
 if (defined('APP_STORE_URL') && APP_STORE_URL !== '') {
     $appSameAs[] = APP_STORE_URL;
 }
+if (defined('PLAY_STORE_URL') && PLAY_STORE_URL !== '') {
+    $appSameAs[] = PLAY_STORE_URL;
+}
 $jsonLd = [
     '@context' => 'https://schema.org',
     '@type' => 'WebApplication',
@@ -20,7 +23,7 @@ $jsonLd = [
     'sameAs' => $appSameAs,
     'inLanguage' => 'ja',
     'applicationCategory' => 'EducationalApplication',
-    'operatingSystem' => 'Web, iOS',
+    'operatingSystem' => 'Web, iOS, Android',
     'offers' => [
         [
             '@type' => 'Offer',

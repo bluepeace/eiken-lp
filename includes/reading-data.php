@@ -119,7 +119,7 @@ function reading_faq_items(array $content): array
         ],
         [
             'q' => 'スマートフォンやiPadでも利用できますか？',
-            'a' => 'ブラウザ、iPhone、iPadで使えます。',
+            'a' => 'ブラウザ、iPhone、iPad、Androidで使えます。',
         ],
         [
             'q' => 'リーディング以外の技能も対策できますか？',

@@ -34,11 +34,11 @@ function faq_categories(): array
                 ],
                 [
                     'q' => 'このサイト（aiken.life）とアプリの違いは？',
-                    'a' => 'aiken.life はサービス紹介・英検コラムなどの公式サイトです。学習そのものは、ブラウザ版（app.aiken.life）か、iPhone・iPadのApp Storeアプリからご利用ください。どちらも同じアカウントです。Androidアプリは近日公開です。未成年の有料契約は、Webからお手続きください。',
+                    'a' => 'aiken.life はサービス紹介・英検コラムなどの公式サイトです。学習そのものは、ブラウザ版（app.aiken.life）、iPhone・iPadのApp Storeアプリ、AndroidのGoogle Playアプリからご利用ください。どれも同じアカウントです。未成年の有料契約は、Webからお手続きください。',
                 ],
                 [
-                    'q' => 'ブラウザとiPhoneアプリの違いはありますか？',
-                    'a' => '学習内容は同じです。ブラウザ（app.aiken.life）でも、App StoreのiPhone・iPadアプリでも、同じアカウントで続けられます。Androidは近日公開です。',
+                    'q' => 'ブラウザとスマホアプリの違いはありますか？',
+                    'a' => '学習内容は同じです。ブラウザ（app.aiken.life）、App StoreのiPhone・iPadアプリ、Google PlayのAndroidアプリのどれでも、同じアカウントで続けられます。',
                     'on_top' => true,
                 ],
                 [
@@ -142,7 +142,7 @@ function faq_categories(): array
                 ],
                 [
                     'q' => '通学などのスキマ時間にも使えますか？',
-                    'a' => 'はい。スマートフォン・タブレット・PCのブラウザから利用できるほか、iPhone・iPadならApp Storeのアプリでも同じアカウントで学習できます。電車・バスなどの移動時間や待ち時間にも気軽に英検対策ができます。',
+                    'a' => 'はい。スマートフォン・タブレット・PCのブラウザから利用できるほか、iPhone・iPadはApp Store、AndroidはGoogle Playのアプリでも同じアカウントで学習できます。電車・バスなどの移動時間や待ち時間にも気軽に英検対策ができます。',
                 ],
                 [
                     'q' => 'AIの回答は100％正しいですか？',
@@ -174,7 +174,7 @@ function faq_categories(): array
             'items' => [
                 [
                     'q' => 'スマートフォン・タブレット・PCのどれでも使えますか？',
-                    'a' => 'はい。一般的なモダンブラウザからご利用いただけるほか、iPhone・iPadはApp Storeのアプリにも対応しています。Androidアプリは近日公開です。OSやブラウザの古い端末では、表示や動作に制限がある場合があります。',
+                    'a' => 'はい。一般的なモダンブラウザからご利用いただけるほか、iPhone・iPadはApp Store、AndroidはGoogle Playのアプリにも対応しています。OSやブラウザの古い端末では、表示や動作に制限がある場合があります。',
                 ],
                 [
                     'q' => '通信はどのくらい使いますか？',
