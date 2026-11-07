@@ -121,7 +121,7 @@ $after_label = (string) ($writing['after_label'] ?? '登録して続きを練習
 
     <div class="speaking-after">
       <p><?php echo br_after_period('登録なしで試せるのは英作文1問です。もう一つの形式は、登録後に同じ添削で練習できます。'); ?></p>
-      <a class="speaking-after__button" href="<?php echo htmlspecialchars($writing_signup_href, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($after_label); ?></a>
+      <a class="speaking-after__button" href="<?php echo htmlspecialchars(lp_app_link($writing_signup_href, 'example'), ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($after_label); ?></a>
     </div>
   </div>
 </section>

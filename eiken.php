@@ -18,7 +18,6 @@ $toc = eiken_hub_toc();
 $grades = eiken_hub_grades();
 $themes = eiken_hub_theme_links();
 $official = eiken_hub_official_urls();
-$signup = rtrim(APP_URL, '/') . '/signup';
 $featured = null;
 foreach ($grades as $g) {
     if (!empty($g['featured'])) {
@@ -337,7 +336,7 @@ include __DIR__ . '/includes/header.php';
       </ul>
       <p class="mt-4 text-sm text-slate-600"><?php echo br_after_period('カード登録不要で、今日から始められます。単語テストは無料で続けられます。'); ?></p>
       <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-        <a class="inline-flex items-center justify-center gap-2 rounded-full bg-[#50c2cb] px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-[#46adb5]" href="<?php echo htmlspecialchars($signup); ?>"><?php echo lp_start_cta_inner('h-4 w-4'); ?></a>
+        <a class="inline-flex items-center justify-center gap-2 rounded-full bg-[#50c2cb] px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-[#46adb5]" href="<?php echo htmlspecialchars(lp_signup_url('final'), ENT_QUOTES, 'UTF-8'); ?>"><?php echo lp_start_cta_inner('h-4 w-4'); ?></a>
         <a class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-8 py-3.5 text-sm font-semibold text-slate-700 transition hover:border-[#50c2cb]/50" href="/about">AiKenとは</a>
       </div>
       <p class="mt-6 text-sm text-slate-500"><a class="font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="/blog/">英検コラム一覧</a> ／ <a class="font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="/guide">使い方ガイド</a> ／ <a class="font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="/study">合格までの道</a></p>

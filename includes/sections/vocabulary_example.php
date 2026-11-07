@@ -91,7 +91,7 @@ $intro = $has_image
 
     <div class="speaking-after">
       <p><?php echo br_after_period('登録なしで3セットまで解けます。履歴と、間違えた語の優先出題は、ログイン後です。'); ?></p>
-      <a class="speaking-after__button" href="<?php echo htmlspecialchars($vocabulary_try_href, ENT_QUOTES, 'UTF-8'); ?>">登録なしで単語テストを試す</a>
+      <a class="speaking-after__button" href="<?php echo htmlspecialchars(lp_app_link($vocabulary_try_href, 'example_try'), ENT_QUOTES, 'UTF-8'); ?>">登録なしで単語テストを試す</a>
     </div>
   </div>
 </section>

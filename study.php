@@ -8,7 +8,6 @@ $page = 'study';
 require_once __DIR__ . '/config.php';
 $canonical = rtrim(SITE_URL, '/') . '/study';
 
-$signup_url = rtrim(APP_URL, '/') . '/signup';
 $toc = [
     ['id' => 'when', 'label' => '始める時期'],
     ['id' => 'primary', 'label' => '一次試験'],
@@ -119,7 +118,7 @@ include __DIR__ . '/includes/header.php';
       <p class="mt-4 text-lg font-semibold leading-relaxed text-slate-900 sm:text-xl">次の英検まで、一日をこう回す</p>
       <p class="mt-4 text-base leading-relaxed text-slate-700"><?php echo br_after_period('使い方の次の一歩です。試験日から逆算して、一次試験の単語・リスニング・リーディング・ライティングを、無理のない時間に分けます。'); ?></p>
       <p class="mt-6">
-        <a class="guide-cta-btn" href="<?php echo htmlspecialchars($signup_url); ?>"><?php echo lp_start_cta_inner('h-4 w-4'); ?></a>
+        <a class="guide-cta-btn" href="<?php echo htmlspecialchars(lp_signup_url('hero'), ENT_QUOTES, 'UTF-8'); ?>"><?php echo lp_start_cta_inner('h-4 w-4'); ?></a>
       </p>
       <p class="mt-3 text-sm text-slate-500">カード登録不要・今日の単語から</p>
     </div>
@@ -225,7 +224,7 @@ include __DIR__ . '/includes/header.php';
       <h2 id="study-closing-heading" class="guide-closing__title">今日の最初の10分は、単語から</h2>
       <p class="guide-closing__lead"><?php echo br_after_period('会員登録のあと、単語を1セット。それが、合格までの道の入口です。'); ?></p>
       <p class="mt-6">
-        <a class="guide-cta-btn" href="<?php echo htmlspecialchars($signup_url); ?>"><?php echo lp_start_cta_inner('h-4 w-4'); ?></a>
+        <a class="guide-cta-btn" href="<?php echo htmlspecialchars(lp_signup_url('final'), ENT_QUOTES, 'UTF-8'); ?>"><?php echo lp_start_cta_inner('h-4 w-4'); ?></a>
       </p>
       <p class="mt-6 text-sm text-slate-500">
         <a class="underline-offset-2 hover:underline" href="/guide">使い方ガイド</a>

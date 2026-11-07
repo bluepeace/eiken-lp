@@ -60,8 +60,8 @@ if ($grade_slug !== '') {
       </ul>
       <?php endif; ?>
       <div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-start">
-        <a class="inline-flex items-center justify-center rounded-full bg-[#50c2cb] px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-[#50c2cb]/25 transition hover:bg-[#46adb5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#50c2cb]/60 focus-visible:ring-offset-2" href="<?php echo htmlspecialchars($vocabulary_try_href, ENT_QUOTES, 'UTF-8'); ?>">登録なしで単語テストを試す</a>
-        <a class="inline-flex items-center justify-center rounded-full border-2 border-[#50c2cb] bg-white px-8 py-3.5 text-base font-semibold text-slate-800 transition hover:border-[#46adb5] hover:bg-[#50c2cb]/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#50c2cb]/60 focus-visible:ring-offset-2" href="<?php echo htmlspecialchars($vocabulary_signup_href, ENT_QUOTES, 'UTF-8'); ?>">無料登録して、間違えた単語から復習する</a>
+        <a class="inline-flex items-center justify-center rounded-full bg-[#50c2cb] px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-[#50c2cb]/25 transition hover:bg-[#46adb5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#50c2cb]/60 focus-visible:ring-offset-2" href="<?php echo htmlspecialchars(lp_app_link($vocabulary_try_href, 'hero_try'), ENT_QUOTES, 'UTF-8'); ?>">登録なしで単語テストを試す</a>
+        <a class="inline-flex items-center justify-center rounded-full border-2 border-[#50c2cb] bg-white px-8 py-3.5 text-base font-semibold text-slate-800 transition hover:border-[#46adb5] hover:bg-[#50c2cb]/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#50c2cb]/60 focus-visible:ring-offset-2" href="<?php echo htmlspecialchars(lp_app_link($vocabulary_signup_href, 'hero'), ENT_QUOTES, 'UTF-8'); ?>">無料登録して、間違えた単語から復習する</a>
       </div>
       <?php
       $store_align = 'start';

@@ -46,7 +46,7 @@
     </ol>
 
     <div class="howto-cta">
-      <a class="howto-cta__button" href="<?php echo APP_URL; ?>/signup"><?php echo lp_start_cta_inner('h-5 w-5'); ?></a>
+      <a class="howto-cta__button" href="<?php echo htmlspecialchars(lp_signup_url('howto'), ENT_QUOTES, 'UTF-8'); ?>"><?php echo lp_start_cta_inner('h-5 w-5'); ?></a>
       <p class="howto-cta__note">カード登録不要・登録したその場から開始</p>
       <p class="mt-3 max-w-2xl text-center text-xs leading-relaxed text-slate-500">単語テストは回数の制限なく無料です。その他の技能の無料範囲は<a class="font-semibold text-[#008b96] underline-offset-2 hover:underline" href="/plan">料金ページ</a>にまとめています。登録時の課金はありません。</p>
     </div>

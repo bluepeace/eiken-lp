@@ -75,7 +75,7 @@ $shots = is_array($reading['shots'] ?? null) ? $reading['shots'] : [];
 
     <div class="speaking-after">
       <p><?php echo br_after_period('リーディングは、登録してから演習が始まります。登録なしで1問だけ解く体験はありません。'); ?></p>
-      <a class="speaking-after__button" href="<?php echo htmlspecialchars($reading_signup_href, ENT_QUOTES, 'UTF-8'); ?>">無料でリーディング対策を始める</a>
+      <a class="speaking-after__button" href="<?php echo htmlspecialchars(lp_app_link($reading_signup_href, 'example'), ENT_QUOTES, 'UTF-8'); ?>">無料でリーディング対策を始める</a>
     </div>
   </div>
 </section>

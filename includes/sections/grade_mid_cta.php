@@ -30,7 +30,7 @@ $secondary_href = (string) ($mid['secondary_href'] ?? '');
     <p class="grade-mid-cta__lead"><?php echo br_after_period($lead); ?></p>
     <?php endif; ?>
     <div class="grade-mid-cta__actions">
-      <a class="grade-mid-cta__button" href="<?php echo APP_URL; ?>/signup"><?php echo lp_start_cta_inner('h-5 w-5'); ?></a>
+      <a class="grade-mid-cta__button" href="<?php echo htmlspecialchars(lp_signup_url('mid'), ENT_QUOTES, 'UTF-8'); ?>"><?php echo lp_start_cta_inner('h-5 w-5'); ?></a>
       <?php if ($secondary_label !== '' && $secondary_href !== ''): ?>
       <a class="grade-mid-cta__secondary" href="<?php echo htmlspecialchars($secondary_href); ?>"><?php echo htmlspecialchars($secondary_label); ?></a>
       <?php endif; ?>

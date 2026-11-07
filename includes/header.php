@@ -181,7 +181,7 @@ $nav_caret = '<span class="site-header__dropdown-caret" aria-hidden="true"><svg 
     <?php endif; ?>
     <nav class="site-header__account flex shrink-0 items-center gap-2" aria-label="アカウント">
       <a class="site-header__btn site-header__btn--login" href="<?php echo APP_URL; ?>/login">ログイン</a>
-      <a class="site-header__btn site-header__btn--signup" href="<?php echo APP_URL; ?>/signup">会員登録</a>
+      <a class="site-header__btn site-header__btn--signup" href="<?php echo htmlspecialchars(lp_signup_url('header'), ENT_QUOTES, 'UTF-8'); ?>">会員登録</a>
     </nav>
     <?php if ($show_main_nav): ?>
     <button
@@ -309,7 +309,7 @@ $nav_caret = '<span class="site-header__dropdown-caret" aria-hidden="true"><svg 
 
       <div class="site-header__mobile-actions">
         <a class="site-header__btn site-header__btn--login" href="<?php echo APP_URL; ?>/login">ログイン</a>
-        <a class="site-header__btn site-header__btn--signup" href="<?php echo APP_URL; ?>/signup">会員登録</a>
+        <a class="site-header__btn site-header__btn--signup" href="<?php echo htmlspecialchars(lp_signup_url('menu'), ENT_QUOTES, 'UTF-8'); ?>">会員登録</a>
       </div>
     </div>
   </nav>

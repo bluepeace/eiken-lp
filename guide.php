@@ -39,7 +39,6 @@ function guide_screen_url(string $key): string
     return '/assets/images/app-screen-placeholder.svg';
 }
 
-$signup_url = rtrim(APP_URL, '/') . '/signup';
 $toc = [
     ['id' => 'start', 'label' => 'はじめ方'],
     ['id' => 'skills', 'label' => '4つの学習'],
@@ -136,7 +135,7 @@ include __DIR__ . '/includes/header.php';
       <p class="mt-4 text-lg font-semibold leading-relaxed text-slate-900 sm:text-xl">今日から、英検の勉強が始まります</p>
       <p class="mt-4 text-base leading-relaxed text-slate-700"><?php echo br_after_period('AiKenは、単語・リーディング・ライティング・リスニングをひとつにまとめた英検対策アプリです。まずは3つのステップ。最初の10分で、自分の級の問題に触れられます。'); ?></p>
       <p class="mt-6">
-        <a class="guide-cta-btn" href="<?php echo htmlspecialchars($signup_url); ?>"><?php echo lp_start_cta_inner('h-4 w-4'); ?></a>
+        <a class="guide-cta-btn" href="<?php echo htmlspecialchars(lp_signup_url('hero'), ENT_QUOTES, 'UTF-8'); ?>"><?php echo lp_start_cta_inner('h-4 w-4'); ?></a>
       </p>
       <p class="mt-3 text-sm text-slate-500">カード登録不要・1分で完了</p>
     </div>
@@ -238,7 +237,7 @@ include __DIR__ . '/includes/header.php';
         </div>
       </div>
       <p class="mt-8 text-center">
-        <a class="guide-cta-btn" href="<?php echo htmlspecialchars($signup_url); ?>"><?php echo lp_start_cta_inner('h-4 w-4'); ?></a>
+        <a class="guide-cta-btn" href="<?php echo htmlspecialchars(lp_signup_url('mid'), ENT_QUOTES, 'UTF-8'); ?>"><?php echo lp_start_cta_inner('h-4 w-4'); ?></a>
       </p>
     </section>
 
@@ -266,7 +265,7 @@ include __DIR__ . '/includes/header.php';
       <p class="guide-closing__lead"><?php echo br_after_period('会員登録が終わったら、ダッシュボードの単語カードを押してみてください。10問終わったころには、今日の学習リズムができています。'); ?></p>
       <p class="mt-4 text-sm leading-relaxed text-slate-600">受験日までの回し方は、<a class="font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="/study">AiKenで英検合格の道</a>にまとめています。</p>
       <p class="mt-6">
-        <a class="guide-cta-btn" href="<?php echo htmlspecialchars($signup_url); ?>"><?php echo lp_start_cta_inner('h-4 w-4'); ?></a>
+        <a class="guide-cta-btn" href="<?php echo htmlspecialchars(lp_signup_url('final'), ENT_QUOTES, 'UTF-8'); ?>"><?php echo lp_start_cta_inner('h-4 w-4'); ?></a>
       </p>
       <p class="mt-6 text-sm text-slate-500">
         <a class="underline-offset-2 hover:underline" href="/cancel">退会・解約の手順</a>

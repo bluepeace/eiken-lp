@@ -91,7 +91,7 @@ $intro = $has_image
 
     <div class="speaking-after">
       <p><?php echo br_after_period('リスニングは、登録してから演習が始まります。登録なしで1問だけ聞く体験はありません。'); ?></p>
-      <a class="speaking-after__button" href="<?php echo htmlspecialchars($listening_signup_href, ENT_QUOTES, 'UTF-8'); ?>">無料でリスニング対策を始める</a>
+      <a class="speaking-after__button" href="<?php echo htmlspecialchars(lp_app_link($listening_signup_href, 'example'), ENT_QUOTES, 'UTF-8'); ?>">無料でリスニング対策を始める</a>
     </div>
   </div>
 </section>

@@ -34,7 +34,7 @@ $start_button_class = 'mt-auto inline-flex w-full items-center justify-center ga
         <li class="flex gap-2"><span class="shrink-0 text-[#50c2cb]"><?php echo lp_icon('check', 'w-5 h-5'); ?></span><span><?php echo htmlspecialchars($feature); ?></span></li>
         <?php endforeach; ?>
       </ul>
-      <a class="<?php echo $start_button_class; ?>" href="<?php echo APP_URL; ?>/signup"><?php echo lp_start_cta_inner('h-5 w-5'); ?></a>
+      <a class="<?php echo $start_button_class; ?>" href="<?php echo htmlspecialchars(lp_signup_url('plan_free'), ENT_QUOTES, 'UTF-8'); ?>"><?php echo lp_start_cta_inner('h-5 w-5'); ?></a>
     </div>
   </article>
 
@@ -60,7 +60,7 @@ $start_button_class = 'mt-auto inline-flex w-full items-center justify-center ga
         <li class="flex gap-2"><span class="shrink-0 text-[#50c2cb]"><?php echo lp_icon('check', 'w-5 h-5'); ?></span><span><?php echo htmlspecialchars($feature); ?></span></li>
         <?php endforeach; ?>
       </ul>
-      <a class="<?php echo $start_button_class; ?>" href="<?php echo APP_URL; ?>/signup"><?php echo lp_start_cta_inner('h-5 w-5'); ?></a>
+      <a class="<?php echo $start_button_class; ?>" href="<?php echo htmlspecialchars(lp_signup_url('plan_premium'), ENT_QUOTES, 'UTF-8'); ?>"><?php echo lp_start_cta_inner('h-5 w-5'); ?></a>
     </div>
   </article>
 </div>

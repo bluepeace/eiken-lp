@@ -87,7 +87,7 @@ $follow_label = $has_try ? '登録して残りのパートも練習する' : (st
     <?php if ($after !== ''): ?>
     <div class="speaking-after">
       <p><?php echo br_after_period(htmlspecialchars($after, ENT_QUOTES, 'UTF-8')); ?></p>
-      <a class="speaking-after__button" href="<?php echo htmlspecialchars($follow_href, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($follow_label); ?></a>
+      <a class="speaking-after__button" href="<?php echo htmlspecialchars(lp_app_link($follow_href, 'example'), ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($follow_label); ?></a>
     </div>
     <?php endif; ?>
   </div>

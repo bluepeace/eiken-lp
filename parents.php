@@ -19,7 +19,7 @@ include __DIR__ . '/includes/header.php';
       <h1 id="parents-heading" class="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">保護者の方へ</h1>
       <p class="mt-4 text-base leading-relaxed text-slate-700 sm:text-lg"><?php echo br_after_period('お子さまの英検対策を、スマホひとつで。料金・安全・学習の進め方をまとめました。'); ?></p>
       <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
-        <a class="inline-flex items-center justify-center gap-2 rounded-full bg-[#50c2cb] px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-[#46adb5]" href="<?php echo htmlspecialchars(APP_URL); ?>/signup"><?php echo lp_start_cta_inner('h-4 w-4'); ?></a>
+        <a class="inline-flex items-center justify-center gap-2 rounded-full bg-[#50c2cb] px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-[#46adb5]" href="<?php echo htmlspecialchars(lp_signup_url('hero'), ENT_QUOTES, 'UTF-8'); ?>"><?php echo lp_start_cta_inner('h-4 w-4'); ?></a>
       </div>
     </div>
   </section>
@@ -75,7 +75,7 @@ include __DIR__ . '/includes/header.php';
     <div class="mx-auto max-w-3xl text-center">
       <h2 class="text-2xl font-bold tracking-tight text-slate-900">今日から、学習を始められます</h2>
       <p class="mt-3 text-slate-600"><?php echo br_after_period('カード登録は不要です。単語テストは無料で続けられます。'); ?></p>
-      <a class="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-[#50c2cb] px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-[#46adb5]" href="<?php echo htmlspecialchars(APP_URL); ?>/signup"><?php echo lp_start_cta_inner('h-4 w-4'); ?></a>
+      <a class="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-[#50c2cb] px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-[#46adb5]" href="<?php echo htmlspecialchars(lp_signup_url('final'), ENT_QUOTES, 'UTF-8'); ?>"><?php echo lp_start_cta_inner('h-4 w-4'); ?></a>
     </div>
   </section>
 </article>

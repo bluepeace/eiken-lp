@@ -60,8 +60,8 @@ if ($grade_slug !== '') {
       </ul>
       <?php endif; ?>
       <div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-start">
-        <a class="inline-flex items-center justify-center rounded-full bg-[#50c2cb] px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-[#50c2cb]/25 transition hover:bg-[#46adb5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#50c2cb]/60 focus-visible:ring-offset-2" href="<?php echo htmlspecialchars($writing_primary_href, ENT_QUOTES, 'UTF-8'); ?>">登録なしで英作文を添削する</a>
-        <a class="inline-flex items-center justify-center rounded-full border-2 border-[#50c2cb] bg-white px-8 py-3.5 text-base font-semibold text-slate-800 transition hover:border-[#46adb5] hover:bg-[#50c2cb]/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#50c2cb]/60 focus-visible:ring-offset-2" href="<?php echo htmlspecialchars($writing_signup_href, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($secondary); ?></a>
+        <a class="inline-flex items-center justify-center rounded-full bg-[#50c2cb] px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-[#50c2cb]/25 transition hover:bg-[#46adb5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#50c2cb]/60 focus-visible:ring-offset-2" href="<?php echo htmlspecialchars(lp_app_link($writing_primary_href, 'hero_try'), ENT_QUOTES, 'UTF-8'); ?>">登録なしで英作文を添削する</a>
+        <a class="inline-flex items-center justify-center rounded-full border-2 border-[#50c2cb] bg-white px-8 py-3.5 text-base font-semibold text-slate-800 transition hover:border-[#46adb5] hover:bg-[#50c2cb]/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#50c2cb]/60 focus-visible:ring-offset-2" href="<?php echo htmlspecialchars(lp_app_link($writing_signup_href, 'hero'), ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($secondary); ?></a>
       </div>
       <?php
       $store_align = 'start';

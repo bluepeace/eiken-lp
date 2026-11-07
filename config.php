@@ -318,10 +318,55 @@ function br_after_period(string $html): string {
     return str_replace('。', '。<br>', $html);
 }
 
-/** 学習開始ボタンの中身（ラベルと右向きの山） */
+/** 表示中のページの級スラッグ（級別・技能別ページのみ。それ以外は空文字） */
+function lp_current_grade(): string
+{
+    global $grade, $GRADES;
+    return (is_string($grade ?? null) && isset($GRADES[$grade])) ? $grade : '';
+}
+
+/**
+ * アプリへのリンクに流入元 ?pid= を付ける。
+ * app.aiken.life 側（lib/signup-attribution.ts）が pid をクッキーに30日保持し、
+ * 初回登録時に user_profiles.signup_param へ保存する（管理画面の「経由」列）。
+ * pid の形式: lp_{ページ}_{級}_{位置}（例: lp_grade_2kyu_hero / lp_listening_3kyu_final / lp_top_hero）
+ * 先頭の lp_ で、SNS など外部リンクの pid（instagram 等）と区別する。
+ * LP に ?pid=instagram で着地した場合は、footer.php のスクリプトが先頭の lp を置き換え
+ * instagram_grade_2kyu_hero のようにする（流入元は aiken.life のクッキーに30日保持）。
+ * app 側の検証に合わせ、英数字・_・- のみ、64文字以内。
+ * grade= は登録後の級の事前選択用（app 側が未対応のあいだは無視される）。
+ */
+function lp_app_link(string $url, string $position): string
+{
+    global $page;
+    $level = lp_current_grade();
+    $parts = array_filter(['lp', (string) ($page ?? ''), $level, $position], static fn ($v) => $v !== '');
+    $pid = substr((string) preg_replace('/[^A-Za-z0-9_-]/', '', implode('_', $parts)), 0, 64);
+    $query = ['pid' => $pid];
+    if ($level !== '') {
+        $query['grade'] = $level;
+    }
+    return $url . (strpos($url, '?') === false ? '?' : '&') . http_build_query($query);
+}
+
+/** 会員登録URL（流入元つき） */
+function lp_signup_url(string $position): string
+{
+    return lp_app_link(rtrim(APP_URL, '/') . '/signup', $position);
+}
+
+/** 学習開始ボタンの中身（ラベルと右向きの山）。級のページでは「無料で〇級の対策を始める」 */
 function lp_start_cta_inner(string $icon_class = 'h-5 w-5'): string
 {
-    return '<span>学習を開始する</span>' . lp_icon('chevron-right', $icon_class . ' shrink-0');
+    global $GRADES;
+    $level = lp_current_grade();
+    if ($level === '') {
+        return '<span>学習を開始する</span>' . lp_icon('chevron-right', $icon_class . ' shrink-0');
+    }
+    // 狭い画面で折り返すときは「〜の／対策を始める」の位置だけで改行させる
+    $name = htmlspecialchars($GRADES[$level]['name_short'], ENT_QUOTES, 'UTF-8');
+    return '<span class="text-center"><span class="inline-block">無料で' . $name . 'の</span><span class="inline-block">対策を始める</span></span>'
+        . lp_icon('chevron-right', $icon_class . ' shrink-0');
 }
 
 function format_yen(int $amount): string {

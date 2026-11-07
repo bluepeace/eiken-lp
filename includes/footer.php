@@ -30,7 +30,7 @@ include __DIR__ . '/breadcrumbs.php';
       <div class="site-footer__actions">
         <a class="site-footer__action site-footer__action--ghost" href="/contact">お問い合わせ</a>
         <a class="site-footer__action site-footer__action--ghost" href="<?php echo APP_URL; ?>/login">ログイン</a>
-        <a class="site-footer__action site-footer__action--solid" href="<?php echo APP_URL; ?>/signup">会員登録</a>
+        <a class="site-footer__action site-footer__action--solid" href="<?php echo htmlspecialchars(lp_signup_url('footer'), ENT_QUOTES, 'UTF-8'); ?>">会員登録</a>
       </div>
     </div>
 
@@ -97,7 +97,7 @@ include __DIR__ . '/breadcrumbs.php';
         </ul>
         <p class="site-footer__col-subtitle">アプリ</p>
         <ul class="site-footer__list">
-          <li><a href="<?php echo htmlspecialchars(APP_URL); ?>/signup">AiKen無料登録</a></li>
+          <li><a href="<?php echo htmlspecialchars(lp_signup_url('footer_link'), ENT_QUOTES, 'UTF-8'); ?>">AiKen無料登録</a></li>
           <li><a href="<?php echo htmlspecialchars(APP_URL); ?>/login">AiKenログイン</a></li>
           <?php if (defined('APP_STORE_URL') && APP_STORE_URL !== ''): ?>
           <li><a href="<?php echo htmlspecialchars(APP_STORE_URL); ?>" rel="noopener noreferrer" target="_blank">App Store</a></li>
@@ -156,5 +156,52 @@ include __DIR__ . '/breadcrumbs.php';
   </div>
 </footer>
 </div>
+<script>
+/*
+ * 外部からの流入元（?pid=instagram など）をアプリへのリンクに引き継ぐ。
+ * LP の各ボタンは pid=lp_{ページ}_{級}_{位置} で出力しているので、
+ * 流入元があれば先頭の lp を置き換えて instagram_{ページ}_{級}_{位置} にする。
+ * 流入元は aiken.life のクッキーに30日保存（app 側の保持期間に合わせる）。
+ * 形式は app 側（lib/signup-attribution.ts）と同じく英数字・_・- のみ、全体64文字以内。
+ */
+(function () {
+  var COOKIE = 'aiken_lp_src';
+  var MAX_AGE = 60 * 60 * 24 * 30;
+  var APP_ORIGIN = <?php echo json_encode(parse_url(APP_URL, PHP_URL_SCHEME) . '://' . parse_url(APP_URL, PHP_URL_HOST)); ?>;
+
+  function clean(v) {
+    v = (v || '').trim().slice(0, 30);
+    return /^[A-Za-z0-9_-]+$/.test(v) && v.toLowerCase().indexOf('lp_') !== 0 && v.toLowerCase() !== 'lp' ? v : '';
+  }
+
+  var src = '';
+  try {
+    var q = new URLSearchParams(location.search);
+    src = clean(q.get('pid') || q.get('p'));
+    if (src) {
+      document.cookie = COOKIE + '=' + encodeURIComponent(src) + '; path=/; max-age=' + MAX_AGE + '; SameSite=Lax' + (location.protocol === 'https:' ? '; Secure' : '');
+    } else {
+      var m = document.cookie.match(new RegExp('(?:^|; )' + COOKIE + '=([^;]*)'));
+      if (m) src = clean(decodeURIComponent(m[1]));
+    }
+  } catch (e) {
+    src = '';
+  }
+  if (!src) return;
+
+  var links = document.querySelectorAll('a[href^="' + APP_ORIGIN + '"]');
+  for (var i = 0; i < links.length; i++) {
+    try {
+      var url = new URL(links[i].href);
+      var pid = url.searchParams.get('pid') || '';
+      if (pid.indexOf('lp_') !== 0) continue;
+      // 64文字を超えるときは、ボタン位置ではなく流入元の側を短くする
+      var rest = pid.slice(2);
+      url.searchParams.set('pid', src.slice(0, Math.max(1, 64 - rest.length)) + rest);
+      links[i].href = url.toString();
+    } catch (e) {}
+  }
+})();
+</script>
 </body>
 </html>
