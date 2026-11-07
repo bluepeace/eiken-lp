@@ -30,7 +30,7 @@ $reasons = [
     [
         'icon' => 'smartphone',
         'title' => 'ブラウザ、iPhone、iPad、Android',
-        'text' => 'ブラウザ、iPhone、iPad、Androidで使えます。音声は、その端末の読み上げです。',
+        'text' => 'ブラウザ、iPhone、iPad、Androidで使えます。どの端末でも、同じ音声ファイルで流れます。',
     ],
 ];
 ?>

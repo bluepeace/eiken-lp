@@ -1,0 +1,1134 @@
+{
+  "reviewedThrough": "2026-11-07",
+  "items": [
+    {
+      "id": "2026-11-07-2kyu-speaking-10",
+      "date": "2026-11-07",
+      "text": "2級のスピーキング問題を10題追加しました",
+      "places": [
+        "grade:2級",
+        "2級:speaking"
+      ]
+    },
+    {
+      "id": "2026-11-06-plan-compare",
+      "date": "2026-11-06",
+      "text": "購入ページで、無料プランの1日の上限とプレミアムの使い放題の違いが分かるようにしました",
+      "places": [
+        "general"
+      ]
+    },
+    {
+      "id": "2026-11-04-jun2-speaking-10",
+      "date": "2026-11-04",
+      "text": "準2級のスピーキング問題を10題追加しました",
+      "places": [
+        "grade:準2級",
+        "準2級:speaking"
+      ]
+    },
+    {
+      "id": "2026-11-04-bookmarks",
+      "date": "2026-11-04",
+      "text": "リーディングとリスニングの問題を、しおりから保存できるようにしました",
+      "places": [
+        "1級:reading",
+        "準1級:reading",
+        "2級:reading",
+        "準2級プラス:reading",
+        "準2級:reading",
+        "3級:reading",
+        "4級:reading",
+        "5級:reading",
+        "1級:listening",
+        "準1級:listening",
+        "2級:listening",
+        "準2級プラス:listening",
+        "準2級:listening",
+        "3級:listening",
+        "4級:listening",
+        "5級:listening"
+      ]
+    },
+    {
+      "id": "2026-11-03-vocab-notebook",
+      "date": "2026-11-03",
+      "text": "単語帳を追加しました。単語クイズで残したい語を、あとから見返せます",
+      "places": [
+        "1級:vocabulary",
+        "準1級:vocabulary",
+        "2級:vocabulary",
+        "準2級プラス:vocabulary",
+        "準2級:vocabulary",
+        "3級:vocabulary",
+        "4級:vocabulary",
+        "5級:vocabulary"
+      ]
+    },
+    {
+      "id": "2026-11-03-writing-original",
+      "date": "2026-11-03",
+      "text": "ライティングの添削結果に、直す前の自分の英文も残すようにしました",
+      "places": [
+        "1級:writing",
+        "準1級:writing",
+        "2級:writing",
+        "準2級プラス:writing",
+        "準2級:writing",
+        "3級:writing"
+      ]
+    },
+    {
+      "id": "2026-11-03-long-fill-review",
+      "date": "2026-11-03",
+      "text": "長文の語句空所補充で、答え合わせのあと空所の意味と解説を確認できるようにしました",
+      "places": [
+        "1級:reading",
+        "準1級:reading",
+        "2級:reading",
+        "準2級プラス:reading",
+        "準2級:reading"
+      ]
+    },
+    {
+      "id": "2026-11-03-listening-review-mobile",
+      "date": "2026-11-03",
+      "text": "スマートフォンアプリでも、リスニングの答え合わせ後に英文と日本語訳を確認できるようにしました",
+      "places": [
+        "1級:listening",
+        "準1級:listening",
+        "2級:listening",
+        "準2級プラス:listening",
+        "準2級:listening",
+        "3級:listening",
+        "4級:listening",
+        "5級:listening"
+      ]
+    },
+    {
+      "id": "2026-11-01-jun1-speaking-10",
+      "date": "2026-11-01",
+      "text": "準1級のスピーキング問題を10題追加しました",
+      "places": [
+        "grade:準1級",
+        "準1級:speaking"
+      ]
+    },
+    {
+      "id": "2026-10-31-1kyu-speaking-10",
+      "date": "2026-10-31",
+      "text": "1級のスピーキングを本番に近い10セットにしました。選んだトピックへの審査員の質問が音声で流れます",
+      "places": [
+        "grade:1級",
+        "1級:speaking"
+      ]
+    },
+    {
+      "id": "2026-10-31-jun1-speaking-10",
+      "date": "2026-10-31",
+      "text": "準1級のスピーキングを本番に近い10セットにしました。審査員の質問が音声で流れ、4コマのイラストが付きます",
+      "places": [
+        "grade:準1級",
+        "準1級:speaking"
+      ]
+    },
+    {
+      "id": "2026-10-31-2kyu-speaking-10",
+      "date": "2026-10-31",
+      "text": "2級のスピーキングを本番に近い10セットにしました。審査員の質問が音声で流れ、3コマのイラストが付きます",
+      "places": [
+        "grade:2級",
+        "2級:speaking"
+      ]
+    },
+    {
+      "id": "2026-10-31-jun2plus-speaking-10",
+      "date": "2026-10-31",
+      "text": "準2級プラスのスピーキングを本番に近い10セットにしました。審査員の質問が音声で流れ、3コマのイラストが付きます",
+      "places": [
+        "grade:準2級プラス",
+        "準2級プラス:speaking"
+      ]
+    },
+    {
+      "id": "2026-10-30-menu-cards",
+      "date": "2026-10-30",
+      "text": "ダッシュボードの学習メニューを、イラスト付きのカードにしました",
+      "places": [
+        "general"
+      ]
+    },
+    {
+      "id": "2026-10-29-jun2-speaking-10",
+      "date": "2026-10-29",
+      "text": "準2級のスピーキングを本番に近い10セットにしました。審査員の質問が音声で流れます",
+      "places": [
+        "grade:準2級",
+        "準2級:speaking"
+      ]
+    },
+    {
+      "id": "2026-10-28-3kyu-speaking-10",
+      "date": "2026-10-28",
+      "text": "3級のスピーキングを本番に近い10セットにしました。審査員の質問が音声で流れます",
+      "places": [
+        "grade:3級",
+        "3級:speaking"
+      ]
+    },
+    {
+      "id": "2026-10-24-app-store",
+      "date": "2026-10-24",
+      "text": "iPhoneアプリを App Store で公開しました。ブラウザと同じ学習を、アプリからも続けられます",
+      "places": [
+        "general"
+      ]
+    },
+    {
+      "id": "2026-10-24-prepared-audio",
+      "date": "2026-10-24",
+      "text": "リスニングと今日の実力テストの音声を、用意した音声で再生するようにしました",
+      "places": [
+        "general",
+        "1級:listening",
+        "準1級:listening",
+        "2級:listening",
+        "準2級プラス:listening",
+        "準2級:listening",
+        "3級:listening",
+        "4級:listening",
+        "5級:listening"
+      ]
+    },
+    {
+      "id": "2026-10-23-vocab-review-next-day",
+      "date": "2026-10-23",
+      "text": "単語で最初に間違えた語を、翌日にアプリの通知とメールで復習できるようにしました",
+      "places": [
+        "1級:vocabulary",
+        "準1級:vocabulary",
+        "2級:vocabulary",
+        "準2級プラス:vocabulary",
+        "準2級:vocabulary",
+        "3級:vocabulary",
+        "4級:vocabulary",
+        "5級:vocabulary"
+      ]
+    },
+    {
+      "id": "2026-10-18-proficiency",
+      "date": "2026-10-18",
+      "text": "今日の実力テストを追加しました。級ごとの結果から、次にやる練習が分かります",
+      "places": [
+        "general",
+        "grade:1級",
+        "grade:準1級",
+        "grade:2級",
+        "grade:準2級プラス",
+        "grade:準2級",
+        "grade:3級",
+        "grade:4級",
+        "grade:5級"
+      ]
+    },
+    {
+      "id": "2026-10-17-signup",
+      "date": "2026-10-17",
+      "text": "会員登録を1画面にまとめ、利用規約とプライバシーポリシーをその場で確認できるようにしました",
+      "places": [
+        "general"
+      ]
+    },
+    {
+      "id": "2026-10-10-speaking-trial",
+      "date": "2026-10-10",
+      "text": "ログイン前に、面接を体験できるようにしました（3級から1級）",
+      "places": [
+        "general",
+        "grade:1級",
+        "grade:準1級",
+        "grade:2級",
+        "grade:準2級プラス",
+        "grade:準2級",
+        "grade:3級",
+        "1級:speaking",
+        "準1級:speaking",
+        "2級:speaking",
+        "準2級プラス:speaking",
+        "準2級:speaking",
+        "3級:speaking"
+      ]
+    },
+    {
+      "id": "2026-10-06-today",
+      "date": "2026-10-06",
+      "text": "ダッシュボードに「今日の学習」を追加しました。続き・復習・今日の目標から、次にやることを選べます",
+      "places": [
+        "general"
+      ]
+    },
+    {
+      "id": "2026-10-06-learning-email",
+      "date": "2026-10-06",
+      "text": "学習の続け方を、メールで受け取れるようにしました",
+      "places": [
+        "general"
+      ]
+    },
+    {
+      "id": "2026-10-04-writing-trial",
+      "date": "2026-10-04",
+      "text": "ログイン前に、英作文を1回体験できるようにしました（3級から1級）",
+      "places": [
+        "general",
+        "grade:1級",
+        "grade:準1級",
+        "grade:2級",
+        "grade:準2級プラス",
+        "grade:準2級",
+        "grade:3級",
+        "1級:writing",
+        "準1級:writing",
+        "2級:writing",
+        "準2級プラス:writing",
+        "準2級:writing",
+        "3級:writing"
+      ]
+    },
+    {
+      "id": "2026-09-26-vocab-unlimited",
+      "date": "2026-09-26",
+      "text": "無料プランでも、単語クイズは回数の上限なく使えるようにしました",
+      "places": [
+        "general",
+        "1級:vocabulary",
+        "準1級:vocabulary",
+        "2級:vocabulary",
+        "準2級プラス:vocabulary",
+        "準2級:vocabulary",
+        "3級:vocabulary",
+        "4級:vocabulary",
+        "5級:vocabulary"
+      ]
+    },
+    {
+      "id": "2026-09-24-writing-mobile-input",
+      "date": "2026-09-24",
+      "text": "スマートフォンアプリのライティングで、音声入力と写真からの読み取りができるようにしました",
+      "places": [
+        "1級:writing",
+        "準1級:writing",
+        "2級:writing",
+        "準2級プラス:writing",
+        "準2級:writing",
+        "3級:writing"
+      ]
+    },
+    {
+      "id": "2026-09-24-buddy",
+      "date": "2026-09-24",
+      "text": "学習時間に応じて、学習バディが仲間になっていくようにしました",
+      "places": [
+        "general"
+      ]
+    },
+    {
+      "id": "2026-09-23-apple-login",
+      "date": "2026-09-23",
+      "text": "Appleアカウントでログインできるようにしました",
+      "places": [
+        "general"
+      ]
+    },
+    {
+      "id": "2026-09-13-1kyu-speaking",
+      "date": "2026-09-13",
+      "text": "1級のスピーキング練習を追加しました。5つのトピックから1つ選び、2分間のスピーチができます",
+      "places": [
+        "grade:1級",
+        "1級:speaking"
+      ]
+    },
+    {
+      "id": "2026-09-08-jun1-listening-pair",
+      "date": "2026-09-08",
+      "text": "準1級リスニング第2部を、1つの英文で2問解く本番の形式にしました。1問ずつ解く練習も残しています",
+      "places": [
+        "grade:準1級",
+        "準1級:listening"
+      ]
+    },
+    {
+      "id": "2026-09-07-jun1-speaking",
+      "date": "2026-09-07",
+      "text": "準1級のスピーキング練習を追加しました。4コマのイラストを見てナレーションできます",
+      "places": [
+        "grade:準1級",
+        "準1級:speaking"
+      ]
+    },
+    {
+      "id": "2026-09-06-reading-expl-3",
+      "date": "2026-09-06",
+      "text": "3級リーディング（長文の内容一致）の解説を、根拠と誤答の違いが分かる形に直しました",
+      "places": [
+        "grade:3級",
+        "3級:reading"
+      ]
+    },
+    {
+      "id": "2026-09-06-reading-expl-4",
+      "date": "2026-09-06",
+      "text": "4級リーディング（長文の内容一致）の解説を、根拠と誤答の違いが分かる形に直しました",
+      "places": [
+        "grade:4級",
+        "4級:reading"
+      ]
+    },
+    {
+      "id": "2026-09-06-reading-expl-jun2",
+      "date": "2026-09-06",
+      "text": "準2級リーディング（長文の内容一致）の解説を、根拠と誤答の違いが分かる形に直しました",
+      "places": [
+        "grade:準2級",
+        "準2級:reading"
+      ]
+    },
+    {
+      "id": "2026-09-04-2kyu-vocab-75",
+      "date": "2026-09-04",
+      "text": "2級の単語を75語追加しました",
+      "places": [
+        "grade:2級",
+        "2級:vocabulary"
+      ]
+    },
+    {
+      "id": "2026-09-04-jun2-vocab-examples",
+      "date": "2026-09-04",
+      "text": "準2級の単語の例文と訳を、自然な表現に直しました",
+      "places": [
+        "grade:準2級",
+        "準2級:vocabulary"
+      ]
+    },
+    {
+      "id": "2026-09-02-mobile-skills",
+      "date": "2026-09-02",
+      "text": "スマートフォンアプリで、単語・リーディング・リスニング・ライティング・スピーキングを練習できるようにしました",
+      "places": [
+        "general"
+      ]
+    },
+    {
+      "id": "2026-09-02-speaking-stt",
+      "date": "2026-09-02",
+      "text": "スマートフォンアプリのスピーキングで、声を認識して発話を練習できるようにしました",
+      "places": [
+        "1級:speaking",
+        "準1級:speaking",
+        "2級:speaking",
+        "準2級プラス:speaking",
+        "準2級:speaking",
+        "3級:speaking"
+      ]
+    },
+    {
+      "id": "2026-08-24-3kyu-speaking",
+      "date": "2026-08-24",
+      "text": "3級のスピーキング練習を追加しました",
+      "places": [
+        "grade:3級",
+        "3級:speaking"
+      ]
+    },
+    {
+      "id": "2026-08-23-2kyu-speaking",
+      "date": "2026-08-23",
+      "text": "2級のスピーキング練習を追加しました。3コマのイラストを見て答える形式です",
+      "places": [
+        "grade:2級",
+        "2級:speaking"
+      ]
+    },
+    {
+      "id": "2026-08-23-jun2plus-speaking",
+      "date": "2026-08-23",
+      "text": "準2級プラスのスピーキング練習を追加しました。3コマのイラストを見て答える形式です",
+      "places": [
+        "grade:準2級プラス",
+        "準2級プラス:speaking"
+      ]
+    },
+    {
+      "id": "2026-08-22-guide",
+      "date": "2026-08-22",
+      "text": "はじめての方向けに、学習の始め方ガイドを公開しました",
+      "places": [
+        "general"
+      ]
+    },
+    {
+      "id": "2026-08-16-jun2plus-summary",
+      "date": "2026-08-16",
+      "text": "準2級プラスのライティングに、英文要約を10問追加しました",
+      "places": [
+        "grade:準2級プラス",
+        "準2級プラス:writing"
+      ]
+    },
+    {
+      "id": "2026-08-16-jun2plus-vocab",
+      "date": "2026-08-16",
+      "text": "準2級プラスの単語を約200語追加しました",
+      "places": [
+        "grade:準2級プラス",
+        "準2級プラス:vocabulary"
+      ]
+    },
+    {
+      "id": "2026-08-14-jun1-vocab",
+      "date": "2026-08-14",
+      "text": "準1級の単語を約190語追加しました",
+      "places": [
+        "grade:準1級",
+        "準1級:vocabulary"
+      ]
+    },
+    {
+      "id": "2026-08-13-jun2-speaking-phrase",
+      "date": "2026-08-13",
+      "text": "準2級スピーキングの音読を、本番の決めフレーズに合わせました",
+      "places": [
+        "grade:準2級",
+        "準2級:speaking"
+      ]
+    },
+    {
+      "id": "2026-07-31-vocab-distractors",
+      "date": "2026-07-31",
+      "text": "単語テストの誤答を、同じ品詞の意味から選ぶようにし、級に合った難しさに整えました",
+      "places": [
+        "1級:vocabulary",
+        "準1級:vocabulary",
+        "2級:vocabulary",
+        "準2級プラス:vocabulary",
+        "準2級:vocabulary",
+        "3級:vocabulary",
+        "4級:vocabulary",
+        "5級:vocabulary"
+      ]
+    },
+    {
+      "id": "2026-06-27-jun2-speaking",
+      "date": "2026-06-27",
+      "text": "準2級のスピーキング練習を追加しました。イラストと模範解答があり、本試験に近い形式です",
+      "places": [
+        "grade:準2級",
+        "準2級:speaking"
+      ]
+    },
+    {
+      "id": "2026-06-25-account-settings",
+      "date": "2026-06-25",
+      "text": "メールアドレスとパスワードを、アカウント設定から変更できるようにしました",
+      "places": [
+        "general"
+      ]
+    },
+    {
+      "id": "2026-06-22-5kyu-listening-art",
+      "date": "2026-06-22",
+      "text": "5級リスニング第3部（イラストの内容一致）のイラストを追加しました",
+      "places": [
+        "grade:5級",
+        "5級:listening"
+      ]
+    },
+    {
+      "id": "2026-06-22-long-fill-strike",
+      "date": "2026-06-22",
+      "text": "長文の語句空所補充で、間違えた選択肢に打ち消し線を表示するようにしました",
+      "places": [
+        "1級:reading",
+        "準1級:reading",
+        "2級:reading",
+        "準2級プラス:reading",
+        "準2級:reading"
+      ]
+    },
+    {
+      "id": "2026-06-18-writing-photo",
+      "date": "2026-06-18",
+      "text": "ライティングで、写真から英文を読み取る精度を上げました",
+      "places": [
+        "1級:writing",
+        "準1級:writing",
+        "2級:writing",
+        "準2級プラス:writing",
+        "準2級:writing",
+        "3級:writing"
+      ]
+    },
+    {
+      "id": "2026-06-18-cancel",
+      "date": "2026-06-18",
+      "text": "プレミアムの解約予約と取り消しができるようにし、メールでお知らせするようにしました",
+      "places": [
+        "general"
+      ]
+    },
+    {
+      "id": "2026-06-18-plan-status",
+      "date": "2026-06-18",
+      "text": "ダッシュボードに、無料プランとプレミアムの利用状況を表示するようにしました",
+      "places": [
+        "general"
+      ]
+    },
+    {
+      "id": "2026-06-18-countdown",
+      "date": "2026-06-18",
+      "text": "試験日までのカウントダウンを表示するようにしました",
+      "places": [
+        "general"
+      ]
+    },
+    {
+      "id": "2026-06-17-receipt",
+      "date": "2026-06-17",
+      "text": "プレミアムの購入履歴から、領収書をダウンロードできるようにしました",
+      "places": [
+        "general"
+      ]
+    },
+    {
+      "id": "2026-06-12-help",
+      "date": "2026-06-12",
+      "text": "ヘルプで、よくある質問を選ぶか、AIに質問できるようにしました",
+      "places": [
+        "general"
+      ]
+    },
+    {
+      "id": "2026-06-12-retry",
+      "date": "2026-06-12",
+      "text": "学習履歴から、同じ問題でもう一度練習できるようにしました",
+      "places": [
+        "general"
+      ]
+    },
+    {
+      "id": "2026-06-12-reading-gloss",
+      "date": "2026-06-12",
+      "text": "長文の日本語訳と、語句の解説を追加しました",
+      "places": [
+        "grade:1級",
+        "1級:reading",
+        "grade:準1級",
+        "準1級:reading",
+        "grade:2級",
+        "2級:reading",
+        "grade:準2級",
+        "準2級:reading"
+      ]
+    },
+    {
+      "id": "2026-06-12-4kyu-listening-expl",
+      "date": "2026-06-12",
+      "text": "4級リスニング第3部（文の内容一致）に解説を追加しました",
+      "places": [
+        "grade:4級",
+        "4級:listening"
+      ]
+    },
+    {
+      "id": "2026-06-12-2kyu-vocab-level",
+      "date": "2026-06-12",
+      "text": "2級の単語から、級に対して易しすぎる語を整理しました",
+      "places": [
+        "grade:2級",
+        "2級:vocabulary"
+      ]
+    },
+    {
+      "id": "2026-06-12-jun1-vocab-level",
+      "date": "2026-06-12",
+      "text": "準1級の単語から、級に対して易しすぎる語を整理しました",
+      "places": [
+        "grade:準1級",
+        "準1級:vocabulary"
+      ]
+    },
+    {
+      "id": "2026-06-09-google",
+      "date": "2026-06-09",
+      "text": "Googleアカウントでログインできるようにしました",
+      "places": [
+        "general"
+      ]
+    },
+    {
+      "id": "2026-06-04-history-explanation",
+      "date": "2026-06-04",
+      "text": "学習履歴で、正解した問題の解説もあとから見られるようにしました",
+      "places": [
+        "1級:reading",
+        "準1級:reading",
+        "2級:reading",
+        "準2級プラス:reading",
+        "準2級:reading",
+        "3級:reading",
+        "4級:reading",
+        "5級:reading",
+        "1級:listening",
+        "準1級:listening",
+        "2級:listening",
+        "準2級プラス:listening",
+        "準2級:listening",
+        "3級:listening",
+        "4級:listening",
+        "5級:listening"
+      ]
+    },
+    {
+      "id": "2026-06-03-2kyu-reading",
+      "date": "2026-06-03",
+      "text": "2級リーディングの長文の語句空所補充を約50問、長文の内容一致を50問追加しました",
+      "places": [
+        "grade:2級",
+        "2級:reading"
+      ]
+    },
+    {
+      "id": "2026-05-29-jun2-listening-p2",
+      "date": "2026-05-29",
+      "text": "準2級リスニング第2部（会話の内容一致）の問題を50問追加しました",
+      "places": [
+        "grade:準2級",
+        "準2級:listening"
+      ]
+    },
+    {
+      "id": "2026-05-29-long-fill",
+      "date": "2026-05-29",
+      "text": "リーディングの長文の語句空所補充を追加しました",
+      "places": [
+        "grade:1級",
+        "1級:reading",
+        "grade:準1級",
+        "準1級:reading"
+      ]
+    },
+    {
+      "id": "2026-05-29-free-tier",
+      "date": "2026-05-29",
+      "text": "登録から5日間は各技能を制限なく使え、6日目以降は各技能1日1セットになるようにしました",
+      "places": [
+        "general"
+      ]
+    },
+    {
+      "id": "2026-05-27-1kyu-interview",
+      "date": "2026-05-27",
+      "text": "1級リスニング第4部（インタビュー）の問題を50問追加しました",
+      "places": [
+        "grade:1級",
+        "1級:listening"
+      ]
+    },
+    {
+      "id": "2026-05-27-writing-1",
+      "date": "2026-05-27",
+      "text": "1級の英作文を20題、英文要約を20題追加しました",
+      "places": [
+        "grade:1級",
+        "1級:writing"
+      ]
+    },
+    {
+      "id": "2026-05-27-writing-jun1",
+      "date": "2026-05-27",
+      "text": "準1級の英作文を20題、英文要約を20題追加しました",
+      "places": [
+        "grade:準1級",
+        "準1級:writing"
+      ]
+    },
+    {
+      "id": "2026-05-27-writing-2",
+      "date": "2026-05-27",
+      "text": "2級の英作文を20題、英文要約を20題追加しました",
+      "places": [
+        "grade:2級",
+        "2級:writing"
+      ]
+    },
+    {
+      "id": "2026-05-27-reading-3",
+      "date": "2026-05-27",
+      "text": "3級リーディングの長文の内容一致を50問追加しました",
+      "places": [
+        "grade:3級",
+        "3級:reading"
+      ]
+    },
+    {
+      "id": "2026-05-27-reading-jun2",
+      "date": "2026-05-27",
+      "text": "準2級リーディングの長文の内容一致を50問追加しました",
+      "places": [
+        "grade:準2級",
+        "準2級:reading"
+      ]
+    },
+    {
+      "id": "2026-05-27-vocab-jun2plus",
+      "date": "2026-05-27",
+      "text": "準2級プラスの単語を追加しました",
+      "places": [
+        "grade:準2級プラス",
+        "準2級プラス:vocabulary"
+      ]
+    },
+    {
+      "id": "2026-05-27-vocab-1kyu",
+      "date": "2026-05-27",
+      "text": "1級の単語を追加しました",
+      "places": [
+        "grade:1級",
+        "1級:vocabulary"
+      ]
+    },
+    {
+      "id": "2026-05-27-vocab-next",
+      "date": "2026-05-27",
+      "text": "単語テストで「次へ」を解説の上に置き、スクロールしなくても次の問題へ進めるようにしました",
+      "places": [
+        "1級:vocabulary",
+        "準1級:vocabulary",
+        "2級:vocabulary",
+        "準2級プラス:vocabulary",
+        "準2級:vocabulary",
+        "3級:vocabulary",
+        "4級:vocabulary",
+        "5級:vocabulary"
+      ]
+    },
+    {
+      "id": "2026-05-21-listening-1-p1",
+      "date": "2026-05-21",
+      "text": "1級リスニング第1部（会話の内容一致）の問題を50問追加しました",
+      "places": [
+        "grade:1級",
+        "1級:listening"
+      ]
+    },
+    {
+      "id": "2026-05-21-listening-1-p2",
+      "date": "2026-05-21",
+      "text": "1級リスニング第2部（文の内容一致）の問題を50問追加しました",
+      "places": [
+        "grade:1級",
+        "1級:listening"
+      ]
+    },
+    {
+      "id": "2026-05-21-listening-1-p3",
+      "date": "2026-05-21",
+      "text": "1級リスニング第3部（Real-Life）の問題を50問追加しました",
+      "places": [
+        "grade:1級",
+        "1級:listening"
+      ]
+    },
+    {
+      "id": "2026-05-21-listening-jun1-p3",
+      "date": "2026-05-21",
+      "text": "準1級リスニング第3部（Real-Life）の問題を50問追加しました",
+      "places": [
+        "grade:準1級",
+        "準1級:listening"
+      ]
+    },
+    {
+      "id": "2026-05-21-listening-3-p2",
+      "date": "2026-05-21",
+      "text": "3級リスニング第2部（会話の内容一致）の問題を50問追加しました",
+      "places": [
+        "grade:3級",
+        "3級:listening"
+      ]
+    },
+    {
+      "id": "2026-05-21-listening-3-p3",
+      "date": "2026-05-21",
+      "text": "3級リスニング第3部（文の内容一致）の問題を50問追加しました",
+      "places": [
+        "grade:3級",
+        "3級:listening"
+      ]
+    },
+    {
+      "id": "2026-05-21-vocab-5",
+      "date": "2026-05-21",
+      "text": "5級の単語を追加しました",
+      "places": [
+        "grade:5級",
+        "5級:vocabulary"
+      ]
+    },
+    {
+      "id": "2026-05-21-vocab-4",
+      "date": "2026-05-21",
+      "text": "4級の単語を追加しました",
+      "places": [
+        "grade:4級",
+        "4級:vocabulary"
+      ]
+    },
+    {
+      "id": "2026-05-21-vocab-3",
+      "date": "2026-05-21",
+      "text": "3級の単語を追加しました",
+      "places": [
+        "grade:3級",
+        "3級:vocabulary"
+      ]
+    },
+    {
+      "id": "2026-05-18-jun1-listening-p2",
+      "date": "2026-05-18",
+      "text": "準1級リスニング第2部（文の内容一致）の問題を50問追加しました",
+      "places": [
+        "grade:準1級",
+        "準1級:listening"
+      ]
+    },
+    {
+      "id": "2026-05-09-2kyu-listening",
+      "date": "2026-05-09",
+      "text": "2級リスニング第1部（会話の内容一致）を50問、第2部（文の内容一致）を追加しました",
+      "places": [
+        "grade:2級",
+        "2級:listening"
+      ]
+    },
+    {
+      "id": "2026-05-09-jun1-listening-p1",
+      "date": "2026-05-09",
+      "text": "準1級リスニング第1部（会話の内容一致）の問題を50問追加しました",
+      "places": [
+        "grade:準1級",
+        "準1級:listening"
+      ]
+    },
+    {
+      "id": "2026-05-06-jun2plus-listening-p1",
+      "date": "2026-05-06",
+      "text": "準2級プラスリスニング第1部（応答文選択）の問題を50問追加しました",
+      "places": [
+        "grade:準2級プラス",
+        "準2級プラス:listening"
+      ]
+    },
+    {
+      "id": "2026-05-06-jun2plus-listening-p2",
+      "date": "2026-05-06",
+      "text": "準2級プラスリスニング第2部（文の内容一致）の問題を50問追加しました",
+      "places": [
+        "grade:準2級プラス",
+        "準2級プラス:listening"
+      ]
+    },
+    {
+      "id": "2026-05-06-jun2-listening-p3",
+      "date": "2026-05-06",
+      "text": "準2級リスニング第3部（文の内容一致）の問題を50問追加しました",
+      "places": [
+        "grade:準2級",
+        "準2級:listening"
+      ]
+    },
+    {
+      "id": "2026-05-06-jun1-vocab",
+      "date": "2026-05-06",
+      "text": "準1級の単語を追加しました",
+      "places": [
+        "grade:準1級",
+        "準1級:vocabulary"
+      ]
+    },
+    {
+      "id": "2026-05-06-play-count",
+      "date": "2026-05-06",
+      "text": "リスニングの放送回数を本番に合わせました。3級以下は2回、準2級以上は1回です",
+      "places": [
+        "1級:listening",
+        "準1級:listening",
+        "2級:listening",
+        "準2級プラス:listening",
+        "準2級:listening",
+        "3級:listening",
+        "4級:listening",
+        "5級:listening"
+      ]
+    },
+    {
+      "id": "2026-05-03-2kyu-vocab",
+      "date": "2026-05-03",
+      "text": "2級の単語を追加しました",
+      "places": [
+        "grade:2級",
+        "2級:vocabulary"
+      ]
+    },
+    {
+      "id": "2026-04-24-jun2-listening-p1",
+      "date": "2026-04-24",
+      "text": "準2級リスニング第1部（応答文選択）の問題を50問追加しました",
+      "places": [
+        "grade:準2級",
+        "準2級:listening"
+      ]
+    },
+    {
+      "id": "2026-04-24-jun2-listening-p2",
+      "date": "2026-04-24",
+      "text": "準2級リスニング第2部（会話の内容一致）の問題を30問追加しました",
+      "places": [
+        "grade:準2級",
+        "準2級:listening"
+      ]
+    },
+    {
+      "id": "2026-04-24-listening-translation",
+      "date": "2026-04-24",
+      "text": "リスニングで、日本語訳の表示をオンとオフで切り替えられるようにしました",
+      "places": [
+        "1級:listening",
+        "準1級:listening",
+        "2級:listening",
+        "準2級プラス:listening",
+        "準2級:listening",
+        "3級:listening",
+        "4級:listening",
+        "5級:listening"
+      ]
+    },
+    {
+      "id": "2026-04-24-listening-readaloud",
+      "date": "2026-04-24",
+      "text": "リスニングで、本文を読み上げてもう一度聞けるようにしました",
+      "places": [
+        "1級:listening",
+        "準1級:listening",
+        "2級:listening",
+        "準2級プラス:listening",
+        "準2級:listening",
+        "3級:listening",
+        "4級:listening",
+        "5級:listening"
+      ]
+    },
+    {
+      "id": "2026-04-19-jun2-vocab",
+      "date": "2026-04-19",
+      "text": "準2級の単語と熟語を追加しました",
+      "places": [
+        "grade:準2級",
+        "準2級:vocabulary"
+      ]
+    },
+    {
+      "id": "2026-03-25-4kyu-listening-p3",
+      "date": "2026-03-25",
+      "text": "4級リスニング第3部（文の内容一致）の問題を30問追加しました",
+      "places": [
+        "grade:4級",
+        "4級:listening"
+      ]
+    },
+    {
+      "id": "2026-03-24-4kyu-listening-p2",
+      "date": "2026-03-24",
+      "text": "4級リスニング第2部（会話の内容一致）の問題を30問追加しました",
+      "places": [
+        "grade:4級",
+        "4級:listening"
+      ]
+    },
+    {
+      "id": "2026-03-23-5kyu-listening-p3",
+      "date": "2026-03-23",
+      "text": "5級リスニング第3部（イラストの内容一致）の問題を30問追加しました",
+      "places": [
+        "grade:5級",
+        "5級:listening"
+      ]
+    },
+    {
+      "id": "2026-03-23-listening-voices",
+      "date": "2026-03-23",
+      "text": "リスニングの会話を、話者ごとに声を分けて再生するようにしました",
+      "places": [
+        "1級:listening",
+        "準1級:listening",
+        "2級:listening",
+        "準2級プラス:listening",
+        "準2級:listening",
+        "3級:listening",
+        "4級:listening",
+        "5級:listening"
+      ]
+    },
+    {
+      "id": "2026-03-21-4kyu-listening-p1",
+      "date": "2026-03-21",
+      "text": "4級リスニング第1部（応答文選択）の問題を追加しました",
+      "places": [
+        "grade:4級",
+        "4級:listening"
+      ]
+    },
+    {
+      "id": "2026-03-21-3kyu-listening-p1",
+      "date": "2026-03-21",
+      "text": "3級リスニング第1部（応答文選択）の問題を追加しました",
+      "places": [
+        "grade:3級",
+        "3級:listening"
+      ]
+    },
+    {
+      "id": "2026-03-21-listening-rate",
+      "date": "2026-03-21",
+      "text": "リスニングの読み上げの速さを、級に応じて変えるようにしました",
+      "places": [
+        "1級:listening",
+        "準1級:listening",
+        "2級:listening",
+        "準2級プラス:listening",
+        "準2級:listening",
+        "3級:listening",
+        "4級:listening",
+        "5級:listening"
+      ]
+    },
+    {
+      "id": "2026-03-18-listening-conversation-flow",
+      "date": "2026-03-18",
+      "text": "リスニングの会話の内容一致を、本番に近い進め方にしました。再生は1つのボタンで、質問は会話のあとに流れます",
+      "places": [
+        "1級:listening",
+        "準1級:listening",
+        "2級:listening",
+        "準2級プラス:listening",
+        "準2級:listening",
+        "3級:listening",
+        "4級:listening",
+        "5級:listening"
+      ]
+    }
+  ]
+}

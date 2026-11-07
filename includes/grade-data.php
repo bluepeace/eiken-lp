@@ -1918,6 +1918,13 @@ function grade_content_all(): array
             'level_label' => '中学中級程度',
             'hero_lead' => '英検4級は、中学中級程度の英語力の目安です。一次にライティングはなく、単語・リーディング・リスニングが中心。AiKenなら本試験形式で効率よく反復できます。',
             'blog_tag_slug' => '英検4級',
+            'mid_cta' => [
+                'heading' => 'まずは単語とリスニングを、<span class="heading-accent">今日から</span>。',
+                'lead' => '4級でいちばん差がつくのは、中学で習う単語と、2回放送のリスニングです。登録したその場で、本試験形式の単語と問題に触れられます。',
+                'note' => 'カード登録不要・1分で完了',
+                'secondary_label' => '4級の学習内容を見る',
+                'secondary_href' => '#grade-skill-word',
+            ],
             'sections' => ['word', 'reading', 'listening'],
             'word' => [
                 'lead' => '中学前半〜中盤の語彙が中心。短い4択で毎日少しずつ回し、間違えた語を履歴で復習しましょう。',
@@ -1960,6 +1967,13 @@ function grade_content_all(): array
             'level_label' => '中学初級程度',
             'hero_lead' => '英検5級は、英検の入門級です。身近な話題の短い英文・音声から情報を取る力が中心。AiKenなら、単語・リーディング・リスニングを本試験形式で楽しく始められます。',
             'blog_tag_slug' => '英検5級',
+            'mid_cta' => [
+                'heading' => 'まずは単語の4択を、<span class="heading-accent">今日から</span>。',
+                'lead' => '5級は、身近な単語を知っているかどうかで、読むのも聞くのも決まります。登録したその場で、本試験形式の4択から始められます。',
+                'note' => 'カード登録不要・1分で完了',
+                'secondary_label' => '5級の学習内容を見る',
+                'secondary_href' => '#grade-skill-word',
+            ],
             'sections' => ['word', 'reading', 'listening'],
             'word' => [
                 'lead' => '中1中心の基本語彙。be動詞・一般動詞・疑問詞などとセットで、4択クイズを短時間繰り返すのがおすすめです。',

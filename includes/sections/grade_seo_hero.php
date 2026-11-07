@@ -64,6 +64,8 @@ $hero_mockup_alt = $name !== ''
       $store_on_hero = true;
       include __DIR__ . '/../store-cta.php';
       ?>
+      <?php include __DIR__ . '/../lp-exam-countdown.php'; ?>
+      <?php include __DIR__ . '/../lp-latest-update.php'; ?>
     </div>
     <div class="grade-seo-hero__mockup hero-mockup flex-1 w-full">
       <?php echo lp_picture([

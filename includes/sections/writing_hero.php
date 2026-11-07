@@ -68,6 +68,8 @@ if ($grade_slug !== '') {
       $store_on_hero = true;
       include __DIR__ . '/../store-cta.php';
       ?>
+      <?php include __DIR__ . '/../lp-exam-countdown.php'; ?>
+      <?php include __DIR__ . '/../lp-latest-update.php'; ?>
     </div>
     <div class="speaking-hero__visual w-full flex-1">
       <button

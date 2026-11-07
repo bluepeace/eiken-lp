@@ -74,8 +74,10 @@ $shots = is_array($reading['shots'] ?? null) ? $reading['shots'] : [];
     <?php endforeach; ?>
 
     <div class="speaking-after">
-      <p><?php echo br_after_period('リーディングは、登録してから演習が始まります。登録なしで1問だけ解く体験はありません。'); ?></p>
+      <p><?php echo br_after_period('登録したその日から、この形式の問題を解けます。答えたあとは解説で、正解の根拠と誤答との違いを確かめられます。登録から' . FREE_TRIAL_DAYS . '日間は、回数の制限なく練習できます。'); ?></p>
       <a class="speaking-after__button" href="<?php echo htmlspecialchars(lp_app_link($reading_signup_href, 'example'), ENT_QUOTES, 'UTF-8'); ?>">無料でリーディング対策を始める</a>
+      <?php require_once __DIR__ . '/../vocabulary-data.php'; ?>
+      <p class="mt-4 text-sm text-slate-600">登録の前に試したい方は、<a class="font-semibold text-[#2a9aa3] underline underline-offset-2 hover:no-underline" href="<?php echo htmlspecialchars(lp_app_link(vocabulary_try_url((string) $grade), 'example_try'), ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars((string) ($grade_data['name_short'] ?? '')); ?>の単語10問を登録なしで解いてみる</a>のがおすすめです。読解で迷う原因の多くは、知らない単語です。</p>
     </div>
   </div>
 </section>
