@@ -23,6 +23,7 @@ DirectoryIndex index.php
   RewriteRule ^contact/?$ contact.php [L,QSA]
   RewriteRule ^external-transmission/?$ external-transmission.php [L,QSA]
   RewriteRule ^company/?$ company.php [L,QSA]
+  RewriteRule ^media/?$ media.php [L,QSA]
   RewriteRule ^cancel/?$ cancel.php [L,QSA]
   RewriteRule ^parents/?$ parents.php [L,QSA]
   RewriteRule ^guide/?$ guide.php [L,QSA]

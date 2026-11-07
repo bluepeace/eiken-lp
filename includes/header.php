@@ -9,8 +9,8 @@ require_once __DIR__ . '/listening-data.php';
 require_once __DIR__ . '/vocabulary-data.php';
 $current_page = $page ?? 'top';
 $current_grade = $grade ?? '';
-$show_main_nav = in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy', 'contact', 'external', 'company', 'cancel', 'parents', 'guide', 'study', 'grade', 'speaking', 'writing', 'reading', 'listening', 'vocabulary', 'eiken'], true);
-$lp_index = in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy', 'contact', 'external', 'company', 'cancel', 'parents', 'guide', 'study', 'grade', 'speaking', 'writing', 'reading', 'listening', 'vocabulary', 'eiken'], true);
+$show_main_nav = in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy', 'contact', 'external', 'company', 'media', 'cancel', 'parents', 'guide', 'study', 'grade', 'speaking', 'writing', 'reading', 'listening', 'vocabulary', 'eiken'], true);
+$lp_index = in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy', 'contact', 'external', 'company', 'media', 'cancel', 'parents', 'guide', 'study', 'grade', 'speaking', 'writing', 'reading', 'listening', 'vocabulary', 'eiken'], true);
 $is_grade_section = in_array($current_page, ['grade', 'speaking', 'writing', 'reading', 'listening', 'vocabulary'], true);
 $about_nav = [
     ['label' => 'AiKenとは', 'href' => '/about', 'current' => $current_page === 'about'],

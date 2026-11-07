@@ -45,6 +45,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:url" content="<?php echo htmlspecialchars($canonical); ?>">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:site_name" content="<?php echo htmlspecialchars(SITE_NAME); ?>">
+<?php if (!empty($og_image)): ?>
+<meta property="og:image" content="<?php echo htmlspecialchars((string) $og_image, ENT_QUOTES, 'UTF-8'); ?>">
+<meta property="og:image:alt" content="<?php echo htmlspecialchars(SITE_NAME . '（' . SITE_READING . '）', ENT_QUOTES, 'UTF-8'); ?>">
+<?php endif; ?>
 
 <?php if (($page ?? '') === 'top' && empty($grade)): ?>
 <link rel="preload" as="image" href="<?php echo $base; ?>/assets/images/hero-bg.webp" type="image/webp" fetchpriority="high">

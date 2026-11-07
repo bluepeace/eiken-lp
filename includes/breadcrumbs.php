@@ -58,6 +58,7 @@ function lp_breadcrumb_items(string $page = 'top', string $grade = '', ?array $g
         'cancel' => ['name' => '退会・解約', 'url' => '/cancel'],
         'contact' => ['name' => 'お問い合わせ', 'url' => '/contact'],
         'company' => ['name' => '運営者情報', 'url' => '/company'],
+        'media' => ['name' => 'メディア向け紹介', 'url' => '/media'],
         'tokushoho' => ['name' => '特定商取引法に基づく表記', 'url' => '/tokushoho'],
         'terms' => ['name' => '利用規約', 'url' => '/terms'],
         'privacy' => ['name' => 'プライバシーポリシー', 'url' => '/privacy'],

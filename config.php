@@ -106,6 +106,12 @@ $PAGE_META = [
         'og_type' => 'website',
         'omit_jsonld' => true,
     ],
+    'media' => [
+        'title' => 'メディア向けサービス紹介｜AiKen（アイケン）英検対策アプリ',
+        'description' => '英検5級から1級まで対応した英検対策アプリAiKenのメディア向け紹介です。対応技能、AI採点・添削、プランの違い、Web・iOS・Androidの利用方法、レビュー依頼のご案内をまとめています。',
+        'og_type' => 'website',
+        'omit_jsonld' => true,
+    ],
     'cancel' => [
         'title' => '退会・解約の手順｜AiKen（アイケン）',
         'description' => 'AiKen（アイケン）のプレミアムプラン解約・退会の手順。アプリ内の「サブスクリプションを管理」からの流れを案内します。',

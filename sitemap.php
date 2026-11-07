@@ -34,6 +34,7 @@ $entries[] = ['loc' => $base . '/faq', 'changefreq' => 'monthly', 'priority' => 
 $entries[] = ['loc' => $base . '/plan', 'changefreq' => 'monthly', 'priority' => '0.8'];
 $entries[] = ['loc' => $base . '/cancel', 'changefreq' => 'yearly', 'priority' => '0.5'];
 $entries[] = ['loc' => $base . '/company', 'changefreq' => 'yearly', 'priority' => '0.5'];
+$entries[] = ['loc' => $base . '/media', 'changefreq' => 'monthly', 'priority' => '0.6'];
 $entries[] = ['loc' => $base . '/terms', 'changefreq' => 'monthly', 'priority' => '0.5'];
 $entries[] = ['loc' => $base . '/privacy', 'changefreq' => 'monthly', 'priority' => '0.5'];
 $entries[] = ['loc' => $base . '/external-transmission', 'changefreq' => 'yearly', 'priority' => '0.4'];

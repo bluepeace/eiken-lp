@@ -111,6 +111,7 @@ include __DIR__ . '/breadcrumbs.php';
         <p class="site-footer__col-title">法務・運営</p>
         <ul class="site-footer__list">
           <li><a href="/company">運営者情報</a></li>
+          <li><a href="/media"<?php echo ($page ?? '') === 'media' ? ' aria-current="page"' : ''; ?>>メディアの方へ</a></li>
           <li><a href="https://note.com/wu_moriyama" rel="noopener noreferrer" target="_blank">開発者note</a></li>
           <li><a href="/tokushoho">特定商取引法に基づく表記</a></li>
           <li><a href="/terms">利用規約</a></li>

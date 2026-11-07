@@ -2,59 +2,9 @@
 if (!defined('SITE_NAME')) {
     require_once __DIR__ . '/../../config.php';
 }
+require_once __DIR__ . '/../buddy-data.php';
 
-$buddy_items = [
-    [
-        'name' => 'マメ',
-        'slug' => 'mame',
-        'text' => '明るくポジティブ。失敗しても「大丈夫！」と前を向ける。困ったときは自然とみんなをまとめる。',
-    ],
-    [
-        'name' => 'チョコ',
-        'slug' => 'choco',
-        'text' => '優しくて共感力が高い。「大丈夫かな？」とすぐ相手を気にする。少し心配性だけど、その優しさでみんなを支える。',
-    ],
-    [
-        'name' => 'コロ',
-        'slug' => 'koro',
-        'text' => '人懐っこく天真爛漫。誰とでもすぐ仲良くなれる。気づくと周りに犬が集まっている。',
-    ],
-    [
-        'name' => 'モコ',
-        'slug' => 'moko',
-        'text' => '小柄で物静か。感情を大きく出さないけれど、実は誰よりもよく見ている。困ったときに的確な一言をくれる。',
-    ],
-    [
-        'name' => 'マロン',
-        'slug' => 'marron',
-        'text' => 'とにかく懐っこい。初対面でも距離を縮めるのが上手。「ねえねえ！」と自然に懐に入ってくる。',
-    ],
-    [
-        'name' => 'シロ',
-        'slug' => 'shiro',
-        'text' => '上品で穏やか。憧れられる存在だけど、実はただのんびり屋。そっとそばで、みんなのペースに寄り添う。',
-    ],
-    [
-        'name' => 'ティア',
-        'slug' => 'tia',
-        'text' => 'しっかり者でまとめ役。誰とでも話せるけれど、気を遣いすぎて疲れることも。それでも自然と、みんなをまとめる。',
-    ],
-    [
-        'name' => 'ルーク',
-        'slug' => 'luke',
-        'text' => '自分をしっかり持っていて頼もしい。小柄だけど、みんなに頼られる兄貴タイプ。困ったときは、いちばん先に動く。',
-    ],
-    [
-        'name' => 'ソラ',
-        'slug' => 'sora',
-        'text' => '体を動かすのが大好き。いつも走り回っていて、面白いものを見つけるとすぐカバンに入れる。',
-    ],
-    [
-        'name' => 'ジン',
-        'slug' => 'jin',
-        'text' => '知識が豊富で物知り。自慢はせず、謙虚で物静か。聞かれたときに、そっと正しい答えをくれる。',
-    ],
-];
+$buddy_items = buddy_cast();
 ?>
 <section class="buddies-section border-t border-slate-100 bg-white px-4 py-16 sm:py-20" aria-labelledby="buddies-heading">
   <div class="lp-container">
@@ -62,6 +12,9 @@ $buddy_items = [
       <p class="section-badge section-badge--center" aria-hidden="true">BUDDIES</p>
       <h2 id="buddies-heading" class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">愛犬（バディ）紹介</h2>
       <p class="mt-3 text-slate-600"><?php echo br_after_period('学習のそばにいてくれる10匹のバディ。あなたに合う子を選んで、一緒に英検対策を続けましょう。'); ?></p>
+      <div class="mt-8 flex justify-center">
+        <?php buddy_say('mame', 'マメ', '10匹いるよ。気に入った子と、英検を続けよう。', 'lg'); ?>
+      </div>
     </div>
 
     <ul class="buddies-grid mt-10 sm:mt-12">

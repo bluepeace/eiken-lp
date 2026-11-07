@@ -4,6 +4,7 @@
  */
 $page = 'about';
 require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/includes/buddy-data.php';
 $canonical = rtrim(SITE_URL, '/') . '/about';
 
 include __DIR__ . '/includes/header.php';
@@ -14,6 +15,9 @@ include __DIR__ . '/includes/header.php';
     <h1 id="about-lead-heading" class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">AiKen（アイケン）とは</h1>
     <p class="mt-4 text-lg font-medium text-slate-800">英検対策 × AI × バディ（愛犬）— 合格まで、ひとつのアプリにまとめました。</p>
     <p class="mt-5 text-left text-slate-600 sm:text-center"><?php echo br_after_period('<strong>AiKen</strong>は、英検<strong>1級から5級まで全級</strong>の出題形式に沿って、<strong>AIが練習問題を出題</strong>する英検対策アプリです。リーディング・リスニング・ライティング・スピーキングの<strong>4技能</strong>をアプリ内で鍛え、学習履歴も残るので<strong>間違えた問題の復習</strong>がかんたん。そして<strong>バディ</strong>がそばで励まし、続けやすい環境をつくります。'); ?></p>
+    <div class="mt-8 flex justify-center">
+      <?php buddy_say('shiro', 'シロ', 'そばにいるから、続けやすいよ。'); ?>
+    </div>
     <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:justify-center">
       <a class="inline-flex items-center justify-center gap-2 rounded-full bg-[#50c2cb] px-10 py-4 text-lg font-semibold text-white shadow-lg shadow-[#50c2cb]/25 transition hover:bg-[#46adb5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#50c2cb]/60 focus-visible:ring-offset-2" href="<?php echo htmlspecialchars(lp_signup_url('hero'), ENT_QUOTES, 'UTF-8'); ?>"><?php echo lp_start_cta_inner('h-5 w-5'); ?></a>
       <a class="inline-flex items-center justify-center rounded-full border-2 border-slate-300 bg-white px-10 py-4 text-lg font-semibold text-slate-800 transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 focus-visible:ring-offset-2" href="<?php echo APP_URL; ?>/login">ログイン</a>
@@ -74,7 +78,7 @@ include __DIR__ . '/includes/header.php';
         <p class="mt-2 text-sm leading-relaxed text-slate-600"><?php echo br_after_period('学んだ内容は<strong>アプリに蓄積</strong>。間違えた問題に戻りやすく、<strong>「忘れてから拾い直す」負担</strong>を減らします。'); ?></p>
       </article>
       <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <span class="inline-flex text-[#F57A9C]"><?php echo lp_icon('dog', 'w-7 h-7'); ?></span>
+        <img src="/assets/images/buddies/choco.png" alt="バディ「チョコ」" width="96" height="96" class="h-16 w-16 object-contain" decoding="async">
         <h3 class="mt-3 font-semibold text-slate-900">バディが寄り添う</h3>
         <p class="mt-2 text-sm leading-relaxed text-slate-600"><?php echo br_after_period('愛犬のようにそばにいる<strong>バディ</strong>が、励ましと継続の後押しを。ひとりで続ける英検勉強を、<strong>少し明るく</strong>します。'); ?></p>
       </article>

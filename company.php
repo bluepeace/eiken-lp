@@ -62,6 +62,7 @@ include __DIR__ . '/includes/header.php';
       <h2 id="company-links" class="text-lg font-bold text-slate-900">関連ページ</h2>
       <ul class="mt-3 list-disc space-y-2 pl-5 text-sm">
         <li><a class="font-medium text-[#50c2cb] underline-offset-2 hover:underline" href="/about">AiKenとは</a></li>
+        <li><a class="font-medium text-[#50c2cb] underline-offset-2 hover:underline" href="/media">メディア向け紹介</a></li>
         <li><a class="font-medium text-[#50c2cb] underline-offset-2 hover:underline" href="/tokushoho">特定商取引法に基づく表記</a></li>
         <li><a class="font-medium text-[#50c2cb] underline-offset-2 hover:underline" href="/privacy">プライバシーポリシー</a></li>
         <li><a class="font-medium text-[#50c2cb] underline-offset-2 hover:underline" href="/terms">利用規約</a></li>

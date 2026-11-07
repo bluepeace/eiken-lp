@@ -100,6 +100,11 @@ if (preg_match('#^/company/?$#', $uri)) {
     return true;
 }
 
+if (preg_match('#^/media/?$#', $uri)) {
+    require __DIR__ . '/media.php';
+    return true;
+}
+
 if (preg_match('#^/cancel/?$#', $uri)) {
     require __DIR__ . '/cancel.php';
     return true;
