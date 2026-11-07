@@ -39,7 +39,7 @@ $capabilities = [
     <div class="mx-auto max-w-3xl text-center">
       <p class="section-badge section-badge--center" aria-hidden="true">PRACTICE</p>
       <h2 id="speaking-practice-heading" class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">AiKenでできるスピーキング対策</h2>
-      <p class="mt-3 text-slate-600"><?php echo br_after_period('各級3セットです。面接の流れを通すフル模擬と、弱いパートだけのドリルがあります。話したあとは、日本語で採点が返ります。'); ?></p>
+      <p class="mt-3 text-slate-600"><?php echo br_after_period($name_short . 'は' . speaking_set_count((string) $grade) . 'セットです。面接の流れを通すフル模擬と、弱いパートだけのドリルがあります。話したあとは、日本語で採点が返ります。'); ?></p>
     </div>
     <div class="speaking-cap-grid mt-10 sm:mt-12">
       <?php foreach ($capabilities as $cap): ?>

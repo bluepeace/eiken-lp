@@ -13,8 +13,9 @@ if ($deep === null) {
     return;
 }
 
-// 一次試験までの日数で、今の段階を決める（日程が未登録なら強調しない）
-$deep_exam = lp_next_exam((string) $grade, null, 'first');
+// 次の試験までの日数で、今の段階を決める（日程が未登録なら強調しない）
+// plan_exam: first（一次試験・既定）/ second（二次試験。スピーキング用）
+$deep_exam = lp_next_exam((string) $grade, null, (string) ($deep['plan_exam'] ?? 'first'));
 $deep_now = -1;
 if ($deep_exam !== null) {
     foreach ($deep['plan'] as $i => $step) {
@@ -33,6 +34,7 @@ if ($deep_exam !== null) {
       <p class="mt-4 text-left leading-relaxed text-slate-700 sm:text-center"><?php echo br_after_period(htmlspecialchars($deep['intro'])); ?></p>
     </div>
 
+    <?php if (!empty($deep['topics'])): ?>
     <div class="mx-auto mt-12 max-w-3xl">
       <h3 class="text-xl font-bold text-slate-900"><?php echo htmlspecialchars($deep['topics_heading']); ?></h3>
       <p class="mt-3 leading-relaxed text-slate-700"><?php echo htmlspecialchars($deep['topics_lead']); ?></p>
@@ -41,8 +43,11 @@ if ($deep_exam !== null) {
         <li class="rounded-full border border-[#50c2cb]/40 bg-white px-3 py-1 text-sm font-semibold text-slate-700"><?php echo htmlspecialchars($topic); ?></li>
         <?php endforeach; ?>
       </ul>
+      <?php if (($deep['topics_note'] ?? '') !== ''): ?>
       <p class="mt-4 text-sm leading-relaxed text-slate-600"><?php echo htmlspecialchars($deep['topics_note']); ?></p>
+      <?php endif; ?>
     </div>
+    <?php endif; ?>
 
     <div class="mx-auto mt-12 max-w-3xl">
       <h3 class="text-xl font-bold text-slate-900"><?php echo htmlspecialchars($deep['traps_heading']); ?></h3>

@@ -47,6 +47,20 @@ function speaking_try_url(string $slug): string
     return rtrim(APP_URL, '/') . '/try/speaking/' . rawurlencode(speaking_try_slug($slug));
 }
 
+/** 級ごとのスピーキングのセット数（アプリの収録数に合わせて更新する） */
+function speaking_set_count(string $slug): int
+{
+    $counts = [
+        'jun1kyu' => 20,
+        '2kyu' => 20,
+        'jun2kyu' => 20,
+        '1kyu' => 10,
+        'jun2kyu-plus' => 10,
+        '3kyu' => 10,
+    ];
+    return $counts[$slug] ?? 0;
+}
+
 function speaking_signup_url(): string
 {
     return rtrim(APP_URL, '/') . '/signup';
@@ -143,7 +157,7 @@ function speaking_faq_items(string $slug, array $content): array
 
     $items[] = [
         'q' => '何セットありますか？',
-        'a' => 'この級は3セットです。同じセットを、ドリルでパート別に繰り返せます。',
+        'a' => 'この級は' . speaking_set_count($slug) . 'セットです。同じセットを、ドリルでパート別に繰り返せます。',
     ];
 
     $items[] = [
