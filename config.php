@@ -395,6 +395,14 @@ function open_campaign_active(): bool {
     return time() <= strtotime(OPEN_CAMPAIGN_END . ' 23:59:59');
 }
 
+/**
+ * OPEN記念価格のうちに申し込んだ人は、解約しない限りその価格のまま続く。
+ * 例: 2026年12月31日までに申し込むと、解約しない限りずっと月額980円のまま
+ */
+function open_campaign_keep_note(): string {
+    return open_campaign_end_label() . 'までに申し込むと、解約しない限りずっと' . monthly_price_label(false) . 'のまま';
+}
+
 /** 例: 2026年12月31日 */
 function open_campaign_end_label(): string {
     $ts = strtotime(OPEN_CAMPAIGN_END);

@@ -23,7 +23,7 @@ $tokushoho_rows = [
     ],
     ['営業時間', '平日 10:00〜18:00'],
     ['販売価格', (open_campaign_active()
-        ? 'プレミアムプラン：定価' . monthly_price_regular_label() . '。OPEN記念価格として' . monthly_price_label() . '（' . open_campaign_end_label() . 'まで）。'
+        ? 'プレミアムプラン：定価' . monthly_price_regular_label() . '。OPEN記念価格として' . monthly_price_label() . '（' . open_campaign_end_label() . 'までのお申し込み。期間中にお申し込みの場合、解約しない限り同じ価格で継続します）。'
         : 'プレミアムプラン：' . monthly_price_regular_label() . '。')
         . 'アプリ内課金の表示価格は App Store / Google Play の価格に従います。表示価格は全て税込です。'],
     ['支払方法', 'アプリ内課金（Apple App Store / Google Play）またはクレジットカード決済（Stripe）。代金は各課金サイクル（月額の場合は毎月の契約日）に自動課金されます。'],

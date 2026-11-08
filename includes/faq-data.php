@@ -8,8 +8,13 @@ if (!defined('SITE_NAME')) {
 
 function faq_monthly_price_answer(bool $with_plan_link = false): string
 {
-    $tail = $with_plan_link ? '金額は「料金」ページの料金表でご確認ください。' : '金額は料金ページの料金表でご確認ください。';
-    return 'Freeプランは追加料金なしで、単語テストを回数の制限なく使えます。プレミアムプランに加入すると、リーディング・リスニング・ライティング・スピーキングも制限なく使えます。' . $tail;
+    $tail = $with_plan_link ? '詳しくは「料金」ページの料金表でご確認ください。' : '詳しくは料金ページの料金表でご確認ください。';
+    if (open_campaign_active()) {
+        $price = 'プレミアムプランは' . monthly_price_label() . 'です（OPEN記念価格）。' . open_campaign_keep_note() . '続けられます。翌月からの新規申し込みは、定価の' . monthly_price_regular_label() . 'になる予定です。';
+    } else {
+        $price = 'プレミアムプランは' . monthly_price_regular_label() . 'です。';
+    }
+    return 'Freeプランは追加料金なしで、単語テストを回数の制限なく使えます。' . $price . 'プレミアムプランに加入すると、リーディング・リスニング・ライティング・スピーキングも制限なく使えます。' . $tail;
 }
 
 function faq_categories(): array

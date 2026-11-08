@@ -52,7 +52,7 @@ $secondary_href = (string) ($mid['secondary_href'] ?? '');
       <?php if ($mid_campaign): ?>
       <li class="rounded-xl border border-[#50c2cb]/40 bg-white px-4 py-3">
         <strong>プレミアムのOPEN記念価格は、<?php echo htmlspecialchars(open_campaign_end_label()); ?>まで。</strong>
-        <?php echo htmlspecialchars(monthly_price_label() . '（定価 ' . monthly_price_regular_label(false) . '）です。無料登録のあと、アプリ内で申し込めます。'); ?>
+        <?php echo htmlspecialchars('期間中に申し込むと、解約しない限りずっと' . monthly_price_label() . 'のまま（定価 ' . monthly_price_regular_label(false) . '）。無料登録のあと、アプリ内で申し込めます。'); ?>
       </li>
       <?php endif; ?>
     </ul>

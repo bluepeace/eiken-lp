@@ -50,6 +50,7 @@ $start_button_class = 'mt-auto inline-flex w-full items-center justify-center ga
         <p class="mt-3 text-sm text-slate-400 line-through">定価 <?php echo htmlspecialchars(monthly_price_regular_label()); ?></p>
         <p class="mt-1 text-4xl font-bold tracking-tight text-slate-900"><?php echo htmlspecialchars(monthly_price_label()); ?></p>
         <p class="plan-campaign__until"><?php echo htmlspecialchars(open_campaign_end_label()); ?>までのキャンペーン</p>
+        <p class="plan-campaign__keep"><strong><?php echo htmlspecialchars('期間中に申し込むと、解約しない限りずっと' . monthly_price_label(false) . 'のまま。'); ?></strong><br><?php echo htmlspecialchars('翌月からの新規申し込みは、定価の' . monthly_price_regular_label(false) . 'になる予定です。'); ?></p>
       </div>
       <?php else: ?>
       <p class="text-4xl font-bold tracking-tight text-slate-900"><?php echo htmlspecialchars(monthly_price_regular_label()); ?></p>

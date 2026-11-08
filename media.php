@@ -102,14 +102,17 @@ $screens = [
     ],
 ];
 
-$plan_rows = [
-    ['単語', '5級〜1級を、回数の制限なく利用できます。', null],
-    ['4技能の問題', 'リーディング・リスニング・ライティング・スピーキングは、登録から' . $trial_days . '日間は回数制限なし。' . $limited_from . '日目以降は1日1セット（ライティングはAI添削1回）です。', '回数の上限なく利用できます。'],
-    ['AI採点・添削', '上記の回数まで利用できます。', '回数を気にせず利用できます。'],
-    ['収録問題', '10,000問以上。1日のセット数に上限があります。', '10,000問以上を、1日のセット数を気にせず反復できます。'],
-    ['対応級', '5級〜1級（準2級プラスを含む）。', '級ごとの追加料金はありません。'],
-    ['始め方', 'カード登録は不要です。登録の時点では課金されません。', '学習を始めてから、アプリ内で申し込めます。'],
+$free_points = [
+    '単語は5級〜1級、回数の制限なし',
+    '4技能は登録から' . $trial_days . '日間、回数の制限なし',
+    $limited_from . '日目以降は1日1セット（AI添削は1日1回）',
 ];
+$premium_points = [
+    '単語と4技能を、回数の上限なく',
+    'AI採点・添削も、回数を気にせず',
+    'どの級も同じ料金（級ごとの追加料金なし）',
+];
+$campaign = open_campaign_active();
 
 include __DIR__ . '/includes/header.php';
 ?>
@@ -259,34 +262,38 @@ include __DIR__ . '/includes/header.php';
     <div class="mp-container">
       <div class="mp-head">
         <p class="section-badge" aria-hidden="true">PLANS</p>
-        <h2 id="plans-heading" class="mp-h2">Freeプランとプレミアムプラン</h2>
-        <p class="mp-lead">できることの違いです。料金はキャンペーンで変わることがあるため、<a class="mp-link" href="/plan">料金ページ</a>でご確認ください。</p>
+        <h2 id="plans-heading" class="mp-h2">まず無料で、続けるならプレミアム</h2>
       </div>
-      <div class="mp-table-wrap mp-content">
-        <table class="mp-table mp-table--plans">
-          <thead>
-            <tr>
-              <th scope="col">項目</th>
-              <th scope="col">Freeプラン</th>
-              <th scope="col" class="mp-table__premium">プレミアムプラン</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php foreach ($plan_rows as [$label, $free, $premium]): ?>
-            <tr>
-              <th scope="row"><?php echo mp_e($label); ?></th>
-              <td data-label="Freeプラン"><?php echo mp_e($free); ?></td>
-              <?php if ($premium === null): ?>
-              <td data-label="プレミアムプラン" class="mp-table__premium mp-table__same">Freeプランと同じ</td>
-              <?php else: ?>
-              <td data-label="プレミアムプラン" class="mp-table__premium"><?php echo mp_e($premium); ?></td>
-              <?php endif; ?>
-            </tr>
+      <div class="mp-grid mp-grid--2 mp-content">
+        <div class="mp-card mp-plan">
+          <h3 class="mp-h3">Freeプラン</h3>
+          <p class="mp-plan__price">0円</p>
+          <p class="mp-plan__sub">カード登録なしで始められます</p>
+          <ul class="mp-plan__list">
+            <?php foreach ($free_points as $point): ?>
+            <li><?php echo mp_e($point); ?></li>
             <?php endforeach; ?>
-          </tbody>
-        </table>
+          </ul>
+        </div>
+        <div class="mp-card mp-plan mp-plan--premium">
+          <div class="mp-plan__head">
+            <h3 class="mp-h3">プレミアムプラン</h3>
+            <?php if ($campaign): ?><span class="mp-plan__badge">OPEN記念価格</span><?php endif; ?>
+          </div>
+          <p class="mp-plan__price"><?php echo mp_e(monthly_price_label(false)); ?><small>（税込）</small></p>
+          <?php if ($campaign): ?>
+          <p class="mp-plan__sub"><strong><?php echo mp_e(open_campaign_keep_note()); ?></strong>です。翌月からの新規申し込みは、定価の<?php echo mp_e(monthly_price_regular_label(false)); ?>になる予定です。</p>
+          <?php else: ?>
+          <p class="mp-plan__sub">学習を始めてから、アプリ内で申し込めます</p>
+          <?php endif; ?>
+          <ul class="mp-plan__list">
+            <?php foreach ($premium_points as $point): ?>
+            <li><?php echo mp_e($point); ?></li>
+            <?php endforeach; ?>
+          </ul>
+        </div>
       </div>
-      <p class="mp-note">お支払いは、Web版がクレジットカード（Stripe）、アプリ版が各ストアのアプリ内課金です。詳しくは<a class="mp-link" href="/plan">料金ページ</a>と<a class="mp-link" href="/tokushoho">特定商取引法に基づく表記</a>をご覧ください。</p>
+      <p class="mp-note">価格はすべて税込です。料金は変更になる場合があります。最新の料金は<a class="mp-link" href="/plan">料金ページ</a>をご覧ください。お支払いは、Web版がクレジットカード（Stripe）、アプリ版が各ストアのアプリ内課金です（<a class="mp-link" href="/tokushoho">特定商取引法に基づく表記</a>）。</p>
     </div>
   </section>
 
