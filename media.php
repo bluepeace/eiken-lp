@@ -404,7 +404,7 @@ include __DIR__ . '/includes/header.php';
       <div id="download" class="mp-card mp-download">
         <div>
           <h3 class="mp-h3">素材ダウンロード</h3>
-          <p class="mp-body">ご紹介資料（PDF）と、ロゴ、アプリ画面（スマートフォン・タブレット）、ストア掲載画像、AI添削の画面、バディ10匹の画像をまとめたZIPです。PDFだけを開くこともできます。画面に写っている名前や学習記録はサンプルです。</p>
+          <p class="mp-body">ロゴ、アプリ画面（スマートフォン・タブレット）、ストア掲載画像、AI添削の画面、バディ10匹の画像をまとめたZIPです。ご紹介資料はPDFで別にご覧いただけます。画面に写っている名前や学習記録はサンプルです。</p>
         </div>
         <div class="mp-download__actions">
           <a class="mp-btn mp-btn--primary" href="<?php echo mp_e($kit_url); ?>" download>素材ZIP<?php echo $kit_size !== '' ? '（' . mp_e($kit_size) . '）' : ''; ?></a>

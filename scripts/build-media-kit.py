@@ -22,7 +22,6 @@ TOP = "aiken-media-kit"
 
 # (ZIP 内のフォルダ, 元ファイル, ZIP 内のファイル名)
 FILES: list[tuple[str, Path, str]] = [
-    ("", ROOT / "assets" / "media-kit" / "aiken-media-guide.pdf", "aiken-media-guide.pdf"),
     ("01_logo", IMG / "logo-aiken.png", "aiken-logo.png"),
 ]
 for name in ["home", "skills", "vocabulary", "reading-setup", "reading", "listening",
@@ -44,7 +43,6 @@ README = """AiKen（アイケン）メディア向け素材
 
 英検対策アプリ AiKen の紹介用素材です。
 
-aiken-media-guide.pdf   ご紹介資料（PDF）
 01_logo                 ロゴ
 02_screens_smartphone   スマートフォンのアプリ画面
 03_screens_tablet       タブレット（幅の広い画面）のアプリ画面
@@ -58,6 +56,7 @@ aiken-media-guide.pdf   ご紹介資料（PDF）
 ・料金が写った画面は含めていません。最新の料金は https://aiken.life/plan をご覧ください。
 
 サービスの基本情報: https://aiken.life/media
+ご紹介資料（PDF）: https://aiken.life/assets/media-kit/aiken-media-guide.pdf
 お問い合わせ: info@aiken.life ／ https://aiken.life/contact
 運営: Bluepiece Lab.
 """
