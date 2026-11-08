@@ -5177,3 +5177,23 @@ a.speaking-related__link:hover {
     flex-shrink: 0;
   }
 }
+
+.mp-download__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .mp-download__actions {
+    flex-direction: column;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 479px) {
+  .mp-download__actions,
+  .mp-download__actions .mp-btn {
+    width: 100%;
+  }
+}

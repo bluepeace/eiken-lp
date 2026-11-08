@@ -22,6 +22,7 @@ TOP = "aiken-media-kit"
 
 # (ZIP 内のフォルダ, 元ファイル, ZIP 内のファイル名)
 FILES: list[tuple[str, Path, str]] = [
+    ("", ROOT / "assets" / "media-kit" / "aiken-media-guide.pdf", "aiken-media-guide.pdf"),
     ("01_logo", IMG / "logo-aiken.png", "aiken-logo.png"),
 ]
 for name in ["home", "skills", "vocabulary", "reading-setup", "reading", "listening",
@@ -43,6 +44,7 @@ README = """AiKen（アイケン）メディア向け素材
 
 英検対策アプリ AiKen の紹介用素材です。
 
+aiken-media-guide.pdf   ご紹介資料（PDF）
 01_logo                 ロゴ
 02_screens_smartphone   スマートフォンのアプリ画面
 03_screens_tablet       タブレット（幅の広い画面）のアプリ画面
@@ -74,7 +76,7 @@ def main() -> None:
     with zipfile.ZipFile(OUT, "w", compression=zipfile.ZIP_DEFLATED) as z:
         z.writestr(f"{TOP}/README.txt", "﻿" + README.replace("\n", "\r\n"))
         for folder, src, name in FILES:
-            arc = f"{TOP}/{folder}/{name}"
+            arc = f"{TOP}/{folder}/{name}" if folder else f"{TOP}/{name}"
             if src.suffix.lower() == ".webp":
                 z.writestr(arc, png_bytes(src))
             else:

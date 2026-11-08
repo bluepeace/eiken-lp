@@ -20,6 +20,9 @@ $media_email = 'info@aiken.life';
 $kit_file = __DIR__ . '/assets/media-kit/aiken-media-kit.zip';
 $kit_url = '/assets/media-kit/aiken-media-kit.zip?v=' . (@filemtime($kit_file) ?: '1');
 $kit_size = is_file($kit_file) ? number_format(filesize($kit_file) / 1048576, 1) . 'MB' : '';
+$guide_file = __DIR__ . '/assets/media-kit/aiken-media-guide.pdf';
+$guide_url = '/assets/media-kit/aiken-media-guide.pdf?v=' . (@filemtime($guide_file) ?: '1');
+$guide_size = is_file($guide_file) ? number_format(filesize($guide_file) / 1048576, 1) . 'MB' : '';
 
 
 function mp_e(string $s): string
@@ -401,9 +404,14 @@ include __DIR__ . '/includes/header.php';
       <div id="download" class="mp-card mp-download">
         <div>
           <h3 class="mp-h3">素材ダウンロード</h3>
-          <p class="mp-body">ロゴ、アプリ画面（スマートフォン・タブレット）、ストア掲載画像、AI添削の画面、バディ10匹の画像をまとめたZIPです。画面に写っている名前や学習記録はサンプルです。</p>
+          <p class="mp-body">ご紹介資料（PDF）と、ロゴ、アプリ画面（スマートフォン・タブレット）、ストア掲載画像、AI添削の画面、バディ10匹の画像をまとめたZIPです。PDFだけを開くこともできます。画面に写っている名前や学習記録はサンプルです。</p>
         </div>
-        <a class="mp-btn mp-btn--primary" href="<?php echo mp_e($kit_url); ?>" download>ZIPをダウンロード<?php echo $kit_size !== '' ? '（' . mp_e($kit_size) . '）' : ''; ?></a>
+        <div class="mp-download__actions">
+          <a class="mp-btn mp-btn--primary" href="<?php echo mp_e($kit_url); ?>" download>素材ZIP<?php echo $kit_size !== '' ? '（' . mp_e($kit_size) . '）' : ''; ?></a>
+          <?php if ($guide_size !== ''): ?>
+          <a class="mp-btn mp-btn--ghost" href="<?php echo mp_e($guide_url); ?>" target="_blank" rel="noopener">ご紹介資料PDF（<?php echo mp_e($guide_size); ?>）</a>
+          <?php endif; ?>
+        </div>
       </div>
     </div>
   </section>
