@@ -5154,3 +5154,26 @@ a.speaking-related__link:hover {
 .mp-request .section-badge {
   margin-inline: auto;
 }
+
+/* 素材ダウンロード */
+.mp-download {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+  margin-top: 1.5rem;
+  scroll-margin-top: 5rem;
+}
+
+@media (min-width: 768px) {
+  .mp-download {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.5rem;
+    padding: 2rem 2.5rem;
+  }
+  .mp-download .mp-btn {
+    flex-shrink: 0;
+  }
+}

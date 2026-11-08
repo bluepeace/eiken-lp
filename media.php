@@ -16,6 +16,10 @@ $og_image = asset('/assets/images/intro-app-screen.jpg');
 $trial_days = (int) FREE_TRIAL_DAYS;
 $limited_from = $trial_days + 1;
 $review_url = '/contact?subject=media';
+$media_email = 'info@aiken.life';
+$kit_file = __DIR__ . '/assets/media-kit/aiken-media-kit.zip';
+$kit_url = '/assets/media-kit/aiken-media-kit.zip?v=' . (@filemtime($kit_file) ?: '1');
+$kit_size = is_file($kit_file) ? number_format(filesize($kit_file) / 1048576, 1) . 'MB' : '';
 
 
 function mp_e(string $s): string
@@ -32,6 +36,7 @@ $toc = [
     'access' => '利用方法',
     'operator' => '運営者',
     'request' => '取材・レビューのご依頼',
+    'download' => '素材ダウンロード',
 ];
 
 $facts = [
@@ -358,8 +363,12 @@ include __DIR__ . '/includes/header.php';
                 <td>森山卓</td>
               </tr>
               <tr>
-                <th scope="row">開発者note</th>
-                <td><a class="mp-link" href="https://note.com/wu_moriyama" rel="noopener noreferrer" target="_blank">note.com/wu_moriyama</a></td>
+                <th scope="row">メール</th>
+                <td><a class="mp-link" href="mailto:<?php echo mp_e($media_email); ?>"><?php echo mp_e($media_email); ?></a></td>
+              </tr>
+              <tr>
+                <th scope="row">開発記</th>
+                <td><a class="mp-link" href="https://note.com/wu_moriyama/m/mc163c29fa30b" rel="noopener noreferrer" target="_blank">noteマガジン</a></td>
               </tr>
             </tbody>
           </table>
@@ -386,6 +395,15 @@ include __DIR__ . '/includes/header.php';
           <a class="mp-btn mp-btn--primary" href="<?php echo mp_e($review_url); ?>">レビュー用アカウントを依頼する</a>
           <a class="mp-btn mp-btn--ghost" href="/contact">その他のお問い合わせ</a>
         </div>
+        <p class="mp-note">メールでも受け付けています：<a class="mp-link" href="mailto:<?php echo mp_e($media_email); ?>"><?php echo mp_e($media_email); ?></a></p>
+      </div>
+
+      <div id="download" class="mp-card mp-download">
+        <div>
+          <h3 class="mp-h3">素材ダウンロード</h3>
+          <p class="mp-body">ロゴ、アプリ画面（スマートフォン・タブレット）、ストア掲載画像、AI添削の画面、バディ10匹の画像をまとめたZIPです。画面に写っている名前や学習記録はサンプルです。</p>
+        </div>
+        <a class="mp-btn mp-btn--primary" href="<?php echo mp_e($kit_url); ?>" download>ZIPをダウンロード<?php echo $kit_size !== '' ? '（' . mp_e($kit_size) . '）' : ''; ?></a>
       </div>
     </div>
   </section>
