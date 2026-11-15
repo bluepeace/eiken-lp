@@ -45,6 +45,7 @@ include __DIR__ . '/breadcrumbs.php';
           <li><a href="/guide">使い方ガイド</a></li>
           <li><a href="/study">合格までの道</a></li>
           <li><a href="/parents">保護者の方へ</a></li>
+          <li><a href="/school"<?php echo ($page ?? '') === 'school' ? ' aria-current="page"' : ''; ?>>学校向け</a></li>
           <li><a href="/eiken/">英検対策コンテンツ</a></li>
           <li><a href="/blog">英検コラム</a></li>
         </ul>

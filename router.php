@@ -141,6 +141,11 @@ if (preg_match('#^/eiken/?$#', $uri)) {
     return true;
 }
 
+if (preg_match('#^/school/?$#', $uri)) {
+    require __DIR__ . '/school.php';
+    return true;
+}
+
 if ($uri === '/' || $uri === '') {
     require __DIR__ . '/index.php';
     return true;

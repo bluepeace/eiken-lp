@@ -5304,3 +5304,522 @@ a.speaking-related__link:hover {
 .plan-campaign__keep strong {
   color: #c2410c;
 }
+
+/* ========== 学校向け導入相談（/school） ========== */
+.school-page {
+  color: var(--lp-text);
+}
+
+.school-section {
+  padding: 4rem 1rem;
+}
+
+.school-section--mist {
+  background: #f7fbfb;
+}
+
+.school-section--form {
+  background: #fff;
+  border-top: 1px solid #e2e8f0;
+}
+
+.school-hero {
+  padding: 3.5rem 1rem 4rem;
+}
+
+.school-hero__grid,
+.school-features,
+.school-ai,
+.school-devices {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.school-hero h1,
+.school-section h2 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+  color: #0f172a;
+}
+
+.school-section h2,
+.school-consult {
+  text-align: center;
+}
+
+.school-lead {
+  margin: 1rem 0 0;
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.school-lead--center {
+  max-width: 42rem;
+  margin-inline: auto;
+}
+
+.school-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+  border: 0;
+  border-radius: 9999px;
+  background: var(--aiken-brand);
+  color: #fff;
+  padding: 0.9rem 1.6rem;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(80, 194, 203, 0.25);
+}
+
+.school-btn:hover {
+  background: var(--aiken-brand-hover);
+}
+
+.school-btn:focus-visible,
+.school-field:focus,
+.school-textlink:focus-visible,
+.school-table a:focus-visible,
+.school-acc a:focus-visible {
+  outline: 2px solid var(--aiken-brand);
+  outline-offset: 2px;
+}
+
+.school-shot {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: top center;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #f8fbfb;
+}
+
+.school-shot--hero {
+  height: 280px;
+}
+
+.school-shot--phone {
+  height: 320px;
+  object-fit: contain;
+  background: #f4fbfb;
+}
+
+.school-hero__pair,
+.school-card__shots {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.school-issues {
+  max-width: 42rem;
+  margin: 2rem auto 0;
+  padding: 0.25rem 0;
+  list-style: none;
+}
+
+.school-issues li {
+  position: relative;
+  margin: 0;
+  padding: 0.85rem 0 0.85rem 1.75rem;
+  border-bottom: 1px solid rgba(80, 194, 203, 0.25);
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.school-issues li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.15rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 9999px;
+  background: var(--aiken-brand);
+}
+
+.school-buddy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 1.75rem 0 0;
+}
+
+.school-buddy img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
+
+.school-buddy figcaption {
+  margin: 0;
+  max-width: 16rem;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: #475569;
+}
+
+.school-features {
+  margin-top: 2rem;
+}
+
+.school-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.school-card h3 {
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+.school-card p,
+.school-acc p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.school-card__num {
+  margin: 0;
+  color: var(--aiken-brand-text);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.school-stat {
+  margin: 0;
+  padding: 1rem;
+  border-radius: 12px;
+  background: #f7fbfb;
+  color: var(--aiken-brand-text);
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.school-stat span {
+  display: block;
+  margin-top: 0.25rem;
+  color: #334155;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.school-textlink,
+.school-table a,
+.school-acc a,
+.school-store a,
+.school-lead a,
+.school-consent a {
+  color: var(--aiken-brand-text);
+  font-weight: 700;
+}
+
+.school-table-wrap {
+  margin-top: 2rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.school-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.school-table th,
+.school-table td {
+  padding: 0.75rem 0.85rem;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.school-table thead th {
+  background: #e8fafb;
+  font-weight: 700;
+}
+
+.school-table tbody th {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: #fff;
+  text-align: left;
+}
+
+.school-table tbody tr:last-child th,
+.school-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.school-acc {
+  display: none;
+  margin-top: 1.5rem;
+}
+
+.school-acc__item {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #fff;
+  padding: 0.85rem 1rem;
+}
+
+.school-acc__item + .school-acc__item {
+  margin-top: 0.75rem;
+}
+
+.school-acc summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.school-acc dl {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 1rem;
+  margin: 0.85rem 0;
+}
+
+.school-acc dt {
+  color: #64748b;
+  font-size: 0.8rem;
+}
+
+.school-acc dd {
+  margin: 0.1rem 0 0;
+  font-weight: 700;
+}
+
+.school-note {
+  max-width: 46rem;
+  margin: 1.25rem auto 0;
+  padding: 1rem 1.1rem;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid rgba(80, 194, 203, 0.35);
+  font-size: 0.95rem;
+  line-height: 1.85;
+}
+
+.school-section:not(.school-section--mist) .school-note {
+  background: #f7fbfb;
+}
+
+.school-ai,
+.school-devices {
+  margin-top: 2rem;
+}
+
+.school-store {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  margin: 1rem 0 0;
+}
+
+.school-consult .school-btn {
+  display: flex;
+  width: fit-content;
+  margin-inline: auto;
+}
+
+.school-form-wrap {
+  max-width: 40rem;
+}
+
+.school-form {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.school-form label {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.school-form label span,
+.school-consent span {
+  margin-left: 0.35rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.school-field {
+  display: block;
+  width: 100%;
+  margin-top: 0.4rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  padding: 0.65rem 0.75rem;
+  font: inherit;
+  color: #0f172a;
+  background: #fff;
+}
+
+.school-hint {
+  margin: 0.4rem 0 0;
+  color: #64748b;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.school-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.school-consent input {
+  margin-top: 0.3rem;
+}
+
+.school-consent label {
+  font-weight: 500;
+}
+
+.school-alert {
+  margin-top: 1.25rem;
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.school-alert p,
+.school-alert ul {
+  margin: 0.4rem 0 0;
+}
+
+.school-alert__title {
+  margin: 0;
+  font-weight: 800;
+}
+
+.school-alert--ok {
+  border: 1px solid #a7f3d0;
+  background: #ecfdf5;
+  color: #064e3b;
+}
+
+.school-alert--ng {
+  border: 1px solid #fecaca;
+  background: #fef2f2;
+  color: #7f1d1d;
+}
+
+.school-alert--ng ul {
+  padding-left: 1.2rem;
+}
+
+.school-sticky {
+  display: none;
+}
+
+.school-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+#school-contact {
+  scroll-margin-top: 6rem;
+}
+
+@media (max-width: 639px) {
+  .school-table-wrap {
+    display: none;
+  }
+
+  .school-acc {
+    display: block;
+  }
+}
+
+@media (max-width: 1023px) {
+  body.school-sticky-on {
+    padding-bottom: calc(4.75rem + env(safe-area-inset-bottom));
+  }
+
+  .school-sticky {
+    display: flex;
+    position: fixed;
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: calc(0.75rem + env(safe-area-inset-bottom));
+    z-index: 40;
+    margin: 0;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.16);
+  }
+
+  .school-sticky[hidden] {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .school-hero__grid {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .school-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .school-section h2 {
+    font-size: 1.875rem;
+  }
+
+  .school-features {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .school-ai {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .school-devices {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .school-shot--hero {
+    height: 360px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .school-features {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
