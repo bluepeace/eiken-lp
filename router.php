@@ -19,6 +19,11 @@ if (preg_match('#^/sitemap\.xml$#', $uri)) {
     return true;
 }
 
+if (preg_match('#^/llms\.txt$#', $uri)) {
+    require __DIR__ . '/llms.php';
+    return true;
+}
+
 if (preg_match('#^/(1kyu|jun1kyu|2kyu|jun2kyu-plus|jun2kyu|3kyu)/speaking/?$#', $uri, $m)) {
     $_GET['level'] = $m[1];
     require __DIR__ . '/speaking.php';
@@ -34,6 +39,12 @@ if (preg_match('#^/(1kyu|jun1kyu|2kyu|jun2kyu-plus|jun2kyu|3kyu)/writing/?$#', $
 if (preg_match('#^/(1kyu|jun1kyu|2kyu|jun2kyu-plus|jun2kyu|3kyu|4kyu|5kyu)/vocabulary/?$#', $uri, $m)) {
     $_GET['level'] = $m[1];
     require __DIR__ . '/vocabulary.php';
+    return true;
+}
+
+if (preg_match('#^/(2kyu|jun2kyu-plus|jun2kyu|3kyu|4kyu|5kyu)/grammar/?$#', $uri, $m)) {
+    $_GET['level'] = $m[1];
+    require __DIR__ . '/grammar.php';
     return true;
 }
 

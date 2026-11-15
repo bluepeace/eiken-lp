@@ -14,7 +14,7 @@ include __DIR__ . '/includes/header.php';
     <p class="section-badge section-badge--center" aria-hidden="true">ABOUT</p>
     <h1 id="about-lead-heading" class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">AiKen（アイケン）とは</h1>
     <p class="mt-4 text-lg font-medium text-slate-800">英検対策 × AI × バディ（愛犬）— 合格まで、ひとつのアプリにまとめました。</p>
-    <p class="mt-5 text-left text-slate-600 sm:text-center"><?php echo br_after_period('<strong>AiKen</strong>は、英検<strong>1級から5級まで全級</strong>の出題形式に沿って、<strong>AIが練習問題を出題</strong>する英検対策アプリです。リーディング・リスニング・ライティング・スピーキングの<strong>4技能</strong>をアプリ内で鍛え、学習履歴も残るので<strong>間違えた問題の復習</strong>がかんたん。そして<strong>バディ</strong>がそばで励まし、続けやすい環境をつくります。'); ?></p>
+    <p class="mt-5 text-left text-slate-600 sm:text-center"><?php echo br_after_period('<strong>AiKen</strong>は、英検<strong>1級から5級まで全級</strong>の出題形式に沿って、<strong>AIが練習問題を出題</strong>する英検対策アプリです。リーディング・リスニング・ライティング・スピーキングの<strong>4技能</strong>をアプリ内で鍛え、学習履歴も残るので<strong>間違えた問題の復習</strong>がかんたん。そして<strong>バディ</strong>がそばで励まし、続けやすい環境をつくります。文法は<strong>5級から2級</strong>まで。1テーマを読んで、4択を5問解いて終わります。単語と同じく、回数の上限はありません。英検協会が公式に定めた文法項目の一覧ではありません。'); ?></p>
     <div class="mt-8 flex justify-center">
       <?php buddy_say('shiro', 'シロ', 'そばにいるから、続けやすいよ。'); ?>
     </div>
@@ -55,7 +55,7 @@ include __DIR__ . '/includes/header.php';
   <div class="lp-container">
     <p class="section-badge section-badge--center" aria-hidden="true">BENEFIT</p>
     <h2 id="about-value-heading" class="text-center text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">アプリで得られること（ベネフィット）</h2>
-    <p class="mt-3 text-center text-slate-600"><?php echo br_after_period('英検対策で押さえたい<strong>全級・4技能・AI・履歴・バディ</strong>を、はじめての方にも分かりやすくまとめました。'); ?></p>
+    <p class="mt-3 text-center text-slate-600"><?php echo br_after_period('英検対策で押さえたい<strong>全級・4技能・文法・AI・履歴・バディ</strong>を、はじめての方にも分かりやすくまとめました。'); ?></p>
     <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
         <span class="inline-flex text-[#50c2cb]"><?php echo lp_icon('graduation-cap', 'w-7 h-7'); ?></span>
@@ -71,6 +71,11 @@ include __DIR__ . '/includes/header.php';
         <span class="inline-flex text-[#50c2cb]"><?php echo lp_icon('book-text', 'w-7 h-7'); ?></span>
         <h3 class="mt-3 font-semibold text-slate-900">4 技能をアプリ内で完結</h3>
         <p class="mt-2 text-sm leading-relaxed text-slate-600"><?php echo br_after_period('<strong>リーディング・リスニング・ライティング・スピーキング</strong>をひとつの流れで。英検対策に必要な軸を<strong>オールインワン</strong>でカバーします。'); ?></p>
+      </article>
+      <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <span class="inline-flex text-[#50c2cb]"><?php echo lp_icon('list-checks', 'w-7 h-7'); ?></span>
+        <h3 class="mt-3 font-semibold text-slate-900">文法は5級から2級</h3>
+        <p class="mt-2 text-sm leading-relaxed text-slate-600"><?php echo br_after_period('1テーマは解説を読んで、<strong>4択を5問</strong>。解説は日本語で、ほかの選択肢が合わない理由まで残します。単語と同じく、<strong>回数の上限はありません</strong>。'); ?></p>
       </article>
       <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
         <span class="inline-flex text-[#50c2cb]"><?php echo lp_icon('clipboard-list', 'w-7 h-7'); ?></span>
@@ -103,7 +108,7 @@ include __DIR__ . '/includes/header.php';
       </div>
       <div class="rounded-2xl border-l-4 border border-slate-200 border-l-[#A6D472] bg-slate-50/50 p-6 shadow-sm">
         <h3 class="font-semibold text-slate-900">高校生と保護者の方</h3>
-        <p class="mt-3 text-sm leading-relaxed text-slate-600"><?php echo br_after_period('<strong>準2級〜準1級</strong>など、受験や評定に向けた英検対策。<strong>4技能と単語</strong>をまとめて扱えるので、教材の切り替えコストを減らせます。'); ?></p>
+        <p class="mt-3 text-sm leading-relaxed text-slate-600"><?php echo br_after_period('<strong>準2級〜準1級</strong>など、受験や評定に向けた英検対策。<strong>4技能と単語</strong>をまとめて扱えるので、教材の切り替えコストを減らせます。2級までは、文法を1テーマ5問で確認できます。'); ?></p>
       </div>
       <div class="rounded-2xl border-l-4 border border-slate-200 border-l-[#50c2cb] bg-slate-50/50 p-6 shadow-sm">
         <h3 class="font-semibold text-slate-900">社会人・上位級を目指す方</h3>
@@ -131,7 +136,7 @@ include __DIR__ . '/includes/header.php';
         <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#50c2cb] text-lg font-bold text-white">2</span>
         <div>
           <h3 class="font-semibold text-slate-900">級と今日やるメニューを選ぶ</h3>
-          <p class="mt-1 text-sm text-slate-600"><?php echo br_after_period('目標の級に合わせて、単語・リーディング・ライティングなど<strong>やりたい技能</strong>からスタート。'); ?></p>
+          <p class="mt-1 text-sm text-slate-600"><?php echo br_after_period('目標の級に合わせて、単語・文法・リーディング・ライティングなど<strong>やりたいメニュー</strong>からスタート。'); ?></p>
         </div>
       </li>
       <li class="flex gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">

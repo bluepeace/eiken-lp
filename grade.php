@@ -40,6 +40,8 @@ if (in_array('word', $sections, true)) {
     include __DIR__ . '/includes/sections/grade_skill_word.php';
 }
 
+include __DIR__ . '/includes/sections/grade_skill_grammar.php';
+
 foreach (['reading', 'listening', 'writing', 'speaking'] as $skill_key) {
     if (!in_array($skill_key, $sections, true)) {
         continue;

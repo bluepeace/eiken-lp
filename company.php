@@ -55,7 +55,7 @@ include __DIR__ . '/includes/header.php';
 
     <section class="mt-12" aria-labelledby="company-mission">
       <h2 id="company-mission" class="text-lg font-bold text-slate-900">AiKen について</h2>
-      <p class="mt-3 text-sm leading-relaxed text-slate-700"><?php echo br_after_period('AiKen は、英検5級から1級までを本試験に近い形式で対策できる学習アプリです。単語・リーディング・リスニング・ライティング・スピーキングをひとつにまとめ、AI添削や学習履歴で続けやすさを大切にしています。'); ?></p>
+      <p class="mt-3 text-sm leading-relaxed text-slate-700"><?php echo br_after_period('AiKen は、英検5級から1級までを本試験に近い形式で対策できる学習アプリです。単語・リーディング・リスニング・ライティング・スピーキングをひとつにまとめ、AI添削や学習履歴で続けやすさを大切にしています。文法は5級から2級まで、1テーマ5問で確認できます。単語と同じく、回数の上限はありません。'); ?></p>
     </section>
 
     <section class="mt-10" aria-labelledby="company-links">

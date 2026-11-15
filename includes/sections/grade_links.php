@@ -2,10 +2,12 @@
 if (!defined('SITE_NAME')) {
     require_once __DIR__ . '/../../config.php';
 }
+require_once __DIR__ . '/../grammar-data.php';
 global $GRADES;
 
 $skill_columns = [
     'vocabulary' => ['label' => '単語', 'detail' => '4択・音声・例文'],
+    'grammar' => ['label' => '文法', 'detail' => '5級〜2級・1テーマ5問'],
     'reading' => ['label' => 'リーディング', 'detail' => '級別の読解形式'],
     'listening' => ['label' => 'リスニング', 'detail' => '級別の音声問題'],
     'writing' => ['label' => 'ライティング', 'detail' => 'AI採点・添削'],
@@ -41,6 +43,11 @@ function top_skill_cell(string $grade, string $skill, array $writing_labels, arr
         'reading' => '級別の読解問題',
         'listening' => '級別の音声問題',
     ];
+    if ($skill === 'grammar') {
+        return grammar_page_path($grade) !== null
+            ? ['label' => '1テーマ5問', 'url' => top_skill_link($grade, $skill)]
+            : null;
+    }
     if ($skill === 'writing') {
         return isset($writing_labels[$grade])
             ? ['label' => $writing_labels[$grade], 'url' => top_skill_link($grade, $skill)]
@@ -58,7 +65,7 @@ function top_skill_cell(string $grade, string $skill, array $writing_labels, arr
   <div class="lp-container">
     <p class="section-badge section-badge--center" aria-hidden="true">GRADES &amp; SKILLS</p>
     <h2 id="grade-links-heading" class="text-center text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">英検5級〜1級、<span class="heading-accent">級別・技能別</span>に対策</h2>
-    <p class="mx-auto mt-3 max-w-3xl text-center leading-relaxed text-slate-600"><?php echo br_after_period('AiKenは、目標級に合わせて英検単語・リーディング・リスニングを練習できます。3級以上はライティングとスピーキングにも対応し、英作文・要約・面接をAI採点とフィードバックで振り返れます。'); ?></p>
+    <p class="mx-auto mt-3 max-w-3xl text-center leading-relaxed text-slate-600"><?php echo br_after_period('AiKenは、目標級に合わせて単語・リーディング・リスニングを練習できます。文法は5級から2級まで、1テーマ5問です。3級以上はライティングとスピーキングにも対応し、英作文・要約・面接をAI採点とフィードバックで振り返れます。'); ?></p>
 
     <div class="grade-skill-table-wrap mt-10" tabindex="0" role="region" aria-label="級別・技能別の対応一覧">
       <table class="grade-skill-table">

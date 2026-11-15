@@ -81,6 +81,13 @@ $skills = [
         'image' => 'word',
     ],
     [
+        'en' => 'Grammar',
+        'title' => '文法',
+        'lead' => '5級から2級。1テーマを読んで、4択を5問解きます。',
+        'body' => '解説、ルール、例文のあと、確認問題です。選ぶと訳と、ほかの選択肢が合わない理由が出ます。回数の上限はありません。',
+        'image' => 'grammar',
+    ],
+    [
         'en' => 'Reading',
         'title' => 'リーディング',
         'lead' => '本番と同じ形式で解いて、すぐ解説が読めます。',
@@ -113,7 +120,7 @@ $habits = [
 $faqs = [
     [
         'q' => '級はあとから変えられますか？',
-        'a' => 'はい。プロフィールの「目標級」から、5級〜1級（準2級プラス含む）にいつでも変更できます。単語や各技能の問題も、選んだ級に合わせて切り替わります。',
+        'a' => 'はい。プロフィールの「目標級」から、5級〜1級（準2級プラス含む）にいつでも変更できます。単語、文法、各技能の問題も、選んだ級に合わせて切り替わります。文法のテーマは5級から2級までです。',
     ],
     [
         'q' => 'スマートフォンでも使えますか？',
@@ -133,7 +140,7 @@ include __DIR__ . '/includes/header.php';
       <p class="section-badge section-badge--center" aria-hidden="true">GUIDE</p>
       <h1 id="guide-heading" class="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">はじめての使い方</h1>
       <p class="mt-4 text-lg font-semibold leading-relaxed text-slate-900 sm:text-xl">今日から、英検の勉強が始まります</p>
-      <p class="mt-4 text-base leading-relaxed text-slate-700"><?php echo br_after_period('AiKenは、単語・リーディング・ライティング・リスニングをひとつにまとめた英検対策アプリです。まずは3つのステップ。最初の10分で、自分の級の問題に触れられます。'); ?></p>
+      <p class="mt-4 text-base leading-relaxed text-slate-700"><?php echo br_after_period('AiKenは、単語・リーディング・ライティング・リスニングをひとつにまとめた英検対策アプリです。5級から2級は、文法を1テーマ5問で確認できます。まずは3つのステップ。最初の10分で、自分の級の問題に触れられます。'); ?></p>
       <p class="mt-6">
         <a class="guide-cta-btn" href="<?php echo htmlspecialchars(lp_signup_url('hero'), ENT_QUOTES, 'UTF-8'); ?>"><?php echo lp_start_cta_inner('h-4 w-4'); ?></a>
       </p>
@@ -197,7 +204,8 @@ include __DIR__ . '/includes/header.php';
         </article>
         <?php endforeach; ?>
       </div>
-      <p class="mt-5 text-sm leading-relaxed text-slate-600"><?php echo br_after_period('準2級ではスピーキング（面接形式）の練習にも対応しています。'); ?></p>
+      <p class="mt-5 text-sm leading-relaxed text-slate-600"><?php echo br_after_period('文法は5級から2級までです。級を選ぶとテーマが並び、1テーマは解説、ルール、例文のあと、4択が5問です。解説は日本語で、ほかの選択肢が合わない理由まで書いています。英検協会が公式に定めた文法項目の一覧ではありません。単語と同じく、回数の上限はありません。'); ?></p>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600"><?php echo br_after_period('準2級ではスピーキング（面接形式）の練習にも対応しています。'); ?></p>
     </section>
 
     <section id="guide-ten-min" class="guide-block" aria-labelledby="guide-ten-min-heading">
@@ -206,7 +214,8 @@ include __DIR__ . '/includes/header.php';
         <li><span class="guide-ten-min__label">1.</span> 単語クイズを1セット（約5分）</li>
         <li><span class="guide-ten-min__label">2.</span> リーディングかリスニングを、好きな形式で1つ</li>
       </ol>
-      <p class="mt-4 text-sm leading-relaxed text-slate-600"><?php echo br_after_period('ライティングは、少し落ち着いて書けるときに。書いた英文は履歴に残るので、あとから見返せます。'); ?></p>
+      <p class="mt-4 text-sm leading-relaxed text-slate-600"><?php echo br_after_period('5級から2級なら、単語のあとに文法を1テーマ足せます。文法を足しても、リーディング・リスニング・ライティング・スピーキングの1日1セットはそのまま使えます。'); ?></p>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600"><?php echo br_after_period('ライティングは、少し落ち着いて書けるときに。書いた英文は履歴に残るので、あとから見返せます。'); ?></p>
     </section>
 
     <section id="guide-habit" class="guide-block" aria-labelledby="guide-habit-heading">
@@ -228,11 +237,11 @@ include __DIR__ . '/includes/header.php';
       <div class="guide-trial__grid">
         <div class="guide-trial__card">
           <h3 class="guide-trial__card-title">登録から<?php echo FREE_TRIAL_DAYS; ?>日間</h3>
-          <p class="guide-trial__card-body"><?php echo br_after_period('単語・リーディング・ライティング・リスニングを、回数の制限なく使えます。自分に合うか、じっくり見てみてください。'); ?></p>
+          <p class="guide-trial__card-body"><?php echo br_after_period('単語と文法、リーディング・リスニング・ライティング・スピーキングを、回数の制限なく使えます。自分に合うか、じっくり見てみてください。'); ?></p>
         </div>
         <div class="guide-trial__card">
           <h3 class="guide-trial__card-title"><?php echo FREE_TRIAL_DAYS + 1; ?>日目以降も、毎日続けられます</h3>
-          <p class="guide-trial__card-body"><?php echo br_after_period('単語テストは回数の制限なく無料です。その他の技能は1日1セットまで（ライティングはAI添削1回まで）無料で続けられます。受験までしっかり取り組みたいときは、プレミアムプランをご検討ください。'); ?></p>
+          <p class="guide-trial__card-body"><?php echo br_after_period('単語と、5級から2級の文法は回数の制限なく無料です。リーディング・リスニング・ライティング・スピーキングは1日1セットまで（ライティングはAI添削1回まで）無料で続けられます。受験までしっかり取り組みたいときは、プレミアムプランをご検討ください。'); ?></p>
           <p class="mt-3"><a class="text-sm font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="/plan">料金プランを見る</a></p>
         </div>
       </div>

@@ -38,7 +38,7 @@ include __DIR__ . '/includes/header.php';
 
         <p class="mt-4 font-semibold text-slate-900">【学習データ】（アプリ）</p>
         <ul class="mt-2 list-disc space-y-2 pl-5">
-          <li>単語・リーディング・リスニングの学習履歴・習熟度</li>
+          <li>単語・文法・リーディング・リスニングの学習履歴・習熟度</li>
           <li>ライティングの提出内容・添削結果</li>
           <li>スピーキング練習の回答（入力テキストまたは音声認識による文字起こし）と添削結果</li>
           <li>学習時間・連続学習日数などの統計</li>

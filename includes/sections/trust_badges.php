@@ -20,7 +20,7 @@
       </li>
       <li class="trust-badges__item">
         <span class="trust-badges__icon" aria-hidden="true"><?php echo lp_icon('badge-check', 'w-5 h-5'); ?></span>
-        <span class="trust-badges__label">単語テストは無料</span>
+        <span class="trust-badges__label">単語・文法は回数の上限なし</span>
       </li>
     </ul>
   </div>

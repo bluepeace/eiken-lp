@@ -8,7 +8,7 @@ $page = 'parents';
 require_once __DIR__ . '/config.php';
 $canonical = rtrim(SITE_URL, '/') . '/parents';
 
-$priceLead = 'Freeプランは追加料金なしで、単語テストを回数の制限なく続けられます。リーディング・リスニング・ライティング・スピーキングも、毎日少しずつ無料で使えます。';
+$priceLead = 'Freeプランは追加料金なしで、単語と、5級から2級の文法を回数の制限なく続けられます。リーディング・リスニング・ライティング・スピーキングも、毎日少しずつ無料で使えます。';
 
 include __DIR__ . '/includes/header.php';
 ?>
@@ -60,7 +60,7 @@ include __DIR__ . '/includes/header.php';
         </li>
         <li class="rounded-xl border border-slate-200 bg-white px-5 py-4">
           <h3 class="font-semibold text-slate-900">2. 毎日少しだけ単語から</h3>
-          <p class="mt-2 text-sm text-slate-600"><?php echo br_after_period('4択クイズですぐ正誤と解説が出ます。間違えた問題は履歴から復習できます。'); ?></p>
+          <p class="mt-2 text-sm text-slate-600"><?php echo br_after_period('4択クイズですぐ正誤と解説が出ます。間違えた問題は履歴から復習できます。5級から2級は、単語のあとに文法を1テーマ。解説を読んで、4択を5問です。'); ?></p>
         </li>
         <li class="rounded-xl border border-slate-200 bg-white px-5 py-4">
           <h3 class="font-semibold text-slate-900">3. 週末に読解・リスニング・作文</h3>
@@ -74,7 +74,7 @@ include __DIR__ . '/includes/header.php';
   <section class="border-t border-slate-100 bg-[#e8f8f9] px-4 py-14 sm:py-16">
     <div class="mx-auto max-w-3xl text-center">
       <h2 class="text-2xl font-bold tracking-tight text-slate-900">今日から、学習を始められます</h2>
-      <p class="mt-3 text-slate-600"><?php echo br_after_period('カード登録は不要です。単語テストは無料で続けられます。'); ?></p>
+      <p class="mt-3 text-slate-600"><?php echo br_after_period('カード登録は不要です。単語と、5級から2級の文法は無料で続けられます。'); ?></p>
       <a class="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-[#50c2cb] px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-[#46adb5]" href="<?php echo htmlspecialchars(lp_signup_url('final'), ENT_QUOTES, 'UTF-8'); ?>"><?php echo lp_start_cta_inner('h-4 w-4'); ?></a>
     </div>
   </section>

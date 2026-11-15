@@ -15,7 +15,7 @@ $plan_heading_id = $plan_heading_id ?? 'top-plan-heading';
       <?php if (!empty($plan_lead)): ?>
       <p class="mt-3 text-slate-600"><?php echo br_after_period($plan_lead); ?></p>
       <?php else: ?>
-      <p class="mt-3 text-slate-600"><?php echo br_after_period('Freeプランは追加料金なし。単語テストは回数の制限なく続けられます。リーディング・リスニング・ライティング・スピーキングも、毎日少しずつ無料で使えます。制限なく進めるときはプレミアムプランです。'); ?></p>
+      <p class="mt-3 text-slate-600"><?php echo br_after_period('Freeプランは追加料金なし。単語と、5級から2級の文法は回数の制限なく続けられます。リーディング・リスニング・ライティング・スピーキングも、毎日少しずつ無料で使えます。制限なく進めるときはプレミアムプランです。'); ?></p>
       <?php endif; ?>
     </div>
     <div class="mx-auto mt-10 max-w-5xl sm:mt-12">

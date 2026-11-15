@@ -20,7 +20,7 @@ function lp_breadcrumb_items(string $page = 'top', string $grade = '', ?array $g
     if ($page === 'top' || $page === '') {
         return [];
     }
-    if ($page === 'grade' || $page === 'speaking' || $page === 'writing' || $page === 'reading' || $page === 'listening' || $page === 'vocabulary') {
+    if ($page === 'grade' || $page === 'speaking' || $page === 'writing' || $page === 'reading' || $page === 'listening' || $page === 'vocabulary' || $page === 'grammar') {
         $name = (string) ($grade_data['name'] ?? '');
         if ($name === '' || $grade === '') {
             return [];
@@ -44,6 +44,9 @@ function lp_breadcrumb_items(string $page = 'top', string $grade = '', ?array $g
         }
         if ($page === 'vocabulary') {
             $items[] = ['name' => '単語', 'url' => '/' . rawurlencode($grade) . '/vocabulary/'];
+        }
+        if ($page === 'grammar') {
+            $items[] = ['name' => '文法', 'url' => '/' . rawurlencode($grade) . '/grammar/'];
         }
         return $items;
     }

@@ -26,7 +26,7 @@
         <p class="howto-step__num" aria-hidden="true">03</p>
         <span class="howto-step__icon"><?php echo lp_icon('rocket', 'w-7 h-7'); ?></span>
         <h3 class="howto-step__title">問題に取り組む</h3>
-        <p class="howto-step__highlight">単語＋英語4技能を級別に</p>
+        <p class="howto-step__highlight">単語・文法＋英語4技能を級別に</p>
         <p class="howto-step__text"><?php echo br_after_period('単語の4択や、級に合ったリーディング・リスニング・ライティング・スピーキングから選んで学習します。'); ?></p>
       </li>
       <li class="howto-step">
@@ -48,7 +48,7 @@
     <div class="howto-cta">
       <a class="howto-cta__button" href="<?php echo htmlspecialchars(lp_signup_url('howto'), ENT_QUOTES, 'UTF-8'); ?>"><?php echo lp_start_cta_inner('h-5 w-5'); ?></a>
       <p class="howto-cta__note">カード登録不要・登録したその場から開始</p>
-      <p class="mt-3 max-w-2xl text-center text-xs leading-relaxed text-slate-500">単語テストは回数の制限なく無料です。その他の技能の無料範囲は<a class="font-semibold text-[#008b96] underline-offset-2 hover:underline" href="/plan">料金ページ</a>にまとめています。登録時の課金はありません。</p>
+      <p class="mt-3 max-w-2xl text-center text-xs leading-relaxed text-slate-500">単語と、5級から2級の文法は回数の制限なく無料です。リーディング・リスニング・ライティング・スピーキングの無料範囲は<a class="font-semibold text-[#008b96] underline-offset-2 hover:underline" href="/plan">料金ページ</a>にまとめています。登録時の課金はありません。</p>
     </div>
   </div>
 </section>

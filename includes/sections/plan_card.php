@@ -5,10 +5,10 @@ if (!defined('SITE_NAME')) {
 $plan_price_note = $plan_price_note ?? '料金は予告なく変更される場合があります。最新の表示価格は本ページおよびアプリ内の案内が優先されます。';
 $show_open_campaign = open_campaign_active();
 $free_features = [
-    '単語テストは回数の制限なく使える',
+    '単語と、5級から2級の文法は回数の制限なく使える',
     '5級〜1級の単語に対応',
     '登録から' . FREE_TRIAL_DAYS . '日間は、リーディング・リスニング・ライティング・スピーキングも回数制限なし',
-    (FREE_TRIAL_DAYS + 1) . '日目以降は、単語以外の各技能が1日1セット（ライティングはAI添削1回）',
+    (FREE_TRIAL_DAYS + 1) . '日目以降は、リーディング・リスニング・ライティング・スピーキングが1日1セット（ライティングはAI添削1回）',
     'カード登録は不要。登録の時点では課金されない',
 ];
 $premium_features = [
@@ -28,7 +28,7 @@ $start_button_class = 'mt-auto inline-flex w-full items-center justify-center ga
     </div>
     <div class="flex flex-1 flex-col px-6 py-8 text-center">
       <p class="text-4xl font-bold tracking-tight text-slate-900">0円</p>
-      <p class="mt-2 text-sm text-slate-600"><?php echo br_after_period('追加料金なし。単語テストはずっと無料です。'); ?></p>
+      <p class="mt-2 text-sm text-slate-600"><?php echo br_after_period('追加料金なし。単語と、5級から2級の文法はずっと無料です。'); ?></p>
       <ul class="mt-8 mb-8 space-y-3 text-left text-sm text-slate-700">
         <?php foreach ($free_features as $feature): ?>
         <li class="flex gap-2"><span class="shrink-0 text-[#50c2cb]"><?php echo lp_icon('check', 'w-5 h-5'); ?></span><span><?php echo htmlspecialchars($feature); ?></span></li>

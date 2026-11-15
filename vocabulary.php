@@ -28,7 +28,7 @@ $vocabulary_signup_href = vocabulary_signup_url();
 
 $plan_heading = '料金・プラン';
 $plan_heading_id = 'vocabulary-plan';
-$plan_lead = '登録なしで、単語クイズを<strong>3セット</strong>まで解けます。1セット10問です。履歴は残りません。無料登録のあと、単語クイズは<strong>回数の制限なく</strong>続けられます。5日を過ぎても、1日1セットにはなりません。間違えた語の優先出題と履歴は、登録後に有効です。リーディング、リスニング、ライティング、スピーキングは、登録から' . FREE_TRIAL_DAYS . '日間は回数の制限がありません。6日目以降は1日1セットです。単語のためだけにプレミアムは要りません。';
+$plan_lead = '登録なしで、単語クイズを<strong>3セット</strong>まで解けます。1セット10問です。履歴は残りません。無料登録のあと、単語クイズは<strong>回数の制限なく</strong>続けられます。5日を過ぎても、1日1セットにはなりません。間違えた語の優先出題と履歴は、登録後に有効です。文法は5級から2級までで、単語と同じく回数の上限はありません。リーディング、リスニング、ライティング、スピーキングは、登録から' . FREE_TRIAL_DAYS . '日間は回数の制限がありません。6日目以降は1日1セットです。単語のためだけにプレミアムは要りません。';
 
 include __DIR__ . '/includes/header.php';
 include __DIR__ . '/includes/sections/vocabulary_hero.php';

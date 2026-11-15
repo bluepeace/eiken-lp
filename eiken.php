@@ -12,6 +12,7 @@ require_once __DIR__ . '/includes/writing-data.php';
 require_once __DIR__ . '/includes/reading-data.php';
 require_once __DIR__ . '/includes/listening-data.php';
 require_once __DIR__ . '/includes/vocabulary-data.php';
+require_once __DIR__ . '/includes/grammar-data.php';
 
 $canonical = rtrim(SITE_URL, '/') . '/eiken/';
 $toc = eiken_hub_toc();
@@ -278,7 +279,7 @@ include __DIR__ . '/includes/header.php';
     <div class="lp-container">
       <div class="mx-auto max-w-3xl text-center">
         <h2 id="eiken-by-grade-heading" class="text-2xl font-bold tracking-tight text-slate-900">級別の英検対策</h2>
-        <p class="mt-3 text-slate-600"><?php echo br_after_period('級ごとのレベル・技能別コラムと、AiKenの級別ページへのリンクです。単語、リーディング、リスニング、ライティング、面接のある級のスピーキングは、それぞれの対策ページから練習へ進めます。'); ?></p>
+        <p class="mt-3 text-slate-600"><?php echo br_after_period('級ごとのレベル・技能別コラムと、AiKenの級別ページへのリンクです。単語、リーディング、リスニング、ライティング、面接のある級のスピーキングは、それぞれの対策ページから練習へ進めます。文法は5級から2級です。'); ?></p>
       </div>
 
       <div class="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
@@ -298,6 +299,10 @@ include __DIR__ . '/includes/header.php';
             <?php $card_word = vocabulary_page_path((string) ($g['slug'] ?? '')); ?>
             <?php if ($card_word !== null): ?>
             <a class="mt-2 block font-semibold text-slate-800 underline-offset-2 hover:text-[#50c2cb] hover:underline" href="<?php echo htmlspecialchars($card_word); ?>"><?php echo htmlspecialchars($g['name']); ?>の単語対策</a>
+            <?php endif; ?>
+            <?php $card_grammar = grammar_page_path((string) ($g['slug'] ?? '')); ?>
+            <?php if ($card_grammar !== null): ?>
+            <a class="mt-2 block font-semibold text-slate-800 underline-offset-2 hover:text-[#50c2cb] hover:underline" href="<?php echo htmlspecialchars($card_grammar); ?>"><?php echo htmlspecialchars($g['name']); ?>の文法</a>
             <?php endif; ?>
             <?php $card_reading = reading_page_path((string) ($g['slug'] ?? '')); ?>
             <?php if ($card_reading !== null): ?>
@@ -329,12 +334,13 @@ include __DIR__ . '/includes/header.php';
       <ul class="mt-6 grid gap-3 sm:grid-cols-2">
         <li class="flex gap-2 rounded-xl border border-white bg-white/80 px-4 py-3 text-sm text-slate-700"><span class="shrink-0 text-[#50c2cb]"><?php echo lp_icon('check', 'w-5 h-5'); ?></span>5級〜1級に対応</li>
         <li class="flex gap-2 rounded-xl border border-white bg-white/80 px-4 py-3 text-sm text-slate-700"><span class="shrink-0 text-[#50c2cb]"><?php echo lp_icon('check', 'w-5 h-5'); ?></span>単語・リーディング・リスニング・ライティング・スピーキング</li>
+        <li class="flex gap-2 rounded-xl border border-white bg-white/80 px-4 py-3 text-sm text-slate-700"><span class="shrink-0 text-[#50c2cb]"><?php echo lp_icon('check', 'w-5 h-5'); ?></span>文法は5級から2級まで、回数の上限なし</li>
         <li class="flex gap-2 rounded-xl border border-white bg-white/80 px-4 py-3 text-sm text-slate-700"><span class="shrink-0 text-[#50c2cb]"><?php echo lp_icon('check', 'w-5 h-5'); ?></span>本試験形式・10,000問超</li>
         <li class="flex gap-2 rounded-xl border border-white bg-white/80 px-4 py-3 text-sm text-slate-700"><span class="shrink-0 text-[#50c2cb]"><?php echo lp_icon('check', 'w-5 h-5'); ?></span>AIによるライティング添削</li>
         <li class="flex gap-2 rounded-xl border border-white bg-white/80 px-4 py-3 text-sm text-slate-700"><span class="shrink-0 text-[#50c2cb]"><?php echo lp_icon('check', 'w-5 h-5'); ?></span>AIスピーキング練習</li>
         <li class="flex gap-2 rounded-xl border border-white bg-white/80 px-4 py-3 text-sm text-slate-700"><span class="shrink-0 text-[#50c2cb]"><?php echo lp_icon('check', 'w-5 h-5'); ?></span>間違えた問題の復習・スマホ学習</li>
       </ul>
-      <p class="mt-4 text-sm text-slate-600"><?php echo br_after_period('カード登録不要で、今日から始められます。単語テストは無料で続けられます。'); ?></p>
+      <p class="mt-4 text-sm text-slate-600"><?php echo br_after_period('カード登録不要で、今日から始められます。単語と、5級から2級の文法は無料で続けられます。'); ?></p>
       <div class="mt-8 flex flex-col gap-3 sm:flex-row">
         <a class="inline-flex items-center justify-center gap-2 rounded-full bg-[#50c2cb] px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-[#46adb5]" href="<?php echo htmlspecialchars(lp_signup_url('final'), ENT_QUOTES, 'UTF-8'); ?>"><?php echo lp_start_cta_inner('h-4 w-4'); ?></a>
         <a class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-8 py-3.5 text-sm font-semibold text-slate-700 transition hover:border-[#50c2cb]/50" href="/about">AiKenとは</a>

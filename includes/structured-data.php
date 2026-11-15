@@ -29,7 +29,7 @@ $jsonLd = [
             '@type' => 'Offer',
             'price' => '0',
             'priceCurrency' => 'JPY',
-            'description' => 'Freeプラン。単語テストは回数制限なく利用できます。',
+            'description' => 'Freeプラン。単語と、5級から2級の文法は回数制限なく利用できます。',
         ],
         [
             '@type' => 'Offer',
@@ -69,6 +69,8 @@ if (!empty($faq_schema_items) && is_array($faq_schema_items)) {
             $faqPageName = $grade_data['name'] . 'のリスニング対策｜よくある質問｜' . SITE_NAME;
         } elseif (($page ?? '') === 'vocabulary' && !empty($grade_data['name'])) {
             $faqPageName = $grade_data['name'] . 'の単語対策｜よくある質問｜' . SITE_NAME;
+        } elseif (($page ?? '') === 'grammar' && !empty($grade_data['name'])) {
+            $faqPageName = $grade_data['name'] . 'の文法｜よくある質問｜' . SITE_NAME;
         } elseif (($page ?? '') === 'grade' && !empty($grade_data['name'])) {
             $faqPageName = $grade_data['name'] . 'のよくある質問｜' . SITE_NAME . '（英検対策アプリ）';
         }

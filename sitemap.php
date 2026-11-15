@@ -11,6 +11,7 @@ require_once __DIR__ . '/includes/writing-data.php';
 require_once __DIR__ . '/includes/reading-data.php';
 require_once __DIR__ . '/includes/listening-data.php';
 require_once __DIR__ . '/includes/vocabulary-data.php';
+require_once __DIR__ . '/includes/grammar-data.php';
 
 header('Content-Type: application/xml; charset=UTF-8');
 
@@ -25,6 +26,7 @@ $esc = static function (string $s): string {
 $entries = [];
 
 $entries[] = ['loc' => $base . '/', 'changefreq' => 'weekly', 'priority' => '1.0'];
+$entries[] = ['loc' => $base . '/llms.txt', 'changefreq' => 'weekly', 'priority' => '0.3'];
 $entries[] = ['loc' => $base . '/about', 'changefreq' => 'monthly', 'priority' => '0.8'];
 $entries[] = ['loc' => $base . '/parents', 'changefreq' => 'monthly', 'priority' => '0.8'];
 $entries[] = ['loc' => $base . '/guide', 'changefreq' => 'monthly', 'priority' => '0.7'];
@@ -81,6 +83,18 @@ foreach (listening_grade_slugs() as $level) {
     }
     $entries[] = [
         'loc' => $base . $listening_path,
+        'changefreq' => 'weekly',
+        'priority' => '0.8',
+    ];
+}
+
+foreach (grammar_grade_slugs() as $level) {
+    $grammar_path = grammar_page_path($level);
+    if ($grammar_path === null) {
+        continue;
+    }
+    $entries[] = [
+        'loc' => $base . $grammar_path,
         'changefreq' => 'weekly',
         'priority' => '0.8',
     ];

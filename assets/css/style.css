@@ -2273,7 +2273,7 @@ img[loading="lazy"] {
 
 .grade-skill-table {
   width: 100%;
-  min-width: 880px;
+  min-width: 1040px;
   border-collapse: separate;
   border-spacing: 0;
   text-align: center;
@@ -2869,6 +2869,10 @@ body.is-nav-locked {
   border-radius: 1rem;
   background: #f8fafc;
   aspect-ratio: 4 / 3;
+}
+
+.grade-skill-section--grammar .grade-capture-card__frame {
+  aspect-ratio: 1024 / 633;
 }
 
 .grade-capture-card__img {

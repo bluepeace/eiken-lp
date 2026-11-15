@@ -12,7 +12,7 @@ include __DIR__ . '/includes/header.php';
   <div class="mx-auto max-w-3xl text-center">
     <p class="section-badge section-badge--center" aria-hidden="true">PLAN</p>
     <h1 id="plan-heading" class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">料金・プラン</h1>
-    <p class="mt-4 text-lg text-slate-700"><?php echo br_after_period('Freeプランは追加料金なし。単語テストは回数の制限なく続けられます。プレミアムに加入すると、リーディング・リスニング・ライティング・スピーキングも制限なく使えます。'); ?></p>
+    <p class="mt-4 text-lg text-slate-700"><?php echo br_after_period('Freeプランは追加料金なし。単語と、5級から2級の文法は回数の制限なく続けられます。プレミアムに加入すると、リーディング・リスニング・ライティング・スピーキングも制限なく使えます。'); ?></p>
   </div>
 </section>
 

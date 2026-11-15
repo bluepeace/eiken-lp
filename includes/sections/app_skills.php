@@ -32,6 +32,21 @@ $skill_items = [
         ],
     ],
     [
+        'key' => 'grammar',
+        'icon' => 'list-checks',
+        'title' => '文法',
+        'image' => '/assets/images/grade/5kyu/grammar-3.png',
+        'image_alt' => 'AiKenの英検5級の文法。I ( ) play soccer at school. の4択で、正解の don\'t と、ほかの選択肢が合わない理由が表示されている',
+        'caption' => '英検5級の文法。選ぶと、訳と理由が出ます。',
+        'tagline' => '1テーマを読んで、4択5問で確かめる',
+        'text' => '5級から2級まで、<span class="lp-marker">解説を読んで4択を5問</span>解いて終わります。英文だけで答えが決まり、日本語訳は答えたあとに出ます。解説は日本語で、正解の理由と、ほかの選択肢が合わない理由まで書いています。単語と同じく、回数の上限はありません。',
+        'points' => [
+            '1テーマは解説、ルール、例文のあと5問',
+            '選んだ直後に、訳と理由が出る',
+            '単語と同じく、回数の上限はない',
+        ],
+    ],
+    [
         'key' => 'reading',
         'icon' => 'book-open',
         'title' => 'リーディング',
@@ -88,8 +103,8 @@ $skill_items = [
   <div class="lp-container">
     <div class="app-skills-section__header mx-auto max-w-3xl text-center">
       <p class="section-badge section-badge--center" aria-hidden="true">SKILLS</p>
-      <h2 id="app-skills-heading" class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">画面で見る、<span class="heading-accent">英語4技能＋単語</span>の学習イメージ</h2>
-      <p class="app-skills-section__lead mt-3"><?php echo br_after_period('単語・リーディング・リスニング・ライティング・スピーキング。英検の本試験形式で、どんなふうに学べるかを画面イメージでご紹介します。'); ?></p>
+      <h2 id="app-skills-heading" class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">画面で見る、<span class="heading-accent">英語4技能＋単語・文法</span>の学習イメージ</h2>
+      <p class="app-skills-section__lead mt-3"><?php echo br_after_period('単語・リーディング・リスニング・ライティング・スピーキングは、英検の本試験に近い形式です。文法は5級から2級まで、1テーマを読んで4択を5問で確認します。'); ?></p>
     </div>
 
     <div class="app-skills-list mt-12 sm:mt-16">

@@ -20,7 +20,7 @@ $windows = [
         'kicker' => 'BEST',
         'when' => '3か月前',
         'tag' => 'ベストタイミング',
-        'body' => '単語を毎日の習慣にしてから、リスニング・リーディング・ライティングを足す余裕があります。形式に慣れて、自分の型ができる期間です。',
+        'body' => '単語を毎日の習慣にしてから、リスニング・リーディング・ライティングを足す余裕があります。5級から2級は、文法を1テーマ足す時間もあります。形式に慣れて、自分の型ができる期間です。',
     ],
     [
         'best' => false,
@@ -153,7 +153,7 @@ include __DIR__ . '/includes/header.php';
     <section id="study-primary" class="guide-block" aria-labelledby="study-primary-heading">
       <div class="mx-auto max-w-3xl">
         <h2 id="study-primary-heading" class="guide-block__title">まずは一次試験</h2>
-        <p class="guide-block__lead"><?php echo br_after_period('開いたら単語。静かな自宅ではリスニング。時間を取れるときにリーディング。ライティングは1日1問で、型を残します。'); ?></p>
+        <p class="guide-block__lead"><?php echo br_after_period('開いたら単語。静かな自宅ではリスニング。時間を取れるときにリーディング。ライティングは1日1問で、型を残します。5級から2級では、単語のあとに文法を1テーマ足せます。解説を読んで、4択を5問です。'); ?></p>
         <p class="mt-3 text-sm leading-relaxed text-slate-500"><?php echo br_after_period('画面は級によって違います。ここに載せているのは、それぞれの技能の一例です。'); ?></p>
       </div>
 
@@ -212,7 +212,7 @@ include __DIR__ . '/includes/header.php';
         </li>
         <?php endforeach; ?>
       </ol>
-      <p class="mx-auto mt-5 max-w-3xl text-sm leading-relaxed text-slate-600"><?php echo br_after_period('一次の形に慣れてきたら、面接のある級はスピーキングも。今日始める軸は、一次のこの4つです。級ごとの出題は英検対策から確認できます。'); ?></p>
+      <p class="mx-auto mt-5 max-w-3xl text-sm leading-relaxed text-slate-600"><?php echo br_after_period('一次の形に慣れてきたら、面接のある級はスピーキングも。今日始める軸は、一次のこの4つです。5級から2級は、単語のあとに文法を1テーマ。終わると連続学習の日数に乗ります。級ごとの出題は英検対策から確認できます。'); ?></p>
       <p class="mx-auto mt-3 max-w-3xl text-sm">
         <a class="font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="/eiken/">英検対策を見る</a>
         ／

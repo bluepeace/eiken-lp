@@ -7,11 +7,12 @@ require_once __DIR__ . '/writing-data.php';
 require_once __DIR__ . '/reading-data.php';
 require_once __DIR__ . '/listening-data.php';
 require_once __DIR__ . '/vocabulary-data.php';
+require_once __DIR__ . '/grammar-data.php';
 $current_page = $page ?? 'top';
 $current_grade = $grade ?? '';
-$show_main_nav = in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy', 'contact', 'external', 'company', 'media', 'cancel', 'parents', 'guide', 'study', 'grade', 'speaking', 'writing', 'reading', 'listening', 'vocabulary', 'eiken'], true);
-$lp_index = in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy', 'contact', 'external', 'company', 'media', 'cancel', 'parents', 'guide', 'study', 'grade', 'speaking', 'writing', 'reading', 'listening', 'vocabulary', 'eiken'], true);
-$is_grade_section = in_array($current_page, ['grade', 'speaking', 'writing', 'reading', 'listening', 'vocabulary'], true);
+$show_main_nav = in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy', 'contact', 'external', 'company', 'media', 'cancel', 'parents', 'guide', 'study', 'grade', 'speaking', 'writing', 'reading', 'listening', 'vocabulary', 'grammar', 'eiken'], true);
+$lp_index = in_array($current_page, ['top', 'about', 'plan', 'faq', 'tokushoho', 'terms', 'privacy', 'contact', 'external', 'company', 'media', 'cancel', 'parents', 'guide', 'study', 'grade', 'speaking', 'writing', 'reading', 'listening', 'vocabulary', 'grammar', 'eiken'], true);
+$is_grade_section = in_array($current_page, ['grade', 'speaking', 'writing', 'reading', 'listening', 'vocabulary', 'grammar'], true);
 $about_nav = [
     ['label' => 'AiKenとは', 'href' => '/about', 'current' => $current_page === 'about'],
     ['label' => '使い方ガイド', 'href' => '/guide', 'current' => $current_page === 'guide'],
@@ -101,6 +102,8 @@ $nav_caret = '<span class="site-header__dropdown-caret" aria-hidden="true"><svg 
                 $grade_current = ($current_page === 'grade' && $is_this_grade);
                 $word_href = vocabulary_page_path($gi['slug']);
                 $word_current = ($current_page === 'vocabulary' && $is_this_grade && $word_href !== null);
+                $grammar_href = grammar_page_path($gi['slug']);
+                $grammar_current = ($current_page === 'grammar' && $is_this_grade && $grammar_href !== null);
                 $reading_href = reading_page_path($gi['slug']);
                 $reading_current = ($current_page === 'reading' && $is_this_grade && $reading_href !== null);
                 $listening_href = listening_page_path($gi['slug']);
@@ -117,7 +120,7 @@ $nav_caret = '<span class="site-header__dropdown-caret" aria-hidden="true"><svg 
                 href="<?php echo htmlspecialchars($gi['href']); ?>"
                 <?php echo $grade_current ? ' aria-current="page"' : ''; ?>
               ><?php echo htmlspecialchars($gi['name']); ?></a>
-              <?php if ($word_href !== null || $reading_href !== null || $listening_href !== null || $writing_href !== null || $speaking_href !== null): ?>
+              <?php if ($word_href !== null || $grammar_href !== null || $reading_href !== null || $listening_href !== null || $writing_href !== null || $speaking_href !== null): ?>
               <span class="site-header__dropdown-subs">
                 <?php if ($word_href !== null): ?>
                 <a
@@ -127,6 +130,15 @@ $nav_caret = '<span class="site-header__dropdown-caret" aria-hidden="true"><svg 
                   aria-label="<?php echo htmlspecialchars($gi['name'] . 'の単語'); ?>"
                   <?php echo $word_current ? ' aria-current="page"' : ''; ?>
                 >単語</a>
+                <?php endif; ?>
+                <?php if ($grammar_href !== null): ?>
+                <a
+                  role="menuitem"
+                  class="site-header__dropdown-sublink<?php echo $grammar_current ? ' is-current' : ''; ?>"
+                  href="<?php echo htmlspecialchars($grammar_href); ?>"
+                  aria-label="<?php echo htmlspecialchars($gi['name'] . 'の文法'); ?>"
+                  <?php echo $grammar_current ? ' aria-current="page"' : ''; ?>
+                >文法</a>
                 <?php endif; ?>
                 <?php if ($reading_href !== null): ?>
                 <a
@@ -239,6 +251,8 @@ $nav_caret = '<span class="site-header__dropdown-caret" aria-hidden="true"><svg 
               $grade_current = ($current_page === 'grade' && $is_this_grade);
               $word_href = vocabulary_page_path($gi['slug']);
               $word_current = ($current_page === 'vocabulary' && $is_this_grade && $word_href !== null);
+              $grammar_href = grammar_page_path($gi['slug']);
+              $grammar_current = ($current_page === 'grammar' && $is_this_grade && $grammar_href !== null);
               $reading_href = reading_page_path($gi['slug']);
               $reading_current = ($current_page === 'reading' && $is_this_grade && $reading_href !== null);
               $listening_href = listening_page_path($gi['slug']);
@@ -254,7 +268,7 @@ $nav_caret = '<span class="site-header__dropdown-caret" aria-hidden="true"><svg 
               href="<?php echo htmlspecialchars($gi['href']); ?>"
               <?php echo $grade_current ? ' aria-current="page"' : ''; ?>
             ><?php echo htmlspecialchars($gi['name']); ?></a>
-            <?php if ($word_href !== null || $reading_href !== null || $listening_href !== null || $writing_href !== null || $speaking_href !== null): ?>
+            <?php if ($word_href !== null || $grammar_href !== null || $reading_href !== null || $listening_href !== null || $writing_href !== null || $speaking_href !== null): ?>
             <span class="site-header__mobile-subs">
               <?php if ($word_href !== null): ?>
               <a
@@ -263,6 +277,14 @@ $nav_caret = '<span class="site-header__dropdown-caret" aria-hidden="true"><svg 
                 aria-label="<?php echo htmlspecialchars($gi['name'] . 'の単語'); ?>"
                 <?php echo $word_current ? ' aria-current="page"' : ''; ?>
               >単語</a>
+              <?php endif; ?>
+              <?php if ($grammar_href !== null): ?>
+              <a
+                class="site-header__mobile-speaking<?php echo $grammar_current ? ' is-current' : ''; ?>"
+                href="<?php echo htmlspecialchars($grammar_href); ?>"
+                aria-label="<?php echo htmlspecialchars($gi['name'] . 'の文法'); ?>"
+                <?php echo $grammar_current ? ' aria-current="page"' : ''; ?>
+              >文法</a>
               <?php endif; ?>
               <?php if ($reading_href !== null): ?>
               <a

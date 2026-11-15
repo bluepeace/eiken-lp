@@ -18,6 +18,7 @@ function lp_announcement_skills(): array
 {
     return [
         'vocabulary' => '単語',
+        'grammar' => '文法',
         'reading' => 'リーディング',
         'listening' => 'リスニング',
         'writing' => 'ライティング',
