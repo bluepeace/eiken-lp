@@ -3530,6 +3530,12 @@ body.is-lightbox-locked {
   object-position: center 28%;
 }
 
+.study-shot__img--grammar {
+  aspect-ratio: 1024 / 633;
+  object-fit: contain;
+  background: #fff;
+}
+
 .study-shot figcaption {
   margin: 0;
   padding: 0.7rem 0.9rem 0.85rem;
@@ -3547,7 +3553,7 @@ body.is-lightbox-locked {
 
 @media (min-width: 800px) {
   .study-day {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
 

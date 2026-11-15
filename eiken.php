@@ -122,6 +122,7 @@ include __DIR__ . '/includes/header.php';
           <?php endforeach; ?>
           <li><a class="text-sm font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="<?php echo htmlspecialchars($featured['lp']); ?>">英検準2級プラスの対策アプリページ</a></li>
           <li><a class="text-sm font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="<?php echo htmlspecialchars((string) vocabulary_page_path('jun2kyu-plus')); ?>">英検準2級プラスの単語対策</a></li>
+          <li><a class="text-sm font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="<?php echo htmlspecialchars((string) grammar_page_path('jun2kyu-plus')); ?>">英検準2級プラスの文法</a></li>
           <li><a class="text-sm font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="<?php echo htmlspecialchars((string) reading_page_path('jun2kyu-plus')); ?>">英検準2級プラスのリーディング対策</a></li>
           <li><a class="text-sm font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="<?php echo htmlspecialchars((string) listening_page_path('jun2kyu-plus')); ?>">英検準2級プラスのリスニング対策</a></li>
           <li><a class="text-sm font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="<?php echo htmlspecialchars((string) writing_page_path('jun2kyu-plus')); ?>">英検準2級プラスのライティング・AI添削</a></li>
@@ -144,6 +145,10 @@ include __DIR__ . '/includes/header.php';
             <?php $word_href = vocabulary_page_path((string) ($g['slug'] ?? '')); ?>
             <?php if ($word_href !== null): ?>
             <li><a class="text-sm font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="<?php echo htmlspecialchars($word_href); ?>"><?php echo htmlspecialchars($g['short']); ?>の単語</a></li>
+            <?php endif; ?>
+            <?php $grammar_href = grammar_page_path((string) ($g['slug'] ?? '')); ?>
+            <?php if ($grammar_href !== null): ?>
+            <li><a class="text-sm font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="<?php echo htmlspecialchars($grammar_href); ?>"><?php echo htmlspecialchars($g['short']); ?>の文法</a></li>
             <?php endif; ?>
             <?php $reading_href = reading_page_path((string) ($g['slug'] ?? '')); ?>
             <?php if ($reading_href !== null): ?>
@@ -175,7 +180,7 @@ include __DIR__ . '/includes/header.php';
   <section id="eiken-study" class="scroll-mt-28 border-b border-slate-100 bg-slate-50/50 px-4 py-14 sm:py-16" aria-labelledby="eiken-study-heading">
     <div class="mx-auto max-w-3xl">
       <h2 id="eiken-study-heading" class="text-2xl font-bold tracking-tight text-slate-900">英検の勉強法</h2>
-      <p class="mt-3 text-slate-600"><?php echo br_after_period('英検対策は、級を決めて形式を知り、単語から技能練習、過去問確認の順で進めると迷いが減ります。'); ?></p>
+      <p class="mt-3 text-slate-600"><?php echo br_after_period('英検対策は、級を決めて形式を知り、単語から始めます。5級から2級は文法を1テーマ足してから、技能練習と過去問確認へ進むと迷いが減ります。'); ?></p>
       <p class="mt-3 text-sm"><a class="font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="/study">AiKenで英検合格の道を見る</a></p>
       <ol class="mt-6 space-y-4">
         <li class="rounded-xl border border-slate-200 bg-white px-5 py-4">
@@ -194,20 +199,25 @@ include __DIR__ . '/includes/header.php';
           <p class="mt-2 text-sm"><a class="font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="#eiken-by-grade">級別の単語対策記事へ</a></p>
         </li>
         <li class="rounded-xl border border-slate-200 bg-white px-5 py-4">
-          <h3 class="font-semibold text-slate-900">4. リーディング・リスニングを練習する</h3>
+          <h3 class="font-semibold text-slate-900">4. 文法を1テーマ確認する</h3>
+          <p class="mt-2 text-sm text-slate-600"><?php echo br_after_period('5級から2級は、解説を読んで4択を5問解きます。回数の上限はありません。1級と準1級のテーマはありません。AiKen独自のカリキュラムで、英検協会が公式に定めた文法項目の一覧ではありません。'); ?></p>
+          <p class="mt-2 text-sm"><a class="font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="#eiken-by-grade">級別の文法ページへ</a></p>
+        </li>
+        <li class="rounded-xl border border-slate-200 bg-white px-5 py-4">
+          <h3 class="font-semibold text-slate-900">5. リーディング・リスニングを練習する</h3>
           <p class="mt-2 text-sm text-slate-600"><?php echo br_after_period('本番に近い形式で量をこなし、解説で弱点を潰します。'); ?></p>
         </li>
         <li class="rounded-xl border border-slate-200 bg-white px-5 py-4">
-          <h3 class="font-semibold text-slate-900">5. ライティング・スピーキングを練習する</h3>
+          <h3 class="font-semibold text-slate-900">6. ライティング・スピーキングを練習する</h3>
           <p class="mt-2 text-sm text-slate-600"><?php echo br_after_period('3級以上はライティングと面接対策が重要です。4級・5級は一次にライティングがありません。'); ?></p>
         </li>
         <li class="rounded-xl border border-slate-200 bg-white px-5 py-4">
-          <h3 class="font-semibold text-slate-900">6. 過去問で実力を確認する</h3>
+          <h3 class="font-semibold text-slate-900">7. 過去問で実力を確認する</h3>
           <p class="mt-2 text-sm text-slate-600"><?php echo br_after_period('公式の過去問で時間配分と正答状況を確認します。'); ?></p>
           <p class="mt-2 text-sm"><a class="font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="#eiken-past">英検の過去問セクションへ</a></p>
         </li>
         <li class="rounded-xl border border-slate-200 bg-white px-5 py-4">
-          <h3 class="font-semibold text-slate-900">7. 苦手分野を繰り返し練習する</h3>
+          <h3 class="font-semibold text-slate-900">8. 苦手分野を繰り返し練習する</h3>
           <p class="mt-2 text-sm text-slate-600"><?php echo br_after_period('間違えた問題を履歴から復習し、本番まで積み上げます。'); ?></p>
           <p class="mt-2 text-sm"><a class="font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="#eiken-aiken">AiKenでの反復練習について</a></p>
         </li>

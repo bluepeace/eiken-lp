@@ -27,7 +27,7 @@ $windows = [
         'kicker' => 'MINIMUM',
         'when' => '2か月前',
         'tag' => 'ギリギリ',
-        'body' => '単語は毎日。技能は、週に何度か回します。範囲を広げすぎず、一次試験の形に触れることを優先します。',
+        'body' => '単語は毎日。5級から2級は、文法を1テーマ足します。技能は、週に何度か回します。範囲を広げすぎず、一次試験の形に触れることを優先します。',
     ],
     [
         'best' => false,
@@ -52,6 +52,20 @@ $skills = [
         'height' => 900,
         'alt' => '英検2級の単語クイズ。adaptの意味を4択から選び、正解のあと例文が表示されている画面',
         'caption' => '英検2級の単語クイズ。意味を選ぶと、例文が出ます。',
+    ],
+    [
+        'id' => 'grammar',
+        'chips' => ['5級〜2級', '1テーマ5問'],
+        'title' => '文法',
+        'body' => '単語のあと、5級から2級は文法を1テーマ足します。解説とルール、例文を読んで、4択を5問解いて終わります。英文だけで答えが決まり、訳は答えたあとに出ます。回数の上限はなく、リーディングなどの1日1セットには入りません。',
+        'steps' => [],
+        'note' => 'AiKen独自のカリキュラムです。英検協会が公式に定めた文法項目の一覧ではありません。1級と準1級のテーマはありません。',
+        'image' => '/assets/images/grade/2kyu/grammar-3.png',
+        'image_class' => ' study-shot__img--grammar',
+        'width' => 1024,
+        'height' => 633,
+        'alt' => '英検2級の文法。4択の確認問題で、選んだあとに訳と解説が出ている画面',
+        'caption' => '英検2級の文法。1テーマは、解説のあと4択が5問です。',
     ],
     [
         'id' => 'listening',
@@ -103,9 +117,10 @@ $skills = [
 
 $day = [
     ['num' => '01', 'name' => '単語', 'time' => '10〜15分', 'place' => 'いちばん最初に'],
-    ['num' => '02', 'name' => 'リスニング', 'time' => '約20分', 'place' => '静かな自宅で'],
-    ['num' => '03', 'name' => 'リーディング', 'time' => '約20分', 'place' => '集中できるときに'],
-    ['num' => '04', 'name' => 'ライティング', 'time' => '1問', 'place' => '解いたら型をつくる'],
+    ['num' => '02', 'name' => '文法', 'time' => '1テーマ5問', 'place' => '5級〜2級・単語のあと'],
+    ['num' => '03', 'name' => 'リスニング', 'time' => '約20分', 'place' => '静かな自宅で'],
+    ['num' => '04', 'name' => 'リーディング', 'time' => '約20分', 'place' => '集中できるときに'],
+    ['num' => '05', 'name' => 'ライティング', 'time' => '1問', 'place' => '解いたら型をつくる'],
 ];
 
 include __DIR__ . '/includes/header.php';
@@ -116,7 +131,7 @@ include __DIR__ . '/includes/header.php';
       <p class="section-badge section-badge--center" aria-hidden="true">ROAD</p>
       <h1 id="study-heading" class="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">AiKenで英検合格の道</h1>
       <p class="mt-4 text-lg font-semibold leading-relaxed text-slate-900 sm:text-xl">次の英検まで、一日をこう回す</p>
-      <p class="mt-4 text-base leading-relaxed text-slate-700"><?php echo br_after_period('使い方の次の一歩です。試験日から逆算して、一次試験の単語・リスニング・リーディング・ライティングを、無理のない時間に分けます。'); ?></p>
+      <p class="mt-4 text-base leading-relaxed text-slate-700"><?php echo br_after_period('使い方の次の一歩です。試験日から逆算して、単語・リスニング・リーディング・ライティングを、無理のない時間に分けます。5級から2級は、単語のあとに文法を1テーマ足します。'); ?></p>
       <p class="mt-6">
         <a class="guide-cta-btn" href="<?php echo htmlspecialchars(lp_signup_url('hero'), ENT_QUOTES, 'UTF-8'); ?>"><?php echo lp_start_cta_inner('h-4 w-4'); ?></a>
       </p>
@@ -200,7 +215,7 @@ include __DIR__ . '/includes/header.php';
     <section id="study-day" class="guide-block" aria-labelledby="study-day-heading">
       <div class="mx-auto max-w-3xl">
         <h2 id="study-day-heading" class="guide-block__title">一日の流れ</h2>
-        <p class="guide-block__lead"><?php echo br_after_period('軸は、開いた最初の単語です。リスニングは自宅、リーディングは集中できるとき、ライティングは1日1問。場所と時間が合う日に足していけば、一次試験の形がそろいます。'); ?></p>
+        <p class="guide-block__lead"><?php echo br_after_period('軸は、開いた最初の単語です。5級から2級は、そのあとに文法を1テーマ。リスニングは自宅、リーディングは集中できるとき、ライティングは1日1問。場所と時間が合う日に足していけば、一次試験の形がそろいます。'); ?></p>
       </div>
       <ol class="study-day">
         <?php foreach ($day as $item): ?>
@@ -212,7 +227,7 @@ include __DIR__ . '/includes/header.php';
         </li>
         <?php endforeach; ?>
       </ol>
-      <p class="mx-auto mt-5 max-w-3xl text-sm leading-relaxed text-slate-600"><?php echo br_after_period('一次の形に慣れてきたら、面接のある級はスピーキングも。今日始める軸は、一次のこの4つです。5級から2級は、単語のあとに文法を1テーマ。終わると連続学習の日数に乗ります。級ごとの出題は英検対策から確認できます。'); ?></p>
+      <p class="mx-auto mt-5 max-w-3xl text-sm leading-relaxed text-slate-600"><?php echo br_after_period('一次の形に慣れてきたら、面接のある級はスピーキングも。5級から2級の文法は、単語のあとの1テーマです。回数の上限はなく、連続学習の日数に乗ります。級ごとのページは英検対策から確認できます。'); ?></p>
       <p class="mx-auto mt-3 max-w-3xl text-sm">
         <a class="font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="/eiken/">英検対策を見る</a>
         ／
