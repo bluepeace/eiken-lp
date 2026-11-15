@@ -144,6 +144,12 @@ $PAGE_META = [
         'og_type' => 'website',
         'omit_jsonld' => true,
     ],
+    'juku' => [
+        'title' => '学習塾向け英検対策｜AiKen（アイケン）5級〜1級・塾での活用相談',
+        'description' => '学習塾の英検対策に、AIを活用した学習アプリAiKen。英検5級〜1級・準2級プラスに対応し、単語・文法・リーディング・リスニング・ライティング・スピーキングをサポート。英検対策コースや家庭学習の教材としてご活用いただけます。',
+        'og_type' => 'website',
+        'omit_jsonld' => true,
+    ],
 ];
 
 /**

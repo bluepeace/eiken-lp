@@ -8,51 +8,13 @@ declare(strict_types=1);
 $page = 'school';
 require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/includes/contact-guard.php';
+require_once __DIR__ . '/includes/inquiry-mail.php';
 
 $canonical = rtrim(SITE_URL, '/') . '/school';
 $og_image = asset('/assets/images/app/tablet/vocabulary.jpg');
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
-}
-
-/**
- * @param array<string, string> $headers
- */
-function school_send_mail(string $to, string $subject, string $body, array $headers): bool
-{
-    $headerLines = [];
-    foreach ($headers as $key => $value) {
-        $headerLines[] = $key . ': ' . $value;
-    }
-    $headerLines[] = 'MIME-Version: 1.0';
-    $headerLines[] = 'Content-Type: text/plain; charset=UTF-8';
-    $headerLines[] = 'Content-Transfer-Encoding: base64';
-
-    $encodedSubject = '=?UTF-8?B?' . base64_encode($subject) . '?=';
-    $encodedBody = chunk_split(base64_encode($body));
-
-    return @mail($to, $encodedSubject, $encodedBody, implode("\r\n", $headerLines));
-}
-
-function school_encode_address(string $name, string $email): string
-{
-    return '=?UTF-8?B?' . base64_encode($name) . '?= <' . $email . '>';
-}
-
-function school_mail_from_email(): string
-{
-    $host = parse_url(SITE_URL, PHP_URL_HOST);
-    if (!is_string($host) || $host === '') {
-        return CONTACT_EMAIL;
-    }
-    return 'noreply@' . $host;
-}
-
-function school_single_line(string $value): string
-{
-    $value = str_replace(["\r", "\n", "\0"], ' ', $value);
-    return trim($value);
 }
 
 function school_e(string $value): string
@@ -77,15 +39,15 @@ if (($_SESSION['school_flash'] ?? '') === 'sent') {
     unset($_SESSION['school_flash']);
 }
 
-$mailFrom = school_encode_address(CONTACT_FROM_NAME, school_mail_from_email());
+$mailFrom = inquiry_encode_address(CONTACT_FROM_NAME, inquiry_mail_from_email());
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $form['school'] = school_single_line((string) ($_POST['school'] ?? ''));
-    $form['name'] = school_single_line((string) ($_POST['name'] ?? ''));
-    $form['role'] = school_single_line((string) ($_POST['role'] ?? ''));
-    $form['email'] = school_single_line((string) ($_POST['email'] ?? ''));
-    $form['headcount'] = school_single_line((string) ($_POST['headcount'] ?? ''));
-    $form['timing'] = school_single_line((string) ($_POST['timing'] ?? ''));
+    $form['school'] = inquiry_single_line((string) ($_POST['school'] ?? ''));
+    $form['name'] = inquiry_single_line((string) ($_POST['name'] ?? ''));
+    $form['role'] = inquiry_single_line((string) ($_POST['role'] ?? ''));
+    $form['email'] = inquiry_single_line((string) ($_POST['email'] ?? ''));
+    $form['headcount'] = inquiry_single_line((string) ($_POST['headcount'] ?? ''));
+    $form['timing'] = inquiry_single_line((string) ($_POST['timing'] ?? ''));
     $form['message'] = trim((string) ($_POST['message'] ?? ''));
     $privacy = (string) ($_POST['privacy'] ?? '');
     $honeypot = trim((string) ($_POST['website'] ?? ''));
@@ -173,7 +135,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             . "---- 相談内容 ----\n"
             . $form['message'] . "\n";
 
-        $adminOk = school_send_mail(
+        $adminOk = inquiry_send_mail(
             CONTACT_EMAIL,
             $adminSubject,
             $adminBody,
@@ -203,7 +165,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             . "AiKen（アイケン）\n"
             . SITE_URL . "/school\n";
 
-        $autoOk = school_send_mail(
+        $autoOk = inquiry_send_mail(
             $form['email'],
             $autoSubject,
             $autoBody,
@@ -461,6 +423,7 @@ include __DIR__ . '/includes/header.php';
       <h2 id="school-consult-heading">学校向けの導入相談</h2>
       <p class="school-lead school-lead--center">導入人数や利用範囲に応じてご相談いただけます。</p>
       <p class="school-lead school-lead--center">学校独自のロゴやサービス名での利用についても、対応範囲を確認したうえでご相談いただけます。すでに用意された標準機能として、ロゴの差し替えや専用ドメインの提供ができるわけではありません。学校名義で App Store や Google Play にアプリを公開することは、標準のサービスには含まれません。</p>
+      <p class="school-lead school-lead--center">学習塾での活用は、<a href="/juku">学習塾向けのページ</a>でご案内しています。</p>
       <a class="school-btn" href="#school-contact">学校向け導入を相談する</a>
     </div>
   </section>

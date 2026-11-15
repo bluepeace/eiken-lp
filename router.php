@@ -146,6 +146,11 @@ if (preg_match('#^/school/?$#', $uri)) {
     return true;
 }
 
+if (preg_match('#^/juku/?$#', $uri)) {
+    require __DIR__ . '/juku.php';
+    return true;
+}
+
 if ($uri === '/' || $uri === '') {
     require __DIR__ . '/index.php';
     return true;

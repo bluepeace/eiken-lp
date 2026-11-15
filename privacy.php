@@ -14,7 +14,7 @@ include __DIR__ . '/includes/header.php';
   <div class="mx-auto max-w-3xl text-slate-800">
     <h1 id="privacy-heading" class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">プライバシーポリシー</h1>
     <p class="mt-4 text-sm leading-relaxed text-slate-600">AiKen（アイケン）（以下「当サービス」）は、ユーザーの個人情報の取り扱いについて以下のとおり定めます。</p>
-    <p class="mt-4 text-sm text-slate-600">制定日：2026年2月16日<br>最終更新：2026年11月15日</p>
+    <p class="mt-4 text-sm text-slate-600">制定日：2026年2月16日<br>最終更新：2026年11月16日</p>
 
     <div class="mt-10 space-y-10 text-sm leading-relaxed">
       <section aria-labelledby="privacy-s1">
@@ -48,9 +48,10 @@ include __DIR__ . '/includes/header.php';
         <ul class="mt-2 list-disc space-y-2 pl-5">
           <li>お問い合わせフォームから送信されたお名前、メールアドレス、お問い合わせ種別、本文</li>
           <li>学校向け導入相談フォーム（<?php echo htmlspecialchars(rtrim(SITE_URL, '/') . '/school'); ?>）から送信された学校名、担当者名、役職、メールアドレス、想定利用人数、導入希望時期、相談内容</li>
+          <li>学習塾向けの相談フォーム（<?php echo htmlspecialchars(rtrim(SITE_URL, '/') . '/juku'); ?>）から送信された塾名、担当者名、役職、メールアドレス、教室数、想定利用人数、導入希望時期、お問い合わせ内容</li>
           <li>送信日時、送信元IPアドレス、ユーザーエージェント、迷惑対策のためのセッション情報（連続送信防止等）</li>
         </ul>
-        <p class="mt-2">公式サイトのお問い合わせ、および学校向け導入相談は、サーバーのメール機能により運営者宛（<?php echo htmlspecialchars(CONTACT_EMAIL); ?>）へ送信され、受付確認のため送信者へ自動返信メールを送る場合があります。学校向け導入相談で受け取る内容は、相談への回答に使います。</p>
+        <p class="mt-2">公式サイトのお問い合わせ、学校向け導入相談、および学習塾向けの相談は、サーバーのメール機能により運営者宛（<?php echo htmlspecialchars(CONTACT_EMAIL); ?>）へ送信され、受付確認のため送信者へ自動返信メールを送る場合があります。学校向け導入相談と学習塾向けの相談で受け取る内容は、相談への回答に使います。</p>
 
         <p class="mt-4 font-semibold text-slate-900">【決済情報】</p>
         <p class="mt-2">クレジットカード番号等の決済情報は当サービスでは保持しません。Web での契約は決済代行会社（Stripe）、アプリ内課金は Apple App Store / Google Play にて処理されます。ストアから提供される購読・レシート情報を、権利確認のためにサーバーで照合することがあります。</p>
@@ -72,6 +73,7 @@ include __DIR__ . '/includes/header.php';
           <li>AI によるライティング添削・スピーキング添削・サポート対応</li>
           <li>お問い合わせへの対応および受付確認の自動返信</li>
           <li>学校向け導入相談への回答および受付確認の自動返信</li>
+          <li>学習塾向けの活用相談への回答および受付確認の自動返信</li>
           <li>特定商取引法に関する開示請求への対応</li>
           <li>有料プランの課金処理（Stripe およびアプリ内課金の権利確認）</li>
           <li>サイト・アプリの利用状況の把握、サービス改善・新機能の開発</li>
@@ -142,7 +144,7 @@ include __DIR__ . '/includes/header.php';
         <h2 id="privacy-s6" class="text-lg font-bold text-slate-900">6. データの保管期間</h2>
         <ul class="mt-3 list-disc space-y-2 pl-5">
           <li>アカウント情報・学習データ：アカウント削除まで保管します。削除後は速やかに消去します。</li>
-          <li>お問い合わせ内容（学校向け導入相談を含む）：対応完了後、一定期間保管の上、削除します（メールボックス上の保管を含むことがあります）。</li>
+          <li>お問い合わせ内容（学校向け導入相談、学習塾向けの相談を含む）：対応完了後、一定期間保管の上、削除します（メールボックス上の保管を含むことがあります）。</li>
           <li>決済記録：法令に基づき、必要な期間保管することがあります。</li>
         </ul>
       </section>
