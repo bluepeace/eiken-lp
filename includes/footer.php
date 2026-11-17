@@ -165,6 +165,27 @@ include __DIR__ . '/breadcrumbs.php';
   </div>
 </footer>
 </div>
+<?php /* Rentracks ITP LPタグ：全ページ共通（アフィリエイト流入の Cookie 計測） */ ?>
+<script type="text/javascript">
+(function(callback){
+var script = document.createElement("script");
+script.type = "text/javascript";
+script.src = "https://www.rentracks.jp/js/itp/rt.track.js?t=" + (new Date()).getTime();
+if ( script.readyState ) {
+script.onreadystatechange = function() {
+if ( script.readyState === "loaded" || script.readyState === "complete" ) {
+script.onreadystatechange = null;
+callback();
+}
+};
+} else {
+script.onload = function() {
+callback();
+};
+}
+document.getElementsByTagName("head")[0].appendChild(script);
+}(function(){}));
+</script>
 <script>
 /*
  * 外部からの流入元（?pid=instagram など）をアプリへのリンクに引き継ぐ。
@@ -172,41 +193,75 @@ include __DIR__ . '/breadcrumbs.php';
  * 流入元があれば先頭の lp を置き換えて instagram_{ページ}_{級}_{位置} にする。
  * 流入元は aiken.life のクッキーに30日保存（app 側の保持期間に合わせる）。
  * 形式は app 側（lib/signup-attribution.ts）と同じく英数字・_・- のみ、全体64文字以内。
+ *
+ * あわせてレントラックス ITP の _rt_ck を app.aiken.life へ引き継ぐ
+ * （LP とサンクスが別ホストでも成果計測できるようにする）。
  */
 (function () {
   var COOKIE = 'aiken_lp_src';
+  var RT_COOKIE = 'aiken_rt_ck';
   var MAX_AGE = 60 * 60 * 24 * 30;
   var APP_ORIGIN = <?php echo json_encode(parse_url(APP_URL, PHP_URL_SCHEME) . '://' . parse_url(APP_URL, PHP_URL_HOST)); ?>;
+  var secure = location.protocol === 'https:' ? '; Secure' : '';
 
   function clean(v) {
     v = (v || '').trim().slice(0, 30);
     return /^[A-Za-z0-9_-]+$/.test(v) && v.toLowerCase().indexOf('lp_') !== 0 && v.toLowerCase() !== 'lp' ? v : '';
   }
 
+  function cleanRtCk(v) {
+    v = (v || '').trim().slice(0, 200);
+    return /^[A-Za-z0-9._-]+$/.test(v) ? v : '';
+  }
+
+  function readCookie(name) {
+    var m = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+    if (!m) return '';
+    try {
+      return decodeURIComponent(m[1]);
+    } catch (e) {
+      return '';
+    }
+  }
+
   var src = '';
+  var rtCk = '';
   try {
     var q = new URLSearchParams(location.search);
     src = clean(q.get('pid') || q.get('p'));
     if (src) {
-      document.cookie = COOKIE + '=' + encodeURIComponent(src) + '; path=/; max-age=' + MAX_AGE + '; SameSite=Lax' + (location.protocol === 'https:' ? '; Secure' : '');
+      document.cookie = COOKIE + '=' + encodeURIComponent(src) + '; path=/; max-age=' + MAX_AGE + '; SameSite=Lax' + secure;
     } else {
-      var m = document.cookie.match(new RegExp('(?:^|; )' + COOKIE + '=([^;]*)'));
-      if (m) src = clean(decodeURIComponent(m[1]));
+      src = clean(readCookie(COOKIE));
+    }
+
+    rtCk = cleanRtCk(q.get('_rt_ck'));
+    if (rtCk) {
+      document.cookie = RT_COOKIE + '=' + encodeURIComponent(rtCk) + '; path=/; max-age=' + MAX_AGE + '; SameSite=Lax' + secure;
+    } else {
+      rtCk = cleanRtCk(readCookie(RT_COOKIE));
     }
   } catch (e) {
     src = '';
+    rtCk = '';
   }
-  if (!src) return;
+  if (!src && !rtCk) return;
 
   var links = document.querySelectorAll('a[href^="' + APP_ORIGIN + '"]');
   for (var i = 0; i < links.length; i++) {
     try {
       var url = new URL(links[i].href);
-      var pid = url.searchParams.get('pid') || '';
-      if (pid.indexOf('lp_') !== 0) continue;
-      // 64文字を超えるときは、ボタン位置ではなく流入元の側を短くする
-      var rest = pid.slice(2);
-      url.searchParams.set('pid', src.slice(0, Math.max(1, 64 - rest.length)) + rest);
+      if (src) {
+        var pid = url.searchParams.get('pid') || '';
+        if (pid.indexOf('lp_') === 0) {
+          // 64文字を超えるときは、ボタン位置ではなく流入元の側を短くする
+          var rest = pid.slice(2);
+          url.searchParams.set('pid', src.slice(0, Math.max(1, 64 - rest.length)) + rest);
+        }
+      }
+      if (rtCk && !url.searchParams.get('_rt_ck')) {
+        url.searchParams.set('_rt_ck', rtCk);
+      }
       links[i].href = url.toString();
     } catch (e) {}
   }

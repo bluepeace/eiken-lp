@@ -15,7 +15,7 @@ include __DIR__ . '/includes/header.php';
   <div class="mx-auto max-w-3xl text-slate-800">
     <h1 id="external-heading" class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">外部送信に関する公表</h1>
     <p class="mt-4 text-sm leading-relaxed text-slate-600"><?php echo br_after_period('電気通信事業法に基づき、AiKen（アイケン）公式サイト（' . htmlspecialchars(SITE_URL, ENT_QUOTES, 'UTF-8') . '）において、利用者に関する情報を外部事業者へ送信する場合があることについて公表します。'); ?></p>
-    <p class="mt-4 text-sm text-slate-600">制定日：2026年8月21日<br>最終更新：2026年8月21日</p>
+    <p class="mt-4 text-sm text-slate-600">制定日：2026年8月21日<br>最終更新：2026年11月17日</p>
 
     <div class="mt-10 space-y-10 text-sm leading-relaxed">
       <section aria-labelledby="external-s1">
@@ -59,7 +59,31 @@ include __DIR__ . '/includes/header.php';
         </div>
         <p class="mt-3 text-slate-600">Google Tag Manager 経由で、Google Analytics その他の計測・広告タグが読み込まれる場合があります。追加・変更した場合は、本ページを更新します。</p>
 
-        <h3 class="mt-8 font-semibold text-slate-900">（2）Google Fonts</h3>
+        <h3 class="mt-8 font-semibold text-slate-900">（2）レントラックス（アフィリエイト計測）</h3>
+        <div class="mt-3 overflow-x-auto rounded-xl border border-slate-200">
+          <table class="w-full min-w-[280px] border-collapse text-left text-sm">
+            <tbody>
+              <tr class="border-b border-slate-200">
+                <th scope="row" class="w-[min(36%,10rem)] bg-slate-50 px-4 py-3 font-semibold text-slate-900">送信先事業者</th>
+                <td class="px-4 py-3">株式会社レントラックス</td>
+              </tr>
+              <tr class="border-b border-slate-200">
+                <th scope="row" class="bg-slate-50 px-4 py-3 font-semibold text-slate-900">送信される情報の例</th>
+                <td class="px-4 py-3">IPアドレス、ユーザーエージェント、閲覧ページのURL、リファラー、Cookie / URL パラメータ（_rt_ck 等）により付与・参照される識別子 など</td>
+              </tr>
+              <tr class="border-b border-slate-200">
+                <th scope="row" class="bg-slate-50 px-4 py-3 font-semibold text-slate-900">利用目的</th>
+                <td class="px-4 py-3">アフィリエイト広告経由の流入および成果（有料プラン開始）の計測</td>
+              </tr>
+              <tr>
+                <th scope="row" class="bg-slate-50 px-4 py-3 font-semibold text-slate-900">関連情報</th>
+                <td class="px-4 py-3"><a class="text-[#50c2cb] underline-offset-2 hover:underline" href="https://www.rentracks.co.jp/privacy/" rel="noopener noreferrer" target="_blank">レントラックス プライバシーポリシー</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="mt-8 font-semibold text-slate-900">（3）Google Fonts</h3>
         <div class="mt-3 overflow-x-auto rounded-xl border border-slate-200">
           <table class="w-full min-w-[280px] border-collapse text-left text-sm">
             <tbody>
@@ -83,7 +107,7 @@ include __DIR__ . '/includes/header.php';
           </table>
         </div>
 
-        <h3 class="mt-8 font-semibold text-slate-900">（3）Tailwind CSS（CDN）</h3>
+        <h3 class="mt-8 font-semibold text-slate-900">（4）Tailwind CSS（CDN）</h3>
         <div class="mt-3 overflow-x-auto rounded-xl border border-slate-200">
           <table class="w-full min-w-[280px] border-collapse text-left text-sm">
             <tbody>

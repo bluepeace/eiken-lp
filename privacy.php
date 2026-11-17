@@ -14,7 +14,7 @@ include __DIR__ . '/includes/header.php';
   <div class="mx-auto max-w-3xl text-slate-800">
     <h1 id="privacy-heading" class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">プライバシーポリシー</h1>
     <p class="mt-4 text-sm leading-relaxed text-slate-600">AiKen（アイケン）（以下「当サービス」）は、ユーザーの個人情報の取り扱いについて以下のとおり定めます。</p>
-    <p class="mt-4 text-sm text-slate-600">制定日：2026年2月16日<br>最終更新：2026年11月16日</p>
+    <p class="mt-4 text-sm text-slate-600">制定日：2026年2月16日<br>最終更新：2026年11月17日</p>
 
     <div class="mt-10 space-y-10 text-sm leading-relaxed">
       <section aria-labelledby="privacy-s1">
@@ -118,6 +118,12 @@ include __DIR__ . '/includes/header.php';
           <li>関連情報：<a class="text-[#50c2cb] underline-offset-2 hover:underline" href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">https://policies.google.com/privacy</a></li>
         </ul>
 
+        <p class="mt-4 font-semibold text-slate-900">【レントラックス】（公式サイト・アプリ Web）</p>
+        <ul class="mt-2 list-disc space-y-2 pl-5">
+          <li>アフィリエイト経由の流入および有料プラン開始の成果計測</li>
+          <li>関連情報：<a class="text-[#50c2cb] underline-offset-2 hover:underline" href="https://www.rentracks.co.jp/privacy/" rel="noopener noreferrer" target="_blank">https://www.rentracks.co.jp/privacy/</a></li>
+        </ul>
+
         <p class="mt-4 font-semibold text-slate-900">【レンタルサーバーのメール送信】（公式サイト）</p>
         <ul class="mt-2 list-disc space-y-2 pl-5">
           <li>お問い合わせフォームおよび自動返信メールの送信処理</li>
@@ -136,6 +142,7 @@ include __DIR__ . '/includes/header.php';
           <li>お問い合わせフォームの不正送信防止（公式サイト）</li>
           <li>サイト表示（フォント・CSS の配信）（公式サイト）</li>
           <li>アクセス解析・タグ管理（Google Tag Manager 等）（公式サイト）</li>
+          <li>アフィリエイト成果計測（レントラックス ITP タグ）（公式サイト・アプリ Web）</li>
         </ul>
         <p class="mt-3">利用者に関する情報の外部送信の詳細は、<a class="font-medium text-[#50c2cb] underline-offset-2 hover:underline" href="/external-transmission">外部送信に関する公表</a>に記載しています。ブラウザの設定で Cookie を無効にした場合、一部機能が正常に動作しない場合があります。</p>
       </section>
