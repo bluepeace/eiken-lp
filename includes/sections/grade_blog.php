@@ -21,6 +21,9 @@ $carousel_id = 'grade-blog-carousel';
     <p class="section-badge section-badge--center" aria-hidden="true">COLUMN</p>
     <h2 id="grade-blog-heading" class="text-center text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl"><?php echo htmlspecialchars($name); ?>の英検対策コラム</h2>
     <p class="mt-2 text-center text-slate-600"><?php echo br_after_period(htmlspecialchars($name_short) . 'の試験形式・勉強法・ポイントをコラムで解説しています。受験前の確認にお役立てください。'); ?></p>
+    <?php if ((string) ($grade ?? '') === '2kyu'): ?>
+    <p class="mt-4 text-center text-sm leading-relaxed text-slate-600">他のアプリとの違いは、<a class="font-semibold text-[#007f89] underline-offset-2 hover:underline" href="/blog/eiken-2kyu-app/">英検2級のアプリ</a>の比較にまとめています。</p>
+    <?php endif; ?>
 
     <?php if ($blog_items === []): ?>
     <p class="mt-10 text-center text-slate-600">この級のコラムは準備中か、まだ公開がありません。</p>

@@ -27,6 +27,7 @@ if ($skill_key === '' || empty($meta[$skill_key]) || empty($grade_content[$skill
 $m = $meta[$skill_key];
 $skill = $grade_content[$skill_key];
 $name_short = $grade_data['name_short'] ?? '';
+$name = (string) ($grade_data['name'] ?? $name_short);
 $parts = $skill['parts'] ?? [];
 $colClass = 'grade-capture-grid--' . min(4, max(2, count($parts) ?: 2));
 $bgClass = in_array($skill_key, ['listening', 'speaking'], true) ? 'bg-slate-50/50' : 'bg-white';
@@ -103,8 +104,9 @@ $bgClass = in_array($skill_key, ['listening', 'speaking'], true) ? 'bg-slate-50/
         require_once __DIR__ . '/../speaking-data.php';
         $speaking_href = speaking_page_path((string) $grade);
         if ($speaking_href !== null): ?>
-    <p class="mt-10 text-center">
-      <a class="inline-flex items-center justify-center rounded-full bg-[#50c2cb] px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-[#50c2cb]/25 transition hover:bg-[#46adb5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#50c2cb]/60 focus-visible:ring-offset-2" href="<?php echo htmlspecialchars($speaking_href); ?>"><?php echo htmlspecialchars($name_short); ?>のスピーキング・面接対策を詳しく見る</a>
+    <p class="mt-8 text-center text-sm leading-relaxed text-slate-600"><a class="font-semibold text-[#007f89] underline-offset-2 hover:underline" href="<?php echo htmlspecialchars($speaking_href); ?>"><?php echo htmlspecialchars($name); ?>のスピーキング</a>に、面接の流れと練習をまとめています。</p>
+    <p class="mt-4 text-center">
+      <a class="inline-flex items-center justify-center rounded-full bg-[#50c2cb] px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-[#50c2cb]/25 transition hover:bg-[#46adb5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#50c2cb]/60 focus-visible:ring-offset-2" href="<?php echo htmlspecialchars($speaking_href); ?>"><?php echo htmlspecialchars($name); ?>のスピーキング・面接を練習する</a>
     </p>
         <?php endif; ?>
     <?php endif; ?>

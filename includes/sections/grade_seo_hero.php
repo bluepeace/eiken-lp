@@ -55,6 +55,11 @@ $hero_mockup_alt = $name !== ''
       </ul>
       <?php endif; ?>
       <p class="max-w-lg text-base leading-relaxed text-[#232323]"><?php echo br_after_period($hero_lead); ?></p>
+      <?php if ((string) $grade === '5kyu'): ?>
+      <p class="max-w-lg text-sm leading-relaxed text-slate-700">項目の一覧は、<a class="font-semibold text-[#007f89] underline-offset-2 hover:underline" href="#grade-skill-grammar">5級で出る文法</a>にまとめています。AiKen独自のカリキュラムで、1テーマ5問、回数の上限はありません。</p>
+      <?php elseif ((string) $grade === 'jun1kyu'): ?>
+      <p class="max-w-lg text-sm leading-relaxed text-slate-700">料金は<?php echo htmlspecialchars(monthly_price_label(), ENT_QUOTES, 'UTF-8'); ?>で、<a class="font-semibold text-[#007f89] underline-offset-2 hover:underline" href="#grade-plan-heading">この級も同じプラン</a>です。カード登録は不要です。下のボタンから登録して始められます。</p>
+      <?php endif; ?>
       <div class="flex flex-col gap-3 sm:flex-row sm:justify-start">
         <a class="inline-flex items-center justify-center gap-2 rounded-full bg-[#50c2cb] px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-[#50c2cb]/25 transition hover:bg-[#46adb5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#50c2cb]/60 focus-visible:ring-offset-2" href="<?php echo htmlspecialchars(lp_signup_url('hero'), ENT_QUOTES, 'UTF-8'); ?>"><?php echo lp_start_cta_inner('h-5 w-5'); ?></a>
         <a class="inline-flex items-center justify-center rounded-full border-2 border-[#50c2cb] bg-white px-8 py-3.5 text-base font-semibold text-slate-800 transition hover:border-[#46adb5] hover:bg-[#50c2cb]/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#50c2cb]/60 focus-visible:ring-offset-2" href="#grade-skill-word"><?php echo htmlspecialchars($name_short); ?>の学習内容を見る</a>

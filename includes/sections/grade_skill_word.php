@@ -73,5 +73,8 @@ $images = $skill['images'] ?? [];
       <a class="inline-flex items-center justify-center rounded-full bg-[#50c2cb] px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-[#50c2cb]/25 transition hover:bg-[#46adb5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#50c2cb]/60 focus-visible:ring-offset-2" href="<?php echo htmlspecialchars($word_href); ?>"><?php echo htmlspecialchars($name_short); ?>の単語対策を詳しく見る</a>
     </p>
     <?php endif; ?>
+    <?php if ((string) $grade === 'jun2kyu-plus'): ?>
+    <p class="mt-4 text-center text-sm leading-relaxed text-slate-600">出る語の一覧は、<a class="font-semibold text-[#007f89] underline-offset-2 hover:underline" href="/blog/eiken-jun2kyu-plus-tango-goi/">準2級プラスの単語一覧</a>にまとめています。</p>
+    <?php endif; ?>
   </div>
 </section>

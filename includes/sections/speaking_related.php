@@ -34,7 +34,7 @@ $parent = '/' . rawurlencode((string) $grade) . '/';
       <?php endforeach; ?>
     </ul>
     <p class="mt-8 text-center">
-      <a class="text-sm font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="<?php echo htmlspecialchars($parent); ?>"><?php echo htmlspecialchars($name); ?>の単語・リーディング・ライティングも見る</a>
+      <a class="text-sm font-semibold text-[#50c2cb] underline-offset-2 hover:underline" href="<?php echo htmlspecialchars($parent); ?>"><?php echo htmlspecialchars($name); ?>対策アプリで、ほかの技能も見る</a>
     </p>
   </div>
 </section>
