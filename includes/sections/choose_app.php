@@ -50,6 +50,7 @@ $aiken_col = count($headers) - 1;
         </table>
       </div>
       <p class="grade-position__note"><?php echo br_after_period('一般的な傾向です。講座や教材によって内容は異なります。AiKenはカード登録なしで、今日から始められます。'); ?></p>
+      <p class="mt-4 text-center text-sm leading-relaxed text-slate-600">アプリのおすすめや、勉強に使うアプリの違いは、<a class="font-semibold text-[#007f89] underline-offset-2 hover:underline" href="/blog/eiken-apps/">英検対策アプリ7選の比較</a>にまとめています。</p>
     </div>
 
     <div class="mt-10 flex justify-center">

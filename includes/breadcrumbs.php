@@ -16,7 +16,8 @@ if (!defined('SITE_NAME')) {
  */
 function lp_breadcrumb_items(string $page = 'top', string $grade = '', ?array $grade_data = null): array
 {
-    $top = ['name' => 'TOP', 'url' => '/'];
+    $grade_family = in_array($page, ['grade', 'speaking', 'writing', 'reading', 'listening', 'vocabulary', 'grammar'], true);
+    $top = ['name' => $grade_family ? '英検対策アプリ' : 'TOP', 'url' => '/'];
     if ($page === 'top' || $page === '') {
         return [];
     }
@@ -93,7 +94,11 @@ if (count($crumb_items) < 2) {
     return;
 }
 $crumb_last = count($crumb_items) - 1;
+$crumb_grade_family = in_array((string) ($page ?? ''), ['grade', 'speaking', 'writing', 'reading', 'listening', 'vocabulary', 'grammar'], true);
 ?>
+<?php if ($crumb_grade_family): ?>
+<p class="lp-grade-home">5級から1級をまとめて見るなら、<a href="/">英検対策アプリ</a>へ。</p>
+<?php endif; ?>
 <nav class="lp-breadcrumb" aria-label="パンくずリスト">
   <div class="lp-container">
     <ol class="lp-breadcrumb__list">

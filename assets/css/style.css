@@ -2327,6 +2327,49 @@ img[loading="lazy"] {
 .grade-skill-table__check { color: #22a66f; }
 .grade-skill-table__none { color: #94a3b8; }
 
+.grade-app-links {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.grade-app-links article {
+  padding: 1rem 1.1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.9rem;
+  background: #f8fafc;
+}
+
+.grade-app-links h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.grade-app-links h3 a {
+  color: #007f89;
+  text-decoration: none;
+}
+
+.grade-app-links h3 a:hover { text-decoration: underline; }
+
+.grade-app-links p {
+  margin: 0.35rem 0 0;
+  color: #64748b;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+@media (min-width: 640px) {
+  .grade-app-links { grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 1024px) {
+  .grade-app-links { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
 .grade-skill-guides {
   display: grid;
   grid-template-columns: 1fr;
@@ -3591,6 +3634,22 @@ body.is-lightbox-locked {
   font-size: 0.8125rem;
   line-height: 1.6;
   color: #64748b;
+}
+
+.lp-grade-home {
+  margin: 0;
+  padding: 1.25rem 1rem 0;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: #475569;
+  text-align: center;
+}
+
+.lp-grade-home a {
+  color: #007f89;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 /* パンくず（フッター直上） */

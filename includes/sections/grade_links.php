@@ -67,6 +67,33 @@ function top_skill_cell(string $grade, string $skill, array $writing_labels, arr
     <h2 id="grade-links-heading" class="text-center text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">英検5級〜1級、<span class="heading-accent">級別・技能別</span>に対策</h2>
     <p class="mx-auto mt-3 max-w-3xl text-center leading-relaxed text-slate-600"><?php echo br_after_period('AiKenは、目標級に合わせて単語・リーディング・リスニングを練習できます。文法は5級から2級まで、1テーマ5問です。3級以上はライティングとスピーキングにも対応し、英作文・要約・面接をAI採点とフィードバックで振り返れます。'); ?></p>
 
+    <?php
+    $grade_app_order = ['5kyu', '4kyu', '3kyu', 'jun2kyu', 'jun2kyu-plus', '2kyu', 'jun1kyu', '1kyu'];
+    $grade_app_notes = [
+        '5kyu' => '中学初級。単語、リーディング、リスニングと文法。',
+        '4kyu' => '中学中級。単語、リーディング、リスニングと文法。',
+        '3kyu' => '中学卒業。単語と文法に加え、ライティングと面接。',
+        'jun2kyu' => '高校中級。単語から面接まで、文法も1テーマ5問。',
+        'jun2kyu-plus' => '高校上級。要約・英作文と、3コマの面接。',
+        '2kyu' => '高校卒業。要約・英作文と、社会的な話題の面接。',
+        'jun1kyu' => '大学中級。要約と、4コマの面接。',
+        '1kyu' => '大学上級。要約と、2分スピーチ。',
+    ];
+    ?>
+    <nav class="grade-app-links" aria-label="級別の英検対策アプリ">
+      <?php foreach ($grade_app_order as $slug):
+          if (!isset($GRADES[$slug])) {
+              continue;
+          }
+          $app_name = (string) $GRADES[$slug]['name'];
+          ?>
+      <article>
+        <h3><a href="<?php echo htmlspecialchars(grade_url($slug)); ?>"><?php echo htmlspecialchars($app_name); ?>対策アプリ</a></h3>
+        <p><?php echo htmlspecialchars($grade_app_notes[$slug] ?? ''); ?></p>
+      </article>
+      <?php endforeach; ?>
+    </nav>
+
     <div class="grade-skill-table-wrap mt-10" tabindex="0" role="region" aria-label="級別・技能別の対応一覧">
       <table class="grade-skill-table">
         <thead>
@@ -101,7 +128,7 @@ function top_skill_cell(string $grade, string $skill, array $writing_labels, arr
 
     <nav class="grade-skill-guides mt-8" aria-label="英検対策の関連ガイド">
       <a href="/eiken/"><strong>英検対策コンテンツ</strong><span>日程・レベル・勉強法をまとめて確認</span></a>
-      <a href="/blog/eiken-apps/"><strong>英検対策アプリ7選を比較</strong><span>対応技能・料金・向いている学習を比べる</span></a>
+      <a href="/blog/eiken-apps/"><strong>英検アプリのおすすめを比較</strong><span>勉強アプリとの違い、対応技能、料金</span></a>
       <a href="/blog/"><strong>級別の英検コラム</strong><span>単語・4技能の勉強法を記事で読む</span></a>
     </nav>
   </div>
