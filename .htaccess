@@ -6,6 +6,23 @@ DirectoryIndex index.php
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+  # 正規URLへ 301。級・技能・/eiken/ は末尾スラッシュあり、1枚ものはなし。
+  # POST はフォーム送信なので、スラッシュの付け替えはしない。
+  RewriteCond %{REQUEST_METHOD} !^POST$
+  RewriteRule ^(about|faq|plan|tokushoho|terms|privacy|contact|external-transmission|company|media|cancel|parents|guide|study|school|juku)/$ /$1 [R=301,L]
+  RewriteCond %{REQUEST_METHOD} !^POST$
+  RewriteRule ^eiken$ /eiken/ [R=301,L]
+  RewriteCond %{REQUEST_METHOD} !^POST$
+  RewriteRule ^(1kyu|jun1kyu|2kyu|jun2kyu-plus|jun2kyu|3kyu|4kyu|5kyu)$ /$1/ [R=301,L]
+  RewriteCond %{REQUEST_METHOD} !^POST$
+  RewriteRule ^(1kyu|jun1kyu|2kyu|jun2kyu-plus|jun2kyu|3kyu)/(speaking|writing)$ /$1/$2/ [R=301,L]
+  RewriteCond %{REQUEST_METHOD} !^POST$
+  RewriteRule ^(1kyu|jun1kyu|2kyu|jun2kyu-plus|jun2kyu|3kyu|4kyu|5kyu)/(reading|listening|vocabulary)$ /$1/$2/ [R=301,L]
+  RewriteCond %{REQUEST_METHOD} !^POST$
+  RewriteRule ^(2kyu|jun2kyu-plus|jun2kyu|3kyu|4kyu|5kyu)/grammar$ /$1/grammar/ [R=301,L]
+  # 実在しない URL。404 のままだと Search Console の検証が終わらない。
+  RewriteRule ^blog/wp-\*\.php$ /blog/ [R=301,L]
+  RewriteRule ^blog/wp-%2[Aa]\.php$ /blog/ [R=301,L]
   # キャッシュ直アクセス防止
   RewriteRule ^cache/ - [F,L]
   # 実在ファイル・ディレクトリはそのまま
