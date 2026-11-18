@@ -17,7 +17,7 @@ if (!defined('SITE_NAME')) {
 function lp_breadcrumb_items(string $page = 'top', string $grade = '', ?array $grade_data = null): array
 {
     $grade_family = in_array($page, ['grade', 'speaking', 'writing', 'reading', 'listening', 'vocabulary', 'grammar'], true);
-    $top = ['name' => $grade_family ? '英検対策アプリ' : 'TOP', 'url' => '/'];
+    $top = ['name' => $grade_family ? '英検対策アプリ' : '英検対策アプリ「AiKen」', 'url' => '/'];
     if ($page === 'top' || $page === '') {
         return [];
     }

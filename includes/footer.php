@@ -39,7 +39,7 @@ include __DIR__ . '/breadcrumbs.php';
       <nav class="site-footer__col" aria-label="サービス">
         <p class="site-footer__col-title">サービス</p>
         <ul class="site-footer__list">
-          <li><a href="/">トップ</a></li>
+          <li><a href="/">英検対策アプリ「AiKen」</a></li>
           <li><a href="/about">AiKenとは</a></li>
           <li><a href="/plan">料金プラン</a></li>
           <li><a href="/guide">使い方ガイド</a></li>
