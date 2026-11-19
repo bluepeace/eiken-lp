@@ -5952,6 +5952,75 @@ a.speaking-related__link:hover {
   }
 }
 
+/* 学校向け: 本文中のイメージ写真 */
+.school-photo {
+  display: block;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #e2e8f0;
+}
+
+.school-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.school-photo--speaking img {
+  object-position: center 20%;
+}
+
+.school-photo--home img {
+  object-position: center 55%;
+}
+
+.school-issues-wrap {
+  max-width: 42rem;
+  margin: 2rem auto 0;
+}
+
+.school-issues-wrap .school-issues {
+  margin-top: 1.25rem;
+}
+
+.school-figure {
+  max-width: 48rem;
+  margin: 2rem auto 0;
+}
+
+.school-figure figcaption {
+  margin: 0.75rem 0 0;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: #475569;
+  text-align: center;
+}
+
+.school-figure + .school-ai,
+.school-figure + .school-devices {
+  margin-top: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .school-issues-wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 3rem;
+    max-width: 64rem;
+  }
+
+  .school-issues-wrap .school-issues {
+    margin: 0;
+  }
+
+  .school-figure .school-photo img {
+    aspect-ratio: 2 / 1;
+  }
+}
+
 /* ========== 学習塾向け（/juku）。学校向けの見た目は変えない ========== */
 .juku-chips {
   display: flex;

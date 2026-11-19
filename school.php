@@ -201,6 +201,15 @@ $shot = static function (string $path, string $alt, int $width, int $height, str
     return '<img src="' . school_e($src) . '" alt="' . school_e($alt) . '" width="' . $width . '" height="' . $height . '" class="' . school_e($class) . '" loading="lazy" decoding="async">';
 };
 
+/** 学校のイメージ写真（WebP＋JPG）。$name は assets/images/school/ のファイル名（拡張子なし） */
+$photo = static function (string $name, string $alt, string $class = ''): string {
+    $base = '/assets/images/school/' . $name;
+    return '<picture class="school-photo' . ($class !== '' ? ' ' . school_e($class) : '') . '">'
+        . '<source type="image/webp" srcset="' . school_e(lp_versioned_asset($base . '.webp')) . '">'
+        . '<img src="' . school_e(lp_versioned_asset($base . '.jpg')) . '" alt="' . school_e($alt) . '" width="900" height="600" loading="lazy" decoding="async">'
+        . '</picture>';
+};
+
 $gradeRows = [
     ['slug' => '5kyu', 'word' => true, 'grammar' => true, 'reading' => true, 'listening' => true, 'writing' => false, 'speaking' => false],
     ['slug' => '4kyu', 'word' => true, 'grammar' => true, 'reading' => true, 'listening' => true, 'writing' => false, 'speaking' => false],
@@ -245,13 +254,16 @@ include __DIR__ . '/includes/header.php';
       <p class="section-badge section-badge--center">CURRENT SITUATION</p>
       <h2 id="school-issues-heading">学校が抱える課題</h2>
       <p class="school-lead school-lead--center">英語科の授業と補習だけでは、生徒一人ひとりの級に合わせた練習量を確保しきれないことがあります。</p>
-      <ul class="school-issues">
-        <li>授業外でも、英検対策に取り組める環境を整えたい</li>
-        <li>生徒ごとに異なる英検の級へ対応したい</li>
-        <li>ライティングやスピーキングの練習機会を増やしたい</li>
-        <li>生徒が自分で繰り返し学習できる教材を用意したい</li>
-        <li>教員の指導を補完する学習ツールを探している</li>
-      </ul>
+      <div class="school-issues-wrap">
+        <?php echo $photo('exam-hall', '英検の試験会場で、問題に向かう高校生', 'school-photo--exam'); ?>
+        <ul class="school-issues">
+          <li>授業外でも、英検対策に取り組める環境を整えたい</li>
+          <li>生徒ごとに異なる英検の級へ対応したい</li>
+          <li>ライティングやスピーキングの練習機会を増やしたい</li>
+          <li>生徒が自分で繰り返し学習できる教材を用意したい</li>
+          <li>教員の指導を補完する学習ツールを探している</li>
+        </ul>
+      </div>
       <figure class="school-buddy">
         <img src="<?php echo school_e(lp_versioned_asset('/assets/images/buddies/mame.png')); ?>" alt="AiKenの学習キャラクター「マメ」" width="900" height="900" loading="lazy" decoding="async">
         <figcaption>学習中は、相棒のキャラクターが画面に寄り添います。</figcaption>
@@ -367,6 +379,10 @@ include __DIR__ . '/includes/header.php';
       <p class="section-badge section-badge--center">AI SUPPORT</p>
       <h2 id="school-ai-heading">AIによる添削・採点</h2>
       <p class="school-lead school-lead--center">AIが返すのは、生徒が自分で取り組んだあとの練習用フィードバックです。授業の目標や評価は、先生が行います。</p>
+      <figure class="school-figure">
+        <?php echo $photo('classroom-speaking', 'タブレットを手に、黒板の前で英語を話す高校生', 'school-photo--speaking'); ?>
+        <figcaption>スピーキングは、マイクで声に出して答える練習ができます。</figcaption>
+      </figure>
       <div class="school-ai">
         <article class="school-card">
           <?php echo $shot('/assets/images/app/tablet/writing.jpg', '英作文を書き、AI添削に出す画面', 2064, 2752, 'school-shot'); ?>
@@ -389,6 +405,10 @@ include __DIR__ . '/includes/header.php';
       <p class="section-badge section-badge--center">DEVICES</p>
       <h2 id="school-devices-heading">利用する端末</h2>
       <p class="school-lead school-lead--center">学習は、ブラウザ版 <a href="<?php echo school_e(APP_URL); ?>/"><?php echo school_e(APP_URL); ?>/</a>、または各ストアのAiKenアプリで行います。<?php echo school_e(SITE_URL); ?>/ は紹介サイトであり、学習画面ではありません。</p>
+      <figure class="school-figure">
+        <?php echo $photo('home-study', '家でタブレットを使って英語を学習する高校生', 'school-photo--home'); ?>
+        <figcaption>学校で使うのと同じアカウントで、家庭のタブレットやPCからも学習できます。</figcaption>
+      </figure>
       <div class="school-devices">
         <article class="school-card">
           <?php echo $shot('/assets/images/app/phone/vocabulary.png', 'スマートフォン版AiKenの単語クイズ', 1170, 2532, 'school-shot school-shot--phone'); ?>
