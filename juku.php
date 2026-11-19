@@ -209,6 +209,15 @@ $shot = static function (string $path, string $alt, int $width, int $height, str
     return '<img src="' . juku_e($src) . '" alt="' . juku_e($alt) . '" width="' . $width . '" height="' . $height . '" class="' . juku_e($class) . '" loading="lazy" decoding="async">';
 };
 
+/** 塾のイメージ写真（WebP＋JPG）。$name は assets/images/juku/ のファイル名（拡張子なし） */
+$photo = static function (string $name, string $alt, string $class = ''): string {
+    $base = '/assets/images/juku/' . $name;
+    return '<picture class="school-photo' . ($class !== '' ? ' ' . juku_e($class) : '') . '">'
+        . '<source type="image/webp" srcset="' . juku_e(lp_versioned_asset($base . '.webp')) . '">'
+        . '<img src="' . juku_e(lp_versioned_asset($base . '.jpg')) . '" alt="' . juku_e($alt) . '" width="900" height="600" loading="lazy" decoding="async">'
+        . '</picture>';
+};
+
 $ranges = [
     ['skill' => '単語', 'grades' => '5級〜1級'],
     ['skill' => '文法', 'grades' => '5級〜2級'],
@@ -258,11 +267,15 @@ $inputClass = 'school-field';
 include __DIR__ . '/includes/header.php';
 ?>
 <div class="school-page juku-page">
-  <section class="school-hero" aria-labelledby="juku-heading">
-    <div class="lp-container school-hero__grid">
+  <section class="school-hero school-hero--photo juku-hero" aria-labelledby="juku-heading">
+    <picture class="school-hero__photo">
+      <source type="image/webp" srcset="<?php echo juku_e(lp_versioned_asset('/assets/images/juku/hero-classroom.webp')); ?>">
+      <img src="<?php echo juku_e(lp_versioned_asset('/assets/images/juku/hero-classroom.jpg')); ?>" alt="教室で前を向き、ノートを取りながら授業を受ける生徒" width="1600" height="1066" loading="eager" fetchpriority="high" decoding="async">
+    </picture>
+    <div class="lp-container school-hero__inner">
       <div class="school-hero__copy">
         <p class="section-badge">FOR JUKU</p>
-        <h1 id="juku-heading">英検対策を、もっと手軽に。塾の指導にAiKenを。</h1>
+        <h1 id="juku-heading"><span class="school-hero__nowrap">英検対策を、もっと手軽に。</span><span class="school-hero__nowrap">塾の指導にAiKenを。</span></h1>
         <p class="school-lead">英検5級〜1級・準2級プラスに対応した英検対策アプリ「AiKen（アイケン）」。単語・文法からリーディング・リスニング・ライティング・スピーキングまで、AIを活用した学習機能で、生徒一人ひとりの英検合格をサポートします。</p>
         <p class="school-lead">塾の英検対策コースや授業の補助教材、家庭学習用の教材としてご活用いただけます。</p>
         <ul class="juku-chips">
@@ -272,13 +285,6 @@ include __DIR__ . '/includes/header.php';
           <li>パソコン・タブレット・スマートフォンに対応</li>
         </ul>
         <a class="school-btn" href="#juku-contact">塾での活用について相談する</a>
-      </div>
-      <div class="school-hero__screens">
-        <img src="<?php echo juku_e(lp_versioned_asset('/assets/images/app/tablet/vocabulary.jpg')); ?>" alt="AiKenの単語クイズ。英単語を4択で選ぶ画面" width="2064" height="2752" class="school-shot school-shot--hero" loading="eager" decoding="async">
-        <div class="school-hero__pair">
-          <img src="<?php echo juku_e(lp_versioned_asset('/assets/images/app/tablet/writing.jpg')); ?>" alt="AiKenの英作文画面。書いた英文をAI添削に出すボタンがある" width="2064" height="2752" class="school-shot" loading="eager" decoding="async">
-          <img src="<?php echo juku_e(lp_versioned_asset('/assets/images/app/tablet/speaking.jpg')); ?>" alt="AiKenのスピーキング画面。面接形式の問題カード" width="2064" height="2752" class="school-shot" loading="eager" decoding="async">
-        </div>
       </div>
     </div>
   </section>
@@ -316,6 +322,9 @@ include __DIR__ . '/includes/header.php';
     <div class="lp-container">
       <p class="section-badge section-badge--center">SUPPORT</p>
       <h2 id="juku-support-heading">AiKenが塾の英検対策をサポート</h2>
+      <figure class="school-figure">
+        <?php echo $photo('student-smile', '教室で笑顔を見せながら学習する生徒', 'juku-photo--smile'); ?>
+      </figure>
       <div class="school-features">
         <article class="school-card">
           <p class="school-card__num">01</p>
@@ -356,6 +365,9 @@ include __DIR__ . '/includes/header.php';
     <div class="lp-container">
       <p class="section-badge section-badge--center">IN THE CLASSROOM</p>
       <h2 id="juku-uses-heading">塾での活用イメージ</h2>
+      <figure class="school-figure">
+        <?php echo $photo('classroom-pc', '教室でヘッドセットを着け、ノートパソコンで学習する生徒', 'juku-photo--classroom'); ?>
+      </figure>
       <div class="juku-uses">
         <article class="school-card juku-use juku-use--course">
           <p class="juku-use__label">授業とあわせて</p>
@@ -449,6 +461,9 @@ include __DIR__ . '/includes/header.php';
       <h2 id="juku-devices-heading">パソコン・タブレット・スマートフォンに対応</h2>
       <p class="school-lead school-lead--center">AiKenはWeb版に加え、iOS版・Android版も提供しています。パソコンやタブレットを使った教室での学習はもちろん、スマートフォンを使った自宅での学習にも対応。同じアカウントで利用できるため、場所や端末に合わせて学習を進められます。</p>
       <p class="school-lead school-lead--center">授業中の補助教材としても、授業外の自主学習用としても活用いただけます。</p>
+      <figure class="school-figure">
+        <?php echo $photo('headset-study', 'ヘッドセットを着けてパソコンに向かい、メモを取りながら学習する生徒', 'juku-photo--headset'); ?>
+      </figure>
       <div class="school-devices">
         <article class="school-card">
           <?php echo $shot('/assets/images/app/tablet/listening.jpg', 'パソコンのブラウザで開いたAiKenのリスニング画面', 2064, 2752, 'school-shot'); ?>

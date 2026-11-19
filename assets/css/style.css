@@ -6022,6 +6022,19 @@ a.speaking-related__link:hover {
 }
 
 /* ========== 学習塾向け（/juku）。学校向けの見た目は変えない ========== */
+/* 塾向け: 本文中のイメージ写真（顔が切れないよう位置を調整） */
+.juku-photo--smile img {
+  object-position: 40% 30%;
+}
+
+.juku-photo--classroom img {
+  object-position: 30% 35%;
+}
+
+.juku-photo--headset img {
+  object-position: center 30%;
+}
+
 .juku-chips {
   display: flex;
   flex-wrap: wrap;
