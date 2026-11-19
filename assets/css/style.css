@@ -5884,6 +5884,74 @@ a.speaking-related__link:hover {
   }
 }
 
+/* 学校向けヒーロー: 教室写真。スマホは写真を上に帯で置き、PCは全面背景＋左を白く抜いてコピーを載せる */
+.school-hero--photo {
+  position: relative;
+  overflow: hidden;
+  padding: 0 0 3rem;
+}
+
+.school-hero__photo {
+  display: block;
+}
+
+.school-hero__photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: 70% 30%;
+}
+
+.school-hero--photo .school-hero__inner {
+  position: relative;
+  padding: 1.75rem 1rem 0;
+}
+
+.school-hero__nowrap {
+  display: inline-block;
+}
+
+@media (min-width: 1024px) {
+  .school-hero--photo {
+    display: flex;
+    align-items: center;
+    min-height: 600px;
+    padding: 4rem 1rem;
+  }
+
+  .school-hero__photo,
+  .school-hero__photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+  }
+
+  .school-hero__photo img {
+    object-position: 60% 28%;
+  }
+
+  .school-hero__photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.86) 36%, rgba(255, 255, 255, 0.35) 58%, rgba(255, 255, 255, 0) 75%);
+  }
+
+  .school-hero--photo .school-hero__inner {
+    z-index: 1;
+    width: 100%;
+    padding: 0;
+  }
+
+  .school-hero--photo .school-hero__copy {
+    max-width: 36rem;
+  }
+}
+
 /* ========== 学習塾向け（/juku）。学校向けの見た目は変えない ========== */
 .juku-chips {
   display: flex;

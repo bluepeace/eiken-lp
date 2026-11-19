@@ -225,20 +225,17 @@ $inputClass = 'school-field';
 include __DIR__ . '/includes/header.php';
 ?>
 <div class="school-page">
-  <section class="school-hero" aria-labelledby="school-heading">
-    <div class="lp-container school-hero__grid">
+  <section class="school-hero school-hero--photo" aria-labelledby="school-heading">
+    <picture class="school-hero__photo">
+      <source type="image/webp" srcset="<?php echo school_e(lp_versioned_asset('/assets/images/school/hero-classroom.webp')); ?>">
+      <img src="<?php echo school_e(lp_versioned_asset('/assets/images/school/hero-classroom.jpg')); ?>" alt="教室でタブレットを見ながら笑顔で学習する高校生" width="1600" height="1066" loading="eager" fetchpriority="high" decoding="async">
+    </picture>
+    <div class="lp-container school-hero__inner">
       <div class="school-hero__copy">
         <p class="section-badge">FOR SCHOOLS</p>
-        <h1 id="school-heading">2027年度の英検対策を、もっと手軽に。</h1>
+        <h1 id="school-heading"><span class="school-hero__nowrap">2027年度の英検対策を、</span><span class="school-hero__nowrap">もっと手軽に。</span></h1>
         <p class="school-lead">英検5級から1級（準2級プラスを含む）に対応しています。単語、文法、リーディング、リスニング、ライティング、スピーキングを学習できます。AIによる添削と採点は、生徒の自主学習を支え、先生の指導を補完します。スマートフォン、タブレット、PCから利用できます。2027年度に向けた、学校向けの導入相談を受け付けています。</p>
         <a class="school-btn" href="#school-contact">学校向け導入を相談する</a>
-      </div>
-      <div class="school-hero__screens">
-        <img src="<?php echo school_e(lp_versioned_asset('/assets/images/app/tablet/vocabulary.jpg')); ?>" alt="AiKenの単語クイズ。英検2級の単語を4択で選ぶ画面" width="2064" height="2752" class="school-shot school-shot--hero" loading="eager" decoding="async">
-        <div class="school-hero__pair">
-          <img src="<?php echo school_e(lp_versioned_asset('/assets/images/app/tablet/writing.jpg')); ?>" alt="AiKenの英作文画面。書いた英文をAI添削に出すボタンがある" width="2064" height="2752" class="school-shot" loading="eager" decoding="async">
-          <img src="<?php echo school_e(lp_versioned_asset('/assets/images/app/tablet/speaking.jpg')); ?>" alt="AiKenのスピーキング画面。面接形式の問題カードと制限時間" width="2064" height="2752" class="school-shot" loading="eager" decoding="async">
-        </div>
       </div>
     </div>
   </section>
