@@ -13,6 +13,12 @@ define('APP_STORE_URL', 'https://apps.apple.com/jp/app/aiken/id6814042355');
 define('APP_STORE_ID', '6814042355');
 /** Android（Google Play）。LP のストア導線はここを正とする */
 define('PLAY_STORE_URL', 'https://play.google.com/store/apps/details?id=jp.eikenapp.app');
+/**
+ * App Store のキャンペーンリンク用プロバイダトークン（pt）。
+ * App Store Connect → アプリ → アナリティクス →「キャンペーンリンクを生成」で表示される pt= の値。
+ * 空のあいだは、ストアへのリンクに pt / ct を付けない（ct だけでは計測されない）。
+ */
+define('APP_STORE_PROVIDER_TOKEN', '129485458');
 /** LP フッター著作権表示のリンク先 */
 define('BLUEPIECE_LAB_URL', 'https://bluepiece.me/link');
 define('BRAND_COLOR', '#50c2cb');
@@ -365,6 +371,50 @@ function lp_app_link(string $url, string $position): string
         $query['grade'] = $level;
     }
     return $url . (strpos($url, '?') === false ? '?' : '&') . http_build_query($query);
+}
+
+/**
+ * ストアへのリンクに付けるキャンペーン名。形式は lp_{ページ}_{級}_{位置}（例: lp_top_hero / lp_grade_3kyu / lp_speaking_2kyu_footer）。
+ * App Store の ct は40文字まで。英数字・_・- のみ。
+ */
+function lp_store_campaign(string $position = ''): string
+{
+    global $page;
+    $parts = array_filter(['lp', (string) ($page ?? ''), lp_current_grade(), $position], static fn ($v) => $v !== '');
+    return substr((string) preg_replace('/[^A-Za-z0-9_-]/', '', implode('_', $parts)), 0, 40);
+}
+
+/**
+ * App Store へのリンク（キャンペーン計測つき）。
+ * App Store Connect の「キャンペーン」に、ct ごとのインプレッション・ダウンロードが出る。
+ */
+function lp_app_store_url(string $position = ''): string
+{
+    $url = defined('APP_STORE_URL') ? (string) APP_STORE_URL : '';
+    $pt = defined('APP_STORE_PROVIDER_TOKEN') ? (string) APP_STORE_PROVIDER_TOKEN : '';
+    if ($url === '' || $pt === '') {
+        return $url;
+    }
+    $query = http_build_query(['pt' => $pt, 'ct' => lp_store_campaign($position), 'mt' => '8']);
+    return $url . (strpos($url, '?') === false ? '?' : '&') . $query;
+}
+
+/**
+ * Google Play へのリンク（キャンペーン計測つき）。
+ * referrer の UTM が Play Console の「ユーザー獲得」のキャンペーン別に出る。
+ */
+function lp_play_store_url(string $position = ''): string
+{
+    $url = defined('PLAY_STORE_URL') ? (string) PLAY_STORE_URL : '';
+    if ($url === '') {
+        return $url;
+    }
+    $referrer = http_build_query([
+        'utm_source' => 'aiken.life',
+        'utm_medium' => 'lp',
+        'utm_campaign' => lp_store_campaign($position),
+    ]);
+    return $url . (strpos($url, '?') === false ? '?' : '&') . 'referrer=' . rawurlencode($referrer);
 }
 
 /** 会員登録URL（流入元つき） */

@@ -8,14 +8,15 @@ if (!defined('SITE_NAME')) {
     require_once __DIR__ . '/../config.php';
 }
 
-$store_url = defined('APP_STORE_URL') ? (string) APP_STORE_URL : '';
+$store_on_hero = !empty($store_on_hero);
+$store_position = $store_on_hero ? 'hero' : '';
+$store_url = lp_app_store_url($store_position);
 if ($store_url === '') {
     return;
 }
 
 $store_align = (($store_align ?? 'center') === 'start') ? 'start' : 'center';
-$store_on_hero = !empty($store_on_hero);
-$play_url = defined('PLAY_STORE_URL') ? (string) PLAY_STORE_URL : '';
+$play_url = lp_play_store_url($store_position);
 
 $classes = 'store-cta store-cta--' . $store_align;
 if ($store_on_hero) {
@@ -62,4 +63,4 @@ if ($store_on_hero) {
   <p class="store-cta__note">同じアカウントで、ブラウザでもアプリでも使えます</p>
 </div>
 <?php
-unset($store_align, $store_on_hero, $store_url, $play_url, $classes);
+unset($store_align, $store_on_hero, $store_position, $store_url, $play_url, $classes);

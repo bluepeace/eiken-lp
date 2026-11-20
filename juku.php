@@ -483,8 +483,8 @@ include __DIR__ . '/includes/header.php';
       </div>
       <p class="school-note">学習は、Web版 <a href="<?php echo juku_e(APP_URL); ?>/"><?php echo juku_e(APP_URL); ?>/</a>、または App Store・Google Play のAiKenアプリで行います。Web版・iOS版・Android版の名称はいずれもAiKenです。<?php echo juku_e(SITE_URL); ?>/ は紹介サイトです。</p>
       <p class="school-store">
-        <a href="<?php echo juku_e(APP_STORE_URL); ?>" rel="noopener noreferrer" target="_blank">App Store</a>
-        <a href="<?php echo juku_e(PLAY_STORE_URL); ?>" rel="noopener noreferrer" target="_blank">Google Play</a>
+        <a href="<?php echo juku_e(lp_app_store_url()); ?>" rel="noopener noreferrer" target="_blank">App Store</a>
+        <a href="<?php echo juku_e(lp_play_store_url()); ?>" rel="noopener noreferrer" target="_blank">Google Play</a>
       </p>
     </div>
   </section>

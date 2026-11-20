@@ -108,10 +108,10 @@ include __DIR__ . '/breadcrumbs.php';
           <li><a href="<?php echo htmlspecialchars(lp_signup_url('footer_link'), ENT_QUOTES, 'UTF-8'); ?>">AiKen無料登録</a></li>
           <li><a href="<?php echo htmlspecialchars(APP_URL); ?>/login">AiKenログイン</a></li>
           <?php if (defined('APP_STORE_URL') && APP_STORE_URL !== ''): ?>
-          <li><a href="<?php echo htmlspecialchars(APP_STORE_URL); ?>" rel="noopener noreferrer" target="_blank">App Store</a></li>
+          <li><a href="<?php echo htmlspecialchars(lp_app_store_url('footer')); ?>" rel="noopener noreferrer" target="_blank">App Store</a></li>
           <?php endif; ?>
           <?php if (defined('PLAY_STORE_URL') && PLAY_STORE_URL !== ''): ?>
-          <li><a href="<?php echo htmlspecialchars(PLAY_STORE_URL); ?>" rel="noopener noreferrer" target="_blank">Google Play</a></li>
+          <li><a href="<?php echo htmlspecialchars(lp_play_store_url('footer')); ?>" rel="noopener noreferrer" target="_blank">Google Play</a></li>
           <?php endif; ?>
         </ul>
       </nav>

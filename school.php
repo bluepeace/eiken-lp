@@ -428,8 +428,8 @@ include __DIR__ . '/includes/header.php';
       </div>
       <p class="school-note">今あるスマートフォン、タブレット、PCを使って始められます。iPhone・iPadは App Store、Androidは Google Play のAiKenアプリです。アプリの名称はAiKenのままです。学校名義でのストア公開は、標準のサービスには含まれません。対応ブラウザ、音声、マイク、学校のネットワークによって動作が異なることがあります。導入前に、使う端末とネットワークで画面と音声をご確認ください。</p>
       <p class="school-store">
-        <a href="<?php echo school_e(APP_STORE_URL); ?>" rel="noopener noreferrer" target="_blank">App Store</a>
-        <a href="<?php echo school_e(PLAY_STORE_URL); ?>" rel="noopener noreferrer" target="_blank">Google Play</a>
+        <a href="<?php echo school_e(lp_app_store_url()); ?>" rel="noopener noreferrer" target="_blank">App Store</a>
+        <a href="<?php echo school_e(lp_play_store_url()); ?>" rel="noopener noreferrer" target="_blank">Google Play</a>
       </p>
     </div>
   </section>

@@ -313,14 +313,14 @@ include __DIR__ . '/includes/header.php';
         <div class="mp-card mp-access">
           <h3 class="mp-h3">iOSアプリ</h3>
           <p class="mp-body">iPhone・iPadは App Store から入手できます。</p>
-          <a class="mp-access__badge" href="<?php echo mp_e(APP_STORE_URL); ?>" target="_blank" rel="noopener noreferrer">
+          <a class="mp-access__badge" href="<?php echo mp_e(lp_app_store_url()); ?>" target="_blank" rel="noopener noreferrer">
             <img src="/assets/images/badge-app-store.svg" alt="App Store からダウンロード" width="109" height="40">
           </a>
         </div>
         <div class="mp-card mp-access">
           <h3 class="mp-h3">Androidアプリ</h3>
           <p class="mp-body">Android は Google Play から入手できます。</p>
-          <a class="mp-access__badge" href="<?php echo mp_e(PLAY_STORE_URL); ?>" target="_blank" rel="noopener noreferrer">
+          <a class="mp-access__badge" href="<?php echo mp_e(lp_play_store_url()); ?>" target="_blank" rel="noopener noreferrer">
             <img src="/assets/images/badge-google-play.png" alt="Google Play で手に入れよう" width="135" height="40">
           </a>
         </div>
